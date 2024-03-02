@@ -1,0 +1,7 @@
+.env.development
+.cache
+node_modules
+public
+.DS_Store
+src/gatsby-types.d.ts
+.env.production
