@@ -1483,6 +1483,7 @@ h6 {
   cursor: pointer;
 }
 .team-skills-one__certificates__item img {
+  height: 120px;
   object-fit: cover;
   filter: grayscale(100%);
   transition: all 0.5s ease-in-out;

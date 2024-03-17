@@ -5,12 +5,13 @@ import PageHead from "../../components/page-head/page-head";
 
 const TeamDetailsPage: React.FC<
     PageProps<{
-        allContentfulProject: Queries.ContentfulProjectGroupConnection;
+        contentfulTeam: Queries.ContentfulTeam;
     }>
 > = ({ data, params }) => {
     const { slug } = params;
 
-    const projects = data.allContentfulProject.nodes;
+    const team = data.contentfulTeam;
+    console.log(team);
 
     return (
         <PageBody>
@@ -40,80 +41,60 @@ const TeamDetailsPage: React.FC<
                         <div className="row">
                             <div className="col-md-5">
                                 <div className="team-details__image  wow fadeInLeft" data-wow-delay="500ms">
-                                    <img src="/assets/images/team/team-d-1.png" alt="team-details__image" />
+                                    <img src={team.avatar!.localFile!.publicURL!} alt="team-details__image" />
                                 </div>
                             </div>
 
                             <div className="col-md-7">
                                 <div className="team-details__content">
                                     <h6 className="team-details__content__subtitle  wow fadeInUp" data-wow-delay="500ms">
-                                        Instructor
+                                        {team.role}
                                     </h6>
                                     <h3 className="team-details__content__title  wow fadeInUp" data-wow-delay="500ms">
-                                        Darrell Steward
+                                        {team.name}
                                     </h3>
                                     <p className="team-details__content__text  wow fadeInUp" data-wow-delay="500ms">
-                                        There are many variations of passages of Lorem Ipsum have avagtilable, but the majority suffered alteration in some form, by injected
-                                        hudfdfmour, or randomised words which don't look
+                                        {team.description}
                                     </p>
 
                                     <div className="team-details__content__highlight  wow fadeInUp" data-wow-delay="500ms">
-                                        <span className="team-details__content__highlight__text">
-                                            The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
-                                        </span>
+                                        <span className="team-details__content__highlight__text">{team.quote}</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 38">
                                             <path d="M267 0L0 38H315V18L267 0Z" />
                                         </svg>
                                     </div>
                                     <ul className="list-unstyled team-details__list  wow fadeInUp" data-wow-delay="500ms">
                                         <li className="team-details__list__item">
-                                            <i className="icon-portfolio"></i> <span className="team-details__list__item__name">Experience:</span> 23 Years
+                                            <i className="icon-portfolio"></i> <span className="team-details__list__item__name">Experience:</span> {team.experience}
                                         </li>
                                         <li className="team-details__list__item">
                                             <i className="icon-email"></i> <span className="team-details__list__item__name"> Email:</span>{" "}
-                                            <a href="mailto:demo@gmail.com">demo@gmail.com</a>
+                                            <a href={`mailto:${team.email}`}>{team.email}</a>
                                         </li>
                                         <li className="team-details__list__item">
                                             <i className="icon-telephone"></i> <span className="team-details__list__item__name">Phone:</span>{" "}
-                                            <a href="tel:+8801775-338747"> +(684) 555-0102</a>
+                                            <a href={`tel:${team.phone?.replace(/[\(\) ]/g, "")}`}>{team.phone}</a>
                                         </li>
                                     </ul>
 
-                                    <div className="team-skills">
-                                        <div className="team-skills__progress">
-                                            <h4 className="team-skills__progress__title">Web Development</h4>
-                                            <div className="team-skills__progress__bar">
-                                                <div className="team-skills__progress__inner count-bar" data-percent="80%">
-                                                    <div className="team-skills__progress__number count-text">80%</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="team-skills__progress">
-                                            <h4 className="team-skills__progress__title">UI/UX Design</h4>
-                                            <div className="team-skills__progress__bar">
-                                                <div className="team-skills__progress__inner count-bar" data-percent="70%">
-                                                    <div className="team-skills__progress__number count-text">70%</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <div className="team-details__social  wow fadeInUp" data-wow-delay="500ms">
-                                        <a href="https://twitter.com">
-                                            <i className="icon-x-twitter" aria-hidden="true"></i> <span className="sr-only">Twitter</span>
-                                        </a>
-                                        <a href="https://facebook.com">
-                                            <i className="icon-facebook-f" aria-hidden="true"></i>
-                                            <span className="sr-only">Facebook</span>
-                                        </a>
-                                        <a href="https://pinterest.com">
-                                            <i className="icon-pinterest-p" aria-hidden="true"></i>
-                                            <span className="sr-only">Pinterest</span>
-                                        </a>
-                                        <a href="https://instagram.com">
-                                            <i className="fab fa-instagram" aria-hidden="true"></i>
-                                            <span className="sr-only">Instagram</span>
-                                        </a>
+                                        {team.link!.github && (
+                                            <a href={team.link!.github!}>
+                                                <i className="fab fa-github" aria-hidden="true"></i> <span className="sr-only">Github</span>
+                                            </a>
+                                        )}
+                                        {team.link!.facebook && (
+                                            <a href={team.link!.facebook!}>
+                                                <i className="icon-facebook-f" aria-hidden="true"></i>
+                                                <span className="sr-only">Facebook</span>
+                                            </a>
+                                        )}
+                                        {team.link!.youtube && (
+                                            <a href={team.link!.youtube!}>
+                                                <i className="fab fa-youtube" aria-hidden="true"></i>
+                                                <span className="sr-only">Youtube</span>
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -129,22 +110,16 @@ const TeamDetailsPage: React.FC<
                             <div className="col-md-6 col-lg-6">
                                 <div className="team-skills-one__content  wow fadeInUp" data-wow-delay="500ms">
                                     <h3 className="team-skills-one__title">Certificates & Education</h3>
-                                    <p className="team-skills-one__text">
-                                        There are many variations of passages of Lorem Ipsum avagtilable, but the majority have suffered alteration in some form
-                                    </p>
+                                    <p className="team-skills-one__text">{team.certificate!.description!}</p>
                                 </div>
                             </div>
                             <div className="col-md-6 col-lg-6">
                                 <div className="team-skills-one__certificates  wow fadeInUp" data-wow-delay="700ms">
-                                    <div className="team-skills-one__certificates__item">
-                                        <img src="/assets/images/team/certificate-1-1.jpg" alt="team-skills-one__certificates" />
-                                    </div>
-                                    <div className="team-skills-one__certificates__item">
-                                        <img src="/assets/images/team/certificate-1-2.jpg" alt="team-skills-one__certificates" />
-                                    </div>
-                                    <div className="team-skills-one__certificates__item">
-                                        <img src="/assets/images/team/certificate-1-3.jpg" alt="team-skills-one__certificates" />
-                                    </div>
+                                    {team.certificate!.thumbnails!.map((thumbnail) => (
+                                        <div key={thumbnail!.id!} className="team-skills-one__certificates__item">
+                                            <img src={thumbnail!.localFile!.publicURL!} alt="team-skills-one__certificates" />
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
@@ -152,34 +127,15 @@ const TeamDetailsPage: React.FC<
 
                     <div className="team-skills-one__bottom  wow fadeInUp" data-wow-delay="500ms">
                         <div className="row align-items-center gutter-y-30">
-                            <div className="col-md-3">
-                                <div className="team-skills-one__skill">
-                                    <span className="team-skills-one__skill__start">July 2018</span>
-                                    <h4 className="team-skills-one__skill__title">Computer science</h4>
-                                    <p className="team-skills-one__skill__text">Canadian National University</p>
+                            {team.timeline!.map((timeline) => (
+                                <div key={timeline!.id!} className="col">
+                                    <div className="team-skills-one__skill">
+                                        <span className="team-skills-one__skill__start">{timeline!.date!}</span>
+                                        <h4 className="team-skills-one__skill__title">{timeline!.name!}</h4>
+                                        <p className="team-skills-one__skill__text">{timeline!.description!}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="team-skills-one__skill">
-                                    <span className="team-skills-one__skill__start">July 2019</span>
-                                    <h4 className="team-skills-one__skill__title">Artist</h4>
-                                    <p className="team-skills-one__skill__text">Canadian National University</p>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="team-skills-one__skill">
-                                    <span className="team-skills-one__skill__start">July 2020</span>
-                                    <h4 className="team-skills-one__skill__title">Master Degree</h4>
-                                    <p className="team-skills-one__skill__text">Canadian National University</p>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div className="team-skills-one__skill">
-                                    <span className="team-skills-one__skill__start">July 2023</span>
-                                    <h4 className="team-skills-one__skill__title">Ms, Technolgy</h4>
-                                    <p className="team-skills-one__skill__text">Canadian National University</p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -243,18 +199,39 @@ export default TeamDetailsPage;
 export const Head: HeadFC = () => <PageHead />;
 
 export const projects = graphql`
-    {
-        allContentfulProject(sort: { updatedAt: DESC }) {
-            nodes {
-                id
-                title
-                subtitle
-                slug
-                thumbnail {
+    query ($slug: String!) {
+        contentfulTeam(slug: { eq: $slug }) {
+            name
+            role
+            description
+            quote
+            experience
+            email
+            phone
+            link {
+                facebook
+                github
+                youtube
+            }
+            avatar {
+                localFile {
+                    publicURL
+                }
+            }
+            certificate {
+                description
+                thumbnails {
+                    id
                     localFile {
                         publicURL
                     }
                 }
+            }
+            timeline {
+                id
+                name
+                description
+                date(formatString: "MMM YYYY")
             }
         }
     }
