@@ -5,12 +5,12 @@ import PageHead from "../../components/page-head/page-head";
 
 const TeamDetailsPage: React.FC<
     PageProps<{
-        allContentfulProjects: Queries.ContentfulProjectsGroupConnection;
+        allContentfulProject: Queries.ContentfulProjectGroupConnection;
     }>
 > = ({ data, params }) => {
     const { slug } = params;
 
-    const projects = data.allContentfulProjects.nodes;
+    const projects = data.allContentfulProject.nodes;
 
     return (
         <PageBody>
@@ -244,7 +244,7 @@ export const Head: HeadFC = () => <PageHead />;
 
 export const projects = graphql`
     {
-        allContentfulProjects(sort: { updatedAt: DESC }) {
+        allContentfulProject(sort: { updatedAt: DESC }) {
             nodes {
                 id
                 title
