@@ -33,7 +33,7 @@ const HomePage: React.FC<
                             <div
                                 className="main-slider-two__bg"
                                 style={{
-                                    backgroundImage: "url(assets/images/backgrounds/slider-1-1.jpg)",
+                                    backgroundImage: "url(/assets/images/backgrounds/slider-1-1.jpg)",
                                 }}
                             ></div>
                             <div className="container">
@@ -65,7 +65,7 @@ const HomePage: React.FC<
                                 </div>
                             </div>
                             <div className="main-slider-two__item__shape">
-                                <img src="assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
+                                <img src="/assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@ const HomePage: React.FC<
                             <div
                                 className="main-slider-two__bg"
                                 style={{
-                                    backgroundImage: "url(assets/images/backgrounds/slider-1-2.jpg)",
+                                    backgroundImage: "url(/assets/images/backgrounds/slider-1-2.jpg)",
                                 }}
                             ></div>
                             <div className="container">
@@ -108,7 +108,7 @@ const HomePage: React.FC<
                                 </div>
                             </div>
                             <div className="main-slider-two__item__shape">
-                                <img src="assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
+                                <img src="/assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ const HomePage: React.FC<
                             <div
                                 className="main-slider-two__bg"
                                 style={{
-                                    backgroundImage: "url(assets/images/backgrounds/slider-1-3.jpg)",
+                                    backgroundImage: "url(/assets/images/backgrounds/slider-1-3.jpg)",
                                 }}
                             ></div>
                             <div className="container">
@@ -151,7 +151,7 @@ const HomePage: React.FC<
                                 </div>
                             </div>
                             <div className="main-slider-two__item__shape">
-                                <img src="assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
+                                <img src="/assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
                             </div>
                         </div>
                     </div>
@@ -162,7 +162,7 @@ const HomePage: React.FC<
                             <div
                                 className="main-slider-two__bg"
                                 style={{
-                                    backgroundImage: "url(assets/images/backgrounds/slider-1-4.jpg)",
+                                    backgroundImage: "url(/assets/images/backgrounds/slider-1-4.jpg)",
                                 }}
                             ></div>
                             <div className="container">
@@ -194,7 +194,7 @@ const HomePage: React.FC<
                                 </div>
                             </div>
                             <div className="main-slider-two__item__shape">
-                                <img src="assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
+                                <img src="/assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
                             </div>
                         </div>
                     </div>
@@ -248,10 +248,10 @@ const HomePage: React.FC<
                             <div className="about-three__left wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
                                 <div className="about-three__thumb">
                                     <div className="about-three__thumb__item about-three__thumb__item--one">
-                                        <img src="assets/images/about/about-s-3-1.png" alt="ostech image" />
+                                        <img src="/assets/images/about/about-s-3-1.png" alt="ostech image" />
                                     </div>
                                     <div className="about-three__thumb__item about-three__thumb__item--two">
-                                        <img src="assets/images/about/about-3-1.png" alt="ostech image" />
+                                        <img src="/assets/images/about/about-3-1.png" alt="ostech image" />
                                     </div>
 
                                     <div className="about-three__thumb__call">
@@ -273,7 +273,7 @@ const HomePage: React.FC<
                                 <div className="about-three__top">
                                     <div className="sec-title wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                         <div className="d-flex align-items-center justify-content-start">
-                                            <img src="assets/images/shapes/sec-title-s-1.png" alt="Về Chúng Tôi" className="sec-title__img" />
+                                            <img src="/assets/images/shapes/sec-title-s-1.png" alt="Về Chúng Tôi" className="sec-title__img" />
                                             <h6 className="sec-title__tagline">Về Chúng Tôi</h6>
                                         </div>
                                         <h3 className="sec-title__title">Chuyên Cung Cấp Các Dịch Vụ Phát Triển Kinh Doanh</h3>
@@ -344,7 +344,7 @@ const HomePage: React.FC<
                 <div
                     className="service-three__bg"
                     style={{
-                        backgroundImage: "url(assets/images/shapes/service-shape-2-1.png)",
+                        backgroundImage: "url(/assets/images/shapes/service-shape-2-1.png)",
                     }}
                 ></div>
                 <div className="container">
@@ -352,7 +352,7 @@ const HomePage: React.FC<
                         <div className="col-12">
                             <div className="sec-title sec-title--two text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                 <div className="d-flex align-items-center justify-content-center">
-                                    <img src="assets/images/shapes/sec-title-s-1.png" alt="Service" className="sec-title__img" />
+                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Service" className="sec-title__img" />
                                     <h6 className="sec-title__tagline">Chúng tôi cung cấp</h6>
                                 </div>
                                 <h3 className="sec-title__title">
@@ -400,13 +400,13 @@ const HomePage: React.FC<
                                         </div>
                                     </div>
                                     <div className="service-three__item__thumb">
-                                        <img src="assets/images/service/service-3-1.png" alt="ostech image" />
+                                        <img src="/assets/images/service/service-3-1.png" alt="ostech image" />
                                     </div>
                                     <div className="service-three__item__content">
                                         <h4 className="service-three__item__title">
                                             Xây Dựng <br /> Website
                                         </h4>
-                                        <a href="service-d-development.html" className="service-three__item__link">
+                                        <a href="service-d-development" className="service-three__item__link">
                                             <span className="service-three__item__link__icon"></span>
                                         </a>
                                     </div>
@@ -422,13 +422,13 @@ const HomePage: React.FC<
                                         </div>
                                     </div>
                                     <div className="service-three__item__thumb">
-                                        <img src="assets/images/service/service-3-2.png" alt="ostech image" />
+                                        <img src="/assets/images/service/service-3-2.png" alt="ostech image" />
                                     </div>
                                     <div className="service-three__item__content">
                                         <h4 className="service-three__item__title">
                                             Marketing <br /> Sản Phẩm
                                         </h4>
-                                        <a href="service-d-design.html" className="service-three__item__link">
+                                        <a href="service-d-design" className="service-three__item__link">
                                             <span className="service-three__item__link__icon"></span>
                                         </a>
                                     </div>
@@ -444,13 +444,13 @@ const HomePage: React.FC<
                                         </div>
                                     </div>
                                     <div className="service-three__item__thumb">
-                                        <img src="assets/images/service/service-3-3.png" alt="ostech image" />
+                                        <img src="/assets/images/service/service-3-3.png" alt="ostech image" />
                                     </div>
                                     <div className="service-three__item__content">
                                         <h4 className="service-three__item__title">
                                             Phân tích <br /> Khách Hàng
                                         </h4>
-                                        <a href="service-d-marketing.html" className="service-three__item__link">
+                                        <a href="service-d-marketing" className="service-three__item__link">
                                             <span className="service-three__item__link__icon"></span>
                                         </a>
                                     </div>
@@ -466,13 +466,13 @@ const HomePage: React.FC<
                                         </div>
                                     </div>
                                     <div className="service-three__item__thumb">
-                                        <img src="assets/images/service/service-1-4.png" alt="ostech image" />
+                                        <img src="/assets/images/service/service-1-4.png" alt="ostech image" />
                                     </div>
                                     <div className="service-three__item__content">
                                         <h4 className="service-three__item__title">
                                             Bán Hàng <br /> Trực Tuyến
                                         </h4>
-                                        <a href="service-d-analysis.html" className="service-three__item__link">
+                                        <a href="service-d-analysis" className="service-three__item__link">
                                             <span className="service-three__item__link__icon"></span>
                                         </a>
                                     </div>
@@ -488,13 +488,13 @@ const HomePage: React.FC<
                                         </div>
                                     </div>
                                     <div className="service-three__item__thumb">
-                                        <img src="assets/images/service/service-1-5.png" alt="ostech image" />
+                                        <img src="/assets/images/service/service-1-5.png" alt="ostech image" />
                                     </div>
                                     <div className="service-three__item__content">
                                         <h4 className="service-three__item__title">
                                             Hỗ Trợ <br /> Bán Hàng
                                         </h4>
-                                        <a href="service-d-security.html" className="service-three__item__link">
+                                        <a href="service-d-security" className="service-three__item__link">
                                             <span className="service-three__item__link__icon"></span>
                                         </a>
                                     </div>
@@ -510,13 +510,13 @@ const HomePage: React.FC<
                                         </div>
                                     </div>
                                     <div className="service-three__item__thumb">
-                                        <img src="assets/images/service/service-1-6.png" alt="ostech image" />
+                                        <img src="/assets/images/service/service-1-6.png" alt="ostech image" />
                                     </div>
                                     <div className="service-three__item__content">
                                         <h4 className="service-three__item__title">
                                             Mở Rộng <br /> Kinh Doanh
                                         </h4>
-                                        <a href="service-experience.html" className="service-three__item__link">
+                                        <a href="service-experience" className="service-three__item__link">
                                             <span className="service-three__item__link__icon"></span>
                                         </a>
                                     </div>
@@ -532,13 +532,13 @@ const HomePage: React.FC<
                                         </div>
                                     </div>
                                     <div className="service-three__item__thumb">
-                                        <img src="assets/images/service/service-1-4.png" alt="ostech image" />
+                                        <img src="/assets/images/service/service-1-4.png" alt="ostech image" />
                                     </div>
                                     <div className="service-three__item__content">
                                         <h4 className="service-three__item__title">
                                             Tư vấn <br /> Giải Pháp
                                         </h4>
-                                        <a href="service-d-analysis.html" className="service-three__item__link">
+                                        <a href="service-d-analysis" className="service-three__item__link">
                                             <span className="service-three__item__link__icon"></span>
                                         </a>
                                     </div>
@@ -593,43 +593,43 @@ const HomePage: React.FC<
             }'
                     >
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                     </div>
@@ -648,7 +648,7 @@ const HomePage: React.FC<
                                 <div className="why-choose-one__top">
                                     <div className="sec-title wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                         <div className="d-flex align-items-center justify-content-start">
-                                            <img src="assets/images/shapes/sec-title-s-1.png" alt="Trách nhiệm & chuyên môn" className="sec-title__img" />
+                                            <img src="/assets/images/shapes/sec-title-s-1.png" alt="Trách nhiệm & chuyên môn" className="sec-title__img" />
                                             <h6 className="sec-title__tagline">Trách nhiệm & chuyên môn</h6>
                                         </div>
                                         <h3 className="sec-title__title">Nên Chọn Passgenix Solutions Cùng Đồng Hành?</h3>
@@ -663,7 +663,7 @@ const HomePage: React.FC<
                                             <h4 className="why-choose-one__feature__item__text">Lộ trình phát triển kinh doanh rõ ràng và đầy đủ.</h4>
                                         </div>
                                         <div className="why-choose-one__feature__item__link">
-                                            <a href="contact.html" className="why-choose-one__feature__item__link__btn">
+                                            <a href="contact" className="why-choose-one__feature__item__link__btn">
                                                 <i className="icon-arrow-left"></i>
                                             </a>
                                         </div>
@@ -676,7 +676,7 @@ const HomePage: React.FC<
                                             <h4 className="why-choose-one__feature__item__text">Giải pháp cụ thể cho các vấn đề kinh doanh của bạn.</h4>
                                         </div>
                                         <div className="why-choose-one__feature__item__link">
-                                            <a href="contact.html" className="why-choose-one__feature__item__link__btn">
+                                            <a href="contact" className="why-choose-one__feature__item__link__btn">
                                                 <i className="icon-arrow-left"></i>
                                             </a>
                                         </div>
@@ -692,14 +692,14 @@ const HomePage: React.FC<
                         <div className="col-lg-6">
                             <div className="why-choose-one__right wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
                                 <div className="why-choose-one__thumb">
-                                    <img src="assets/images/resources/why-choos-us-3-1.png" alt="ostech image" />
+                                    <img src="/assets/images/resources/why-choos-us-3-1.png" alt="ostech image" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="why-choose-one__shape wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
-                    <img src="assets/images/shapes/why-choose-2-1.png" alt="why-choose" />
+                    <img src="/assets/images/shapes/why-choose-2-1.png" alt="why-choose" />
                 </div>
             </section>
             {/* <!-- Why Choose section End --> */}
@@ -711,7 +711,7 @@ const HomePage: React.FC<
                         <div className="col-12">
                             <div className="sec-title text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                 <div className="d-flex align-items-center justify-content-center">
-                                    <img src="assets/images/shapes/sec-title-s-1.png" alt="Testimonial" className="sec-title__img" />
+                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Testimonial" className="sec-title__img" />
                                     <h6 className="sec-title__tagline">Phản hồi</h6>
                                 </div>
                                 <h3 className="sec-title__title">Khách Hàng Nói Gì?</h3>
@@ -756,7 +756,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="assets/images/resources/testi-1-5.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-5.jpg" alt="ostech image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -785,7 +785,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="assets/images/resources/testi-1-6.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-6.jpg" alt="ostech image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -814,7 +814,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="assets/images/resources/testi-1-1.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-1.jpg" alt="ostech image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -843,7 +843,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="assets/images/resources/testi-1-2.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-2.jpg" alt="ostech image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -873,7 +873,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="assets/images/resources/testi-1-3.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-3.jpg" alt="ostech image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -892,16 +892,16 @@ const HomePage: React.FC<
 
                     <div className="testimonial-two__author">
                         <div className="testimonial-two__author__image testimonial-two__author__image--one">
-                            <img src="assets/images/resources/testi-1-1.jpg" alt=" osthech image" />
+                            <img src="/assets/images/resources/testi-1-1.jpg" alt=" osthech image" />
                         </div>
                         <div className="testimonial-two__author__image testimonial-two__author__image--two">
-                            <img src="assets/images/resources/testi-1-2.jpg" alt=" osthech image" />
+                            <img src="/assets/images/resources/testi-1-2.jpg" alt=" osthech image" />
                         </div>
                         <div className="testimonial-two__author__image testimonial-two__author__image--three">
-                            <img src="assets/images/resources/testi-1-3.jpg" alt=" osthech image" />
+                            <img src="/assets/images/resources/testi-1-3.jpg" alt=" osthech image" />
                         </div>
                         <div className="testimonial-two__author__image testimonial-two__author__image--fore">
-                            <img src="assets/images/resources/testi-1-4.jpg" alt=" osthech image" />
+                            <img src="/assets/images/resources/testi-1-4.jpg" alt=" osthech image" />
                         </div>
                     </div>
                 </div>
@@ -915,7 +915,7 @@ const HomePage: React.FC<
                         <div className="col-12">
                             <div className="sec-title text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                 <div className="d-flex align-items-center justify-content-center">
-                                    <img src="assets/images/shapes/sec-title-s-1.png" alt="Latest Project" className="sec-title__img" />
+                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Latest Project" className="sec-title__img" />
                                     <h6 className="sec-title__tagline">Dự án gần đây</h6>
                                 </div>
                                 <h3 className="sec-title__title">
@@ -933,10 +933,10 @@ const HomePage: React.FC<
                                     </div>
                                     <div className="project-two__content">
                                         <h4 className="project-two__content__title">
-                                            <a href="service-d-development.html">{project.title}</a>
+                                            <a href="service-d-development">{project.title}</a>
                                         </h4>
                                         <p className="project-two__content__text">{project.subtitle}</p>
-                                        <a href="service-d-design.html" className="project-two__content__btn">
+                                        <a href="service-d-design" className="project-two__content__btn">
                                             <span className="project-two__content__btn__icon"></span>
                                         </a>
                                     </div>
@@ -955,7 +955,7 @@ const HomePage: React.FC<
                         <div className="col-md-12">
                             <div className="sec-title text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                 <div className="d-flex align-items-center justify-content-center">
-                                    <img src="assets/images/shapes/sec-title-s-1.png" alt="Pricing plane" className="sec-title__img" />
+                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Pricing plane" className="sec-title__img" />
                                     <h6 className="sec-title__tagline">Bảng giá</h6>
                                 </div>
                                 <h3 className="sec-title__title">
@@ -997,13 +997,13 @@ const HomePage: React.FC<
                                         </li>
                                     </ul>
                                     <div className="package-card__content__link">
-                                        <a href="checkout.html" className="package-card__content__link__btn ostech-btn ostech-btn--secondary">
+                                        <a href="checkout" className="package-card__content__link__btn ostech-btn ostech-btn--secondary">
                                             Bắt Đầu Ngay
                                         </a>
                                     </div>
                                 </div>
                                 <div className="package-card__shape">
-                                    <img src="assets/images/shapes/price-1-1.png" alt="price" />
+                                    <img src="/assets/images/shapes/price-1-1.png" alt="price" />
                                 </div>
                             </div>
                         </div>
@@ -1042,13 +1042,13 @@ const HomePage: React.FC<
                                         </li>
                                     </ul>
                                     <div className="package-card__content__link">
-                                        <a href="checkout.html" className="package-card__content__link__btn ostech-btn ostech-btn--secondary">
+                                        <a href="checkout" className="package-card__content__link__btn ostech-btn ostech-btn--secondary">
                                             Bắt Đầu Ngay
                                         </a>
                                     </div>
                                 </div>
                                 <div className="package-card__shape">
-                                    <img src="assets/images/shapes/price-1-1.png" alt="price" />
+                                    <img src="/assets/images/shapes/price-1-1.png" alt="price" />
                                 </div>
                             </div>
                         </div>
@@ -1085,13 +1085,13 @@ const HomePage: React.FC<
                                         </li>
                                     </ul>
                                     <div className="package-card__content__link">
-                                        <a href="checkout.html" className="package-card__content__link__btn ostech-btn ostech-btn--secondary">
+                                        <a href="checkout" className="package-card__content__link__btn ostech-btn ostech-btn--secondary">
                                             Bắt Đầu Ngay
                                         </a>
                                     </div>
                                 </div>
                                 <div className="package-card__shape">
-                                    <img src="assets/images/shapes/price-1-1.png" alt="price" />
+                                    <img src="/assets/images/shapes/price-1-1.png" alt="price" />
                                 </div>
                             </div>
                         </div>
@@ -1108,7 +1108,7 @@ const HomePage: React.FC<
                         <div className="col-lg-4">
                             <div className="contact-two__left">
                                 <div className="contact-two__thumb wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="500ms">
-                                    <img src="assets/images/resources/contact-1-2.png" alt="ostech image" />
+                                    <img src="/assets/images/resources/contact-1-2.png" alt="ostech image" />
                                 </div>
                             </div>
                         </div>
@@ -1118,7 +1118,7 @@ const HomePage: React.FC<
                                     <div className="contact-two__top__content">
                                         <div className="sec-title sec-title--three text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                             <div className="d-flex align-items-center justify-content-center">
-                                                <img src="assets/images/shapes/sec-title-s-2.png" alt="Contact with us" className="sec-title__img" />
+                                                <img src="/assets/images/shapes/sec-title-s-2.png" alt="Contact with us" className="sec-title__img" />
                                                 <h6 className="sec-title__tagline">Đối Tác Đáng Tin Cậy</h6>
                                             </div>
                                             <h3 className="sec-title__title">Liên Hệ Với Chúng Tôi Ngay</h3>
@@ -1161,7 +1161,7 @@ const HomePage: React.FC<
                     </div>
                 </div>
                 <div className="contact-two__shape">
-                    <img src="assets/images/shapes/benefit-shape-1-1.png" alt="price" />
+                    <img src="/assets/images/shapes/benefit-shape-1-1.png" alt="price" />
                 </div>
             </section>
             {/* <!-- Contact section End --> */}
@@ -1173,7 +1173,7 @@ const HomePage: React.FC<
                         <div className="col-12">
                             <div className="sec-title text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                 <div className="d-flex align-items-center justify-content-center">
-                                    <img src="assets/images/shapes/sec-title-s-1.png" alt="Article" className="sec-title__img" />
+                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Article" className="sec-title__img" />
                                     <h6 className="sec-title__tagline">Nổi Bật</h6>
                                 </div>
                                 <h3 className="sec-title__title">
@@ -1186,9 +1186,9 @@ const HomePage: React.FC<
                         <div className="col-md-6 col-lg-4">
                             <div className="blog-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                 <div className="blog-card__image">
-                                    <img src="assets/images/blog/blog-1-1.png" alt="@@title" />
-                                    <img src="assets/images/blog/blog-1-1.png" alt="@@title" />
-                                    <a href="blog-details-right.html" className="blog-card__image__link">
+                                    <img src="/assets/images/blog/blog-1-1.png" alt="@@title" />
+                                    <img src="/assets/images/blog/blog-1-1.png" alt="@@title" />
+                                    <a href="blog-details-right" className="blog-card__image__link">
                                         <span className="sr-only">@@title</span>
                                     </a>
                                     <div className="blog-card__date">
@@ -1200,7 +1200,7 @@ const HomePage: React.FC<
                                     <ul className="list-unstyled blog-card__meta">
                                         <li>
                                             <a href="#">
-                                                <img src="assets/images/blog/blog-author-1-1.jpg" alt="ostech" /> Jane Cooper
+                                                <img src="/assets/images/blog/blog-author-1-1.jpg" alt="ostech" /> Jane Cooper
                                             </a>
                                         </li>
                                         <li>
@@ -1211,9 +1211,9 @@ const HomePage: React.FC<
                                     </ul>
                                     <div className="blog-card__content__inner">
                                         <h3 className="blog-card__title">
-                                            <a href="blog-details-right.html">Improving Business Growth with New Technology</a>
+                                            <a href="blog-details-right">Improving Business Growth with New Technology</a>
                                         </h3>
-                                        <a href="blog-details-right.html" className="blog-card__link">
+                                        <a href="blog-details-right" className="blog-card__link">
                                             Read more<i className="icon-arrow-left"></i>
                                         </a>
                                     </div>
@@ -1223,9 +1223,9 @@ const HomePage: React.FC<
                         <div className="col-md-6 col-lg-4">
                             <div className="blog-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
                                 <div className="blog-card__image">
-                                    <img src="assets/images/blog/blog-1-2.png" alt="@@title" />
-                                    <img src="assets/images/blog/blog-1-2.png" alt="@@title" />
-                                    <a href="blog-details-right.html" className="blog-card__image__link">
+                                    <img src="/assets/images/blog/blog-1-2.png" alt="@@title" />
+                                    <img src="/assets/images/blog/blog-1-2.png" alt="@@title" />
+                                    <a href="blog-details-right" className="blog-card__image__link">
                                         <span className="sr-only">@@title</span>
                                     </a>
                                     <div className="blog-card__date">
@@ -1237,7 +1237,7 @@ const HomePage: React.FC<
                                     <ul className="list-unstyled blog-card__meta">
                                         <li>
                                             <a href="#">
-                                                <img src="assets/images/blog/blog-author-1-2.jpg" alt="ostech" />
+                                                <img src="/assets/images/blog/blog-author-1-2.jpg" alt="ostech" />
                                                 Annette Black
                                             </a>
                                         </li>
@@ -1249,9 +1249,9 @@ const HomePage: React.FC<
                                     </ul>
                                     <div className="blog-card__content__inner">
                                         <h3 className="blog-card__title">
-                                            <a href="blog-details-right.html">Improving Business Growth with New Technology</a>
+                                            <a href="blog-details-right">Improving Business Growth with New Technology</a>
                                         </h3>
-                                        <a href="blog-details-right.html" className="blog-card__link">
+                                        <a href="blog-details-right" className="blog-card__link">
                                             Read more<i className="icon-arrow-left"></i>
                                         </a>
                                     </div>
@@ -1261,9 +1261,9 @@ const HomePage: React.FC<
                         <div className="col-md-6 col-lg-4">
                             <div className="blog-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                 <div className="blog-card__image">
-                                    <img src="assets/images/blog/blog-1-3.png" alt="@@title" />
-                                    <img src="assets/images/blog/blog-1-3.png" alt="@@title" />
-                                    <a href="blog-details-right.html" className="blog-card__image__link">
+                                    <img src="/assets/images/blog/blog-1-3.png" alt="@@title" />
+                                    <img src="/assets/images/blog/blog-1-3.png" alt="@@title" />
+                                    <a href="blog-details-right" className="blog-card__image__link">
                                         <span className="sr-only">@@title</span>
                                     </a>
                                     <div className="blog-card__date">
@@ -1275,7 +1275,7 @@ const HomePage: React.FC<
                                     <ul className="list-unstyled blog-card__meta">
                                         <li>
                                             <a href="#">
-                                                <img src="assets/images/blog/blog-author-1-3.jpg" alt="ostech" />
+                                                <img src="/assets/images/blog/blog-author-1-3.jpg" alt="ostech" />
                                                 Eleanor Pena
                                             </a>
                                         </li>
@@ -1287,9 +1287,9 @@ const HomePage: React.FC<
                                     </ul>
                                     <div className="blog-card__content__inner">
                                         <h3 className="blog-card__title">
-                                            <a href="blog-details-right.html">Improving Business Growth with New Technology</a>
+                                            <a href="blog-details-right">Improving Business Growth with New Technology</a>
                                         </h3>
-                                        <a href="blog-details-right.html" className="blog-card__link">
+                                        <a href="blog-details-right" className="blog-card__link">
                                             Read more<i className="icon-arrow-left"></i>
                                         </a>
                                     </div>
