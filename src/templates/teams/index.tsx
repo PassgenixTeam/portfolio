@@ -11,7 +11,6 @@ const TeamDetailsPage: React.FC<
     const { slug } = params;
 
     const team = data.contentfulTeam;
-    console.log(team);
 
     return (
         <PageBody>

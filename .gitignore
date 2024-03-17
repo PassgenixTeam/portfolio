@@ -5,3 +5,7 @@ public
 .DS_Store
 src/gatsby-types.d.ts
 .env.production
+.yarn/*
+!.yarn/releases
+.pnp.cjs
+.pnp.loader.mjs
