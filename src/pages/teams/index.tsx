@@ -45,7 +45,7 @@ const TeamsPage: React.FC<
                                         <div className="team-card__content__inner">
                                             <div className="team-card__content__inner__item">
                                                 <h3 className="team-card__content__title">
-                                                    <a href="/team-details">Mike Hardson</a>
+                                                    <a href="slug">Mike Hardson</a>
                                                 </h3>
                                                 <h6 className="team-card__content__designation">Web Developer</h6>
                                             </div>
@@ -87,7 +87,7 @@ const TeamsPage: React.FC<
                                         <div className="team-card__content__inner">
                                             <div className="team-card__content__inner__item">
                                                 <h3 className="team-card__content__title">
-                                                    <a href="/team-details">aleesha brown</a>
+                                                    <a href="slug">aleesha brown</a>
                                                 </h3>
                                                 <h6 className="team-card__content__designation">Web Developer</h6>
                                             </div>
@@ -129,7 +129,7 @@ const TeamsPage: React.FC<
                                         <div className="team-card__content__inner">
                                             <div className="team-card__content__inner__item">
                                                 <h3 className="team-card__content__title">
-                                                    <a href="/team-details">david cooper</a>
+                                                    <a href="slug">david cooper</a>
                                                 </h3>
                                                 <h6 className="team-card__content__designation">Web Developer</h6>
                                             </div>
@@ -171,7 +171,7 @@ const TeamsPage: React.FC<
                                         <div className="team-card__content__inner">
                                             <div className="team-card__content__inner__item">
                                                 <h3 className="team-card__content__title">
-                                                    <a href="/team-details">sarah albert</a>
+                                                    <a href="slug">sarah albert</a>
                                                 </h3>
                                                 <h6 className="team-card__content__designation">Web Developer</h6>
                                             </div>
@@ -213,7 +213,7 @@ const TeamsPage: React.FC<
                                         <div className="team-card__content__inner">
                                             <div className="team-card__content__inner__item">
                                                 <h3 className="team-card__content__title">
-                                                    <a href="/team-details">kevin martin</a>
+                                                    <a href="slug">kevin martin</a>
                                                 </h3>
                                                 <h6 className="team-card__content__designation">Web Developer</h6>
                                             </div>
@@ -255,7 +255,7 @@ const TeamsPage: React.FC<
                                         <div className="team-card__content__inner">
                                             <div className="team-card__content__inner__item">
                                                 <h3 className="team-card__content__title">
-                                                    <a href="/team-details">christine eve</a>
+                                                    <a href="slug">christine eve</a>
                                                 </h3>
                                                 <h6 className="team-card__content__designation">Web Developer</h6>
                                             </div>
