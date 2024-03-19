@@ -6,9 +6,11 @@ import PageBody from "../components/page-body/page-body";
 const HomePage: React.FC<
     PageProps<{
         allContentfulProject: Queries.ContentfulProjectGroupConnection;
+        allContentfulService: Queries.ContentfulServiceGroupConnection;
     }>
 > = ({ data }) => {
     const projects = data.allContentfulProject.nodes;
+    const services = data.allContentfulService.nodes;
 
     return (
         <PageBody>
@@ -391,160 +393,40 @@ const HomePage: React.FC<
             }
 		}'
                     >
-                        <div className="item">
-                            <div className="service-three__item">
-                                <div className="service-three__item__inner">
-                                    <div className="service-three__item__icon">
-                                        <div className="service-three__item__icon__inner">
-                                            <i className="icon-software-1"></i>
+                        {services.map((service, index) => (
+                            <div key={service.id} className="item">
+                                <div className="service-three__item">
+                                    <div className="service-three__item__inner">
+                                        <div className="service-three__item__icon">
+                                            <div className="service-three__item__icon__inner">
+                                                <i
+                                                    className={
+                                                        [
+                                                            "icon-software-1",
+                                                            "icon-layer-1",
+                                                            "icon-digital-marketing-1",
+                                                            "icon-analysis-1",
+                                                            "icon-cyber-security",
+                                                            "icon-cloud-computing",
+                                                            "icon-analysis-1",
+                                                        ][index]
+                                                    }
+                                                ></i>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="service-three__item__thumb">
-                                        <img src="/assets/images/service/service-3-1.png" alt="ostech image" />
-                                    </div>
-                                    <div className="service-three__item__content">
-                                        <h4 className="service-three__item__title">
-                                            Xây Dựng <br /> Website
-                                        </h4>
-                                        <a href="service-d-development" className="service-three__item__link">
-                                            <span className="service-three__item__link__icon"></span>
-                                        </a>
+                                        <div className="service-three__item__thumb">
+                                            <img src={service.thumbnail?.localFile?.publicURL || ""} alt={service.title || ""} />
+                                        </div>
+                                        <div className="service-three__item__content">
+                                            <h4 className="service-three__item__title">{service.title || ""}</h4>
+                                            <a href={`service/${service.slug}`} className="service-three__item__link">
+                                                <span className="service-three__item__link__icon"></span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="item">
-                            <div className="service-three__item">
-                                <div className="service-three__item__inner">
-                                    <div className="service-three__item__icon">
-                                        <div className="service-three__item__icon__inner">
-                                            <i className="icon-layer-1"></i>
-                                        </div>
-                                    </div>
-                                    <div className="service-three__item__thumb">
-                                        <img src="/assets/images/service/service-3-2.png" alt="ostech image" />
-                                    </div>
-                                    <div className="service-three__item__content">
-                                        <h4 className="service-three__item__title">
-                                            Marketing <br /> Sản Phẩm
-                                        </h4>
-                                        <a href="service-d-design" className="service-three__item__link">
-                                            <span className="service-three__item__link__icon"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="service-three__item">
-                                <div className="service-three__item__inner">
-                                    <div className="service-three__item__icon">
-                                        <div className="service-three__item__icon__inner">
-                                            <i className="icon-digital-marketing-1"></i>
-                                        </div>
-                                    </div>
-                                    <div className="service-three__item__thumb">
-                                        <img src="/assets/images/service/service-3-3.png" alt="ostech image" />
-                                    </div>
-                                    <div className="service-three__item__content">
-                                        <h4 className="service-three__item__title">
-                                            Phân tích <br /> Khách Hàng
-                                        </h4>
-                                        <a href="service-d-marketing" className="service-three__item__link">
-                                            <span className="service-three__item__link__icon"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="service-three__item">
-                                <div className="service-three__item__inner">
-                                    <div className="service-three__item__icon">
-                                        <div className="service-three__item__icon__inner">
-                                            <i className="icon-analysis-1"></i>
-                                        </div>
-                                    </div>
-                                    <div className="service-three__item__thumb">
-                                        <img src="/assets/images/service/service-1-4.png" alt="ostech image" />
-                                    </div>
-                                    <div className="service-three__item__content">
-                                        <h4 className="service-three__item__title">
-                                            Bán Hàng <br /> Trực Tuyến
-                                        </h4>
-                                        <a href="service-d-analysis" className="service-three__item__link">
-                                            <span className="service-three__item__link__icon"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="service-three__item">
-                                <div className="service-three__item__inner">
-                                    <div className="service-three__item__icon">
-                                        <div className="service-three__item__icon__inner">
-                                            <i className="icon-cyber-security"></i>
-                                        </div>
-                                    </div>
-                                    <div className="service-three__item__thumb">
-                                        <img src="/assets/images/service/service-1-5.png" alt="ostech image" />
-                                    </div>
-                                    <div className="service-three__item__content">
-                                        <h4 className="service-three__item__title">
-                                            Hỗ Trợ <br /> Bán Hàng
-                                        </h4>
-                                        <a href="service-d-security" className="service-three__item__link">
-                                            <span className="service-three__item__link__icon"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="service-three__item">
-                                <div className="service-three__item__inner">
-                                    <div className="service-three__item__icon">
-                                        <div className="service-three__item__icon__inner">
-                                            <i className="icon-cloud-computing"></i>
-                                        </div>
-                                    </div>
-                                    <div className="service-three__item__thumb">
-                                        <img src="/assets/images/service/service-1-6.png" alt="ostech image" />
-                                    </div>
-                                    <div className="service-three__item__content">
-                                        <h4 className="service-three__item__title">
-                                            Mở Rộng <br /> Kinh Doanh
-                                        </h4>
-                                        <a href="service-experience" className="service-three__item__link">
-                                            <span className="service-three__item__link__icon"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="service-three__item">
-                                <div className="service-three__item__inner">
-                                    <div className="service-three__item__icon">
-                                        <div className="service-three__item__icon__inner">
-                                            <i className="icon-analysis-1"></i>
-                                        </div>
-                                    </div>
-                                    <div className="service-three__item__thumb">
-                                        <img src="/assets/images/service/service-1-4.png" alt="ostech image" />
-                                    </div>
-                                    <div className="service-three__item__content">
-                                        <h4 className="service-three__item__title">
-                                            Tư vấn <br /> Giải Pháp
-                                        </h4>
-                                        <a href="service-d-analysis" className="service-three__item__link">
-                                            <span className="service-three__item__link__icon"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -933,9 +815,11 @@ const HomePage: React.FC<
                                     </div>
                                     <div className="project-two__content">
                                         <h4 className="project-two__content__title">
-                                            <a href="service-d-development">{project.title}</a>
+                                            <a href={`projects/${project.slug || ""}`}>
+                                                <span className="text-ellipsis line-clamp-1">{project.title}</span>
+                                            </a>
                                         </h4>
-                                        <p className="project-two__content__text">{project.subtitle}</p>
+                                        <p className="project-two__content__text">{project.service?.title}</p>
                                         <a href="service-d-design" className="project-two__content__btn">
                                             <span className="project-two__content__btn__icon"></span>
                                         </a>
@@ -1314,7 +1198,22 @@ export const projects = graphql`
             nodes {
                 id
                 title
-                subtitle
+                slug
+                thumbnail {
+                    localFile {
+                        publicURL
+                    }
+                }
+                service {
+                    title
+                }
+            }
+        }
+
+        allContentfulService {
+            nodes {
+                id
+                title
                 slug
                 thumbnail {
                     localFile {

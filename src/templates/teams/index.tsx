@@ -7,40 +7,18 @@ const TeamDetailsPage: React.FC<
     PageProps<{
         contentfulTeam: Queries.ContentfulTeam;
     }>
-> = ({ data, params }) => {
-    const { slug } = params;
-
+> = ({ data }) => {
     const team = data.contentfulTeam;
 
     return (
         <PageBody>
-            <section className="page-header">
-                <div
-                    className="page-header__bg"
-                    style={{
-                        backgroundImage: "url(/assets/images/backgrounds/page-header-bg-1-1.jpg)",
-                    }}
-                ></div>
-                <div className="container">
-                    <h2 className="page-header__title">Team Details</h2>
-                    <ul className="ostech-breadcrumb list-unstyled">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <span>Team</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
             <section className="team-details">
                 <div className="container">
                     <div className="team-details__inner">
                         <div className="row">
                             <div className="col-md-5">
                                 <div className="team-details__image  wow fadeInLeft" data-wow-delay="500ms">
-                                    <img src={team.avatar!.localFile!.publicURL!} alt="team-details__image" />
+                                    <img src={team.avatar?.localFile?.publicURL || ""} alt="team-details__image" />
                                 </div>
                             </div>
 
@@ -77,19 +55,19 @@ const TeamDetailsPage: React.FC<
                                     </ul>
 
                                     <div className="team-details__social  wow fadeInUp" data-wow-delay="500ms">
-                                        {team.link!.github && (
-                                            <a href={team.link!.github!}>
+                                        {team.link?.github && (
+                                            <a href={team.link?.github || ""}>
                                                 <i className="fab fa-github" aria-hidden="true"></i> <span className="sr-only">Github</span>
                                             </a>
                                         )}
-                                        {team.link!.facebook && (
-                                            <a href={team.link!.facebook!}>
+                                        {team.link?.facebook && (
+                                            <a href={team.link?.facebook || ""}>
                                                 <i className="icon-facebook-f" aria-hidden="true"></i>
                                                 <span className="sr-only">Facebook</span>
                                             </a>
                                         )}
-                                        {team.link!.youtube && (
-                                            <a href={team.link!.youtube!}>
+                                        {team.link?.youtube && (
+                                            <a href={team.link?.youtube || ""}>
                                                 <i className="fab fa-youtube" aria-hidden="true"></i>
                                                 <span className="sr-only">Youtube</span>
                                             </a>
@@ -109,14 +87,14 @@ const TeamDetailsPage: React.FC<
                             <div className="col-md-6 col-lg-6">
                                 <div className="team-skills-one__content  wow fadeInUp" data-wow-delay="500ms">
                                     <h3 className="team-skills-one__title">Certificates & Education</h3>
-                                    <p className="team-skills-one__text">{team.certificate!.description!}</p>
+                                    <p className="team-skills-one__text">{team.certificate?.description || ""}</p>
                                 </div>
                             </div>
                             <div className="col-md-6 col-lg-6">
                                 <div className="team-skills-one__certificates  wow fadeInUp" data-wow-delay="700ms">
-                                    {team.certificate!.thumbnails!.map((thumbnail) => (
-                                        <div key={thumbnail!.id!} className="team-skills-one__certificates__item">
-                                            <img src={thumbnail!.localFile!.publicURL!} alt="team-skills-one__certificates" />
+                                    {team.certificate?.thumbnails?.map((thumbnail) => (
+                                        <div key={thumbnail?.id || ""} className="team-skills-one__certificates__item">
+                                            <img src={thumbnail?.localFile?.publicURL || ""} alt="team-skills-one__certificates" />
                                         </div>
                                     ))}
                                 </div>
@@ -126,12 +104,12 @@ const TeamDetailsPage: React.FC<
 
                     <div className="team-skills-one__bottom  wow fadeInUp" data-wow-delay="500ms">
                         <div className="row align-items-center gutter-y-30">
-                            {team.timeline!.map((timeline) => (
-                                <div key={timeline!.id!} className="col">
+                            {team.timeline?.map((timeline) => (
+                                <div key={timeline?.id || ""} className="col">
                                     <div className="team-skills-one__skill">
-                                        <span className="team-skills-one__skill__start">{timeline!.date!}</span>
-                                        <h4 className="team-skills-one__skill__title">{timeline!.name!}</h4>
-                                        <p className="team-skills-one__skill__text">{timeline!.description!}</p>
+                                        <span className="team-skills-one__skill__start">{timeline?.date || ""}</span>
+                                        <h4 className="team-skills-one__skill__title">{timeline?.name || ""}</h4>
+                                        <p className="team-skills-one__skill__text">{timeline?.description || ""}</p>
                                     </div>
                                 </div>
                             ))}

@@ -143,7 +143,6 @@ export const projects = graphql`
             nodes {
                 id
                 title
-                subtitle
                 slug
                 thumbnail {
                     localFile {

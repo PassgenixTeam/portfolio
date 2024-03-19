@@ -40,13 +40,13 @@ const TeamsPage: React.FC<
                                 <div className="team-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                                     <div className="team-card__inner">
                                         <div className="team-card__image">
-                                            <img src={team.avatar!.localFile!.publicURL!} alt={team.name!} />
+                                            <img src={team.avatar?.localFile?.publicURL || ""} alt={team.name || ""} />
                                         </div>
                                         <div className="team-card__content">
                                             <div className="team-card__content__inner">
                                                 <div className="team-card__content__inner__item">
                                                     <h3 className="team-card__content__title">
-                                                        <a href={team.slug!}>{team.name}</a>
+                                                        <a href={team.slug || ""}>{team.name}</a>
                                                     </h3>
                                                     <h6 className="team-card__content__designation">{team.role}</h6>
                                                 </div>

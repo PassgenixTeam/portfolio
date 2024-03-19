@@ -13698,3 +13698,19 @@ body.boxed-wrapper .page-wrapper {
   color: var(--ostech-text-dark, #222429);
 }
 /*# sourceMappingURL=ostech.css.map */
+
+/* Custom CSS */
+.text-ellipsis {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-ellipsis.line-clamp-1 {
+  -webkit-line-clamp: 1;
+}
+
+.text-ellipsis.line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
