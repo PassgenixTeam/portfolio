@@ -13007,7 +13007,7 @@ body.boxed-wrapper .page-wrapper {
   top: 0;
   cursor: pointer;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: center;
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -13087,6 +13087,8 @@ body.boxed-wrapper .page-wrapper {
 }
 .project-one__thumb img {
   object-fit: cover;
+  max-width: 570px;
+  height: 500px;
 }
 @media (max-width: 991px) {
   .project-one__thumb img {
@@ -13120,6 +13122,7 @@ body.boxed-wrapper .page-wrapper {
   line-height: 160%;
   margin-bottom: 0;
   padding-bottom: 0;
+  text-align: center;
 }
 @media (max-width: 575px) {
   .project-one__content__title {

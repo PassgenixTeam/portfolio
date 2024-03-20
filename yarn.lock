@@ -1621,7 +1621,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@contentful/rich-text-react-renderer@npm:^15.17.0":
+"@contentful/rich-text-react-renderer@npm:^15.17.0, @contentful/rich-text-react-renderer@npm:^15.19.6":
   version: 15.19.6
   resolution: "@contentful/rich-text-react-renderer@npm:15.19.6"
   dependencies:
@@ -5153,6 +5153,13 @@ __metadata:
   version: 2.0.0
   resolution: "ci-info@npm:2.0.0"
   checksum: 3b374666a85ea3ca43fa49aa3a048d21c9b475c96eb13c133505d2324e7ae5efd6a454f41efe46a152269e9b6a00c9edbe63ec7fa1921957165aae16625acd67
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "classnames@npm:2.5.1"
+  checksum: da424a8a6f3a96a2e87d01a432ba19315503294ac7e025f9fece656db6b6a0f7b5003bb1fbb51cbb0d9624d964f1b9bb35a51c73af9b2434c7b292c42231c1e5
   languageName: node
   linkType: hard
 
@@ -12338,10 +12345,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "passgenix-team@workspace:."
   dependencies:
+    "@contentful/rich-text-react-renderer": ^15.19.6
     "@mdx-js/react": ^3.0.1
     "@types/node": ^20.11.19
     "@types/react": ^18.2.55
     "@types/react-dom": ^18.2.19
+    classnames: ^2.5.1
+    d: ^1.0.2
     gatsby: ^5.13.3
     gatsby-plugin-google-gtag: ^5.13.1
     gatsby-plugin-image: ^3.13.1

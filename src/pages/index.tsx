@@ -250,10 +250,10 @@ const HomePage: React.FC<
                             <div className="about-three__left wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
                                 <div className="about-three__thumb">
                                     <div className="about-three__thumb__item about-three__thumb__item--one">
-                                        <img src="/assets/images/about/about-s-3-1.png" alt="ostech image" />
+                                        <img src="/assets/images/about/about-s-3-1.png" alt="Passgenix Solutions image" />
                                     </div>
                                     <div className="about-three__thumb__item about-three__thumb__item--two">
-                                        <img src="/assets/images/about/about-3-1.png" alt="ostech image" />
+                                        <img src="/assets/images/about/about-3-1.png" alt="Passgenix Solutions image" />
                                     </div>
 
                                     <div className="about-three__thumb__call">
@@ -475,43 +475,43 @@ const HomePage: React.FC<
             }'
                     >
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                         <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="ostech" />
+                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
                         </div>
                         {/* <!-- /.owl-slide-item--> */}
                     </div>
@@ -574,7 +574,7 @@ const HomePage: React.FC<
                         <div className="col-lg-6">
                             <div className="why-choose-one__right wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
                                 <div className="why-choose-one__thumb">
-                                    <img src="/assets/images/resources/why-choos-us-3-1.png" alt="ostech image" />
+                                    <img src="/assets/images/resources/why-choos-us-3-1.png" alt="Passgenix Solutions image" />
                                 </div>
                             </div>
                         </div>
@@ -638,7 +638,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-5.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-5.jpg" alt="Passgenix Solutions image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -667,7 +667,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-6.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-6.jpg" alt="Passgenix Solutions image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -696,7 +696,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-1.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-1.jpg" alt="Passgenix Solutions image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -725,7 +725,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-2.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-2.jpg" alt="Passgenix Solutions image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -755,7 +755,7 @@ const HomePage: React.FC<
                                 </p>
                                 <div className="testimonial-two__item__author">
                                     <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-3.jpg" alt="ostech image" />
+                                        <img src="/assets/images/resources/testi-1-3.jpg" alt="Passgenix Solutions image" />
                                     </div>
                                     <div className="testimonial-two__item__author__content">
                                         <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
@@ -809,22 +809,24 @@ const HomePage: React.FC<
                     <div className="row gutter-y-30">
                         {projects.map((project) => (
                             <div key={project.id} className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                    <div className="project-two__thumb">
-                                        <img src={project.thumbnail?.localFile?.publicURL || ""} alt="ostech image" />
-                                    </div>
-                                    <div className="project-two__content">
-                                        <h4 className="project-two__content__title">
-                                            <a href={`projects/${project.slug || ""}`}>
-                                                <span className="text-ellipsis line-clamp-1">{project.title}</span>
+                                <a href={`/projects/${project.slug || ""}`}>
+                                    <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                                        <div className="project-two__thumb">
+                                            <img src={project.thumbnail?.localFile?.publicURL || ""} alt="Passgenix Solutions image" />
+                                        </div>
+                                        <div className="project-two__content">
+                                            <h4 className="project-two__content__title">
+                                                <a href={`/projects/${project.slug || ""}`}>
+                                                    <span className="text-ellipsis line-clamp-1">{project.title}</span>
+                                                </a>
+                                            </h4>
+                                            <p className="project-two__content__text">{project.service?.title}</p>
+                                            <a href={`/projects/${project.slug || ""}`} className="project-two__content__btn">
+                                                <span className="project-two__content__btn__icon"></span>
                                             </a>
-                                        </h4>
-                                        <p className="project-two__content__text">{project.service?.title}</p>
-                                        <a href="service-d-design" className="project-two__content__btn">
-                                            <span className="project-two__content__btn__icon"></span>
-                                        </a>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         ))}
                     </div>
@@ -992,7 +994,7 @@ const HomePage: React.FC<
                         <div className="col-lg-4">
                             <div className="contact-two__left">
                                 <div className="contact-two__thumb wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="500ms">
-                                    <img src="/assets/images/resources/contact-1-2.png" alt="ostech image" />
+                                    <img src="/assets/images/resources/contact-1-2.png" alt="Passgenix Solutions image" />
                                 </div>
                             </div>
                         </div>
@@ -1084,7 +1086,7 @@ const HomePage: React.FC<
                                     <ul className="list-unstyled blog-card__meta">
                                         <li>
                                             <a href="#">
-                                                <img src="/assets/images/blog/blog-author-1-1.jpg" alt="ostech" /> Jane Cooper
+                                                <img src="/assets/images/blog/blog-author-1-1.jpg" alt="Passgenix Solutions" /> Jane Cooper
                                             </a>
                                         </li>
                                         <li>
@@ -1121,7 +1123,7 @@ const HomePage: React.FC<
                                     <ul className="list-unstyled blog-card__meta">
                                         <li>
                                             <a href="#">
-                                                <img src="/assets/images/blog/blog-author-1-2.jpg" alt="ostech" />
+                                                <img src="/assets/images/blog/blog-author-1-2.jpg" alt="Passgenix Solutions" />
                                                 Annette Black
                                             </a>
                                         </li>
@@ -1159,7 +1161,7 @@ const HomePage: React.FC<
                                     <ul className="list-unstyled blog-card__meta">
                                         <li>
                                             <a href="#">
-                                                <img src="/assets/images/blog/blog-author-1-3.jpg" alt="ostech" />
+                                                <img src="/assets/images/blog/blog-author-1-3.jpg" alt="Passgenix Solutions" />
                                                 Eleanor Pena
                                             </a>
                                         </li>

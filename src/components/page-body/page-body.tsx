@@ -77,7 +77,7 @@ const PageBody: React.FC<{
                         <div className="main-header__inner">
                             <div className="main-header__logo logo-ostech">
                                 <a href="index.html">
-                                    <img src="/assets/images/logo-dark.png" alt="Ostech HTML" width="136" />
+                                    <img src="/assets/images/logo-dark.png" alt="Passgenix Solutions HTML" width="136" />
                                 </a>
                             </div>
                             {/* <!-- /.main-header__logo --> */}
@@ -125,7 +125,7 @@ const PageBody: React.FC<{
                             <div className="main-footer__top__inner">
                                 <div className="main-footer__top__logo">
                                     <a href="index.html" className="footer__logo ostech-logo">
-                                        <img src="/assets/images/logo-light.png" width="120" alt="Ostech HTML Template" />
+                                        <img src="/assets/images/logo-light.png" width="120" alt="Passgenix Solutions HTML Template" />
                                     </a>
                                 </div>
                                 <div className="main-footer__top__social">
@@ -170,43 +170,43 @@ const PageBody: React.FC<{
                                         <h2 className="footer-widget__title">Liên kết</h2>
                                         <ul className="list-unstyled footer-widget__links">
                                             <li className="footer-widget__links__item">
-                                                <a href="project.html">Dự Án</a>
+                                                <a href="/projects">Dự Án</a>
                                             </li>
                                             <li className="footer-widget__links__item">
-                                                <a href="team.html">Thành Viên</a>
+                                                <a href="/teams">Thành Viên</a>
                                             </li>
-                                            <li className="footer-widget__links__item">
-                                                <a href="blog-list.html">Blogs & Tin Tức</a>
-                                            </li>
+                                            {/* <li className="footer-widget__links__item">
+                                                <a href="/">Blogs & Tin Tức</a>
+                                            </li> */}
                                         </ul>
                                     </div>
                                 </div>
 
                                 {/* <div className="col-md-6 col-xl-3">
-                        <div className="footer-widget footer-widget--instagram">
-                            <h2 className="footer-widget__title">Gallery</h2>
-                            <div className="footer-widget__instagram">
-                                <a href="/assets/images/instagram/1-1.jpg" className="img-popup">
-                                    <img src="/assets/images/instagram/1.jpg" alt="ostech image" />
-                                </a>
-                                <a href="/assets/images/instagram/1-2.jpg" className="img-popup">
-                                    <img src="/assets/images/instagram/2.jpg" alt="ostech image" />
-                                </a>
-                                <a href="/assets/images/instagram/1-3.jpg" className="img-popup">
-                                    <img src="/assets/images/instagram/3.jpg" alt="ostech image" />
-                                </a>
-                                <a href="/assets/images/instagram/1-4.jpg" className="img-popup">
-                                    <img src="/assets/images/instagram/4.jpg" alt="ostech image" />
-                                </a>
-                                <a href="/assets/images/instagram/1-5.jpg" className="img-popup">
-                                    <img src="/assets/images/instagram/5.jpg" alt="ostech image" />
-                                </a>
-                                <a href="/assets/images/instagram/1-6.jpg" className="img-popup">
-                                    <img src="/assets/images/instagram/6.jpg" alt="ostech image" />
-                                </a>
-                            </div>
-                        </div>
-                    </div> */}
+                                    <div className="footer-widget footer-widget--instagram">
+                                        <h2 className="footer-widget__title">Gallery</h2>
+                                        <div className="footer-widget__instagram">
+                                            <a href="/assets/images/instagram/1-1.jpg" className="img-popup">
+                                                <img src="/assets/images/instagram/1.jpg" alt="Passgenix Solutions image" />
+                                            </a>
+                                            <a href="/assets/images/instagram/1-2.jpg" className="img-popup">
+                                                <img src="/assets/images/instagram/2.jpg" alt="Passgenix Solutions image" />
+                                            </a>
+                                            <a href="/assets/images/instagram/1-3.jpg" className="img-popup">
+                                                <img src="/assets/images/instagram/3.jpg" alt="Passgenix Solutions image" />
+                                            </a>
+                                            <a href="/assets/images/instagram/1-4.jpg" className="img-popup">
+                                                <img src="/assets/images/instagram/4.jpg" alt="Passgenix Solutions image" />
+                                            </a>
+                                            <a href="/assets/images/instagram/1-5.jpg" className="img-popup">
+                                                <img src="/assets/images/instagram/5.jpg" alt="Passgenix Solutions image" />
+                                            </a>
+                                            <a href="/assets/images/instagram/1-6.jpg" className="img-popup">
+                                                <img src="/assets/images/instagram/6.jpg" alt="Passgenix Solutions image" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div> */}
                                 <div className="col-md-6 col-xl-4">
                                     <div className="footer-widget footer-widget--contact">
                                         <h2 className="footer-widget__title">Thông Tin Liên Hệ</h2>
@@ -226,16 +226,16 @@ const PageBody: React.FC<{
                                             </li>
 
                                             {/* <li className="footer-widget__contact__item">
-                              <div className="footer-widget__contact__icon">
-                                  <i className="icon-Earth"></i>
-                              </div>
-                              <div className="footer-widget__contact__inner">
-                                  <a href="https://themeforest.net/user/bracket-web"
-                                      className="footer-widget__contact__text">mitc@example.com</a>
-                                  <a href="https://themeforest.net/user/bracket-web"
-                                      className="footer-widget__contact__text">www.website.com</a>
-                              </div>
-                          </li> */}
+                                                <div className="footer-widget__contact__icon">
+                                                    <i className="icon-Earth"></i>
+                                                </div>
+                                                <div className="footer-widget__contact__inner">
+                                                    <a href="https://themeforest.net/user/bracket-web"
+                                                        className="footer-widget__contact__text">mitc@example.com</a>
+                                                    <a href="https://themeforest.net/user/bracket-web"
+                                                        className="footer-widget__contact__text">www.website.com</a>
+                                                </div>
+                                            </li> */}
                                             <li className="footer-widget__contact__item">
                                                 <div className="footer-widget__contact__icon">
                                                     <i className="icon-Pin"></i>
@@ -248,7 +248,7 @@ const PageBody: React.FC<{
                                             </li>
                                         </ul>
                                         <div className="footer-widget__thumb">
-                                            <img src="/assets/images/resources/footer-1-1.png" alt="ostech image" />
+                                            <img src="/assets/images/resources/footer-1-1.png" alt="Passgenix Solutions image" />
                                         </div>
                                     </div>
                                 </div>
@@ -286,8 +286,8 @@ const PageBody: React.FC<{
                     </span>
 
                     <div className="logo-box">
-                        <a href="index.html" aria-label="logo image">
-                            <img src="/assets/images/logo-light.png" width="155" alt="ostech logo" />
+                        <a href="/" aria-label="logo image">
+                            <img src="/assets/images/logo-light.png" width="155" alt="Passgenix Solutions logo" />
                         </a>
                     </div>
 

@@ -35,102 +35,28 @@ const HomePage: React.FC<
             <section className="project-two project-two--page">
                 <div className="container">
                     <div className="row gutter-y-30">
-                        <div className="col-md-4 col-sm-6">
-                            <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                <div className="project-two__thumb">
-                                    <img src="/assets/images/about/project-2-1.png" alt="ostech image" />
-                                </div>
-                                <div className="project-two__content">
-                                    <h4 className="project-two__content__title">
-                                        <a href="service-d-development">Product Development</a>
-                                    </h4>
-                                    <p className="project-two__content__text">Technology</p>
-                                    <a href="product-details" className="project-two__content__btn">
-                                        <span className="project-two__content__btn__icon"></span>
+                        {projects.map((project) => (
+                            <div key={project.id} className="col-md-4 col-sm-6">
+                                <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                                    <a href={`/projects/${project.slug || ""}`}>
+                                        <div className="project-two__thumb">
+                                            <img src={project.thumbnail?.localFile?.publicURL || ""} alt={project.title || ""} />
+                                        </div>
+                                        <div className="project-two__content">
+                                            <h4 className="project-two__content__title">
+                                                <a href={`/projects/${project.slug || ""}`}>
+                                                    <span className="text-ellipsis line-clamp-1">{project.title || ""}</span>
+                                                </a>
+                                            </h4>
+                                            <p className="project-two__content__text">{project.service?.title || ""}</p>
+                                            <a href={`/projects/${project.slug || ""}`} className="project-two__content__btn">
+                                                <span className="project-two__content__btn__icon"></span>
+                                            </a>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-4 col-sm-6">
-                            <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
-                                <div className="project-two__thumb">
-                                    <img src="/assets/images/about/project-2-2.png" alt="ostech image" />
-                                </div>
-                                <div className="project-two__content">
-                                    <h4 className="project-two__content__title">
-                                        <a href="service-d-design">UI/UX Development</a>
-                                    </h4>
-                                    <p className="project-two__content__text">Technology</p>
-                                    <a href="product-details" className="project-two__content__btn">
-                                        <span className="project-two__content__btn__icon"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 col-sm-6">
-                            <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="700ms">
-                                <div className="project-two__thumb">
-                                    <img src="/assets/images/about/project-2-3.png" alt="ostech image" />
-                                </div>
-                                <div className="project-two__content">
-                                    <h4 className="project-two__content__title">
-                                        <a href="service-d-marketing">Digital Marketing</a>
-                                    </h4>
-                                    <p className="project-two__content__text">Technology</p>
-                                    <a href="product-details" className="project-two__content__btn">
-                                        <span className="project-two__content__btn__icon"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 col-sm-6">
-                            <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="800ms">
-                                <div className="project-two__thumb">
-                                    <img src="/assets/images/about/project-2-4.png" alt="ostech image" />
-                                </div>
-                                <div className="project-two__content">
-                                    <h4 className="project-two__content__title">
-                                        <a href="service-experience">Digital Experience</a>
-                                    </h4>
-                                    <p className="project-two__content__text">Technology</p>
-                                    <a href="product-details" className="project-two__content__btn">
-                                        <span className="project-two__content__btn__icon"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 col-sm-6">
-                            <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="700ms">
-                                <div className="project-two__thumb">
-                                    <img src="/assets/images/about/project-2-5.png" alt="ostech image" />
-                                </div>
-                                <div className="project-two__content">
-                                    <h4 className="project-two__content__title">
-                                        <a href="service-d-analysis">Data Analysis</a>
-                                    </h4>
-                                    <p className="project-two__content__text">Technology</p>
-                                    <a href="product-details" className="project-two__content__btn">
-                                        <span className="project-two__content__btn__icon"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 col-sm-6">
-                            <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="800ms">
-                                <div className="project-two__thumb">
-                                    <img src="/assets/images/about/project-2-6.png" alt="ostech image" />
-                                </div>
-                                <div className="project-two__content">
-                                    <h4 className="project-two__content__title">
-                                        <a href="service-d-security">Cyber Security</a>
-                                    </h4>
-                                    <p className="project-two__content__text">Technology</p>
-                                    <a href="product-details" className="project-two__content__btn">
-                                        <span className="project-two__content__btn__icon"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
