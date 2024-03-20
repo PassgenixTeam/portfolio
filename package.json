@@ -13,14 +13,14 @@
         "build": "gatsby build",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
-        "lint": "prettier . --write",
-        "typecheck": "tsc --noEmit"
+        "lint": "prettier . --write --ignore-unknown",
+        "typecheck": "tsc --noEmit",
+        "prepare": "husky"
     },
     "dependencies": {
         "@contentful/rich-text-react-renderer": "^15.19.6",
         "@mdx-js/react": "^3.0.1",
         "classnames": "^2.5.1",
-        "d": "^1.0.2",
         "gatsby": "^5.13.3",
         "gatsby-plugin-google-gtag": "^5.13.1",
         "gatsby-plugin-image": "^3.13.1",
@@ -40,6 +40,8 @@
         "@types/node": "^20.11.19",
         "@types/react": "^18.2.55",
         "@types/react-dom": "^18.2.19",
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.2",
         "prettier": "3.2.5",
         "typescript": "^5.3.3"
     },
