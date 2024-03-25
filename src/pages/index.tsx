@@ -249,11 +249,9 @@ const HomePage: React.FC<
                         <div className="col-lg-6">
                             <div className="about-three__left wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
                                 <div className="about-three__thumb">
-                                    <div className="about-three__thumb__item about-three__thumb__item--one">
-                                        <img src="/assets/images/about/about-s-3-1.png" alt="Passgenix Solutions image" />
-                                    </div>
+                                    <div className="about-three__thumb__item about-three__thumb__item--one"></div>
                                     <div className="about-three__thumb__item about-three__thumb__item--two">
-                                        <img src="/assets/images/about/about-3-1.png" alt="Passgenix Solutions image" />
+                                        <img src="/assets/images/about/about-phone-3d.png" alt="Passgenix Solutions image" />
                                     </div>
 
                                     <div className="about-three__thumb__call">
@@ -313,7 +311,7 @@ const HomePage: React.FC<
                                         <p className="about-three__feature__item__text">Tích hợp SEO và bán hàng tự động, thương mại điện tử.</p>
                                     </div>
                                 </div>
-                                <ul className="about-three__list list-unstyled wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                                {/* <ul className="about-three__list list-unstyled wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
                                     <li className="about-three__list__item">
                                         <i className="fas fa-check-circle"></i>Đa dạng dịch vụ công nghệ
                                     </li>
@@ -323,7 +321,7 @@ const HomePage: React.FC<
                                     <li className="about-three__list__item">
                                         <i className="fas fa-check-circle"></i>Đội ngũ lập trình chuyên nghiệp
                                     </li>
-                                </ul>
+                                </ul> */}
                                 <div className="about-three__link wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
                                     <a href="/about" className="about-three__link__btn ostech-btn ostech-btn--secondary">
                                         Tìm hiểu hêm

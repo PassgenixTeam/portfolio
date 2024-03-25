@@ -12427,7 +12427,6 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .service-three__item__thumb {
   position: relative;
-  max-height: 342px;
   height: 100%;
   width: 100%;
   overflow: hidden;
