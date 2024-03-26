@@ -14,1176 +14,758 @@ const HomePage: React.FC<
 
     return (
         <PageBody>
-            {/* <!-- Main slider Start --> */}
-            <section className="main-slider-two">
-                <div
-                    className="main-slider-two__carousel ostech-owl__carousel owl-carousel"
-                    data-owl-options={JSON.stringify({
-                        loop: true,
-                        items: 1,
-                        autoplay: true,
-                        autoplayTimeout: 10000,
-                        smartSpeed: 1000,
-                        nav: false,
-                        dots: true,
-                        margin: 0,
-                    })}
-                >
-                    {/* <!-- Item --> */}
-                    <div className="item">
-                        <div className="main-slider-two__item">
-                            <div
-                                className="main-slider-two__bg"
-                                style={{
-                                    backgroundImage: "url(/assets/images/backgrounds/slider-1-1.jpg)",
-                                }}
-                            ></div>
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <div className="main-slider-two__content">
-                                            <h5 className="main-slider-two__sub-title">Giải pháp phần mềm</h5>
-                                            <h2 className="main-slider-two__title">
-                                                Cung cấp <br /> dịch vụ công nghệ
-                                                <span className="main-slider-two__title__overlay-group">
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                </span>
-                                            </h2>
-                                            <div className="main-slider-two__link">
-                                                <a href="/contact" className="ostech-btn ostech-btn--base">
-                                                    Tìm Hiểu Thêm
-                                                </a>
-                                                <a href="/contact" className="ostech-btn ostech-btn--secondary">
-                                                    Liên Hệ
-                                                </a>
-                                            </div>
+            {/* <!--...::: Hero Section Start :::... --> */}
+            <section className="section-hero">
+                <div className="relative z-10 overflow-hidden bg-[#FAF9F5]">
+                    {/* <!-- Section Space --> */}
+                    <div className="pb-[60px] pt-28 md:pb-20 md:pt-36 lg:pb-[100px] lg:pt-[150px] xxl:pb-[120px] xxl:pt-[185px]">
+                        {/* <!-- Section Container --> */}
+                        <div className="container-custom">
+                            {/* <!-- Hero Area --> */}
+                            <div className="grid gap-10 lg:grid-cols-2 xxl:grid-cols-[1.1fr_minmax(0,_1fr)]">
+                                {/* <!-- Hero Content Block --> */}
+                                <div className="jos">
+                                    <div className="has-container-custom">
+                                        <h1 className="mb-6">We focus on growing your brand online</h1>
+                                        <p>
+                                            Build world-class digital products with a team of design, development & strategy experts. All in one place. We can provide your business
+                                            with a variety of digital solutions.
+                                        </p>
+                                        <form action="#" method="post" className="relative mx-auto flex w-full items-center sm:w-[80%] lg:mx-0 lg:mt-5 lg:max-w-md">
+                                            <input
+                                                type="email"
+                                                placeholder="Enter your email"
+                                                className="w-full rounded-[50px] border border-ColorBlack bg-white px-5 py-[15px] pr-40 text-base font-semibold text-opacity-50 outline-none"
+                                            />
+                                            <button type="submit" className="btn is-blue is-rounded absolute right-[5px] py-[10px]">
+                                                Subscribe
+                                            </button>
+                                        </form>
+                                        <div className="mt-5 text-sm leading-6 md:justify-normal">
+                                            <span className="mr-2 inline-block text-lg text-ColorBlue">
+                                                <i className="fa-solid fa-badge-check"></i>
+                                            </span>
+                                            <span className="opacity-50">No credit card is required. You can cancel anytime</span>
                                         </div>
                                     </div>
                                 </div>
+                                {/* <!-- Hero Content Block --> */}
+
+                                {/* <!-- Hero Image Block --> */}
+                                <div className="jos">
+                                    <div className="relative flex items-center justify-center">
+                                        <img src="assets/img/th-1/hero-img.jpg" alt="hero image" width="600" height="579" className="h-auto w-full" />
+                                        <a
+                                            data-fslightbox="gallery"
+                                            href="https://www.youtube.com/watch?v=3nQNiWdeH2Q"
+                                            className="group group absolute flex h-[100px] w-[100px] items-center justify-center rounded-[50%] bg-white text-ColorBlue"
+                                            aria-label="video-play"
+                                        >
+                                            <span className="text-2xl transition-all duration-300 ease-linear group-hover:scale-110">
+                                                <i className="fa-solid fa-play"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                {/* <!-- Hero Image Block --> */}
                             </div>
-                            <div className="main-slider-two__item__shape">
-                                <img src="/assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
-                            </div>
+                            {/* <!-- Hero Area --> */}
                         </div>
+                        {/* <!-- Section Container --> */}
+                    </div>
+                    {/* <!-- Section Space --> */}
+
+                    {/* <!-- Hero Shape - 1 --> */}
+                    <div className="absolute left-0 top-0 -z-10">
+                        <img src="assets/img/elements/hero-1-shape-1.svg" alt="hero-shape-1" width="607" height="792" className="" />
                     </div>
 
-                    {/* <!-- Item --> */}
-                    <div className="item">
-                        <div className="main-slider-two__item">
-                            <div
-                                className="main-slider-two__bg"
-                                style={{
-                                    backgroundImage: "url(/assets/images/backgrounds/slider-1-2.jpg)",
-                                }}
-                            ></div>
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <div className="main-slider-two__content">
-                                            <h5 className="main-slider-two__sub-title">Xây dựng sản phẩm</h5>
-                                            <h2 className="main-slider-two__title">
-                                                Tư vấn & xây dựng <br /> website, ứng dụng
-                                                <span className="main-slider-two__title__overlay-group">
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                </span>
-                                            </h2>
-                                            <div className="main-slider-two__link">
-                                                <a href="/contact" className="ostech-btn ostech-btn--base">
-                                                    Tìm Hiểu Thêm
-                                                </a>
-                                                <a href="/contact" className="ostech-btn ostech-btn--secondary">
-                                                    Liên Hệ
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="main-slider-two__item__shape">
-                                <img src="/assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* <!-- Item --> */}
-                    <div className="item">
-                        <div className="main-slider-two__item">
-                            <div
-                                className="main-slider-two__bg"
-                                style={{
-                                    backgroundImage: "url(/assets/images/backgrounds/slider-1-3.jpg)",
-                                }}
-                            ></div>
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <div className="main-slider-two__content">
-                                            <h5 className="main-slider-two__sub-title">Thương mại điện tử</h5>
-                                            <h2 className="main-slider-two__title">
-                                                Listing & đồng bộ <br /> các cửa hàng online
-                                                <span className="main-slider-two__title__overlay-group">
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                </span>
-                                            </h2>
-                                            <div className="main-slider-two__link">
-                                                <a href="/contact" className="ostech-btn ostech-btn--base">
-                                                    Tìm Hiểu Thêm
-                                                </a>
-                                                <a href="/contact" className="ostech-btn ostech-btn--secondary">
-                                                    Liên Hệ
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="main-slider-two__item__shape">
-                                <img src="/assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* <!-- Item --> */}
-                    <div className="item">
-                        <div className="main-slider-two__item">
-                            <div
-                                className="main-slider-two__bg"
-                                style={{
-                                    backgroundImage: "url(/assets/images/backgrounds/slider-1-4.jpg)",
-                                }}
-                            ></div>
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <div className="main-slider-two__content">
-                                            <h5 className="main-slider-two__sub-title">Agency & các dịch vụ quảng cáo</h5>
-                                            <h2 className="main-slider-two__title">
-                                                Làm nổi bật <br /> thương hiệu của bạn
-                                                <span className="main-slider-two__title__overlay-group">
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                    <span className="main-slider-two__title__overlay"></span>
-                                                </span>
-                                            </h2>
-                                            <div className="main-slider-two__link">
-                                                <a href="/contact" className="ostech-btn ostech-btn--base">
-                                                    Tìm Hiểu Thêm
-                                                </a>
-                                                <a href="/contact" className="ostech-btn ostech-btn--secondary">
-                                                    Liên Hệ
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="main-slider-two__item__shape">
-                                <img src="/assets/images/shapes/frame-hero-2-1.png" alt="frame-hero" />
-                            </div>
-                        </div>
+                    {/* <!-- Hero Shape - 2 --> */}
+                    <div className="absolute bottom-0 right-0 -z-[1]">
+                        <img src="assets/img/elements/hero-1-shape-2.svg" alt="hero-shape-2" width="607" height="792" />
                     </div>
                 </div>
             </section>
-            {/* <!-- Main slider End --> */}
+            {/* <!--...::: Hero Section End :::... --> */}
 
-            {/* <!--Funfact Start --> */}
-            <div className="funfact-two">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="funfact-two__inner">
-                                <div className="funfact-two__item  wow fadeInUp" data-wow-delay="500ms">
-                                    <div className="funfact-two__item__funfact__item count-box">
-                                        <div className="funfact-two__item__funfact__item__icon">
-                                            <i className="icon-expertise-1"></i>
-                                        </div>
-                                        <h2 className="funfact-two__item__funfact__item__count">
-                                            <span className="count-text" data-stop="99" data-speed="1500"></span>
-                                            <span>.0K</span>
-                                        </h2>
-                                        <p className="funfact-two__item__funfact__item__text">Khách hàng</p>
+            {/* <!--...::: Brand Section Start :::... --> */}
+            <div className="section-brand">
+                <div className="jos">
+                    {/* <!-- Section Space --> */}
+                    <div className="py-[60px] md:py-20 lg:py-[100px]">
+                        {/* <!-- Section Container --> */}
+                        <div className="container-default">
+                            <div className="mx-auto mb-10 max-w-[80%] text-center text-xl font-semibold leading-[1.4] opacity-70 md:mb-16 lg:mb-20 lg:max-w-2xl">
+                                From start-ups to Fortune 500, we partner with brands of all sizes
+                            </div>
+                            {/* <!-- Brand Slider --> */}
+                            <div className="swiper brand-slider">
+                                {/* <!-- Additional required wrapper --> */}
+                                <div className="swiper-wrapper">
+                                    {/* <!-- Slides --> */}
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-1.png" alt="brand-1" width="186" height="46" className="h-auto w-fit" />
                                     </div>
-                                </div>
-
-                                <div className="funfact-two__item wow fadeInUp" data-wow-delay="700ms">
-                                    <div className="funfact-two__item__funfact__item count-box">
-                                        <div className="funfact-two__item__funfact__item__icon">
-                                            <i className="icon-technology-2"></i>
-                                        </div>
-                                        <h2 className="funfact-two__item__funfact__item__count">
-                                            <span className="count-text" data-stop="100" data-speed="1500"></span>
-                                            <span>%</span>
-                                        </h2>
-                                        <p className="funfact-two__item__funfact__item__text">Phản hồi tích cực</p>
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-2.png" alt="brand-2" width="186" height="46" className="h-auto w-fit" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-3.png" alt="brand-3" width="186" height="46" className="h-auto w-fit" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-4.png" alt="brand-4" width="186" height="46" className="h-auto w-fit" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-5.png" alt="brand-5" width="186" height="46" className="h-auto w-fit" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-1.png" alt="brand-1" width="186" height="46" className="h-auto w-fit" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-2.png" alt="brand-2" width="186" height="46" className="h-auto w-fit" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-3.png" alt="brand-3" width="186" height="46" className="h-auto w-fit" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-4.png" alt="brand-4" width="186" height="46" className="h-auto w-fit" />
+                                    </div>
+                                    <div className="swiper-slide">
+                                        <img src="assets/img/th-1/brand-5.png" alt="brand-5" width="186" height="46" className="h-auto w-fit" />
                                     </div>
                                 </div>
                             </div>
+                            {/* <!-- Brand Slider --> */}
                         </div>
+                        {/* <!-- Section Container --> */}
                     </div>
+                    {/* <!-- Section Space --> */}
                 </div>
             </div>
-            {/* <!-- Funfact End --> */}
+            {/* <!--...::: Brand Section End :::... --> */}
 
-            {/* <!-- About section Start --> */}
-            <section className="about-three">
-                <div className="container">
-                    <div className="row gutter-y-30">
-                        <div className="col-lg-6">
-                            <div className="about-three__left wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                <div className="about-three__thumb">
-                                    <div className="about-three__thumb__item about-three__thumb__item--one"></div>
-                                    <div className="about-three__thumb__item about-three__thumb__item--two">
-                                        <img src="/assets/images/about/about-phone-3d.png" alt="Passgenix Solutions image" />
-                                    </div>
+            {/* <!-- Horizontal Line Separator --> */}
+            <div className="horizontal-line bg-ColorBlack"></div>
+            {/* <!-- Horizontal Line Separator --> */}
 
-                                    <div className="about-three__thumb__call">
-                                        <div className="about-three__thumb__call__icon">
-                                            <i className="icon-chatting-1"></i>
-                                        </div>
-                                        <div className="about-three__thumb__call__content">
-                                            <span className="about-three__thumb__call__text">Liên hệ ngay</span>
-                                            <h5 className="about-three__thumb__call__title">
-                                                <a href="tel:+84-946-672-181">+84 946 672 181</a>
-                                            </h5>
-                                        </div>
-                                    </div>
+            {/* <!--...::: Service Section Start :::... --> */}
+            <section className="section-service">
+                <div className="relative z-10 overflow-hidden">
+                    {/* <!-- Section Space --> */}
+                    <div className="section-space">
+                        {/* <!-- Section Container --> */}
+                        <div className="container-custom">
+                            {/* <!-- Section Content Wrapper --> */}
+                            <div className="jos mb-[60px] xl:mb-20">
+                                {/* <!-- Section Content Block --> */}
+                                <div className="mx-auto max-w-[590px]">
+                                    <h2 className="text-center">All the digital services that are convenient for you</h2>
                                 </div>
+                                {/* <!-- Section Content Block --> */}
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="about-three__right">
-                                <div className="about-three__top">
-                                    <div className="sec-title wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                        <div className="d-flex align-items-center justify-content-start">
-                                            <img src="/assets/images/shapes/sec-title-s-1.png" alt="Về Chúng Tôi" className="sec-title__img" />
-                                            <h6 className="sec-title__tagline">Về Chúng Tôi</h6>
-                                        </div>
-                                        <h3 className="sec-title__title">Chuyên Cung Cấp Các Dịch Vụ Phát Triển Kinh Doanh</h3>
-                                    </div>
-                                    <p className="about-three__top__text">
-                                        Chúng tôi cung cấp các dịch vụ và giải pháp phần mềm kinh doanh, tối ưu hóa quy trình cho doanh nghiệp của bạn, tăng cường sức cạnh tranh và
-                                        phát triển.
-                                    </p>
-                                </div>
-                                <div className="about-three__feature wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-                                    <div className="about-three__feature__item">
-                                        <div className="about-three__feature__top">
-                                            <div className="about-three__feature__top__icon">
-                                                <i className="icon-nanotechnology-1"></i>
+                            {/* <!-- Section Content Wrapper --> */}
+
+                            {/* <!-- Service List --> */}
+                            <div className="grid gap-6 sm:grid-cols-2">
+                                {/* <!-- Service Item --> */}
+                                <div className="jos" data-jos_delay="0">
+                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
+                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
+                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
+                                                <img
+                                                    src="assets/img/icons/icon-black-service-1.svg"
+                                                    alt="icon-service-1"
+                                                    width="98"
+                                                    height="100"
+                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
+                                                />
+                                                <img
+                                                    src="assets/img/icons/icon-blue-service-1.svg"
+                                                    alt="icon-service-1"
+                                                    width="98"
+                                                    height="100"
+                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
+                                                />
                                             </div>
-                                            <h4 className="about-three__feature__top__title">
-                                                Giải Pháp
-                                                <br />
-                                                Phần Mềm
-                                            </h4>
-                                        </div>
-                                        <p className="about-three__feature__item__text">Xây dựng Website với chi phí vận hành thấp.</p>
-                                    </div>
-                                    <div className="about-three__feature__item">
-                                        <div className="about-three__feature__top">
-                                            <div className="about-three__feature__top__icon">
-                                                <i className="icon-it-service-1"></i>
-                                            </div>
-                                            <h4 className="about-three__feature__top__title">
-                                                Phát Triển
-                                                <br />
-                                                Kinh Doanh
-                                            </h4>
-                                        </div>
-                                        <p className="about-three__feature__item__text">Tích hợp SEO và bán hàng tự động, thương mại điện tử.</p>
-                                    </div>
-                                </div>
-                                {/* <ul className="about-three__list list-unstyled wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                    <li className="about-three__list__item">
-                                        <i className="fas fa-check-circle"></i>Đa dạng dịch vụ công nghệ
-                                    </li>
-                                    <li className="about-three__list__item">
-                                        <i className="fas fa-check-circle"></i>Phục vụ nhiều mục tiêu kinh doanh
-                                    </li>
-                                    <li className="about-three__list__item">
-                                        <i className="fas fa-check-circle"></i>Đội ngũ lập trình chuyên nghiệp
-                                    </li>
-                                </ul> */}
-                                <div className="about-three__link wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                    <a href="/about" className="about-three__link__btn ostech-btn ostech-btn--secondary">
-                                        Tìm hiểu hêm
-                                    </a>
-                                </div>
-
-                                <div className="about-three__award">
-                                    <i className="icon-mark"></i>
-                                    <p className="about-three__award__text">Miễn Phí Tư Vấn Dịch Vụ</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- About section End --> */}
-
-            {/* <!-- Service section Start --> */}
-            <section className="service-three">
-                <div
-                    className="service-three__bg"
-                    style={{
-                        backgroundImage: "url(/assets/images/shapes/service-shape-2-1.png)",
-                    }}
-                ></div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="sec-title sec-title--two text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                <div className="d-flex align-items-center justify-content-center">
-                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Service" className="sec-title__img" />
-                                    <h6 className="sec-title__tagline">Chúng tôi cung cấp</h6>
-                                </div>
-                                <h3 className="sec-title__title">
-                                    Các Dịch Vụ Theo Từng Mục Tiêu <br /> Kinh Doanh
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        className="service-three__carousel ostech-owl__carousel owl-theme owl-carousel"
-                        data-owl-options='{
-			"loop": true,
-			"items": 3,
-			"autoplay": true,
-			"autoplayTimeout": 10000,
-			"smartSpeed": 1000,
-			"nav": false,
-			"dots": true,
-			"margin": 0,
-			"responsive":{
-                "0":{
-                    "items":1
-                },
-                "575":{
-                    "items":1
-                },
-				"767":{
-                    "items": 2
-                },
-                "992":{
-                    "items": 2
-                },
-                "1200":{
-                    "items": 3
-                }
-            }
-		}'
-                    >
-                        {services.map((service, index) => (
-                            <div key={service.id} className="item">
-                                <div className="service-three__item">
-                                    <div className="service-three__item__inner">
-                                        <div className="service-three__item__icon">
-                                            <div className="service-three__item__icon__inner">
-                                                <i
-                                                    className={
-                                                        [
-                                                            "icon-software-1",
-                                                            "icon-layer-1",
-                                                            "icon-digital-marketing-1",
-                                                            "icon-analysis-1",
-                                                            "icon-cyber-security",
-                                                            "icon-cloud-computing",
-                                                            "icon-analysis-1",
-                                                        ][index]
-                                                    }
-                                                ></i>
-                                            </div>
-                                        </div>
-                                        <div className="service-three__item__thumb">
-                                            <img src={service.thumbnail?.localFile?.publicURL || ""} alt={service.title || ""} />
-                                        </div>
-                                        <div className="service-three__item__content">
-                                            <h4 className="service-three__item__title">{service.title || ""}</h4>
-                                            <a href={`service/${service.slug}`} className="service-three__item__link">
-                                                <span className="service-three__item__link__icon"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-            {/* <!-- Service section End --> */}
-
-            {/* <!-- Client carousel Start --> */}
-            <div className="client-carousel client-carousel--one d-none">
-                <div className="container">
-                    ∂
-                    <div
-                        className="client-carousel__one ostech-owl__carousel owl-theme owl-carousel"
-                        data-owl-options='{
-            "items": 5,
-            "margin": 60,
-            "smartSpeed": 700,
-            "loop":true,
-            "autoplay": 6000,
-            "nav":false,
-            "dots":false,
-            "responsive":{
-                "0":{
-                    "items":1,
-                    "margin": 0
-                },
-                "360":{
-                    "items":2,
-                    "margin": 30
-                },
-                "575":{
-                    "items":3,
-                    "margin": 30
-                },
-                "768":{
-                    "items":3,
-                    "margin": 40
-                },
-                "992":{
-                    "items": 4,
-                    "margin": 40
-                },
-                "1200":{
-                    "items": 5,
-                    "margin": 140
-                }
-            }
-            }'
-                    >
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                        <div className="client-carousel__one__item">
-                            <img src="/assets/images/resources/brand-2-1.png" alt="Passgenix Solutions" />
-                        </div>
-                        {/* <!-- /.owl-slide-item--> */}
-                    </div>
-                    {/* <!-- /.thm-owl__slider --> */}
-                </div>
-                {/* <!-- /.container --> */}
-            </div>
-            {/* <!-- Client carousel End --> */}
-
-            {/* <!-- Why Choose section Start --> */}
-            <section className="why-choose-one">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <div className="why-choose-one__left wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                <div className="why-choose-one__top">
-                                    <div className="sec-title wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                        <div className="d-flex align-items-center justify-content-start">
-                                            <img src="/assets/images/shapes/sec-title-s-1.png" alt="Trách nhiệm & chuyên môn" className="sec-title__img" />
-                                            <h6 className="sec-title__tagline">Trách nhiệm & chuyên môn</h6>
-                                        </div>
-                                        <h3 className="sec-title__title">Nên Chọn Passgenix Solutions Cùng Đồng Hành?</h3>
-                                    </div>
-                                </div>
-                                <div className="why-choose-one__feature">
-                                    <div className="why-choose-one__feature__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                        <div className="why-choose-one__feature__item__content">
-                                            <div className="why-choose-one__feature__item__icon">
-                                                <i className="icon-it-1"></i>
-                                            </div>
-                                            <h4 className="why-choose-one__feature__item__text">Lộ trình phát triển kinh doanh rõ ràng và đầy đủ.</h4>
-                                        </div>
-                                        <div className="why-choose-one__feature__item__link">
-                                            <a href="contact" className="why-choose-one__feature__item__link__btn">
-                                                <i className="icon-arrow-left"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div className="why-choose-one__feature__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                        <div className="why-choose-one__feature__item__content">
-                                            <div className="why-choose-one__feature__item__icon">
-                                                <i className="icon-future-1"></i>
-                                            </div>
-                                            <h4 className="why-choose-one__feature__item__text">Giải pháp cụ thể cho các vấn đề kinh doanh của bạn.</h4>
-                                        </div>
-                                        <div className="why-choose-one__feature__item__link">
-                                            <a href="contact" className="why-choose-one__feature__item__link__btn">
-                                                <i className="icon-arrow-left"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="why-choose-one__link wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                    <a href="" className="why-choose-one__link__btn ostech-btn">
-                                        Liên Hệ Chúng Tôi
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="why-choose-one__right wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                <div className="why-choose-one__thumb">
-                                    <img src="/assets/images/resources/why-choos-us-3-1.png" alt="Passgenix Solutions image" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="why-choose-one__shape wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
-                    <img src="/assets/images/shapes/why-choose-2-1.png" alt="why-choose" />
-                </div>
-            </section>
-            {/* <!-- Why Choose section End --> */}
-
-            {/* <!-- testimonial-two section start --> */}
-            <section className="testimonial-two">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="sec-title text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                <div className="d-flex align-items-center justify-content-center">
-                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Testimonial" className="sec-title__img" />
-                                    <h6 className="sec-title__tagline">Phản hồi</h6>
-                                </div>
-                                <h3 className="sec-title__title">Khách Hàng Nói Gì?</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        className="testimonial-two__carousel ostech-owl__carousel owl-theme owl-carousel"
-                        data-owl-options='{
-			"items": 1,
-			"margin": 30,
-			"smartSpeed": 700,
-			"loop":true,
-			"autoplay": true,
-			"nav":false,
-			"dots":false,
-			"responsive": {
-				"0": {
-					"items": 1
-				},
-				"767": {
-					"items": 1
-				},
-				"1200": {
-					"items": 2
-				}
-			}
-			}'
-                    >
-                        <div className="item">
-                            <div className="testimonial-two__item">
-                                <div className="testimonial-two__item__star">
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                </div>
-                                <p className="testimonial-two__item__text">
-                                    Nhân viên dịch vụ khách hàng rất nhiệt tình và chu đáo, giải đáp mọi thắc mắc của tôi một cách nhanh chóng và hiệu quả.Tôi rất hài lòng với thái
-                                    độ phục vụ chuyên nghiệp và thân thiện của đội ngũ nhân viên.
-                                </p>
-                                <div className="testimonial-two__item__author">
-                                    <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-5.jpg" alt="Passgenix Solutions image" />
-                                    </div>
-                                    <div className="testimonial-two__item__author__content">
-                                        <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
-                                        <span className="testimonial-two__item__author__deg">Khách hàng thân thiết</span>
-                                    </div>
-                                </div>
-                                <div className="testimonial-two__item__quite">
-                                    <i className="icon-quite"></i>
-                                </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 38">
-                                    <path d="M61 37.6621C43.331 20.1523 12.9713 5.69967 0 0.662109H61V37.6621Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="testimonial-two__item">
-                                <div className="testimonial-two__item__star">
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                </div>
-                                <p className="testimonial-two__item__text">
-                                    Website có chất lượng tốt, đáp ứng đầy đủ nhu cầu của công ti tôi. Rất ấn tượng với thiết kế và độ hiệu quả website mang lại.
-                                </p>
-                                <div className="testimonial-two__item__author">
-                                    <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-6.jpg" alt="Passgenix Solutions image" />
-                                    </div>
-                                    <div className="testimonial-two__item__author__content">
-                                        <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
-                                        <span className="testimonial-two__item__author__deg">Khách hàng</span>
-                                    </div>
-                                </div>
-                                <div className="testimonial-two__item__quite">
-                                    <i className="icon-quite"></i>
-                                </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 38">
-                                    <path d="M61 37.6621C43.331 20.1523 12.9713 5.69967 0 0.662109H61V37.6621Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="testimonial-two__item">
-                                <div className="testimonial-two__item__star">
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                </div>
-                                <p className="testimonial-two__item__text">
-                                    Giá cả hợp lý, phù hợp với mục tiêu phát triển của công ti nhỏ lẻ như chúng tôi. Công ty luôn đặt lợi ích của khách hàng lên hàng đầu.
-                                </p>
-                                <div className="testimonial-two__item__author">
-                                    <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-1.jpg" alt="Passgenix Solutions image" />
-                                    </div>
-                                    <div className="testimonial-two__item__author__content">
-                                        <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
-                                        <span className="testimonial-two__item__author__deg">Customer</span>
-                                    </div>
-                                </div>
-                                <div className="testimonial-two__item__quite">
-                                    <i className="icon-quite"></i>
-                                </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 38">
-                                    <path d="M61 37.6621C43.331 20.1523 12.9713 5.69967 0 0.662109H61V37.6621Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="testimonial-two__item">
-                                <div className="testimonial-two__item__star">
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                </div>
-                                <p className="testimonial-two__item__text">
-                                    Chính sách hỗ trợ lâu dài, giúp tôi yên tâm sử dụng dịch vụ. Công ty luôn sẵn sàng hỗ trợ khách hàng khi gặp vấn đề phát sinh.
-                                </p>
-                                <div className="testimonial-two__item__author">
-                                    <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-2.jpg" alt="Passgenix Solutions image" />
-                                    </div>
-                                    <div className="testimonial-two__item__author__content">
-                                        <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
-                                        <span className="testimonial-two__item__author__deg">Customer</span>
-                                    </div>
-                                </div>
-                                <div className="testimonial-two__item__quite">
-                                    <i className="icon-quite"></i>
-                                </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 38">
-                                    <path d="M61 37.6621C43.331 20.1523 12.9713 5.69967 0 0.662109H61V37.6621Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="testimonial-two__item">
-                                <div className="testimonial-two__item__star">
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                    <i className="icon-star"></i>
-                                </div>
-                                <p className="testimonial-two__item__text">
-                                    Tôi đã sử dụng dịch vụ của công ty này nhiều năm nay và luôn hài lòng với chất lượng dịch vụ. Tôi sẽ giới thiệu dịch vụ của công ty này cho bạn
-                                    bè và người thân.
-                                </p>
-                                <div className="testimonial-two__item__author">
-                                    <div className="testimonial-two__item__author__thumb">
-                                        <img src="/assets/images/resources/testi-1-3.jpg" alt="Passgenix Solutions image" />
-                                    </div>
-                                    <div className="testimonial-two__item__author__content">
-                                        <h5 className="testimonial-two__item__author__title">Nguyễn Minh Thắng</h5>
-                                        <span className="testimonial-two__item__author__deg">Khách hàng thân thiết</span>
-                                    </div>
-                                </div>
-                                <div className="testimonial-two__item__quite">
-                                    <i className="icon-quite"></i>
-                                </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 38">
-                                    <path d="M61 37.6621C43.331 20.1523 12.9713 5.69967 0 0.662109H61V37.6621Z" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="testimonial-two__author">
-                        <div className="testimonial-two__author__image testimonial-two__author__image--one">
-                            <img src="/assets/images/resources/testi-1-1.jpg" alt=" osthech image" />
-                        </div>
-                        <div className="testimonial-two__author__image testimonial-two__author__image--two">
-                            <img src="/assets/images/resources/testi-1-2.jpg" alt=" osthech image" />
-                        </div>
-                        <div className="testimonial-two__author__image testimonial-two__author__image--three">
-                            <img src="/assets/images/resources/testi-1-3.jpg" alt=" osthech image" />
-                        </div>
-                        <div className="testimonial-two__author__image testimonial-two__author__image--fore">
-                            <img src="/assets/images/resources/testi-1-4.jpg" alt=" osthech image" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- testimonial-two section End --> */}
-
-            {/* <!-- testimonial-two section End --> */}
-            <section className="project-two">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="sec-title text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                <div className="d-flex align-items-center justify-content-center">
-                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Latest Project" className="sec-title__img" />
-                                    <h6 className="sec-title__tagline">Dự án gần đây</h6>
-                                </div>
-                                <h3 className="sec-title__title">
-                                    Các Dự Án Vừa Mới <br /> Được Phát Hành
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row gutter-y-30">
-                        {projects.map((project) => (
-                            <div key={project.id} className="col-lg-3 col-md-4 col-sm-6">
-                                <a href={`/projects/${project.slug || ""}`}>
-                                    <div className="project-two__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-                                        <div className="project-two__thumb">
-                                            <img src={project.thumbnail?.localFile?.publicURL || ""} alt="Passgenix Solutions image" />
-                                        </div>
-                                        <div className="project-two__content">
-                                            <h4 className="project-two__content__title">
-                                                <a href={`/projects/${project.slug || ""}`}>
-                                                    <span className="text-ellipsis line-clamp-1">{project.title}</span>
+                                            <div className="flex-1 text-center lg:text-left">
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Branding & Digital Strategies
+                                                </div>
+                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
+                                                    Brand strategy is all about developing a unique identity that distinguishes your business from
+                                                </p>
+                                                <a
+                                                    href="service-details.html"
+                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue"
+                                                >
+                                                    Find out more
+                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                                                        <i className="fa-solid fa-arrow-right"></i>
+                                                    </span>
                                                 </a>
-                                            </h4>
-                                            <p className="project-two__content__text">{project.service?.title}</p>
-                                            <a href={`/projects/${project.slug || ""}`} className="project-two__content__btn">
-                                                <span className="project-two__content__btn__icon"></span>
-                                            </a>
+                                            </div>
                                         </div>
                                     </div>
+                                </div>
+                                {/* <!-- Service Item --> */}
+                                {/* <!-- Service Item --> */}
+                                <div className="jos" data-jos_delay="0.3">
+                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
+                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
+                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
+                                                <img
+                                                    src="assets/img/icons/icon-black-service-2.svg"
+                                                    alt="icon-service-2"
+                                                    width="98"
+                                                    height="100"
+                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
+                                                />
+                                                <img
+                                                    src="assets/img/icons/icon-blue-service-2.svg"
+                                                    alt="icon-service-2"
+                                                    width="98"
+                                                    height="100"
+                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
+                                                />
+                                            </div>
+                                            <div className="flex-1 text-center lg:text-left">
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Web Design & App Development
+                                                </div>
+                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
+                                                    Web design & development is an umbrella term that describes the process of creating a website
+                                                </p>
+                                                <a
+                                                    href="service-details.html"
+                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue"
+                                                >
+                                                    Find out more
+                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                                                        <i className="fa-solid fa-arrow-right"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Service Item --> */}
+                                {/* <!-- Service Item --> */}
+                                <div className="jos" data-jos_delay="0.6">
+                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
+                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
+                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
+                                                <img
+                                                    src="assets/img/icons/icon-black-service-3.svg"
+                                                    alt="icon-service-3"
+                                                    width="98"
+                                                    height="100"
+                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
+                                                />
+                                                <img
+                                                    src="assets/img/icons/icon-blue-service-3.svg"
+                                                    alt="icon-service-3"
+                                                    width="98"
+                                                    height="100"
+                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
+                                                />
+                                            </div>
+                                            <div className="flex-1 text-center lg:text-left">
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Results-Driven Digital Marketing
+                                                </div>
+                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
+                                                    Digital marketing potential customers using the internet & other forms of digital communication
+                                                </p>
+                                                <a
+                                                    href="service-details.html"
+                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue"
+                                                >
+                                                    Find out more
+                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                                                        <i className="fa-solid fa-arrow-right"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Service Item --> */}
+                                {/* <!-- Service Item --> */}
+                                <div className="jos" data-jos_delay="0.9">
+                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
+                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
+                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
+                                                <img
+                                                    src="assets/img/icons/icon-black-service-4.svg"
+                                                    alt="icon-service-4"
+                                                    width="98"
+                                                    height="100"
+                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
+                                                />
+                                                <img
+                                                    src="assets/img/icons/icon-blue-service-4.svg"
+                                                    alt="icon-service-4"
+                                                    width="98"
+                                                    height="100"
+                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
+                                                />
+                                            </div>
+                                            <div className="flex-1 text-center lg:text-left">
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Custom Software Development
+                                                </div>
+                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
+                                                    Custom Software Development is the process of conceptualizing, designing, building & deploying
+                                                </p>
+                                                <a
+                                                    href="service-details.html"
+                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue"
+                                                >
+                                                    Find out more
+                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                                                        <i className="fa-solid fa-arrow-right"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Service Item --> */}
+                            </div>
+                            {/* <!-- Service List --> */}
+                        </div>
+                        {/* <!-- Section Container --> */}
+                    </div>
+                    {/* <!-- Section Space --> */}
+
+                    {/* <!-- Service Shape --> */}
+                    <div className="absolute bottom-0 left-0 -z-10">
+                        <img src="assets/img/elements/service-1-shape-1.svg" alt="service-section-shape" width="390" height="507" />
+                    </div>
+                    {/* <!-- Service Shape --> */}
+                </div>
+            </section>
+            {/* <!--...::: Service Section End :::... --> */}
+
+            {/* <!--...::: Content Section Start :::... --> */}
+            <section className="section-content">
+                {/* <!-- Section Background --> */}
+                <div className="bg-ColorOffWhite">
+                    {/* <!-- Section Spacer --> */}
+                    <div className="section-space">
+                        {/* <!-- Section Container --> */}
+                        <div className="container-custom">
+                            <div className="flex flex-col gap-y-20 lg:gap-y-[100px] xl:gap-y-[120px]">
+                                {/* <!-- Content Area Single --> */}
+                                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-24 xl:grid-cols-[1.2fr_minmax(0,_1fr)] xl:gap-[135px]">
+                                    {/* <!-- Content Block Left --> */}
+                                    <div className="jos" data-jos_animation="fade-right">
+                                        {/* <!-- Section Wrapper --> */}
+                                        <div>
+                                            {/* <!-- Section Block --> */}
+                                            <div className="mb-5">
+                                                <h2>Boost the effectiveness of your promotions as well as polish your branding</h2>
+                                            </div>
+                                            {/* <!-- Section Block --> */}
+                                        </div>
+                                        {/* <!-- Section Wrapper --> */}
+                                        <p>
+                                            SINCE 1998, we transform bold business ideas into exceptional digital products. We ideate, design, and develop data-driven digital
+                                            products made to answer business challenges.
+                                        </p>
+                                        <p>We offer 360° services to smoothly guide you on your way to creating a seamless digital masterpiece projects on budget and on time.</p>
+                                    </div>
+                                    {/* <!-- Content Block Left --> */}
+                                    {/* <!-- Content Block Right --> */}
+                                    <div className="jos relative" data-jos_animation="fade-left">
+                                        <div className="rounded-[10px] bg-[#FCEDCF] p-[30px] lg:p-10 xl:p-[50px]">
+                                            {/* <!-- Content Image --> */}
+                                            <img src="assets/img/th-1/content-img-1.jpg" alt="content-img-1" width="426" height="398" className="h-auto w-full rounded-[10px]" />
+                                        </div>
+                                        {/* <!-- Content Shape --> */}
+                                        <img src="assets/img/elements/content-shape-1.svg" alt="content-shape-1" width="168" height="61" className="absolute -right-16 -top-16" />
+                                    </div>
+                                    {/* <!-- Content Block Right --> */}
+                                </div>
+                                {/* <!-- Content Area Single --> */}
+
+                                {/* <!-- Content Area Single --> */}
+                                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-24 xl:grid-cols-[1fr_minmax(0,_1.2fr)] xl:gap-[135px]">
+                                    {/* <!-- Content Block Left --> */}
+                                    <div className="jos lg:order-2" data-jos_animation="fade-left">
+                                        {/* <!-- Section Wrapper --> */}
+                                        <div>
+                                            {/* <!-- Section Block --> */}
+                                            <div className="mb-5">
+                                                <h2>Discover the latest digital strategies & emerging ideas for business growth</h2>
+                                            </div>
+                                            {/* <!-- Section Block --> */}
+                                        </div>
+                                        {/* <!-- Section Wrapper --> */}
+                                        <p>Our brand tenders and marketing mixologists always serve up unique, design-forward websites coded with today’s modern technologies</p>
+                                        <ul className="flex flex-col gap-5 font-semibold text-ColorBlack">
+                                            <li>
+                                                <span className="mr-3 inline-block text-xl text-ColorBlue">
+                                                    <i className="fa-solid fa-badge-check"></i>
+                                                </span>
+                                                Reach new business opportunities or test your product ideas.
+                                            </li>
+                                            <li>
+                                                <span className="mr-3 inline-block text-xl text-ColorBlue">
+                                                    <i className="fa-solid fa-badge-check"></i>
+                                                </span>
+                                                Automate your processes and get data-driven business insights.
+                                            </li>
+                                            <li>
+                                                <span className="mr-3 inline-block text-xl text-ColorBlue">
+                                                    <i className="fa-solid fa-badge-check"></i>
+                                                </span>
+                                                Create lightweight, scalable, and easly accessible cloud solution.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {/* <!-- Content Block Left --> */}
+                                    {/* <!-- Content Block Right --> */}
+                                    <div className="jos relative lg:order-1" data-jos_animation="fade-right">
+                                        <div className="rounded-[10px] bg-[#BEF8FC] p-[30px] lg:p-10 xl:p-[50px]">
+                                            {/* <!-- Content Image --> */}
+                                            <img src="assets/img/th-1/content-img-2.jpg" alt="content-img-1" width="426" height="398" className="h-auto w-full rounded-[10px]" />
+                                        </div>
+                                        {/* <!-- Content Shape --> */}
+                                        <img src="assets/img/elements/content-shape-2.svg" alt="content-shape-1" width="107" height="105" className="absolute -bottom-1 -left-1" />
+                                    </div>
+                                    {/* <!-- Content Block Right --> */}
+                                </div>
+                                {/* <!-- Content Area Single --> */}
+                            </div>
+                        </div>
+                        {/* <!-- Section Container --> */}
+                    </div>
+                    {/* <!-- Section Spacer --> */}
+                </div>
+                {/* <!-- Section Background --> */}
+            </section>
+            {/* <!--...::: Content Section End :::... --> */}
+
+            {/* <!--...::: Portfolio Section Start :::... --> */}
+            <section className="section-portfolio">
+                <div className="relative z-10 overflow-hidden">
+                    {/* <!-- Section Space --> */}
+                    <div className="section-space">
+                        {/* <!-- Section Container --> */}
+                        <div className="container-default">
+                            {/* <!-- Section Wrapper --> */}
+                            <div className="jos mb-[60px] flex flex-wrap items-end justify-between gap-8 xl:mb-20">
+                                {/* <!-- Section Block --> */}
+                                <div className="max-w-[550px]">
+                                    <h2>We create world-class web design, & branding</h2>
+                                </div>
+                                {/* <!-- Section Block --> */}
+                                <a href="portfolio.html" className="btn is-blue is-rounded btn-animation is-large group">
+                                    <span>See more works</span>
                                 </a>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-            {/* <!-- testimonial-two section End --> */}
+                            {/* <!-- Section Wrapper --> */}
 
-            {/* <!-- Package section start --> */}
-            <section className="package-page package-page--two">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="sec-title text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                <div className="d-flex align-items-center justify-content-center">
-                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Pricing plane" className="sec-title__img" />
-                                    <h6 className="sec-title__tagline">Bảng giá</h6>
-                                </div>
-                                <h3 className="sec-title__title">
-                                    Bảng Giá Ước Tính <br /> Cho Các Dịch Vụ Phổ Biến
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    {/* <!-- /.row --> */}
-                    <div className="row gutter-y-30">
-                        <div className="col-md-6 col-lg-4">
-                            <div className="package-card price wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                                <div className="package-card__head">
-                                    <div className="package-card__head__box">
-                                        <h2 className="package-card__head__title">Tư Vấn</h2>
-                                    </div>
-                                    <div className="package-card__head__content">
-                                        <p className="package-card__head__price ps-0">Miễn Phí</p>
-                                        <p className="package-card__head__month">Cho mọi dịch vụ</p>
-                                    </div>
-                                </div>
-                                <div className="package-card__content">
-                                    <ul className="package-card__content__list list-unstyled">
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Social Media Marketing
-                                        </li>
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Digital Analysis
-                                        </li>
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Web Development
-                                        </li>
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Technical Support
-                                        </li>
-                                    </ul>
-                                    <div className="package-card__content__link">
-                                        <a href="checkout" className="package-card__content__link__btn ostech-btn ostech-btn--secondary">
-                                            Bắt Đầu Ngay
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="package-card__shape">
-                                    <img src="/assets/images/shapes/price-1-1.png" alt="price" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6 col-lg-4">
-                            <div className="package-card price wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                                <div className="package-card__head">
-                                    <p className="package-card__head__top">Dùng Nhiều</p>
-
-                                    <div className="package-card__head__box">
-                                        <h2 className="package-card__head__title">Website</h2>
-                                    </div>
-                                    <div className="package-card__head__content">
-                                        <p className="package-card__head__price">
-                                            ~4.000.000<span className="sup">VNĐ</span>
-                                        </p>
-                                        <p className="package-card__head__month">Cho một website</p>
-                                    </div>
-                                </div>
-                                <div className="package-card__content">
-                                    <ul className="package-card__content__list list-unstyled">
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Social Media Marketing
-                                        </li>
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Digital Analysis
-                                        </li>
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Web Development
-                                        </li>
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Technical Support
-                                        </li>
-                                    </ul>
-                                    <div className="package-card__content__link">
-                                        <a href="checkout" className="package-card__content__link__btn ostech-btn ostech-btn--secondary">
-                                            Bắt Đầu Ngay
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="package-card__shape">
-                                    <img src="/assets/images/shapes/price-1-1.png" alt="price" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6 col-lg-4">
-                            <div className="package-card price wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
-                                <div className="package-card__head">
-                                    <div className="package-card__head__box">
-                                        <h2 className="package-card__head__title">Marketing</h2>
-                                    </div>
-                                    <div className="package-card__head__content">
-                                        <p className="package-card__head__price">
-                                            ~6.000.000<span className="sup">VNĐ</span>
-                                        </p>
-                                        <p className="package-card__head__month">Cho tất cả các sản phẩm</p>
-                                    </div>
-                                </div>
-                                <div className="package-card__content">
-                                    <ul className="package-card__content__list list-unstyled">
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Social Media Marketing
-                                        </li>
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Digital Analysis
-                                        </li>
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Web Development
-                                        </li>
-                                        <li className="package-card__content__list__item">
-                                            {" "}
-                                            <i className="icon-mark"></i>Technical Support
-                                        </li>
-                                    </ul>
-                                    <div className="package-card__content__link">
-                                        <a href="checkout" className="package-card__content__link__btn ostech-btn ostech-btn--secondary">
-                                            Bắt Đầu Ngay
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="package-card__shape">
-                                    <img src="/assets/images/shapes/price-1-1.png" alt="price" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* <!-- /.row --> */}
-                </div>
-            </section>
-            {/* <!-- Package section End --> */}
-
-            {/* <!-- Contact section Start --> */}
-            <section className="contact-two">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-4">
-                            <div className="contact-two__left">
-                                <div className="contact-two__thumb wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="500ms">
-                                    <img src="/assets/images/resources/contact-1-2.png" alt="Passgenix Solutions image" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-8">
-                            <div className="contact-two__right wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="500ms">
-                                <div className="contact-two__top">
-                                    <div className="contact-two__top__content">
-                                        <div className="sec-title sec-title--three text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                            <div className="d-flex align-items-center justify-content-center">
-                                                <img src="/assets/images/shapes/sec-title-s-2.png" alt="Contact with us" className="sec-title__img" />
-                                                <h6 className="sec-title__tagline">Đối Tác Đáng Tin Cậy</h6>
+                            {/* <!-- Portfolio List --> */}
+                            <div className="grid gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]">
+                                {/* <!-- Portfolio Item --> */}
+                                <div className="jos" data-jos_delay="0">
+                                    <div className="group">
+                                        <div className="overflow-hidden rounded-[10px]">
+                                            <img
+                                                src="assets/img/th-1/portfolio-img-1.jpg"
+                                                alt="portfolio-img-1"
+                                                width="617"
+                                                height="450"
+                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+                                            />
+                                        </div>
+                                        <div className="mt-6">
+                                            <div className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
+                                                <a
+                                                    href="portfolio-details.html"
+                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorBlue xl:text-2xl"
+                                                >
+                                                    App — The power of communication
+                                                </a>
+                                                <a href="#" className="hover:text-ColorBlue">
+                                                    UI/UX Design
+                                                </a>
                                             </div>
-                                            <h3 className="sec-title__title">Liên Hệ Với Chúng Tôi Ngay</h3>
+                                            <a href="portfolio-details.html" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
+                                                View work
+                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
+                                                    <i className="fa-solid fa-arrow-right"></i>
+                                                </span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="contact-two__content">
-                                    <div className="contact-two__form__inner">
-                                        <form className="contact-two__form contact-form-validated form-one wow fadeInUp" data-wow-duration="1500ms" action="inc/sendemail.php">
-                                            <div className="form-one__group">
-                                                <div className="form-one__control form-one__control--full">
-                                                    <input type="text" name="name" placeholder="Tên Của Bạn" />
-                                                </div>
-                                                {/* <!-- /.form-one__control form-one__control__full --> */}
-                                                <div className="form-one__control form-one__control--full">
-                                                    <input type="email" name="email" placeholder="Địa Chỉ Email" />
-                                                </div>
-                                                {/* <!-- /.form-one__control form-one__control__full --> */}
-                                                <div className="form-one__control form-one__control--full">
-                                                    <input type="text" name="subject" placeholder="Tiêu Đề" />
-                                                </div>
-                                                {/* <!-- /.form-one__control form-one__control__full --> */}
-                                                <div className="form-one__control form-one__control--full">
-                                                    <textarea name="message" placeholder="Để Lại Lời Nhắn Tại Đây"></textarea>
-                                                </div>
-                                                {/* <!-- /.form-one__control --> */}
-                                                <div className="form-one__control form-one__control--full">
-                                                    <button type="submit" className="ostech-btn">
-                                                        Hoàn Thành
-                                                    </button>
-                                                </div>
-                                                {/* <!-- /.form-one__control --> */}
+                                {/* <!-- Portfolio Item --> */}
+                                {/* <!-- Portfolio Item --> */}
+                                <div className="jos" data-jos_delay="0.3">
+                                    <div className="group">
+                                        <div className="overflow-hidden rounded-[10px]">
+                                            <img
+                                                src="assets/img/th-1/portfolio-img-2.jpg"
+                                                alt="portfolio-img-2"
+                                                width="617"
+                                                height="450"
+                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+                                            />
+                                        </div>
+                                        <div className="mt-6">
+                                            <div className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
+                                                <a
+                                                    href="portfolio-details.html"
+                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorBlue xl:text-2xl"
+                                                >
+                                                    Website — The future lifestyle platform.
+                                                </a>
+                                                <a href="#" className="hover:text-ColorBlue">
+                                                    Branding
+                                                </a>
                                             </div>
-                                            {/* <!-- /.form-one__group --> */}
-                                        </form>
+                                            <a href="portfolio-details.html" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
+                                                View work
+                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
+                                                    <i className="fa-solid fa-arrow-right"></i>
+                                                </span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
+                                {/* <!-- Portfolio Item --> */}
                             </div>
+                            {/* <!-- Portfolio List --> */}
                         </div>
+                        {/* <!-- Section Container --> */}
                     </div>
-                </div>
-                <div className="contact-two__shape">
-                    <img src="/assets/images/shapes/benefit-shape-1-1.png" alt="price" />
-                </div>
-            </section>
-            {/* <!-- Contact section End --> */}
+                    {/* <!-- Section Space --> */}
 
-            {/* <!-- Blog section Start --> */}
-            <section className="blog-one blog-one--page">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="sec-title text-center wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                <div className="d-flex align-items-center justify-content-center">
-                                    <img src="/assets/images/shapes/sec-title-s-1.png" alt="Article" className="sec-title__img" />
-                                    <h6 className="sec-title__tagline">Nổi Bật</h6>
-                                </div>
-                                <h3 className="sec-title__title">
-                                    Tin Tức & Bài Viết Mới <br /> Cập Nhật
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row gutter-y-30">
-                        <div className="col-md-6 col-lg-4">
-                            <div className="blog-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                <div className="blog-card__image">
-                                    <img src="/assets/images/blog/blog-1-1.png" alt="@@title" />
-                                    <img src="/assets/images/blog/blog-1-1.png" alt="@@title" />
-                                    <a href="blog-details-right" className="blog-card__image__link">
-                                        <span className="sr-only">@@title</span>
-                                    </a>
-                                    <div className="blog-card__date">
-                                        <span>08</span>Jun
-                                    </div>
-                                </div>
-
-                                <div className="blog-card__content">
-                                    <ul className="list-unstyled blog-card__meta">
-                                        <li>
-                                            <a href="#">
-                                                <img src="/assets/images/blog/blog-author-1-1.jpg" alt="Passgenix Solutions" /> Jane Cooper
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i className="icon-bubble-chat-1"></i>2 Comments
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div className="blog-card__content__inner">
-                                        <h3 className="blog-card__title">
-                                            <a href="blog-details-right">Improving Business Growth with New Technology</a>
-                                        </h3>
-                                        <a href="blog-details-right" className="blog-card__link">
-                                            Read more<i className="icon-arrow-left"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6 col-lg-4">
-                            <div className="blog-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                                <div className="blog-card__image">
-                                    <img src="/assets/images/blog/blog-1-2.png" alt="@@title" />
-                                    <img src="/assets/images/blog/blog-1-2.png" alt="@@title" />
-                                    <a href="blog-details-right" className="blog-card__image__link">
-                                        <span className="sr-only">@@title</span>
-                                    </a>
-                                    <div className="blog-card__date">
-                                        <span>09</span>DEC
-                                    </div>
-                                </div>
-
-                                <div className="blog-card__content">
-                                    <ul className="list-unstyled blog-card__meta">
-                                        <li>
-                                            <a href="#">
-                                                <img src="/assets/images/blog/blog-author-1-2.jpg" alt="Passgenix Solutions" />
-                                                Annette Black
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i className="icon-bubble-chat-1"></i>2 Comments
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div className="blog-card__content__inner">
-                                        <h3 className="blog-card__title">
-                                            <a href="blog-details-right">Improving Business Growth with New Technology</a>
-                                        </h3>
-                                        <a href="blog-details-right" className="blog-card__link">
-                                            Read more<i className="icon-arrow-left"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6 col-lg-4">
-                            <div className="blog-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                                <div className="blog-card__image">
-                                    <img src="/assets/images/blog/blog-1-3.png" alt="@@title" />
-                                    <img src="/assets/images/blog/blog-1-3.png" alt="@@title" />
-                                    <a href="blog-details-right" className="blog-card__image__link">
-                                        <span className="sr-only">@@title</span>
-                                    </a>
-                                    <div className="blog-card__date">
-                                        <span>07</span>AUG
-                                    </div>
-                                </div>
-
-                                <div className="blog-card__content">
-                                    <ul className="list-unstyled blog-card__meta">
-                                        <li>
-                                            <a href="#">
-                                                <img src="/assets/images/blog/blog-author-1-3.jpg" alt="Passgenix Solutions" />
-                                                Eleanor Pena
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i className="icon-bubble-chat-1"></i>2 Comments
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div className="blog-card__content__inner">
-                                        <h3 className="blog-card__title">
-                                            <a href="blog-details-right">Improving Business Growth with New Technology</a>
-                                        </h3>
-                                        <a href="blog-details-right" className="blog-card__link">
-                                            Read more<i className="icon-arrow-left"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    {/* <!-- Portfolio Shape - 2 --> */}
+                    <div className="absolute right-0 top-0 -z-10">
+                        <img src="assets/img/elements/portfolio-1-shape-1.svg" alt="portfolio-1-shape-1" width="467" height="609" />
                     </div>
                 </div>
             </section>
-            {/* <!-- Blog section End --> */}
+            {/* <!--...::: Portfolio Section End :::... --> */}
+
+            {/* <!--...::: Testimonial Section Start :::... --> */}
+            <section className="section-testimonial">
+                {/* <!-- Section Background --> */}
+                <div className="bg-ColorOffWhite">
+                    {/* <!-- Section Space --> */}
+                    <div className="section-space">
+                        {/* <!-- Section Container --> */}
+                        <div className="container-custom">
+                            {/* <!-- Section Content Wrapper --> */}
+                            <div className="jos mb-[60px] xl:mb-20">
+                                {/* <!-- Section Content Block --> */}
+                                <div className="mx-auto max-w-[625px]">
+                                    <h2 className="text-center">Most of our satisfied clients leave their feedback</h2>
+                                </div>
+                                {/* <!-- Section Content Block --> */}
+                            </div>
+                            {/* <!-- Section Content Wrapper --> */}
+
+                            {/* <!-- Testimonial Area --> */}
+                            <div className="grid items-center gap-10 lg:grid-cols-2 xl:gap-20 xxl:grid-cols-[1.1fr_minmax(0,_1fr)]">
+                                <img
+                                    src="assets/img/th-1/testimonial-image-1.jpg"
+                                    alt="testimonial-image-1"
+                                    width="636"
+                                    height="446"
+                                    className="jos h-auto w-full rounded-2xl"
+                                    data-jos_animation="fade-right"
+                                />
+                                <div className="jos flex flex-col text-ColorBlack" data-jos_animation="fade-left">
+                                    <img
+                                        src="assets/img/icons/icon-blue-quote-right-reverse.svg"
+                                        alt="icon-blue-quote-right-reverse"
+                                        width="90"
+                                        height="60"
+                                        className="h-auto w-10 xl:w-[90px]"
+                                    />
+                                    <p className="mt-[30px] text-xl font-semibold leading-[1.33] -tracking-[0.5px] lg:text-2xl">
+                                        They’re probably one of the easiest vendors I’ve ever worked with in the digital space. They have our best interests in mind. The team went
+                                        the extra mile in negotiating costs and delivering within a flexible scope. They’re customer focused and strong in terms of development
+                                        quality.
+                                    </p>
+                                    <div className="mb-8 lg:mb-[50px]">
+                                        <span className="block text-xl font-semibold">Dominika Drońska</span>
+                                        <span className="block">Senior Digital Marketing Manager, Abbey Road Studios</span>
+                                    </div>
+                                    <a href="portfolio-details.html" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorBlue">
+                                        Read more reviews
+                                        <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
+                                            <i className="fa-solid fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            {/* <!-- Testimonial Area --> */}
+                        </div>
+                        {/* <!-- Section Container --> */}
+                    </div>
+                    {/* <!-- Section Space --> */}
+                </div>
+                {/* <!-- Section Background --> */}
+            </section>
+            {/* <!--...::: Testimonial Section End :::... --> */}
+
+            {/* <!--...::: FAQ Section Start :::... --> */}
+            <section className="section-faq">
+                <div className="relative z-10 overflow-hidden">
+                    {/* <!-- Section Space --> */}
+                    <div className="section-space">
+                        {/* <!-- Section Container --> */}
+                        <div className="container-default">
+                            {/* <!-- Section Content Wrapper --> */}
+                            <div className="jos mb-[60px] xl:mb-20">
+                                {/* <!-- Section Content Block --> */}
+                                <div className="mx-auto max-w-[625px]">
+                                    <h2 className="text-center">Frequently asked questions about our digital agency</h2>
+                                </div>
+                                {/* <!-- Section Content Block --> */}
+                            </div>
+                            {/* <!-- Section Content Wrapper --> */}
+                            {/* <!-- FAQ Area --> */}
+                            <div className="jos">
+                                {/* <!-- Accordion List --> */}
+                                <ul className="mx-auto max-w-[1076px] rounded-[10px] border border-ColorBlack">
+                                    {/* <!-- Accordion Item --> */}
+                                    <li className="accordion-item active overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
+                                        {/* <!-- Accordion Header --> */}
+                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
+                                            <button className="flex-1 text-left">Q. What is a digital agency?</button>
+                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
+                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
+                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
+                                            </div>
+                                        </div>
+                                        {/* <!-- Accordion Header --> */}
+                                        {/* <!-- Accordion Body --> */}
+                                        <div className="accordion-body max-w-[826px] opacity-80">
+                                            <p className="pt-5">
+                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
+                                                design, digital marketing, creative design and app development.
+                                            </p>
+                                        </div>
+                                        {/* <!-- Accordion Body --> */}
+                                    </li>
+                                    {/* <!-- Accordion Item --> */}
+                                    {/* <!-- Accordion Item --> */}
+                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
+                                        {/* <!-- Accordion Header --> */}
+                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
+                                            <button className="flex-1 text-left">Q. What services does a digital agency provide?</button>
+                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
+                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
+                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
+                                            </div>
+                                        </div>
+                                        {/* <!-- Accordion Header --> */}
+                                        {/* <!-- Accordion Body --> */}
+                                        <div className="accordion-body max-w-[826px] opacity-80">
+                                            <p className="pt-5">
+                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
+                                                design, digital marketing, creative design and app development.
+                                            </p>
+                                        </div>
+                                        {/* <!-- Accordion Body --> */}
+                                    </li>
+                                    {/* <!-- Accordion Item --> */}
+                                    {/* <!-- Accordion Item --> */}
+                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
+                                        {/* <!-- Accordion Header --> */}
+                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
+                                            <button className="flex-1 text-left">Q. Hiring a digital agency vs hiring in-house: What is the difference?</button>
+                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
+                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
+                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
+                                            </div>
+                                        </div>
+                                        {/* <!-- Accordion Header --> */}
+                                        {/* <!-- Accordion Body --> */}
+                                        <div className="accordion-body max-w-[826px] opacity-80">
+                                            <p className="pt-5">
+                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
+                                                design, digital marketing, creative design and app development.
+                                            </p>
+                                        </div>
+                                        {/* <!-- Accordion Body --> */}
+                                    </li>
+                                    {/* <!-- Accordion Item --> */}
+                                    {/* <!-- Accordion Item --> */}
+                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
+                                        {/* <!-- Accordion Header --> */}
+                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
+                                            <button className="flex-1 text-left">Q. What questions should you ask when interviewing a digital agency?</button>
+                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
+                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
+                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
+                                            </div>
+                                        </div>
+                                        {/* <!-- Accordion Header --> */}
+                                        {/* <!-- Accordion Body --> */}
+                                        <div className="accordion-body max-w-[826px] opacity-80">
+                                            <p className="pt-5">
+                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
+                                                design, digital marketing, creative design and app development.
+                                            </p>
+                                        </div>
+                                        {/* <!-- Accordion Body --> */}
+                                    </li>
+                                    {/* <!-- Accordion Item --> */}
+                                    {/* <!-- Accordion Item --> */}
+                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
+                                        {/* <!-- Accordion Header --> */}
+                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
+                                            <button className="flex-1 text-left">Q. How do digital agencies charge for their services?</button>
+                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
+                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
+                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
+                                            </div>
+                                        </div>
+                                        {/* <!-- Accordion Header --> */}
+                                        {/* <!-- Accordion Body --> */}
+                                        <div className="accordion-body max-w-[826px] opacity-80">
+                                            <p className="pt-5">
+                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
+                                                design, digital marketing, creative design and app development.
+                                            </p>
+                                        </div>
+                                        {/* <!-- Accordion Body --> */}
+                                    </li>
+                                    {/* <!-- Accordion Item --> */}
+                                </ul>
+                                {/* <!-- Accordion List --> */}
+
+                                <div className="jos mt-[60px] flex justify-center xl:mt-20">
+                                    <a href="contact.html" className="btn is-blue is-rounded btn-animation is-large group">
+                                        <span>Still, have any questions? Contact us</span>
+                                    </a>
+                                </div>
+                            </div>
+                            {/* <!-- FAQ Area --> */}
+                        </div>
+                        {/* <!-- Section Container --> */}
+                    </div>
+                    {/* <!-- Section Space --> */}
+
+                    {/* <!-- FAQ Shape - 1 --> */}
+                    <div className="absolute left-0 top-0 -z-10">
+                        <img src="assets/img/elements/faq-1-shape-1.svg" alt="service-section-shape" width="390" height="507" />
+                    </div>
+                    {/* <!-- FAQ Shape - 2 --> */}
+                    <div className="absolute bottom-0 right-0 -z-10">
+                        <img src="assets/img/elements/faq-1-shape-2.svg" alt="service-section-shape" width="467" height="609" />
+                    </div>
+                </div>
+            </section>
+            {/* <!--...::: FAQ Section End :::... --> */}
         </PageBody>
     );
 };

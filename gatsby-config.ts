@@ -27,6 +27,7 @@ const config: GatsbyConfig = {
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
         "gatsby-plugin-sass",
+        "gatsby-plugin-postcss",
         {
             resolve: "gatsby-plugin-google-gtag",
             options: {
@@ -39,7 +40,7 @@ const config: GatsbyConfig = {
         {
             resolve: "gatsby-plugin-manifest",
             options: {
-                icon: "static/assets/images/favicons/android-chrome-512x512.png",
+                icon: "static/assets/img/favicon.png",
             },
         },
         "gatsby-plugin-mdx",
