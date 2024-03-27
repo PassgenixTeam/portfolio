@@ -75,6 +75,10 @@
         @apply text-base font-bold  transition-all duration-[400ms] ease-in-out;
     }
 
+    .is-primary {
+        @apply border-ColorPrimary bg-ColorPrimary text-white hover:bg-transparent hover:text-ColorPrimary;
+    }
+
     .is-blue {
         @apply border-ColorBlue bg-ColorBlue text-white hover:bg-transparent hover:text-ColorBlue;
     }
@@ -282,7 +286,7 @@
     @apply first:bg-black;
 }
 .accordion-item.active .accordion-icon-6 span {
-    @apply first:bg-[#0000FF];
+    @apply first:bg-ColorPrimary;
 }
 
 .accordion-item.active .accordion-icon-6 span:last-child {

@@ -1,13 +1,13 @@
-const menu = document.querySelector(".menu-block");
-const menuMain = menu.querySelector(".site-menu-main");
-const submenuAll = menu.querySelectorAll(".sub-menu");
-const goBack = menu.querySelector(".go-back");
-const menuTrigger = document.querySelector(".mobile-menu-trigger");
-const closeMenu = menu.querySelector(".mobile-menu-close");
+var menu = document.querySelector(".menu-block");
+var menuMain = menu.querySelector(".site-menu-main");
+var submenuAll = menu.querySelectorAll(".sub-menu");
+var goBack = menu.querySelector(".go-back");
+var menuTrigger = document.querySelector(".mobile-menu-trigger");
+var closeMenu = menu.querySelector(".mobile-menu-close");
 
-let subMenu;
-let subMenuArray = [];
-let subMenuTextArray = [];
+var subMenu;
+var subMenuArray = [];
+var subMenuTextArray = [];
 
 function last(array) {
     return array[array.length - 1];

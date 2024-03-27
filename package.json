@@ -1,52 +1,49 @@
 {
-    "name": "passgenix-team",
-    "version": "1.0.0",
+    "name": "gatsby-starter-default",
     "private": true,
-    "description": "passgenix-team",
-    "author": "Nguyễn Lê Anh Minh",
-    "keywords": [
-        "gatsby"
-    ],
-    "scripts": {
-        "develop": "gatsby develop",
-        "start": "gatsby develop",
-        "build": "gatsby build",
-        "serve": "gatsby serve",
-        "clean": "gatsby clean",
-        "lint": "prettier . --write --ignore-unknown",
-        "typecheck": "tsc --noEmit",
-        "prepare": "husky"
-    },
+    "description": "A simple starter to get up and developing quickly with Gatsby",
+    "version": "0.1.0",
+    "author": "Kyle Mathews <mathews.kyle@gmail.com>",
     "dependencies": {
-        "@contentful/rich-text-react-renderer": "^15.19.6",
-        "@mdx-js/react": "^3.0.1",
+        "autoprefixer": "^10.4.19",
         "classnames": "^2.5.1",
         "gatsby": "^5.13.3",
-        "gatsby-plugin-google-gtag": "^5.13.1",
         "gatsby-plugin-image": "^3.13.1",
         "gatsby-plugin-manifest": "^5.13.1",
-        "gatsby-plugin-mdx": "^5.13.1",
         "gatsby-plugin-postcss": "^6.13.1",
-        "gatsby-plugin-sass": "^6.13.1",
         "gatsby-plugin-sharp": "^5.13.1",
-        "gatsby-plugin-sitemap": "^6.13.1",
         "gatsby-source-contentful": "^8.13.1",
         "gatsby-source-filesystem": "^5.13.1",
         "gatsby-transformer-sharp": "^5.13.1",
         "postcss": "^8.4.38",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "sass": "^1.71.1",
         "tailwindcss": "^3.4.1"
     },
     "devDependencies": {
-        "@types/node": "^20.11.19",
-        "@types/react": "^18.2.55",
-        "@types/react-dom": "^18.2.19",
         "husky": "^9.0.11",
         "lint-staged": "^15.2.2",
-        "prettier": "3.2.5",
-        "typescript": "^5.3.3"
+        "prettier": "^2.8.8"
     },
-    "packageManager": "yarn@3.6.3"
+    "keywords": [
+        "gatsby"
+    ],
+    "license": "0BSD",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\" --ignore-unknown",
+        "start": "gatsby develop",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "prepare": "husky"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    },
+    "bugs": {
+        "url": "https://github.com/gatsbyjs/gatsby/issues"
+    },
+    "packageManager": "yarn@4.1.1"
 }

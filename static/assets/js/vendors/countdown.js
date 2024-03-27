@@ -1,5 +1,5 @@
 // Count Down
-const countDownClock = (number = 100, format = "seconds") => {
+export const countDownClock = (number = 100, format = "seconds") => {
     const d = document;
     const daysElement = d.querySelector(".days");
     const hoursElement = d.querySelector(".hours");

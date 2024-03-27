@@ -4,6 +4,7 @@ const PageBody: React.FC<{
     children?: React.ReactNode;
 }> = ({ children }) => {
     React.useEffect(() => {
+        // Put custom scripts here
         const scriptInfos: Record<string, { path: string } & Record<string, any>> = {
             countdown_js: {
                 path: "/assets/js/vendors/countdown.js",

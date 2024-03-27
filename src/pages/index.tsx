@@ -16,318 +16,263 @@ const HomePage: React.FC<
         <PageBody>
             {/* <!--...::: Hero Section Start :::... --> */}
             <section className="section-hero">
-                <div className="relative z-10 overflow-hidden bg-[#FAF9F5]">
-                    {/* <!-- Section Space --> */}
+                {/* <!-- Section Background --> */}
+                <div className="relative z-10 overflow-hidden">
+                    {/* <!-- Hero Section Space --> */}
                     <div className="pb-[60px] pt-28 md:pb-20 md:pt-36 lg:pb-[100px] lg:pt-[150px] xxl:pb-[120px] xxl:pt-[185px]">
                         {/* <!-- Section Container --> */}
-                        <div className="container-custom">
+                        <div className="container-default">
                             {/* <!-- Hero Area --> */}
-                            <div className="grid gap-10 lg:grid-cols-2 xxl:grid-cols-[1.1fr_minmax(0,_1fr)]">
+                            <div>
                                 {/* <!-- Hero Content Block --> */}
-                                <div className="jos">
-                                    <div className="has-container-custom">
-                                        <h1 className="mb-6">We focus on growing your brand online</h1>
-                                        <p>
-                                            Build world-class digital products with a team of design, development & strategy experts. All in one place. We can provide your business
-                                            with a variety of digital solutions.
-                                        </p>
-                                        <form action="#" method="post" className="relative mx-auto flex w-full items-center sm:w-[80%] lg:mx-0 lg:mt-5 lg:max-w-md">
-                                            <input
-                                                type="email"
-                                                placeholder="Enter your email"
-                                                className="w-full rounded-[50px] border border-ColorBlack bg-white px-5 py-[15px] pr-40 text-base font-semibold text-opacity-50 outline-none"
-                                            />
-                                            <button type="submit" className="btn is-blue is-rounded absolute right-[5px] py-[10px]">
-                                                Subscribe
-                                            </button>
-                                        </form>
-                                        <div className="mt-5 text-sm leading-6 md:justify-normal">
-                                            <span className="mr-2 inline-block text-lg text-ColorBlue">
-                                                <i className="fa-solid fa-badge-check"></i>
-                                            </span>
-                                            <span className="opacity-50">No credit card is required. You can cancel anytime</span>
-                                        </div>
-                                    </div>
+                                <div className="jos mb-6 max-w-xl lg:max-w-2xl xl:max-w-3xl xxl:max-w-[1076px]">
+                                    <h1 className="mb-6 font-Syne text-[40px] font-semibold uppercase leading-none -tracking-[2px] text-black sm:text-5xl lg:text-6xl xl:text-[90px]">
+                                        Smart Solutions for a Modern era
+                                    </h1>
                                 </div>
                                 {/* <!-- Hero Content Block --> */}
 
                                 {/* <!-- Hero Image Block --> */}
-                                <div className="jos">
-                                    <div className="relative flex items-center justify-center">
-                                        <img src="assets/img/th-1/hero-img.jpg" alt="hero image" width="600" height="579" className="h-auto w-full" />
-                                        <a
-                                            data-fslightbox="gallery"
-                                            href="https://www.youtube.com/watch?v=3nQNiWdeH2Q"
-                                            className="group group absolute flex h-[100px] w-[100px] items-center justify-center rounded-[50%] bg-white text-ColorBlue"
-                                            aria-label="video-play"
-                                        >
-                                            <span className="text-2xl transition-all duration-300 ease-linear group-hover:scale-110">
-                                                <i className="fa-solid fa-play"></i>
-                                            </span>
+                                <div className="relative mx-auto my-[60px] max-w-[1296px] overflow-hidden rounded-tl-[10px] rounded-tr-[10px]">
+                                    <img src="assets/img/th-15/hero-img.jpg" alt="hero-img" width="1296" height="550" data-jos_animation="zoom-in-down" className="h-auto w-full" />
+                                </div>
+                                {/* <!-- Hero Image Block --> */}
+
+                                <div className="flex flex-col items-start justify-between gap-x-[200px] xl:flex-row xl:items-center">
+                                    <p className="text-2xl font-semibold text-[#2C2C2C] xl:max-w-[665px]">
+                                        We are dedicated to shaping the future. In the fast-paced world of technology, our company stands as a beacon of innovation and progress.
+                                    </p>
+                                    <div className="mb-3 flex flex-wrap gap-6">
+                                        <a href="#" className="btn is-primary is-transparent btn-animation is-large group inline-block rounded-[3px]">
+                                            <span> Talk To Us </span>
+                                        </a>
+                                        <a href="#" className="btn is-outline-black btn-animation is-large inline-block rounded-[3px]">
+                                            <span>View Our Services</span>
                                         </a>
                                     </div>
                                 </div>
-                                {/* <!-- Hero Image Block --> */}
                             </div>
                             {/* <!-- Hero Area --> */}
                         </div>
                         {/* <!-- Section Container --> */}
                     </div>
-                    {/* <!-- Section Space --> */}
-
-                    {/* <!-- Hero Shape - 1 --> */}
-                    <div className="absolute left-0 top-0 -z-10">
-                        <img src="assets/img/elements/hero-1-shape-1.svg" alt="hero-shape-1" width="607" height="792" className="" />
-                    </div>
-
-                    {/* <!-- Hero Shape - 2 --> */}
-                    <div className="absolute bottom-0 right-0 -z-[1]">
-                        <img src="assets/img/elements/hero-1-shape-2.svg" alt="hero-shape-2" width="607" height="792" />
-                    </div>
+                    {/* <!-- Hero Section Space --> */}
                 </div>
+                {/* <!-- Section Background --> */}
             </section>
             {/* <!--...::: Hero Section End :::... --> */}
-
-            {/* <!--...::: Brand Section Start :::... --> */}
-            <div className="section-brand">
-                <div className="jos">
-                    {/* <!-- Section Space --> */}
-                    <div className="py-[60px] md:py-20 lg:py-[100px]">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-default">
-                            <div className="mx-auto mb-10 max-w-[80%] text-center text-xl font-semibold leading-[1.4] opacity-70 md:mb-16 lg:mb-20 lg:max-w-2xl">
-                                From start-ups to Fortune 500, we partner with brands of all sizes
-                            </div>
-                            {/* <!-- Brand Slider --> */}
-                            <div className="swiper brand-slider">
-                                {/* <!-- Additional required wrapper --> */}
-                                <div className="swiper-wrapper">
-                                    {/* <!-- Slides --> */}
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-1.png" alt="brand-1" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-2.png" alt="brand-2" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-3.png" alt="brand-3" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-4.png" alt="brand-4" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-5.png" alt="brand-5" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-1.png" alt="brand-1" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-2.png" alt="brand-2" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-3.png" alt="brand-3" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-4.png" alt="brand-4" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <img src="assets/img/th-1/brand-5.png" alt="brand-5" width="186" height="46" className="h-auto w-fit" />
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!-- Brand Slider --> */}
-                        </div>
-                        {/* <!-- Section Container --> */}
-                    </div>
-                    {/* <!-- Section Space --> */}
-                </div>
-            </div>
-            {/* <!--...::: Brand Section End :::... --> */}
 
             {/* <!-- Horizontal Line Separator --> */}
             <div className="horizontal-line bg-ColorBlack"></div>
             {/* <!-- Horizontal Line Separator --> */}
 
+            {/* <!--...::: Fun-fact Section Start :::... --> */}
+            <section className="section-fan-fact">
+                {/* <!-- Section Space --> */}
+                <div className="section-space">
+                    {/* <!-- Section Container --> */}
+                    <div className="container-default">
+                        {/* <!-- Section Wrapper --> */}
+                        <div className="jos mb-[60px]">
+                            <div className="mx-auto max-w-[843px]">
+                                {/* <!-- Section Block --> */}
+                                <div className="mb-5">
+                                    <h2 className="text-center font-Syne text-4xl font-semibold uppercase leading-[1.07] text-black sm:text-5xl lg:text-6xl xl:text-[65px]">
+                                        impactful numbers
+                                    </h2>
+                                </div>
+                                {/* <!-- Section Block --> */}
+                            </div>
+                        </div>
+                        {/* <!-- Section Wrapper --> */}
+
+                        {/* <!-- Fun-fact Area --> */}
+                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            {/* <!-- Fun-fact Single Block --> */}
+                            <div className="jos rounded-[10px] bg-white p-10 shadow-[0_4px_80px_0px_rgba(0,0,0,0.06)]" data-jos_delay="0">
+                                <div
+                                    className="mb-[5px] font-Syne text-6xl font-semibold uppercase leading-[1.5] text-ColorPrimary lg:text-7xl xl:text-[90px]"
+                                    data-module="countup"
+                                >
+                                    <span className="start-number text-black" data-countup-number="15">
+                                        15
+                                    </span>
+                                    +
+                                </div>
+                                <span className="text-lg text-black lg:text-xl">We have worked with reputation for the last 15 years</span>
+                            </div>
+                            {/* <!-- Fun-fact Single Block --> */}
+                            {/* <!-- Fun-fact Single Block --> */}
+                            <div className="jos rounded-[10px] bg-white p-10 shadow-[0_4px_80px_0px_rgba(0,0,0,0.06)]" data-jos_delay="0.3">
+                                <div
+                                    className="mb-[5px] font-Syne text-6xl font-semibold uppercase leading-[1.5] text-ColorPrimary lg:text-7xl xl:text-[90px]"
+                                    data-module="countup"
+                                >
+                                    <span className="start-number text-black" data-countup-number="2">
+                                        2
+                                    </span>
+                                    M+
+                                </div>
+                                <span className="text-lg text-black lg:text-xl">Worked with 2M clients in different countries around the world</span>
+                            </div>
+                            {/* <!-- Fun-fact Single Block --> */}
+                            {/* <!-- Fun-fact Single Block --> */}
+                            <div className="jos rounded-[10px] bg-white p-10 shadow-[0_4px_80px_0px_rgba(0,0,0,0.06)]" data-jos_delay="0.6">
+                                <div
+                                    className="mb-[5px] font-Syne text-6xl font-semibold uppercase leading-[1.5] text-ColorPrimary lg:text-7xl xl:text-[90px]"
+                                    data-module="countup"
+                                >
+                                    <span className="start-number text-black" data-countup-number="99">
+                                        99
+                                    </span>
+                                    %
+                                </div>
+                                <span className="text-lg text-black lg:text-xl">About 99% of our clients express their satisfaction with our work</span>
+                            </div>
+                            {/* <!-- Fun-fact Single Block --> */}
+                        </div>
+                        {/* <!-- Fun-fact Area --> */}
+                    </div>
+                    {/* <!-- Section Container --> */}
+                </div>
+                {/* <!-- Section Space --> */}
+            </section>
+            {/* <!--...::: Fun-fact Section End :::... --> */}
+
             {/* <!--...::: Service Section Start :::... --> */}
             <section className="section-service">
-                <div className="relative z-10 overflow-hidden">
+                {/* <!-- Section Background --> */}
+                <div className="bg-black">
                     {/* <!-- Section Space --> */}
                     <div className="section-space">
                         {/* <!-- Section Container --> */}
-                        <div className="container-custom">
-                            {/* <!-- Section Content Wrapper --> */}
-                            <div className="jos mb-[60px] xl:mb-20">
-                                {/* <!-- Section Content Block --> */}
-                                <div className="mx-auto max-w-[590px]">
-                                    <h2 className="text-center">All the digital services that are convenient for you</h2>
+                        <div className="container-default">
+                            {/* <!-- Section Wrapper --> */}
+                            <div className="jos mb-[60px]">
+                                <div className="max-w-[789px]">
+                                    {/* <!-- Section Block --> */}
+                                    <div className="mb-5">
+                                        <h2 className="font-Syne text-4xl font-semibold uppercase leading-[1.07] text-white sm:text-5xl lg:text-6xl xl:text-[65px]">
+                                            impactful numbers
+                                        </h2>
+                                    </div>
+                                    {/* <!-- Section Block --> */}
                                 </div>
-                                {/* <!-- Section Content Block --> */}
                             </div>
-                            {/* <!-- Section Content Wrapper --> */}
+                            {/* <!-- Section Wrapper --> */}
 
                             {/* <!-- Service List --> */}
-                            <div className="grid gap-6 sm:grid-cols-2">
+                            <div className="grid grid-cols-1 gap-y-6">
                                 {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="assets/img/icons/icon-black-service-1.svg"
-                                                    alt="icon-service-1"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="assets/img/icons/icon-blue-service-1.svg"
-                                                    alt="icon-service-1"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Branding & Digital Strategies
-                                                </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Brand strategy is all about developing a unique identity that distinguishes your business from
-                                                </p>
-                                                <a
-                                                    href="service-details.html"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue"
-                                                >
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
+                                <div className="jos">
+                                    <div className="group flex h-full flex-col items-start justify-between gap-10 gap-x-[50px] rounded-[5px] border border-[#414141] p-10 md:flex-row md:items-center lg:gap-x-10">
+                                        <div className="flex-1">
+                                            <div className="mb-6 font-Syne text-3xl font-semibold leading-none text-white lg:text-[35px]">Digital Transformation</div>
+                                            <p className="max-w-[898px] text-xl leading-[1.33] text-white lg:text-2xl">
+                                                We partner with CTOs and CIOs to co-create and execute long-term digital strategies that increase sales, brand awareness, and
+                                                operational efficiency.
+                                            </p>
                                         </div>
+                                        <a href="service-details.html" className="relative flex h-[43px] w-[43px] items-center justify-center overflow-hidden">
+                                            <img
+                                                src="assets/img/icons/icon-white-top-right.svg"
+                                                alt="icon-white-top-right"
+                                                width="43"
+                                                height="43"
+                                                className="absolute inset-0 transition-all duration-300 group-hover:-translate-y-full group-hover:translate-x-full"
+                                            />
+                                            <img
+                                                src="assets/img/icons/icon-blue-top-right.svg"
+                                                alt="icon-blue-top-right"
+                                                width="43"
+                                                height="43"
+                                                className="absolute inset-0 -translate-x-full translate-y-full transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                                            />
+                                        </a>
                                     </div>
                                 </div>
                                 {/* <!-- Service Item --> */}
                                 {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0.3">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="assets/img/icons/icon-black-service-2.svg"
-                                                    alt="icon-service-2"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="assets/img/icons/icon-blue-service-2.svg"
-                                                    alt="icon-service-2"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Web Design & App Development
-                                                </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Web design & development is an umbrella term that describes the process of creating a website
-                                                </p>
-                                                <a
-                                                    href="service-details.html"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue"
-                                                >
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
+                                <div className="jos">
+                                    <div className="group flex h-full flex-col items-start justify-between gap-10 gap-x-[50px] rounded-[5px] border border-[#414141] p-10 md:flex-row md:items-center lg:gap-x-10">
+                                        <div className="flex-1">
+                                            <div className="mb-6 font-Syne text-3xl font-semibold leading-none text-white lg:text-[35px]">E-Commerce Development</div>
+                                            <p className="max-w-[898px] text-xl leading-[1.33] text-white lg:text-2xl">
+                                                We build high converting, fast-loading, headless eCommerce websites for enterprise brands, that accelerate growth.
+                                            </p>
                                         </div>
+                                        <a href="service-details.html" className="relative flex h-[43px] w-[43px] items-center justify-center overflow-hidden">
+                                            <img
+                                                src="assets/img/icons/icon-white-top-right.svg"
+                                                alt="icon-white-top-right"
+                                                width="43"
+                                                height="43"
+                                                className="absolute inset-0 transition-all duration-300 group-hover:-translate-y-full group-hover:translate-x-full"
+                                            />
+                                            <img
+                                                src="assets/img/icons/icon-blue-top-right.svg"
+                                                alt="icon-blue-top-right"
+                                                width="43"
+                                                height="43"
+                                                className="absolute inset-0 -translate-x-full translate-y-full transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                                            />
+                                        </a>
                                     </div>
                                 </div>
                                 {/* <!-- Service Item --> */}
                                 {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0.6">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="assets/img/icons/icon-black-service-3.svg"
-                                                    alt="icon-service-3"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="assets/img/icons/icon-blue-service-3.svg"
-                                                    alt="icon-service-3"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Results-Driven Digital Marketing
-                                                </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Digital marketing potential customers using the internet & other forms of digital communication
-                                                </p>
-                                                <a
-                                                    href="service-details.html"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue"
-                                                >
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
+                                <div className="jos">
+                                    <div className="group flex h-full flex-col items-start justify-between gap-10 gap-x-[50px] rounded-[5px] border border-[#414141] p-10 md:flex-row md:items-center lg:gap-x-10">
+                                        <div className="flex-1">
+                                            <div className="mb-6 font-Syne text-3xl font-semibold leading-none text-white lg:text-[35px]">Custom Software Development</div>
+                                            <p className="max-w-[898px] text-xl leading-[1.33] text-white lg:text-2xl">
+                                                We work with startups and global enterprises to design and develop custom web & mobile apps that drive their business forward.
+                                            </p>
                                         </div>
+                                        <a href="service-details.html" className="relative flex h-[43px] w-[43px] items-center justify-center overflow-hidden">
+                                            <img
+                                                src="assets/img/icons/icon-white-top-right.svg"
+                                                alt="icon-white-top-right"
+                                                width="43"
+                                                height="43"
+                                                className="absolute inset-0 transition-all duration-300 group-hover:-translate-y-full group-hover:translate-x-full"
+                                            />
+                                            <img
+                                                src="assets/img/icons/icon-blue-top-right.svg"
+                                                alt="icon-blue-top-right"
+                                                width="43"
+                                                height="43"
+                                                className="absolute inset-0 -translate-x-full translate-y-full transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                                            />
+                                        </a>
                                     </div>
                                 </div>
                                 {/* <!-- Service Item --> */}
                                 {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0.9">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-ColorOffWhite hover:bg-ColorOffWhite lg:p-10 h-full">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="assets/img/icons/icon-black-service-4.svg"
-                                                    alt="icon-service-4"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="assets/img/icons/icon-blue-service-4.svg"
-                                                    alt="icon-service-4"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Custom Software Development
-                                                </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Custom Software Development is the process of conceptualizing, designing, building & deploying
-                                                </p>
-                                                <a
-                                                    href="service-details.html"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue"
-                                                >
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
+                                <div className="jos">
+                                    <div className="group flex h-full flex-col items-start justify-between gap-10 gap-x-[50px] rounded-[5px] border border-[#414141] p-10 md:flex-row md:items-center lg:gap-x-10">
+                                        <div className="flex-1">
+                                            <div className="mb-6 font-Syne text-3xl font-semibold leading-none text-white lg:text-[35px]">Website Design & Development</div>
+                                            <p className="max-w-[898px] text-xl leading-[1.33] text-white lg:text-2xl">
+                                                We design and develop beautiful websites that deliver best-in-class experiences to your users.
+                                            </p>
                                         </div>
+                                        <a href="service-details.html" className="relative flex h-[43px] w-[43px] items-center justify-center overflow-hidden">
+                                            <img
+                                                src="assets/img/icons/icon-white-top-right.svg"
+                                                alt="icon-white-top-right"
+                                                width="43"
+                                                height="43"
+                                                className="absolute inset-0 transition-all duration-300 group-hover:-translate-y-full group-hover:translate-x-full"
+                                            />
+                                            <img
+                                                src="assets/img/icons/icon-blue-top-right.svg"
+                                                alt="icon-blue-top-right"
+                                                width="43"
+                                                height="43"
+                                                className="absolute inset-0 -translate-x-full translate-y-full transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                                            />
+                                        </a>
                                     </div>
                                 </div>
                                 {/* <!-- Service Item --> */}
@@ -337,275 +282,297 @@ const HomePage: React.FC<
                         {/* <!-- Section Container --> */}
                     </div>
                     {/* <!-- Section Space --> */}
-
-                    {/* <!-- Service Shape --> */}
-                    <div className="absolute bottom-0 left-0 -z-10">
-                        <img src="assets/img/elements/service-1-shape-1.svg" alt="service-section-shape" width="390" height="507" />
-                    </div>
-                    {/* <!-- Service Shape --> */}
                 </div>
+                {/* <!-- Section Background --> */}
             </section>
             {/* <!--...::: Service Section End :::... --> */}
 
             {/* <!--...::: Content Section Start :::... --> */}
             <section className="section-content">
-                {/* <!-- Section Background --> */}
-                <div className="bg-ColorOffWhite">
-                    {/* <!-- Section Spacer --> */}
-                    <div className="section-space">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-custom">
-                            <div className="flex flex-col gap-y-20 lg:gap-y-[100px] xl:gap-y-[120px]">
-                                {/* <!-- Content Area Single --> */}
-                                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-24 xl:grid-cols-[1.2fr_minmax(0,_1fr)] xl:gap-[135px]">
-                                    {/* <!-- Content Block Left --> */}
-                                    <div className="jos" data-jos_animation="fade-right">
-                                        {/* <!-- Section Wrapper --> */}
-                                        <div>
-                                            {/* <!-- Section Block --> */}
-                                            <div className="mb-5">
-                                                <h2>Boost the effectiveness of your promotions as well as polish your branding</h2>
-                                            </div>
-                                            {/* <!-- Section Block --> */}
+                {/* <!-- Section Space --> */}
+                <div className="section-space">
+                    {/* <!-- Section Container --> */}
+                    <div className="container-default">
+                        <div className="flex flex-col gap-y-20 lg:gap-y-[100px] xl:gap-y-[120px]">
+                            {/* <!-- Content Area Single --> */}
+                            <div className="grid items-center gap-10 lg:grid-cols-[0.7fr_minmax(0,_1fr)] lg:gap-24 xl:gap-[110px]">
+                                {/* <!-- Content Block Left --> */}
+                                <div className="jos order-1 lg:order-2" data-jos_animation="fade-right">
+                                    {/* <!-- Section Wrapper --> */}
+                                    <div>
+                                        {/* <!-- Section Block --> */}
+                                        <div className="mb-6">
+                                            <h2 className="font-Syne text-4xl font-semibold uppercase leading-[1.07] text-black sm:text-5xl lg:text-6xl xl:text-[65px]">
+                                                Know about us
+                                            </h2>
                                         </div>
-                                        {/* <!-- Section Wrapper --> */}
-                                        <p>
-                                            SINCE 1998, we transform bold business ideas into exceptional digital products. We ideate, design, and develop data-driven digital
-                                            products made to answer business challenges.
-                                        </p>
-                                        <p>We offer 360° services to smoothly guide you on your way to creating a seamless digital masterpiece projects on budget and on time.</p>
+                                        {/* <!-- Section Block --> */}
                                     </div>
-                                    {/* <!-- Content Block Left --> */}
-                                    {/* <!-- Content Block Right --> */}
-                                    <div className="jos relative" data-jos_animation="fade-left">
-                                        <div className="rounded-[10px] bg-[#FCEDCF] p-[30px] lg:p-10 xl:p-[50px]">
-                                            {/* <!-- Content Image --> */}
-                                            <img src="assets/img/th-1/content-img-1.jpg" alt="content-img-1" width="426" height="398" className="h-auto w-full rounded-[10px]" />
-                                        </div>
-                                        {/* <!-- Content Shape --> */}
-                                        <img src="assets/img/elements/content-shape-1.svg" alt="content-shape-1" width="168" height="61" className="absolute -right-16 -top-16" />
-                                    </div>
-                                    {/* <!-- Content Block Right --> */}
-                                </div>
-                                {/* <!-- Content Area Single --> */}
+                                    {/* <!-- Section Wrapper --> */}
+                                    {/* <!-- Content Text --> */}
+                                    <p className="text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                        We started our journey in January 2010. We are innovation-driven and dedicated to shaping the future through forward-thinking and
+                                        cutting-edge technology solutions. Founded by a team of visionary engineers & entrepreneurs.
+                                    </p>
+                                    <p className="text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                        We believe that technology should not only meet the needs of today but also anticipate the challenges of tomorrow. We are committed to
+                                        creating products & services that empower individuals and businesses, making their digital experiences smarter, safer, and more efficient.
+                                    </p>
+                                    {/* <!-- Content Text --> */}
 
-                                {/* <!-- Content Area Single --> */}
-                                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-24 xl:grid-cols-[1fr_minmax(0,_1.2fr)] xl:gap-[135px]">
-                                    {/* <!-- Content Block Left --> */}
-                                    <div className="jos lg:order-2" data-jos_animation="fade-left">
-                                        {/* <!-- Section Wrapper --> */}
-                                        <div>
-                                            {/* <!-- Section Block --> */}
-                                            <div className="mb-5">
-                                                <h2>Discover the latest digital strategies & emerging ideas for business growth</h2>
-                                            </div>
-                                            {/* <!-- Section Block --> */}
-                                        </div>
-                                        {/* <!-- Section Wrapper --> */}
-                                        <p>Our brand tenders and marketing mixologists always serve up unique, design-forward websites coded with today’s modern technologies</p>
-                                        <ul className="flex flex-col gap-5 font-semibold text-ColorBlack">
-                                            <li>
-                                                <span className="mr-3 inline-block text-xl text-ColorBlue">
-                                                    <i className="fa-solid fa-badge-check"></i>
-                                                </span>
-                                                Reach new business opportunities or test your product ideas.
-                                            </li>
-                                            <li>
-                                                <span className="mr-3 inline-block text-xl text-ColorBlue">
-                                                    <i className="fa-solid fa-badge-check"></i>
-                                                </span>
-                                                Automate your processes and get data-driven business insights.
-                                            </li>
-                                            <li>
-                                                <span className="mr-3 inline-block text-xl text-ColorBlue">
-                                                    <i className="fa-solid fa-badge-check"></i>
-                                                </span>
-                                                Create lightweight, scalable, and easly accessible cloud solution.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    {/* <!-- Content Block Left --> */}
-                                    {/* <!-- Content Block Right --> */}
-                                    <div className="jos relative lg:order-1" data-jos_animation="fade-right">
-                                        <div className="rounded-[10px] bg-[#BEF8FC] p-[30px] lg:p-10 xl:p-[50px]">
-                                            {/* <!-- Content Image --> */}
-                                            <img src="assets/img/th-1/content-img-2.jpg" alt="content-img-1" width="426" height="398" className="h-auto w-full rounded-[10px]" />
-                                        </div>
-                                        {/* <!-- Content Shape --> */}
-                                        <img src="assets/img/elements/content-shape-2.svg" alt="content-shape-1" width="107" height="105" className="absolute -bottom-1 -left-1" />
-                                    </div>
-                                    {/* <!-- Content Block Right --> */}
+                                    <a href="#" className="btn is-primary is-transparent btn-animation is-large group mt-8 inline-block rounded-[3px]">
+                                        <span> Discover More </span>
+                                    </a>
                                 </div>
-                                {/* <!-- Content Area Single --> */}
+                                {/* <!-- Content Block Left --> */}
+                                {/* <!-- Content Block Right --> */}
+                                <div className="jos order-2 lg:order-1" data-jos_animation="fade-left">
+                                    <div className="w-full overflow-hidden rounded-[5px] mx-auto lg:mx-0 max-w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-full">
+                                        <img src="assets/img/th-15/content-img-1.jpg" alt="content-img-1" width="526" height="550" className="h-auto w-full" />
+                                    </div>
+                                </div>
+                                {/* <!-- Content Block Right --> */}
                             </div>
+                            {/* <!-- Content Area Single --> */}
+
+                            {/* <!-- Content Area Single --> */}
+                            <div className="grid items-center gap-10 lg:grid-cols-[1fr_minmax(0,_0.75fr)] lg:gap-24 xl:gap-[110px]">
+                                {/* <!-- Content Block Left --> */}
+                                <div className="jos" data-jos_animation="fade-right">
+                                    {/* <!-- Section Wrapper --> */}
+                                    <div>
+                                        {/* <!-- Section Block --> */}
+                                        <div className="mb-6">
+                                            <h2 className="font-Syne text-4xl font-semibold uppercase leading-[1.07] text-black sm:text-5xl lg:text-6xl xl:text-[65px]">
+                                                Why choose us
+                                            </h2>
+                                        </div>
+                                        {/* <!-- Section Block --> */}
+                                    </div>
+                                    {/* <!-- Section Wrapper --> */}
+                                    {/* <!-- Content Text --> */}
+                                    <p className="text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                        Our core values include the relentless pursuit of excellence, a commitment to ethical and responsible tech development, and a dedication to
+                                        continuous learning.
+                                    </p>
+                                    {/* <!-- Content Text --> */}
+
+                                    {/* <!-- Content List --> */}
+                                    <ul className="flex list-inside flex-col gap-y-8 text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                        {/* <!-- Content Item --> */}
+                                        <li className="flex gap-x-[10px]">
+                                            <span className="mr-3 mt-[3px] text-ColorPrimary">
+                                                <i className="fa-solid fa-circle-check"></i>
+                                            </span>
+                                            <p>
+                                                <strong className="font-semibold text-black">Expertise & Specialization:</strong>
+                                                We’re experts in respective fields. They specialize in various aspects of technology.
+                                            </p>
+                                        </li>
+                                        {/* <!-- Content Item --> */}
+                                        {/* <!-- Content Item --> */}
+                                        <li className="flex gap-x-[10px]">
+                                            <span className="mr-3 mt-[3px] text-ColorPrimary">
+                                                <i className="fa-solid fa-circle-check"></i>
+                                            </span>
+                                            <p>
+                                                <strong className="font-semibold text-black">Cost Efficiency:</strong>
+                                                We can also scale services up or down based on making it a flexible and cost-efficient option.
+                                            </p>
+                                        </li>
+                                        {/* <!-- Content Item --> */}
+                                        {/* <!-- Content Item --> */}
+                                        <li className="flex gap-x-[10px]">
+                                            <span className="mr-3 mt-[3px] text-ColorPrimary">
+                                                <i className="fa-solid fa-circle-check"></i>
+                                            </span>
+                                            <p>
+                                                <strong className="font-semibold text-black">Security & Compliance:</strong>
+                                                Help businesses maintain high levels of security and ensure compliance with industry-specific regulations.
+                                            </p>
+                                        </li>
+                                        {/* <!-- Content Item --> */}
+                                    </ul>
+                                    {/* <!-- Content List --> */}
+                                </div>
+                                {/* <!-- Content Block Left --> */}
+                                {/* <!-- Content Block Right --> */}
+                                <div className="jos" data-jos_animation="fade-left">
+                                    <div className="w-full overflow-hidden rounded-[10px] mx-auto lg:mx-0 max-w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-full">
+                                        <img src="assets/img/th-15/content-img-2.jpg" alt="content-img-2" width="526" height="550" className="h-auto w-full" />
+                                    </div>
+                                </div>
+                                {/* <!-- Content Block Right --> */}
+                            </div>
+                            {/* <!-- Content Area Single --> */}
                         </div>
-                        {/* <!-- Section Container --> */}
                     </div>
-                    {/* <!-- Section Spacer --> */}
+                    {/* <!-- Section Container --> */}
                 </div>
-                {/* <!-- Section Background --> */}
+                {/* <!-- Section Space --> */}
             </section>
             {/* <!--...::: Content Section End :::... --> */}
 
-            {/* <!--...::: Portfolio Section Start :::... --> */}
-            <section className="section-portfolio">
-                <div className="relative z-10 overflow-hidden">
+            {/* <!--...::: Work Process Section Start :::... --> */}
+            <section className="section-work-process">
+                {/* <!-- Section Space --> */}
+                <div className="section-space-bottom">
+                    {/* <!-- Section Container --> */}
+                    <div className="container-default">
+                        {/* <!-- Section Wrapper --> */}
+                        <div className="jos mb-[60px]">
+                            <div className="mx-auto max-w-[843px]">
+                                {/* <!-- Section Block --> */}
+                                <div className="mb-5">
+                                    <h2 className="text-center font-Syne text-4xl font-semibold uppercase leading-[1.07] text-black sm:text-5xl lg:text-6xl xl:text-[65px]">
+                                        Our work process
+                                    </h2>
+                                </div>
+                                {/* <!-- Section Block --> */}
+                            </div>
+                        </div>
+                        {/* <!-- Section Wrapper --> */}
+
+                        {/* <!-- Process Area --> */}
+                        <div className="relative">
+                            {/* <!-- Process Top Border --> */}
+                            <div className="hidden h-[3px] w-full overflow-hidden rounded-[50px] bg-[#EAEDF0] lg:block"></div>
+                            {/* <!-- Process List --> */}
+                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-[30px]">
+                                {/* <!-- Process Item --> */}
+                                <div className="jos group relative lg:pt-[30px]" data-jos_delay="0">
+                                    <div className="mb-6 font-Syne text-3xl font-semibold leading-none text-black lg:text-[26px] xl:text-3xl xxl:text-[35px]">
+                                        1. Project Discovery
+                                    </div>
+                                    <p className="m-0 text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                        We create a detailed project plan with work outlines, milestones, timelines.
+                                    </p>
+                                    <div className="absolute -top-[3px] left-0 hidden h-[3px] w-full scale-x-0 overflow-hidden rounded-[50px] bg-ColorPrimary transition-all duration-300 group-hover:scale-x-100 lg:block"></div>
+                                </div>
+                                {/* <!-- Process Item --> */}
+                                {/* <!-- Process Item --> */}
+                                <div className="jos group relative lg:pt-[30px]" data-jos_delay="0.3">
+                                    <div className="mb-6 font-Syne text-3xl font-semibold leading-none text-black lg:text-[26px] xl:text-3xl xxl:text-[35px]">
+                                        2. Implementation
+                                    </div>
+                                    <p className="m-0 text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                        Developers & engineers is essential in creating the necessary solutions.
+                                    </p>
+                                    <div className="absolute -top-[3px] left-0 hidden h-[3px] w-full scale-x-0 overflow-hidden rounded-[50px] bg-ColorPrimary transition-all duration-300 group-hover:scale-x-100 lg:block"></div>
+                                </div>
+                                {/* <!-- Process Item --> */}
+                                {/* <!-- Process Item --> */}
+                                <div className="jos group relative lg:pt-[30px]" data-jos_delay="0.6">
+                                    <div className="mb-6 font-Syne text-3xl font-semibold leading-none text-black lg:text-[26px] xl:text-3xl xxl:text-[35px]">3. Establishment</div>
+                                    <p className="m-0 text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                        Includes all functional performance testing, testing, and security testing.
+                                    </p>
+                                    <div className="absolute -top-[3px] left-0 hidden h-[3px] w-full scale-x-0 overflow-hidden rounded-[50px] bg-ColorPrimary transition-all duration-300 group-hover:scale-x-100 lg:block"></div>
+                                </div>
+                                {/* <!-- Process Item --> */}
+                            </div>
+                            {/* <!-- Process List --> */}
+                        </div>
+                        {/* <!-- Process Area --> */}
+                    </div>
+                    {/* <!-- Section Container --> */}
+                </div>
+                {/* <!-- Section Space --> */}
+            </section>
+            {/* <!--...::: Work Process Section End :::... --> */}
+
+            {/* <!--...::: Team Section Start :::... --> */}
+            <section className="section-team">
+                {/* <!-- Section Background --> */}
+                <div className="bg-black">
                     {/* <!-- Section Space --> */}
                     <div className="section-space">
                         {/* <!-- Section Container --> */}
                         <div className="container-default">
                             {/* <!-- Section Wrapper --> */}
-                            <div className="jos mb-[60px] flex flex-wrap items-end justify-between gap-8 xl:mb-20">
-                                {/* <!-- Section Block --> */}
-                                <div className="max-w-[550px]">
-                                    <h2>We create world-class web design, & branding</h2>
+                            <div className="jos mb-[60px]">
+                                <div className="max-w-[789px]">
+                                    {/* <!-- Section Block --> */}
+                                    <div className="mb-5">
+                                        <h2 className="font-Syne text-4xl font-semibold uppercase leading-[1.07] text-white sm:text-5xl lg:text-6xl xl:text-[65px]">
+                                            Meet our team
+                                        </h2>
+                                    </div>
+                                    {/* <!-- Section Block --> */}
                                 </div>
-                                {/* <!-- Section Block --> */}
-                                <a href="portfolio.html" className="btn is-blue is-rounded btn-animation is-large group">
-                                    <span>See more works</span>
-                                </a>
                             </div>
                             {/* <!-- Section Wrapper --> */}
 
-                            {/* <!-- Portfolio List --> */}
-                            <div className="grid gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]">
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="assets/img/th-1/portfolio-img-1.jpg"
-                                                alt="portfolio-img-1"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="portfolio-details.html"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    App — The power of communication
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    UI/UX Design
-                                                </a>
-                                            </div>
-                                            <a href="portfolio-details.html" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
+                            {/* <!-- Team List --> */}
+                            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                                {/* <!-- Team Item --> */}
+                                <div className="jos rounded-[5px] bg-[#2C2C2C] p-5" data-jos_animation="flip-left" data-jos_delay="0">
+                                    <div className="mb-6 w-full overflow-hidden rounded-[6px] md:h-80 lg:h-60 xl:h-80">
+                                        <img src="assets/img/th-15/team-img-1.jpg" alt="team-img-1" width="376" height="320" className="h-full w-full object-cover object-top" />
+                                    </div>
+                                    <div className="">
+                                        <div className="mb-[5px] font-Syne text-2xl font-semibold text-white">Adam Smith</div>
+                                        <span className="text-xl text-white">Founder & CEO</span>
                                     </div>
                                 </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0.3">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="assets/img/th-1/portfolio-img-2.jpg"
-                                                alt="portfolio-img-2"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="portfolio-details.html"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Website — The future lifestyle platform.
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Branding
-                                                </a>
-                                            </div>
-                                            <a href="portfolio-details.html" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
+                                {/* <!-- Team Item --> */}
+                                {/* <!-- Team Item --> */}
+                                <div className="jos rounded-[5px] bg-[#2C2C2C] p-5" data-jos_animation="flip-left" data-jos_delay="0.3">
+                                    <div className="mb-6 w-full overflow-hidden rounded-[6px] md:h-80 lg:h-60 xl:h-80">
+                                        <img src="assets/img/th-15/team-img-2.jpg" alt="team-img-2" width="376" height="320" className="h-full w-full object-cover object-top" />
+                                    </div>
+                                    <div className="">
+                                        <div className="mb-[5px] font-Syne text-2xl font-semibold text-white">Jones Marco</div>
+                                        <span className="text-xl text-white">Chief Operating Officer</span>
                                     </div>
                                 </div>
-                                {/* <!-- Portfolio Item --> */}
-                            </div>
-                            {/* <!-- Portfolio List --> */}
-                        </div>
-                        {/* <!-- Section Container --> */}
-                    </div>
-                    {/* <!-- Section Space --> */}
-
-                    {/* <!-- Portfolio Shape - 2 --> */}
-                    <div className="absolute right-0 top-0 -z-10">
-                        <img src="assets/img/elements/portfolio-1-shape-1.svg" alt="portfolio-1-shape-1" width="467" height="609" />
-                    </div>
-                </div>
-            </section>
-            {/* <!--...::: Portfolio Section End :::... --> */}
-
-            {/* <!--...::: Testimonial Section Start :::... --> */}
-            <section className="section-testimonial">
-                {/* <!-- Section Background --> */}
-                <div className="bg-ColorOffWhite">
-                    {/* <!-- Section Space --> */}
-                    <div className="section-space">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-custom">
-                            {/* <!-- Section Content Wrapper --> */}
-                            <div className="jos mb-[60px] xl:mb-20">
-                                {/* <!-- Section Content Block --> */}
-                                <div className="mx-auto max-w-[625px]">
-                                    <h2 className="text-center">Most of our satisfied clients leave their feedback</h2>
-                                </div>
-                                {/* <!-- Section Content Block --> */}
-                            </div>
-                            {/* <!-- Section Content Wrapper --> */}
-
-                            {/* <!-- Testimonial Area --> */}
-                            <div className="grid items-center gap-10 lg:grid-cols-2 xl:gap-20 xxl:grid-cols-[1.1fr_minmax(0,_1fr)]">
-                                <img
-                                    src="assets/img/th-1/testimonial-image-1.jpg"
-                                    alt="testimonial-image-1"
-                                    width="636"
-                                    height="446"
-                                    className="jos h-auto w-full rounded-2xl"
-                                    data-jos_animation="fade-right"
-                                />
-                                <div className="jos flex flex-col text-ColorBlack" data-jos_animation="fade-left">
-                                    <img
-                                        src="assets/img/icons/icon-blue-quote-right-reverse.svg"
-                                        alt="icon-blue-quote-right-reverse"
-                                        width="90"
-                                        height="60"
-                                        className="h-auto w-10 xl:w-[90px]"
-                                    />
-                                    <p className="mt-[30px] text-xl font-semibold leading-[1.33] -tracking-[0.5px] lg:text-2xl">
-                                        They’re probably one of the easiest vendors I’ve ever worked with in the digital space. They have our best interests in mind. The team went
-                                        the extra mile in negotiating costs and delivering within a flexible scope. They’re customer focused and strong in terms of development
-                                        quality.
-                                    </p>
-                                    <div className="mb-8 lg:mb-[50px]">
-                                        <span className="block text-xl font-semibold">Dominika Drońska</span>
-                                        <span className="block">Senior Digital Marketing Manager, Abbey Road Studios</span>
+                                {/* <!-- Team Item --> */}
+                                {/* <!-- Team Item --> */}
+                                <div className="jos rounded-[5px] bg-[#2C2C2C] p-5" data-jos_animation="flip-left" data-jos_delay="0.6">
+                                    <div className="mb-6 w-full overflow-hidden rounded-[6px] md:h-80 lg:h-60 xl:h-80">
+                                        <img src="assets/img/th-15/team-img-3.jpg" alt="team-img-3" width="376" height="320" className="h-full w-full object-cover object-top" />
                                     </div>
-                                    <a href="portfolio-details.html" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorBlue">
-                                        Read more reviews
-                                        <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </span>
-                                    </a>
+                                    <div className="">
+                                        <div className="mb-[5px] font-Syne text-2xl font-semibold text-white">Marsal Joy</div>
+                                        <span className="text-xl text-white">General Manager</span>
+                                    </div>
                                 </div>
+                                {/* <!-- Team Item --> */}
+                                {/* <!-- Team Item --> */}
+                                <div className="jos rounded-[5px] bg-[#2C2C2C] p-5" data-jos_animation="flip-left" data-jos_delay="0.9">
+                                    <div className="mb-6 w-full overflow-hidden rounded-[6px] md:h-80 lg:h-60 xl:h-80">
+                                        <img src="assets/img/th-15/team-img-4.jpg" alt="team-img-4" width="376" height="320" className="h-full w-full object-cover object-top" />
+                                    </div>
+                                    <div className="">
+                                        <div className="mb-[5px] font-Syne text-2xl font-semibold text-white">Douglas Luhan</div>
+                                        <span className="text-xl text-white">Sales Executive</span>
+                                    </div>
+                                </div>
+                                {/* <!-- Team Item --> */}
+                                {/* <!-- Team Item --> */}
+                                <div className="jos rounded-[5px] bg-[#2C2C2C] p-5" data-jos_animation="flip-left" data-jos_delay="1.2">
+                                    <div className="mb-6 w-full overflow-hidden rounded-[6px] md:h-80 lg:h-60 xl:h-80">
+                                        <img src="assets/img/th-15/team-img-5.jpg" alt="team-img-5" width="376" height="320" className="h-full w-full object-cover object-top" />
+                                    </div>
+                                    <div className="">
+                                        <div className="mb-[5px] font-Syne text-2xl font-semibold text-white">Alex Taylor</div>
+                                        <span className="text-xl text-white">Web Developer</span>
+                                    </div>
+                                </div>
+                                {/* <!-- Team Item --> */}
+                                {/* <!-- Team Item --> */}
+                                <div className="jos rounded-[5px] bg-[#2C2C2C] p-5" data-jos_animation="flip-left" data-jos_delay="1.5">
+                                    <div className="mb-6 w-full overflow-hidden rounded-[6px] md:h-80 lg:h-60 xl:h-80">
+                                        <img src="assets/img/th-15/team-img-6.jpg" alt="team-img-6" width="376" height="320" className="h-full w-full object-cover object-top" />
+                                    </div>
+                                    <div className="">
+                                        <div className="mb-[5px] font-Syne text-2xl font-semibold text-white">Henry Fayol</div>
+                                        <span className="text-xl text-white">UI/UX Designer</span>
+                                    </div>
+                                </div>
+                                {/* <!-- Team Item --> */}
                             </div>
-                            {/* <!-- Testimonial Area --> */}
+                            {/* <!-- Team List --> */}
                         </div>
                         {/* <!-- Section Container --> */}
                     </div>
@@ -613,159 +580,281 @@ const HomePage: React.FC<
                 </div>
                 {/* <!-- Section Background --> */}
             </section>
-            {/* <!--...::: Testimonial Section End :::... --> */}
+            {/* <!--...::: Team Section End :::... --> */}
 
             {/* <!--...::: FAQ Section Start :::... --> */}
             <section className="section-faq">
-                <div className="relative z-10 overflow-hidden">
+                {/* <!-- Section Space --> */}
+                <div className="section-space">
+                    {/* <!-- Section Container --> */}
+                    <div className="container-default">
+                        {/* <!-- Section Wrapper --> */}
+                        <div className="jos mb-[60px]">
+                            <div className="mx-auto max-w-[843px]">
+                                {/* <!-- Section Block --> */}
+                                <div className="mb-5">
+                                    <h2 className="text-center font-Syne text-4xl font-semibold uppercase leading-[1.07] text-black sm:text-5xl lg:text-6xl xl:text-[65px]">
+                                        We're often asked
+                                    </h2>
+                                </div>
+                                {/* <!-- Section Block --> */}
+                            </div>
+                        </div>
+                        {/* <!-- Section Wrapper --> */}
+
+                        {/* <!-- FAQ Area --> */}
+                        <div className="jos">
+                            {/* <!-- Accordion List --> */}
+                            <ul className="-mb-[60px]">
+                                {/* <!-- Accordion Item --> */}
+                                <li className="accordion-item active overflow-hidden border-b border-[#EAEDF0] py-[60px] first:pt-0 last:border-b-0">
+                                    {/* <!-- Accordion Header --> */}
+                                    <div className="accordion-header flex justify-between gap-6 font-Syne text-3xl font-semibold leading-none text-black lg:text-[26px] xl:text-3xl xxl:text-[35px]">
+                                        <button className="flex-1 text-left">What does your tech company do?</button>
+                                        <div className="accordion-icon-6 relative flex h-[50px] w-[50px] items-center justify-center">
+                                            <span className="inline-block h-1 w-8 rounded-sm bg-black lg:w-10 xl:h-[7px] xl:w-[50px]"></span>
+                                            <span className="absolute inline-block h-8 w-1 rotate-0 rounded-sm bg-black lg:h-10 xl:h-[50px] xl:w-[7px]"></span>
+                                        </div>
+                                    </div>
+                                    {/* <!-- Accordion Header --> */}
+                                    {/* <!-- Accordion Body --> */}
+                                    <div className="accordion-body max-w-[898px] opacity-80">
+                                        <p className="pt-5 text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                            Masco Innovations is not just a tech company; it's a catalyst for progress, a hub of innovation, and a partner in your digital journey &
+                                            connected future of technology.
+                                        </p>
+                                    </div>
+                                    {/* <!-- Accordion Body --> */}
+                                </li>
+                                {/* <!-- Accordion Item --> */}
+                                {/* <!-- Accordion Item --> */}
+                                <li className="accordion-item overflow-hidden border-b border-[#EAEDF0] py-[60px] first:pt-0 last:border-b-0">
+                                    {/* <!-- Accordion Header --> */}
+                                    <div className="accordion-header flex justify-between gap-6 font-Syne text-3xl font-semibold leading-none text-black lg:text-[26px] xl:text-3xl xxl:text-[35px]">
+                                        <button className="flex-1 text-left">What industries or sectors do you serve?</button>
+                                        <div className="accordion-icon-6 relative flex h-[50px] w-[50px] items-center justify-center">
+                                            <span className="inline-block h-1 w-8 rounded-sm bg-black lg:w-10 xl:h-[7px] xl:w-[50px]"></span>
+                                            <span className="absolute inline-block h-8 w-1 rotate-0 rounded-sm bg-black lg:h-10 xl:h-[50px] xl:w-[7px]"></span>
+                                        </div>
+                                    </div>
+                                    {/* <!-- Accordion Header --> */}
+                                    {/* <!-- Accordion Body --> */}
+                                    <div className="accordion-body max-w-[898px] opacity-80">
+                                        <p className="pt-5 text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                            Masco Innovations is not just a tech company; it's a catalyst for progress, a hub of innovation, and a partner in your digital journey &
+                                            connected future of technology.
+                                        </p>
+                                    </div>
+                                    {/* <!-- Accordion Body --> */}
+                                </li>
+                                {/* <!-- Accordion Item --> */}
+                                {/* <!-- Accordion Item --> */}
+                                <li className="accordion-item overflow-hidden border-b border-[#EAEDF0] py-[60px] first:pt-0 last:border-b-0">
+                                    {/* <!-- Accordion Header --> */}
+                                    <div className="accordion-header flex justify-between gap-6 font-Syne text-3xl font-semibold leading-none text-black lg:text-[26px] xl:text-3xl xxl:text-[35px]">
+                                        <button className="flex-1 text-left">How much does a custom software solution cost?</button>
+                                        <div className="accordion-icon-6 relative flex h-[50px] w-[50px] items-center justify-center">
+                                            <span className="inline-block h-1 w-8 rounded-sm bg-black lg:w-10 xl:h-[7px] xl:w-[50px]"></span>
+                                            <span className="absolute inline-block h-8 w-1 rotate-0 rounded-sm bg-black lg:h-10 xl:h-[50px] xl:w-[7px]"></span>
+                                        </div>
+                                    </div>
+                                    {/* <!-- Accordion Header --> */}
+                                    {/* <!-- Accordion Body --> */}
+                                    <div className="accordion-body max-w-[898px] opacity-80">
+                                        <p className="pt-5 text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                            Masco Innovations is not just a tech company; it's a catalyst for progress, a hub of innovation, and a partner in your digital journey &
+                                            connected future of technology.
+                                        </p>
+                                    </div>
+                                    {/* <!-- Accordion Body --> */}
+                                </li>
+                                {/* <!-- Accordion Item --> */}
+                                {/* <!-- Accordion Item --> */}
+                                <li className="accordion-item overflow-hidden border-b border-[#EAEDF0] py-[60px] first:pt-0 last:border-b-0">
+                                    {/* <!-- Accordion Header --> */}
+                                    <div className="accordion-header flex justify-between gap-6 font-Syne text-3xl font-semibold leading-none text-black lg:text-[26px] xl:text-3xl xxl:text-[35px]">
+                                        <button className="flex-1 text-left">Is data protection and privacy secure?</button>
+                                        <div className="accordion-icon-6 relative flex h-[50px] w-[50px] items-center justify-center">
+                                            <span className="inline-block h-1 w-8 rounded-sm bg-black lg:w-10 xl:h-[7px] xl:w-[50px]"></span>
+                                            <span className="absolute inline-block h-8 w-1 rotate-0 rounded-sm bg-black lg:h-10 xl:h-[50px] xl:w-[7px]"></span>
+                                        </div>
+                                    </div>
+                                    {/* <!-- Accordion Header --> */}
+                                    {/* <!-- Accordion Body --> */}
+                                    <div className="accordion-body max-w-[898px] opacity-80">
+                                        <p className="pt-5 text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                            Masco Innovations is not just a tech company; it's a catalyst for progress, a hub of innovation, and a partner in your digital journey &
+                                            connected future of technology.
+                                        </p>
+                                    </div>
+                                    {/* <!-- Accordion Body --> */}
+                                </li>
+                                {/* <!-- Accordion Item --> */}
+                                {/* <!-- Accordion Item --> */}
+                                <li className="accordion-item overflow-hidden border-b border-[#EAEDF0] py-[60px] first:pt-0 last:border-b-0">
+                                    {/* <!-- Accordion Header --> */}
+                                    <div className="accordion-header flex justify-between gap-6 font-Syne text-3xl font-semibold leading-none text-black lg:text-[26px] xl:text-3xl xxl:text-[35px]">
+                                        <button className="flex-1 text-left">Which software is right for me?</button>
+                                        <div className="accordion-icon-6 relative flex h-[50px] w-[50px] items-center justify-center">
+                                            <span className="inline-block h-1 w-8 rounded-sm bg-black lg:w-10 xl:h-[7px] xl:w-[50px]"></span>
+                                            <span className="absolute inline-block h-8 w-1 rotate-0 rounded-sm bg-black lg:h-10 xl:h-[50px] xl:w-[7px]"></span>
+                                        </div>
+                                    </div>
+                                    {/* <!-- Accordion Header --> */}
+                                    {/* <!-- Accordion Body --> */}
+                                    <div className="accordion-body max-w-[898px] opacity-80">
+                                        <p className="pt-5 text-lg leading-[1.33] -tracking-[0.5px] text-[#2C2C2C] md:text-xl xl:text-2xl">
+                                            Masco Innovations is not just a tech company; it's a catalyst for progress, a hub of innovation, and a partner in your digital journey &
+                                            connected future of technology.
+                                        </p>
+                                    </div>
+                                    {/* <!-- Accordion Body --> */}
+                                </li>
+                                {/* <!-- Accordion Item --> */}
+                            </ul>
+                            {/* <!-- Accordion List --> */}
+                        </div>
+                        {/* <!-- FAQ Area --> */}
+                    </div>
+                    {/* <!-- Section Container --> */}
+                </div>
+                {/* <!-- Section Space --> */}
+            </section>
+            {/* <!--...::: FAQ Section End :::... --> */}
+
+            {/* <!--...::: CTA Section Start :::... --> */}
+            <section className="section-cta">
+                {/* <!-- Section Background --> */}
+                <div className="bg-ColorPrimary">
                     {/* <!-- Section Space --> */}
                     <div className="section-space">
                         {/* <!-- Section Container --> */}
                         <div className="container-default">
-                            {/* <!-- Section Content Wrapper --> */}
-                            <div className="jos mb-[60px] xl:mb-20">
-                                {/* <!-- Section Content Block --> */}
-                                <div className="mx-auto max-w-[625px]">
-                                    <h2 className="text-center">Frequently asked questions about our digital agency</h2>
-                                </div>
-                                {/* <!-- Section Content Block --> */}
-                            </div>
-                            {/* <!-- Section Content Wrapper --> */}
-                            {/* <!-- FAQ Area --> */}
-                            <div className="jos">
-                                {/* <!-- Accordion List --> */}
-                                <ul className="mx-auto max-w-[1076px] rounded-[10px] border border-ColorBlack">
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item active overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. What is a digital agency?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
+                            <div className="grid grid-cols-1 gap-[60px] lg:grid-cols-[1fr_minmax(0,_0.7fr)] xl:gap-20">
+                                {/* <!-- CTA Left Block --> */}
+                                <div className="text-white">
+                                    {/* <!-- Section Wrapper --> */}
+                                    <div className="jos" data-jos_animation="fade-left">
+                                        <div className="max-w-[789px]">
+                                            {/* <!-- Section Block --> */}
+                                            <div className="mb-5">
+                                                <h2 className="font-Syne text-4xl font-semibold uppercase leading-[1.07] text-white sm:text-5xl lg:text-6xl xl:text-[65px]">
+                                                    Are you ready to get started?
+                                                </h2>
                                             </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
+                                            {/* <!-- Section Block --> */}
+                                            <p className="mb-0 max-w-[636px] text-lg leading-[1.33] -tracking-[0.5px] md:text-xl xl:text-2xl">
+                                                Join us on this exciting journey as we continue to redefine what is possible with ever-evolving technology.
                                             </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. What services does a digital agency provide?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. Hiring a digital agency vs hiring in-house: What is the difference?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. What questions should you ask when interviewing a digital agency?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. How do digital agencies charge for their services?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                </ul>
-                                {/* <!-- Accordion List --> */}
 
-                                <div className="jos mt-[60px] flex justify-center xl:mt-20">
-                                    <a href="contact.html" className="btn is-blue is-rounded btn-animation is-large group">
-                                        <span>Still, have any questions? Contact us</span>
-                                    </a>
+                                            <div className="mt-8 lg:mt-[50px]">
+                                                <a href="#" className="btn is-outline-white btn-animation is-large inline-block rounded-[3px]">
+                                                    <span>View Our Services</span>
+                                                </a>
+                                            </div>
+
+                                            <p className="mb-8 mt-16 text-sm md:mt-20 lg:mb-[50px] lg:mt-[100px] xl:mt-[120px]">
+                                                We have collaborated with several esteemed organizations.
+                                            </p>
+                                            <div className="flex flex-wrap gap-x-[60px] gap-y-8">
+                                                <div className="h-auto max-w-[170px]">
+                                                    <img src="assets/img/th-15/brand-1.png" alt="brand-1" width="170" height="36" />
+                                                </div>
+                                                <div className="h-auto max-w-[170px]">
+                                                    <img src="assets/img/th-15/brand-2.png" alt="brand-2" width="173" height="34" />
+                                                </div>
+                                                <div className="h-auto max-w-[170px]">
+                                                    <img src="assets/img/th-15/brand-3.png" alt="brand-3" width="170" height="36" />
+                                                </div>
+                                                <div className="h-auto max-w-[170px]">
+                                                    <img src="assets/img/th-15/brand-4.png" alt="brand-4" width="165" height="29" />
+                                                </div>
+                                                <div className="h-auto max-w-[170px]">
+                                                    <img src="assets/img/th-15/brand-5.png" alt="brand-5" width="158" height="34" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* <!-- Section Wrapper --> */}
                                 </div>
+                                {/* <!-- CTA Left Block --> */}
+
+                                {/* <!-- CTA Right Block --> */}
+                                <div className="jos rounded-[5px] bg-white p-10" data-jos_animation="fade-right">
+                                    <form action="#" method="post" className="flex flex-col gap-y-6">
+                                        <div className="flex flex-col">
+                                            <label htmlFor="cta-name" className="mb-[10px] font-semibold text-black">
+                                                Your name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="cta-name"
+                                                id="cta-name"
+                                                className="rounded-[5px] border border-[#B8C1CC] px-4 py-2 outline-none transition-all duration-150 focus:border-ColorPrimary focus:text-black lg:px-[30px] lg:py-[15px]"
+                                                placeholder="Enter your full name"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <label htmlFor="cta-email" className="mb-[10px] font-semibold text-black">
+                                                Email address
+                                            </label>
+                                            <input
+                                                type="email"
+                                                name="cta-email"
+                                                id="cta-email"
+                                                className="rounded-[5px] border border-[#B8C1CC] px-4 py-2 outline-none transition-all duration-150 focus:border-ColorPrimary focus:text-black lg:px-[30px] lg:py-[15px]"
+                                                placeholder="Enter your email"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <label htmlFor="cta-service" className="mb-[10px] font-semibold text-black">
+                                                Email address
+                                            </label>
+                                            <select
+                                                name="cta-service"
+                                                id="cta-service"
+                                                className="rounded-[5px] border border-[#B8C1CC] px-4 py-2 outline-none transition-all duration-150 focus:border-ColorPrimary focus:text-black lg:px-[30px] lg:py-[15px]"
+                                                required
+                                            >
+                                                <option value="">Select a service</option>
+                                                <option value="ui/ux design">ui/ux design</option>
+                                                <option value="web development">web development</option>
+                                                <option value="cloud hosting">cloud hosting</option>
+                                            </select>
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <label htmlFor="cta-message" className="mb-[10px] font-semibold text-black">
+                                                Write your message
+                                            </label>
+                                            <textarea
+                                                name="cta-message"
+                                                id="cta-message"
+                                                className="min-h-[120px] w-full rounded-[5px] border border-[#B8C1CC] px-4 py-2 outline-none transition-all duration-150 focus:border-ColorPrimary focus:text-black lg:px-[30px] lg:py-[15px]"
+                                                placeholder="Write us your question here..."
+                                                required
+                                            ></textarea>
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            className="btn is-large rounded-[3px] border-ColorPrimary bg-ColorPrimary text-white hover:bg-white hover:text-ColorPrimary"
+                                        >
+                                            Send Message
+                                        </button>
+                                    </form>
+                                </div>
+                                {/* <!-- CTA Right Block --> */}
                             </div>
-                            {/* <!-- FAQ Area --> */}
                         </div>
                         {/* <!-- Section Container --> */}
                     </div>
                     {/* <!-- Section Space --> */}
-
-                    {/* <!-- FAQ Shape - 1 --> */}
-                    <div className="absolute left-0 top-0 -z-10">
-                        <img src="assets/img/elements/faq-1-shape-1.svg" alt="service-section-shape" width="390" height="507" />
-                    </div>
-                    {/* <!-- FAQ Shape - 2 --> */}
-                    <div className="absolute bottom-0 right-0 -z-10">
-                        <img src="assets/img/elements/faq-1-shape-2.svg" alt="service-section-shape" width="467" height="609" />
-                    </div>
                 </div>
+                {/* <!-- Section Background --> */}
             </section>
-            {/* <!--...::: FAQ Section End :::... --> */}
+            {/* <!--...::: CTA Section End :::... --> */}
         </PageBody>
     );
 };
