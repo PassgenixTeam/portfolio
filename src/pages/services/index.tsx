@@ -1,175 +1,55 @@
 import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
-import PageHead from "../components/page-head/page-head";
-import PageBody from "../components/page-body/page-body";
+import PageHead from "../../components/page-head/page-head";
+import PageBody from "../../components/page-body/page-body";
 
-const HomePage: React.FC<
-    PageProps<{
-        allContentfulProject: Queries.ContentfulProjectGroupConnection;
-        allContentfulService: Queries.ContentfulServiceGroupConnection;
-    }>
-> = ({ data }) => {
-    const projects = data.allContentfulProject.nodes;
-    const services = data.allContentfulService.nodes;
-
+const ServicePage: React.FC<PageProps> = ({ data }) => {
     return (
         <PageBody>
-            {/* <!--...::: Hero Section Start :::... --> */}
-            <section className="section-hero">
-                <div className="relative z-10 overflow-hidden bg-[#FAF9F5]">
-                    {/* <!-- Section Space --> */}
-                    <div className="pb-[60px] pt-28 md:pb-20 md:pt-36 lg:pb-[100px] lg:pt-[150px] xxl:pb-[120px] xxl:pt-[185px]">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-custom">
-                            {/* <!-- Hero Area --> */}
-                            <div className="grid gap-10 lg:grid-cols-2 xxl:grid-cols-[1.1fr_minmax(0,_1fr)]">
-                                {/* <!-- Hero Content Block --> */}
-                                <div className="jos">
-                                    <div className="has-container-custom">
-                                        <h1 className="mb-6">We bring innovative solutions.</h1>
-                                        <p>
-                                            Augment your internal development resources with a team of highly skilled technologists. Achieve operational efficiency and
-                                            cost-effectiveness while accelerating your time to market.
-                                        </p>
-                                        <form action="#" method="post" className="relative mx-auto flex w-full items-center sm:w-[80%] lg:mx-0 lg:mt-5 lg:max-w-md">
-                                            <input
-                                                type="email"
-                                                placeholder="Enter your email"
-                                                className="w-full rounded-[50px] border border-ColorBlack bg-white px-5 py-[15px] pr-40 text-base font-semibold text-opacity-50 outline-none"
-                                            />
-                                            <button type="submit" className="btn is-blue is-rounded absolute right-[5px] py-[10px]">
-                                                Subscribe
-                                            </button>
-                                        </form>
-                                        <div className="mt-5 text-sm leading-6 md:justify-normal">
-                                            <span className="mr-2 inline-block text-lg text-ColorPrimary">
-                                                <i className="fa-solid fa-badge-check"></i>
-                                            </span>
-                                            <span className="opacity-50">No credit card is required. You can cancel anytime</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Hero Content Block --> */}
-
-                                {/* <!-- Hero Image Block --> */}
-                                <div className="jos">
-                                    <div className="relative flex items-center justify-center">
-                                        <img src="/assets/img/th-1/hero-img.jpg" alt="hero image" width="600" height="579" className="h-auto w-full" />
-                                        <a
-                                            data-fslightbox="gallery"
-                                            href="/https://www.youtube.com/watch?v=3nQNiWdeH2Q"
-                                            className="group group absolute flex h-[100px] w-[100px] items-center justify-center rounded-[50%] bg-white text-ColorPrimary"
-                                            aria-label="video-play"
-                                        >
-                                            <span className="text-2xl transition-all duration-300 ease-linear group-hover:scale-110">
-                                                <i className="fa-solid fa-play"></i>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                {/* <!-- Hero Image Block --> */}
-                            </div>
-                            {/* <!-- Hero Area --> */}
+            {/* <!--...::: Breadcrumb Section Start :::... --> */}
+            <section className="section-breadcrumb">
+                {/* <!-- Breadcrumb Section Spacer --> */}
+                <div className="breadcrumb-wrapper">
+                    {/* <!-- Section Container --> */}
+                    <div className="container-default">
+                        <div className="breadcrumb-block">
+                            <h1 className="breadcrumb-title">Our Services</h1>
+                            <ul className="breadcrumb-nav">
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>Our Services</li>
+                            </ul>
                         </div>
-                        {/* <!-- Section Container --> */}
                     </div>
-                    {/* <!-- Section Space --> */}
+                    {/* <!-- Section Container --> */}
 
-                    {/* <!-- Hero Shape - 1 --> */}
+                    {/* <!-- Breadcrumb Shape - 1 --> */}
                     <div className="absolute left-0 top-0 -z-10">
-                        <img src="/assets/img/elements/hero-1-shape-1.svg" alt="hero-shape-1" width="607" height="792" className="" />
+                        <img src="/assets/img/elements/breadcrumb-shape-1.svg" alt="hero-shape-1" width="291" height="380" />
                     </div>
 
-                    {/* <!-- Hero Shape - 2 --> */}
+                    {/* <!-- Breadcrumb Shape - 2 --> */}
                     <div className="absolute bottom-0 right-0 -z-[1]">
-                        <img src="/assets/img/elements/hero-1-shape-2.svg" alt="hero-shape-2" width="607" height="792" />
+                        <img src="/assets/img/elements/breadcrumb-shape-2.svg" alt="hero-shape-2" width="291" height="380" />
                     </div>
                 </div>
+                {/* <!-- Breadcrumb Section Spacer --> */}
             </section>
-            {/* <!--...::: Hero Section End :::... --> */}
-
-            {/* <!--...::: Brand Section Start :::... --> */}
-            <div className="section-brand">
-                <div className="jos">
-                    {/* <!-- Section Space --> */}
-                    <div className="py-[60px] md:py-20 lg:py-[100px]">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-default">
-                            <div className="mx-auto mb-10 max-w-[80%] text-center text-xl font-semibold leading-[1.4] opacity-70 md:mb-16 lg:mb-20 lg:max-w-2xl">
-                                We are familiar with the latest technologies and frameworks
-                            </div>
-                            {/* <!-- Brand Slider --> */}
-                            <div className="swiper brand-slider">
-                                {/* <!-- Additional required wrapper --> */}
-                                <div className="swiper-wrapper">
-                                    {/* <!-- Slides --> */}
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-1.png" alt="brand-1" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-2.png" alt="brand-2" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-3.png" alt="brand-3" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-4.png" alt="brand-4" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-5.png" alt="brand-5" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-1.png" alt="brand-1" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-2.png" alt="brand-2" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-3.png" alt="brand-3" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-4.png" alt="brand-4" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-5.png" alt="brand-5" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Brand Slider --> */}
-                        </div>
-                        {/* <!-- Section Container --> */}
-                    </div>
-                    {/* <!-- Section Space --> */}
-                </div>
-            </div>
-            {/* <!--...::: Brand Section End :::... --> */}
-
-            {/* <!-- Horizontal Line Separator --> */}
-            <div className="horizontal-line bg-ColorBlack"></div>
-            {/* <!-- Horizontal Line Separator --> */}
+            {/* <!--...::: Breadcrumb Section End :::... --> */}
 
             {/* <!--...::: Service Section Start :::... --> */}
-            <section className="section-service">
+            <div className="section-service">
                 <div className="relative z-10 overflow-hidden">
                     {/* <!-- Section Space --> */}
                     <div className="section-space">
                         {/* <!-- Section Container --> */}
-                        <div className="container-custom">
-                            {/* <!-- Section Content Wrapper --> */}
-                            <div className="jos mb-[60px] xl:mb-20">
-                                {/* <!-- Section Content Block --> */}
-                                <div className="mx-auto max-w-[590px]">
-                                    <h2 className="text-center">All the common services that are suitable for you</h2>
-                                </div>
-                                {/* <!-- Section Content Block --> */}
-                            </div>
-                            {/* <!-- Section Content Wrapper --> */}
-
+                        <div className="container-default">
                             {/* <!-- Service List --> */}
                             <div className="grid gap-6 sm:grid-cols-2">
                                 {/* <!-- Service Item --> */}
                                 <div className="jos" data-jos_delay="0">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
+                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
                                         <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
                                             <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
                                                 <img
@@ -188,12 +68,13 @@ const HomePage: React.FC<
                                                 />
                                             </div>
                                             <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">AI & Machine Learning</div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">Empower your projects with intelligent automation and data-driven insights.</p>
-                                                <a
-                                                    href="/service-details"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
-                                                >
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Branding & Digital Strategies
+                                                </div>
+                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
+                                                    Brand strategy is all about developing a unique identity that distinguishes your business from
+                                                </p>
+                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
                                                     Find out more
                                                     <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
                                                         <i className="fa-solid fa-arrow-right"></i>
@@ -206,7 +87,7 @@ const HomePage: React.FC<
                                 {/* <!-- Service Item --> */}
                                 {/* <!-- Service Item --> */}
                                 <div className="jos" data-jos_delay="0.3">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
+                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
                                         <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
                                             <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
                                                 <img
@@ -225,14 +106,13 @@ const HomePage: React.FC<
                                                 />
                                             </div>
                                             <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">Web & App Development</div>
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Web Design & App Development
+                                                </div>
                                                 <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Craft exceptional web and mobile applications to bring your digital vision to life.
+                                                    Web design & development is an umbrella term that describes the process of creating a website
                                                 </p>
-                                                <a
-                                                    href="/service-details"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
-                                                >
+                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
                                                     Find out more
                                                     <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
                                                         <i className="fa-solid fa-arrow-right"></i>
@@ -245,7 +125,7 @@ const HomePage: React.FC<
                                 {/* <!-- Service Item --> */}
                                 {/* <!-- Service Item --> */}
                                 <div className="jos" data-jos_delay="0.6">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
+                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
                                         <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
                                             <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
                                                 <img
@@ -264,14 +144,13 @@ const HomePage: React.FC<
                                                 />
                                             </div>
                                             <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">Data Solutions</div>
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Results-Driven Digital Marketing
+                                                </div>
                                                 <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Harness the power of data to unlock actionable insights and inform strategic decision-making.
+                                                    Digital marketing potential customers using the internet & other forms of digital communication
                                                 </p>
-                                                <a
-                                                    href="/service-details"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
-                                                >
+                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
                                                     Find out more
                                                     <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
                                                         <i className="fa-solid fa-arrow-right"></i>
@@ -284,7 +163,7 @@ const HomePage: React.FC<
                                 {/* <!-- Service Item --> */}
                                 {/* <!-- Service Item --> */}
                                 <div className="jos" data-jos_delay="0.9">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
+                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
                                         <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
                                             <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
                                                 <img
@@ -303,14 +182,89 @@ const HomePage: React.FC<
                                                 />
                                             </div>
                                             <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">Maintenance & Support</div>
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Custom Software Development
+                                                </div>
                                                 <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Keep your technology running smoothly, maximizing uptime and minimizing disruption.
+                                                    Custom Software Development is the process of conceptualizing, designing, building & deploying
                                                 </p>
-                                                <a
-                                                    href="/service-details"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
-                                                >
+                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
+                                                    Find out more
+                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                                                        <i className="fa-solid fa-arrow-right"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Service Item --> */}
+                                {/* <!-- Service Item --> */}
+                                <div className="jos" data-jos_delay="1.2">
+                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
+                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
+                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
+                                                <img
+                                                    src="/assets/img/icons/icon-black-service-5.svg"
+                                                    alt="icon-service-5"
+                                                    width="98"
+                                                    height="100"
+                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
+                                                />
+                                                <img
+                                                    src="/assets/img/icons/icon-blue-service-5.svg"
+                                                    alt="icon-service-5"
+                                                    width="98"
+                                                    height="100"
+                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
+                                                />
+                                            </div>
+                                            <div className="flex-1 text-center lg:text-left">
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Search Engine Optimization
+                                                </div>
+                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
+                                                    SEO is the practice of orienting your website to rank higher on a sear engine results more traffic
+                                                </p>
+                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
+                                                    Find out more
+                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                                                        <i className="fa-solid fa-arrow-right"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Service Item --> */}
+                                {/* <!-- Service Item --> */}
+                                <div className="jos" data-jos_delay="1.5">
+                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
+                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
+                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
+                                                <img
+                                                    src="/assets/img/icons/icon-black-service-6.svg"
+                                                    alt="icon-service-6"
+                                                    width="98"
+                                                    height="100"
+                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
+                                                />
+                                                <img
+                                                    src="/assets/img/icons/icon-blue-service-6.svg"
+                                                    alt="icon-service-6"
+                                                    width="98"
+                                                    height="100"
+                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
+                                                />
+                                            </div>
+                                            <div className="flex-1 text-center lg:text-left">
+                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
+                                                    Social Media Strategies
+                                                </div>
+                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
+                                                    A social media strategy is an outline of content that your business will post, the responsibilities
+                                                </p>
+                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
                                                     Find out more
                                                     <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
                                                         <i className="fa-solid fa-arrow-right"></i>
@@ -327,129 +281,88 @@ const HomePage: React.FC<
                         {/* <!-- Section Container --> */}
                     </div>
                     {/* <!-- Section Space --> */}
-
-                    {/* <!-- Service Shape --> */}
-                    <div className="absolute bottom-0 left-0 -z-10">
-                        <img src="/assets/img/elements/service-1-shape-1.svg" alt="service-section-shape" width="390" height="507" />
-                    </div>
-                    {/* <!-- Service Shape --> */}
                 </div>
-            </section>
+            </div>
             {/* <!--...::: Service Section End :::... --> */}
 
-            {/* <!--...::: Content Section Start :::... --> */}
-            <section className="section-content">
-                {/* <!-- Section Background --> */}
-                <div className="bg-ColorOffWhite">
-                    {/* <!-- Section Spacer --> */}
-                    <div className="section-space">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-custom">
-                            <div className="flex flex-col gap-y-20 lg:gap-y-[100px] xl:gap-y-[120px]">
-                                {/* <!-- Content Area Single --> */}
-                                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-24 xl:grid-cols-[1.2fr_minmax(0,_1fr)] xl:gap-[135px]">
-                                    {/* <!-- Content Block Left --> */}
-                                    <div className="jos" data-jos_animation="fade-right">
-                                        {/* <!-- Section Wrapper --> */}
-                                        <div>
-                                            {/* <!-- Section Block --> */}
-                                            <div className="mb-5">
-                                                <h2>Amplify Your Brand & Drive Results with Data-Driven Digital Solutions</h2>
-                                            </div>
-                                            {/* <!-- Section Block --> */}
-                                        </div>
-                                        {/* <!-- Section Wrapper --> */}
-                                        <p>
-                                            We've been transforming bold business ideas into market-leading digital products. We go beyond development, solving real business
-                                            challenges.
-                                        </p>
-                                        <p>
-                                            <strong>Data-Driven Strategies:</strong> We use data to craft promotions that resonate with your audience and build a strong brand
-                                            identity.
-                                        </p>
-                                        <p>
-                                            <strong>Seamless Digital Products:</strong> We design and develop user-centric solutions that meet your business goals and user needs,
-                                            delivered on time and budget. identity.
-                                        </p>
-                                    </div>
-                                    {/* <!-- Content Block Left --> */}
-                                    {/* <!-- Content Block Right --> */}
-                                    <div className="jos relative" data-jos_animation="fade-left">
-                                        <div className="rounded-[10px] bg-[#FCEDCF] p-[30px] lg:p-10 xl:p-[50px]">
-                                            {/* <!-- Content Image --> */}
-                                            <img src="/assets/img/th-1/content-img-1.jpg" alt="content-img-1" width="426" height="398" className="h-auto w-full rounded-[10px]" />
-                                        </div>
-                                        {/* <!-- Content Shape --> */}
-                                        <img src="/assets/img/elements/content-shape-1.svg" alt="content-shape-1" width="168" height="61" className="absolute -right-16 -top-16" />
-                                    </div>
-                                    {/* <!-- Content Block Right --> */}
-                                </div>
-                                {/* <!-- Content Area Single --> */}
+            {/* <!-- Horizontal Separator --> */}
+            <div className="horizontal-line bg-ColorBlack"></div>
 
-                                {/* <!-- Content Area Single --> */}
-                                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-24 xl:grid-cols-[1fr_minmax(0,_1.2fr)] xl:gap-[135px]">
-                                    {/* <!-- Content Block Left --> */}
-                                    <div className="jos lg:order-2" data-jos_animation="fade-left">
-                                        {/* <!-- Section Wrapper --> */}
-                                        <div>
-                                            {/* <!-- Section Block --> */}
-                                            <div className="mb-5">
-                                                <h2>Discover the latest digital strategies & emerging ideas for business growth</h2>
-                                            </div>
-                                            {/* <!-- Section Block --> */}
-                                        </div>
-                                        {/* <!-- Section Wrapper --> */}
-                                        <p>
-                                            Our team of experienced designers and developers create cutting-edge websites that combine innovative design with the latest
-                                            technologies.
-                                        </p>
-                                        <ul className="flex flex-col gap-5 font-semibold text-ColorBlack">
-                                            <li>
-                                                <span className="mr-3 inline-block text-xl text-ColorPrimary">
-                                                    <i className="fa-solid fa-badge-check"></i>
-                                                </span>
-                                                Reach new technology trends or implement your product ideas.
-                                            </li>
-                                            <li>
-                                                <span className="mr-3 inline-block text-xl text-ColorPrimary">
-                                                    <i className="fa-solid fa-badge-check"></i>
-                                                </span>
-                                                Automate your processes and get data-driven business insights.
-                                            </li>
-                                            <li>
-                                                <span className="mr-3 inline-block text-xl text-ColorPrimary">
-                                                    <i className="fa-solid fa-badge-check"></i>
-                                                </span>
-                                                Create lightweight, scalable, and easly accessible cloud solution.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    {/* <!-- Content Block Left --> */}
-                                    {/* <!-- Content Block Right --> */}
-                                    <div className="jos relative lg:order-1" data-jos_animation="fade-right">
-                                        <div className="rounded-[10px] bg-[#BEF8FC] p-[30px] lg:p-10 xl:p-[50px]">
-                                            {/* <!-- Content Image --> */}
-                                            <img src="/assets/img/th-1/content-img-2.jpg" alt="content-img-1" width="426" height="398" className="h-auto w-full rounded-[10px]" />
-                                        </div>
-                                        {/* <!-- Content Shape --> */}
-                                        <img src="/assets/img/elements/content-shape-2.svg" alt="content-shape-1" width="107" height="105" className="absolute -bottom-1 -left-1" />
-                                    </div>
-                                    {/* <!-- Content Block Right --> */}
+            {/* <!--...::: Service Hero Section Start :::... --> */}
+            <section className="section-about-hero">
+                {/* <!-- Section Space --> */}
+                <div className="section-space">
+                    {/* <!-- Section Container --> */}
+                    <div className="container-custom has-container-custom">
+                        {/* <!-- About Hero Area --> */}
+                        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-[60px] xl:gap-[100px] xxl:grid-cols-[1fr_minmax(0,_1.1fr)]">
+                            {/* <!-- About Hero Image Block --> */}
+                            <div className="jos order-2 lg:order-1" data-jos_animation="fade-left" data-jos_delay="0">
+                                <div className="relative flex items-center justify-center mx-auto lg:mx-0 max-w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-full">
+                                    <img src="/assets/img/th-1/about-hero-2.jpg" alt="hero image" width="580" height="550" className="h-auto w-full" />
+                                    <a
+                                        data-fslightbox="gallery"
+                                        href="https://www.youtube.com/watch?v=3nQNiWdeH2Q"
+                                        className="group group absolute flex h-[100px] w-[100px] items-center justify-center rounded-[50%] bg-white text-ColorBlue"
+                                        aria-label="video-play"
+                                    >
+                                        <span className="text-2xl transition-all duration-300 ease-linear group-hover:scale-110">
+                                            <i className="fa-solid fa-play"></i>
+                                        </span>
+                                    </a>
                                 </div>
-                                {/* <!-- Content Area Single --> */}
                             </div>
+                            {/* <!-- About Hero Image Block --> */}
+                            {/* <!-- About Hero Content Block --> */}
+                            <div className="jos order-1 lg:order-2" data-jos_animation="fade-right" data-jos_delay="0.3">
+                                {/* <!-- Section Wrapper --> */}
+                                <div>
+                                    {/* <!-- Section Block --> */}
+                                    <div className="mb-5">
+                                        <h2>Our vision is to build brands and provide world-class experiences to our clients</h2>
+                                    </div>
+                                    {/* <!-- Section Block --> */}
+                                    <p>
+                                        SINCE 1998, we transform bold business ideas into exceptional digital products. We ideate, design, and develop data-driven digital products
+                                        made to answer business challenges.
+                                    </p>
+                                    {/* <!-- Horizontal Line Separator --> */}
+                                    <div className="my-7 h-px w-full bg-ColorBlack opacity-10 xl:my-10 xxl:my-14"></div>
+                                    {/* <!-- BlockQuote Block--> */}
+                                    <div>
+                                        <blockquote className="mb-6 font-semibold italic text-opacity-80">
+                                            “We love what we do & create partnerships with our clients to ensure their digital transformation is positioned for long-term success.”
+                                        </blockquote>
+                                        <div className="flex flex-col items-center gap-4 lg:flex-row">
+                                            <img
+                                                src="/assets/img/th-1/about-hero-user-blockquote-img.jpg"
+                                                alt="about-hero-user-blockquote-img"
+                                                width="60"
+                                                height="60"
+                                                className="mx-auto h-[60px] w-[60px] rounded-[50%] lg:mx-0"
+                                            />
+                                            <div>
+                                                <span className="block font-semibold">Karen Lynn</span>
+                                                <span className="text-sm text-opacity-80">CEO & Co-founder @ Company</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Section Wrapper --> */}
+                            </div>
+                            {/* <!-- About Hero Content Block --> */}
                         </div>
-                        {/* <!-- Section Container --> */}
+                        {/* <!-- About Hero Area --> */}
                     </div>
-                    {/* <!-- Section Spacer --> */}
+                    {/* <!-- Section Container --> */}
                 </div>
-                {/* <!-- Section Background --> */}
+                {/* <!-- Section Space --> */}
             </section>
-            {/* <!--...::: Content Section End :::... --> */}
+            {/* <!--...::: Service Hero Section End :::... --> */}
 
             {/* <!--...::: Pricing Section Start :::... --> */}
             <section className="section-pricing">
-                <div className="bg-ColorEggSour bg-opacity-60">
+                <div className="bg-ColorOffWhite">
                     {/* <!-- Section Space --> */}
                     <div className="section-space">
                         {/* <!-- Section Container --> */}
@@ -665,174 +578,6 @@ const HomePage: React.FC<
             </section>
             {/* <!--...::: Pricing Section Start :::... --> */}
 
-            {/* <!--...::: Portfolio Section Start :::... --> */}
-            <section className="section-portfolio">
-                <div className="relative z-10 overflow-hidden">
-                    {/* <!-- Section Space --> */}
-                    <div className="section-space">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-default">
-                            {/* <!-- Section Wrapper --> */}
-                            <div className="jos mb-[60px] flex flex-wrap items-end justify-between gap-8 xl:mb-20">
-                                {/* <!-- Section Block --> */}
-                                <div className="max-w-[550px]">
-                                    <h2>Discover our latest project in this year</h2>
-                                </div>
-                                {/* <!-- Section Block --> */}
-                                <a href="/portfolio" className="btn is-blue is-rounded btn-animation is-large group">
-                                    <span>See more works</span>
-                                </a>
-                            </div>
-                            {/* <!-- Section Wrapper --> */}
-
-                            {/* <!-- Portfolio List --> */}
-                            <div className="grid gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]">
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-1.jpg"
-                                                alt="portfolio-img-1"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="/portfolio-details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorPrimary xl:text-2xl"
-                                                >
-                                                    App — The power of communication
-                                                </a>
-                                                <a href="#" className="hover:text-ColorPrimary">
-                                                    UI/UX Design
-                                                </a>
-                                            </div>
-                                            <a href="/portfolio-details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0.3">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-2.jpg"
-                                                alt="portfolio-img-2"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="/portfolio-details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorPrimary xl:text-2xl"
-                                                >
-                                                    Website — The future lifestyle platform.
-                                                </a>
-                                                <a href="#" className="hover:text-ColorPrimary">
-                                                    Branding
-                                                </a>
-                                            </div>
-                                            <a href="/portfolio-details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                            </div>
-                            {/* <!-- Portfolio List --> */}
-                        </div>
-                        {/* <!-- Section Container --> */}
-                    </div>
-                    {/* <!-- Section Space --> */}
-
-                    {/* <!-- Portfolio Shape - 2 --> */}
-                    <div className="absolute right-0 top-0 -z-10">
-                        <img src="/assets/img/elements/portfolio-1-shape-1.svg" alt="portfolio-1-shape-1" width="467" height="609" />
-                    </div>
-                </div>
-            </section>
-            {/* <!--...::: Portfolio Section End :::... --> */}
-
-            {/* <!--...::: Testimonial Section Start :::... --> */}
-            <section className="section-testimonial">
-                {/* <!-- Section Background --> */}
-                <div className="bg-ColorOffWhite">
-                    {/* <!-- Section Space --> */}
-                    <div className="section-space">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-custom">
-                            {/* <!-- Section Content Wrapper --> */}
-                            <div className="jos mb-[60px] xl:mb-20">
-                                {/* <!-- Section Content Block --> */}
-                                <div className="mx-auto max-w-[625px]">
-                                    <h2 className="text-center">Most of our satisfied clients leave their feedback</h2>
-                                </div>
-                                {/* <!-- Section Content Block --> */}
-                            </div>
-                            {/* <!-- Section Content Wrapper --> */}
-
-                            {/* <!-- Testimonial Area --> */}
-                            <div className="grid items-center gap-10 lg:grid-cols-2 xl:gap-20 xxl:grid-cols-[1.1fr_minmax(0,_1fr)]">
-                                <img
-                                    src="/assets/img/th-1/testimonial-image-1.jpg"
-                                    alt="testimonial-image-1"
-                                    width="636"
-                                    height="446"
-                                    className="jos h-auto w-full rounded-2xl"
-                                    data-jos_animation="fade-right"
-                                />
-                                <div className="jos flex flex-col text-ColorBlack" data-jos_animation="fade-left">
-                                    <img
-                                        src="/assets/img/icons/icon-blue-quote-right-reverse.svg"
-                                        alt="icon-blue-quote-right-reverse"
-                                        width="90"
-                                        height="60"
-                                        className="h-auto w-10 xl:w-[90px]"
-                                    />
-                                    <p className="mt-[30px] text-xl font-semibold leading-[1.33] -tracking-[0.5px] lg:text-2xl">
-                                        They’re probably one of the easiest vendors I’ve ever worked with in the digital space. They have our best interests in mind. The team went
-                                        the extra mile in negotiating costs and delivering within a flexible scope. They’re customer focused and strong in terms of development
-                                        quality.
-                                    </p>
-                                    <div className="mb-8 lg:mb-[50px]">
-                                        <span className="block text-xl font-semibold">Dominika Drońska</span>
-                                        <span className="block">Senior Digital Marketing Manager, Abbey Road Studios</span>
-                                    </div>
-                                    <a href="/portfolio-details" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorPrimary">
-                                        Read more reviews
-                                        <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Testimonial Area --> */}
-                        </div>
-                        {/* <!-- Section Container --> */}
-                    </div>
-                    {/* <!-- Section Space --> */}
-                </div>
-                {/* <!-- Section Background --> */}
-            </section>
-            {/* <!--...::: Testimonial Section End :::... --> */}
-
             {/* <!--...::: FAQ Section Start :::... --> */}
             <section className="section-faq">
                 <div className="relative z-10 overflow-hidden">
@@ -962,7 +707,7 @@ const HomePage: React.FC<
                                 {/* <!-- Accordion List --> */}
 
                                 <div className="jos mt-[60px] flex justify-center xl:mt-20">
-                                    <a href="/contact" className="btn is-blue is-rounded btn-animation is-large group">
+                                    <a href="contact" className="btn is-blue is-rounded btn-animation is-large group">
                                         <span>Still, have any questions? Contact us</span>
                                     </a>
                                 </div>
@@ -972,15 +717,6 @@ const HomePage: React.FC<
                         {/* <!-- Section Container --> */}
                     </div>
                     {/* <!-- Section Space --> */}
-
-                    {/* <!-- FAQ Shape - 1 --> */}
-                    <div className="absolute left-0 top-0 -z-10">
-                        <img src="/assets/img/elements/faq-1-shape-1.svg" alt="service-section-shape" width="390" height="507" />
-                    </div>
-                    {/* <!-- FAQ Shape - 2 --> */}
-                    <div className="absolute bottom-0 right-0 -z-10">
-                        <img src="/assets/img/elements/faq-1-shape-2.svg" alt="service-section-shape" width="467" height="609" />
-                    </div>
                 </div>
             </section>
             {/* <!--...::: FAQ Section End :::... --> */}
@@ -988,39 +724,6 @@ const HomePage: React.FC<
     );
 };
 
-export default HomePage;
+export default ServicePage;
 
-export const Head: HeadFC = () => <PageHead />;
-
-export const projects = graphql`
-    {
-        allContentfulProject(sort: { updatedAt: DESC }) {
-            nodes {
-                id
-                title
-                slug
-                thumbnail {
-                    localFile {
-                        publicURL
-                    }
-                }
-                service {
-                    title
-                }
-            }
-        }
-
-        allContentfulService {
-            nodes {
-                id
-                title
-                slug
-                thumbnail {
-                    localFile {
-                        publicURL
-                    }
-                }
-            }
-        }
-    }
-`;
+export const Head: HeadFC = () => <PageHead title="Services" />;

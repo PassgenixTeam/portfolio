@@ -7,31 +7,31 @@ const PageHead: React.FC<{
         <>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Masco - Saas Software Startup Tailwind Template</title>
+            <title>{[title, "Passgenix Solution"].filter(Boolean).join(" | ")}</title>
             <meta name="description" content="AIMass Tailwind based SASS Template" />
 
             {/* <!-- Favicon  --> */}
-            <link rel="icon" href="assets/img/favicon.png" />
+            <link rel="icon" href="/assets/img/favicon.png" />
 
             {/* <!-- Icon Font --> */}
-            <link rel="stylesheet" href="assets/fonts/iconfonts/font-awesome/stylesheet.css" />
+            <link rel="stylesheet" href="/assets/fonts/iconfonts/font-awesome/stylesheet.css" />
             {/* <!-- Site font --> */}
-            <link rel="stylesheet" href="assets/fonts/webfonts/inter/stylesheet.css" />
-            <link rel="stylesheet" href="assets/fonts/webfonts/plus-jakarta-sans/stylesheet.css" />
+            <link rel="stylesheet" href="/assets/fonts/webfonts/inter/stylesheet.css" />
+            <link rel="stylesheet" href="/assets/fonts/webfonts/plus-jakarta-sans/stylesheet.css" />
 
             {/* <!-- Vendor CSS --> */}
-            <link rel="stylesheet" href="assets/css/vendors/swiper-bundle.min.css" />
-            <link rel="stylesheet" href="assets/css/vendors/jos.css" />
-            <link rel="stylesheet" href="assets/css/vendors/menu.css" />
+            <link rel="stylesheet" href="/assets/css/vendors/swiper-bundle.min.css" />
+            <link rel="stylesheet" href="/assets/css/vendors/jos.css" />
+            <link rel="stylesheet" href="/assets/css/vendors/menu.css" />
 
             {/* <!-- Custom CSS --> */}
-            <link rel="stylesheet" href="assets/css/custom.css" />
+            <link rel="stylesheet" href="/assets/css/custom.css" />
 
             {/* <!-- Development css --> */}
-            {/* <link href="assets/css/style.css" rel="stylesheet" /> */}
+            {/* <link href="/assets/css/style.css" rel="stylesheet" /> */}
 
             {/* <!-- Production css --> */}
-            {/* <!-- <link rel="stylesheet" href="assets/css/style.min.css"> --> */}
+            {/* <!-- <link rel="stylesheet" href="/assets/css/style.min.css"> --> */}
         </>
     );
 };
