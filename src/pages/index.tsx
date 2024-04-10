@@ -2,6 +2,7 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import PageHead from "../components/page-head/page-head";
 import PageBody from "../components/page-body/page-body";
+import { programingLanguages } from "../data/programing-languages";
 
 const HomePage: React.FC<
     PageProps<{
@@ -28,24 +29,25 @@ const HomePage: React.FC<
                                     <div className="has-container-custom">
                                         <h1 className="mb-6">We bring innovative solutions.</h1>
                                         <p>
-                                            Augment your internal development resources with a team of highly skilled technologists. Achieve operational efficiency and
-                                            cost-effectiveness while accelerating your time to market.
+                                            Launched in 2023, we're a Vietnamese open-source company passionate about building high-quality software and services for the global
+                                            tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale
+                                            projects.
                                         </p>
                                         <form action="#" method="post" className="relative mx-auto flex w-full items-center sm:w-[80%] lg:mx-0 lg:mt-5 lg:max-w-md">
                                             <input
                                                 type="email"
-                                                placeholder="Enter your email"
+                                                placeholder="Leave your email here"
                                                 className="w-full rounded-[50px] border border-ColorBlack bg-white px-5 py-[15px] pr-40 text-base font-semibold text-opacity-50 outline-none"
                                             />
                                             <button type="submit" className="btn is-blue is-rounded absolute right-[5px] py-[10px]">
-                                                Subscribe
+                                                Get started
                                             </button>
                                         </form>
                                         <div className="mt-5 text-sm leading-6 md:justify-normal">
                                             <span className="mr-2 inline-block text-lg text-ColorPrimary">
                                                 <i className="fa-solid fa-badge-check"></i>
                                             </span>
-                                            <span className="opacity-50">No credit card is required. You can cancel anytime</span>
+                                            <span className="opacity-50">No credit card is required. We will contact you within 24 hours.</span>
                                         </div>
                                     </div>
                                 </div>
@@ -103,36 +105,11 @@ const HomePage: React.FC<
                                 {/* <!-- Additional required wrapper --> */}
                                 <div className="swiper-wrapper">
                                     {/* <!-- Slides --> */}
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-1.png" alt="brand-1" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-2.png" alt="brand-2" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-3.png" alt="brand-3" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-4.png" alt="brand-4" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-5.png" alt="brand-5" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-1.png" alt="brand-1" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-2.png" alt="brand-2" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-3.png" alt="brand-3" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-4.png" alt="brand-4" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
-                                    <a href="#" className="swiper-slide">
-                                        <img src="/assets/img/th-1/brand-5.png" alt="brand-5" width="186" height="46" className="h-auto w-fit" />
-                                    </a>
+                                    {programingLanguages.map((language) => (
+                                        <a key={language.name} href={language.link} className="swiper-slide">
+                                            <img src={language.logo} alt={language.name} className="h-24 w-fit" />
+                                        </a>
+                                    ))}
                                 </div>
                             </div>
                             {/* <!-- Brand Slider --> */}
@@ -354,22 +331,22 @@ const HomePage: React.FC<
                                         <div>
                                             {/* <!-- Section Block --> */}
                                             <div className="mb-5">
-                                                <h2>Amplify Your Brand & Drive Results with Data-Driven Digital Solutions</h2>
+                                                <h2>Highly innovative, Modern, Flexible and Extensible Software Solutions</h2>
                                             </div>
                                             {/* <!-- Section Block --> */}
                                         </div>
                                         {/* <!-- Section Wrapper --> */}
                                         <p>
-                                            We've been transforming bold business ideas into market-leading digital products. We go beyond development, solving real business
-                                            challenges.
+                                            At <span className="font-semibold text-cyan-700">Passgenix Solutions</span>, we build with cutting-edge tools and adapt our process to
+                                            keep things fresh. We sweat the details, but never lose sight of the whole project.
                                         </p>
                                         <p>
                                             <strong>Data-Driven Strategies:</strong> We use data to craft promotions that resonate with your audience and build a strong brand
                                             identity.
                                         </p>
                                         <p>
-                                            <strong>Seamless Digital Products:</strong> We design and develop user-centric solutions that meet your business goals and user needs,
-                                            delivered on time and budget. identity.
+                                            <strong>Effective Services:</strong> We design and develop user-centric solutions that meet your business goals and user needs,
+                                            delivered on time and budget.
                                         </p>
                                     </div>
                                     {/* <!-- Content Block Left --> */}
@@ -394,7 +371,7 @@ const HomePage: React.FC<
                                         <div>
                                             {/* <!-- Section Block --> */}
                                             <div className="mb-5">
-                                                <h2>Discover the latest digital strategies & emerging ideas for business growth</h2>
+                                                <h2>Discover the latest projects & emerging ideas for business growth</h2>
                                             </div>
                                             {/* <!-- Section Block --> */}
                                         </div>
@@ -472,9 +449,9 @@ const HomePage: React.FC<
                                         <div className="rounded-[10px] border-2 border-ColorBlack bg-white p-7 xl:p-10 h-full">
                                             {/* <!-- Pricing Content Top --> */}
                                             <div className="text-center text-ColorBlack">
-                                                <span className="text-xl font-bold">Free Plan</span>
+                                                <span className="text-xl font-bold">Getting Start</span>
                                                 <div className="text-[28px] font-normal leading-[2.85]">
-                                                    $<span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">00</span>/month
+                                                    <span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">FREE</span>
                                                 </div>
                                                 <span className="text-sm text-ColorBlack/70">No credit card required</span>
                                             </div>
@@ -523,70 +500,7 @@ const HomePage: React.FC<
                                             </ul>
                                             {/* <!-- Pricing Data list --> */}
                                             <div className="mt-10 flex justify-center">
-                                                <button className="btn is-white is-rounded is-large group w-full border-2">Purchase now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Pricing Item --> */}
-                                {/* <!-- Pricing Item --> */}
-                                <div className="jos" data-jos_animation="flip-left" data-jos_delay="0">
-                                    <div className="hover-solid-shadow h-full">
-                                        <div className="rounded-[10px] border-2 border-ColorBlack bg-white p-7 xl:p-10 h-full">
-                                            {/* <!-- Pricing Content Top --> */}
-                                            <div className="text-center text-ColorBlack">
-                                                <span className="text-xl font-bold">Popular Plan</span>
-                                                <div className="text-[28px] font-normal leading-[2.85]">
-                                                    $<span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">199</span>/month
-                                                </div>
-                                                <span className="text-sm text-ColorBlack/70">No credit card required</span>
-                                            </div>
-                                            {/* <!-- Pricing Content Top --> */}
-                                            {/* <!-- Horizontal Line Separator --> */}
-                                            <div className="my-10 h-px w-full bg-ColorBlack/10"></div>
-                                            {/* <!-- Horizontal Line Separator --> */}
-                                            {/* <!-- Pricing Data list --> */}
-                                            <ul className="flex flex-col gap-y-6 text-base font-semibold text-ColorBlack xl:px-[18px]">
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Live chat + email + FB Messenger
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    3-year conversations history
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Advanced widget customization
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    24/7 system monitoring facility
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage visitors via visitor list
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage with automatic messages
-                                                </li>
-                                            </ul>
-                                            {/* <!-- Pricing Data list --> */}
-                                            <div className="mt-10 flex justify-center">
-                                                <button className="btn is-blue is-rounded is-large group w-full border-2">Purchase now</button>
+                                                <button className="btn is-white is-rounded is-large group w-full border-2">Contact now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -600,9 +514,72 @@ const HomePage: React.FC<
                                             <div className="text-center text-ColorBlack">
                                                 <span className="text-xl font-bold">Standard Plan</span>
                                                 <div className="text-[28px] font-normal leading-[2.85]">
-                                                    $<span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">49</span>/month
+                                                    <span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">~$500</span>
                                                 </div>
-                                                <span className="text-sm text-ColorBlack/70">No credit card required</span>
+                                                <span className="text-sm text-ColorBlack/70">For small websites, retailers</span>
+                                            </div>
+                                            {/* <!-- Pricing Content Top --> */}
+                                            {/* <!-- Horizontal Line Separator --> */}
+                                            <div className="my-10 h-px w-full bg-ColorBlack/10"></div>
+                                            {/* <!-- Horizontal Line Separator --> */}
+                                            {/* <!-- Pricing Data list --> */}
+                                            <ul className="flex flex-col gap-y-6 text-base font-semibold text-ColorBlack xl:px-[18px]">
+                                                <li className="flex gap-x-3">
+                                                    <span className="text-xl">
+                                                        <i className="fa-solid fa-star"></i>
+                                                    </span>
+                                                    Live chat + email + FB Messenger
+                                                </li>
+                                                <li className="flex gap-x-3">
+                                                    <span className="text-xl">
+                                                        <i className="fa-solid fa-star"></i>
+                                                    </span>
+                                                    3-year conversations history
+                                                </li>
+                                                <li className="flex gap-x-3">
+                                                    <span className="text-xl">
+                                                        <i className="fa-solid fa-star"></i>
+                                                    </span>
+                                                    Advanced widget customization
+                                                </li>
+                                                <li className="flex gap-x-3">
+                                                    <span className="text-xl">
+                                                        <i className="fa-solid fa-star"></i>
+                                                    </span>
+                                                    24/7 system monitoring facility
+                                                </li>
+                                                <li className="flex gap-x-3">
+                                                    <span className="text-xl">
+                                                        <i className="fa-solid fa-star"></i>
+                                                    </span>
+                                                    Engage visitors via visitor list
+                                                </li>
+                                                <li className="flex gap-x-3">
+                                                    <span className="text-xl">
+                                                        <i className="fa-solid fa-star"></i>
+                                                    </span>
+                                                    Engage with automatic messages
+                                                </li>
+                                            </ul>
+                                            {/* <!-- Pricing Data list --> */}
+                                            <div className="mt-10 flex justify-center">
+                                                <button className="btn is-blue is-rounded is-large group w-full border-2">Contact now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Pricing Item --> */}
+                                {/* <!-- Pricing Item --> */}
+                                <div className="jos" data-jos_animation="flip-left" data-jos_delay="0">
+                                    <div className="hover-solid-shadow h-full">
+                                        <div className="rounded-[10px] border-2 border-ColorBlack bg-white p-7 xl:p-10 h-full">
+                                            {/* <!-- Pricing Content Top --> */}
+                                            <div className="text-center text-ColorBlack">
+                                                <span className="text-xl font-bold">Pro Plan</span>
+                                                <div className="text-[28px] font-normal leading-[2.85]">
+                                                    <span className="text-[40px] font-bold leading-[1.3] xl:text-[50px]">CONTACT</span>
+                                                </div>
+                                                <span className="text-sm text-ColorBlack/70">For a complex project and maintenance</span>
                                             </div>
                                             {/* <!-- Pricing Content Top --> */}
                                             {/* <!-- Horizontal Line Separator --> */}
@@ -649,7 +626,7 @@ const HomePage: React.FC<
                                             </ul>
                                             {/* <!-- Pricing Data list --> */}
                                             <div className="mt-10 flex justify-center">
-                                                <button className="btn is-white is-rounded is-large group w-full border-2">Purchase now</button>
+                                                <button className="btn is-white is-rounded is-large group w-full border-2">Contact now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -807,13 +784,12 @@ const HomePage: React.FC<
                                         className="h-auto w-10 xl:w-[90px]"
                                     />
                                     <p className="mt-[30px] text-xl font-semibold leading-[1.33] -tracking-[0.5px] lg:text-2xl">
-                                        They’re probably one of the easiest vendors I’ve ever worked with in the digital space. They have our best interests in mind. The team went
-                                        the extra mile in negotiating costs and delivering within a flexible scope. They’re customer focused and strong in terms of development
-                                        quality.
+                                        I've been using Passgenix Solutions's software for a while now, and it's made a huge difference in my workflow. It's easy to use, has all
+                                        the features I need, and their customer support is excellent. A great value for the price!
                                     </p>
                                     <div className="mb-8 lg:mb-[50px]">
-                                        <span className="block text-xl font-semibold">Dominika Drońska</span>
-                                        <span className="block">Senior Digital Marketing Manager, Abbey Road Studios</span>
+                                        <span className="block text-xl font-semibold">Nguyễn Minh Thắng</span>
+                                        <span className="block">Frequent customer, Vietnam</span>
                                     </div>
                                     <a href="/portfolio-details" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorPrimary">
                                         Read more reviews
