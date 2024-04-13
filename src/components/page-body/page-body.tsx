@@ -179,12 +179,11 @@ const PageBody: React.FC<{
                                         <div>
                                             {/* <!-- Footer About Text --> */}
                                             <div className="lg:max-w-[416px]">
-                                                We are strategic & creative digital agency who are focused on user experience, mobile, social, data gathering and promotional
-                                                offerings.
+                                                We develop cutting-edge services that provide exceptional value and personalized service to our clients.
                                             </div>
                                             {/* <!-- Footer Mail --> */}
-                                            <a href="mailto:yourdemo@email.com" className="my-6 block underline-offset-4 transition-all duration-300 hover:underline">
-                                                yourdemo@email.com
+                                            <a href="mailto:passgenixteam2023@gmail.com" className="my-6 block underline-offset-4 transition-all duration-300 hover:underline">
+                                                passgenixteam2023@gmail.com
                                             </a>
                                             {/* <!-- Footer Social Link --> */}
                                             <div className="flex flex-wrap gap-5">

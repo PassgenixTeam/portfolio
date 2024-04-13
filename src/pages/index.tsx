@@ -2,16 +2,19 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import PageHead from "../components/page-head/page-head";
 import PageBody from "../components/page-body/page-body";
-import { programingLanguages } from "../data/programing-languages";
 
 const HomePage: React.FC<
     PageProps<{
         allContentfulProject: Queries.ContentfulProjectGroupConnection;
+        allContentfulProgrammingLanguage: Queries.ContentfulProgrammingLanguageGroupConnection;
         allContentfulService: Queries.ContentfulServiceGroupConnection;
     }>
 > = ({ data }) => {
     const projects = data.allContentfulProject.nodes;
+    const programmingLanguages = data.allContentfulProgrammingLanguage.nodes;
     const services = data.allContentfulService.nodes;
+
+    console.log(programmingLanguages);
 
     return (
         <PageBody>
@@ -105,9 +108,9 @@ const HomePage: React.FC<
                                 {/* <!-- Additional required wrapper --> */}
                                 <div className="swiper-wrapper">
                                     {/* <!-- Slides --> */}
-                                    {programingLanguages.map((language) => (
-                                        <a key={language.name} href={language.link} className="swiper-slide">
-                                            <img src={language.logo} alt={language.name} className="h-24 w-fit" />
+                                    {programmingLanguages.map((language) => (
+                                        <a key={language.id} href={language.link!} className="swiper-slide">
+                                            <img src={language.thumbnail?.localFile?.publicURL!} alt={language.name!} className="h-24 w-fit" />
                                         </a>
                                     ))}
                                 </div>
@@ -145,41 +148,44 @@ const HomePage: React.FC<
                             {/* <!-- Service List --> */}
                             <div className="grid gap-6 sm:grid-cols-2">
                                 {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-1.svg"
-                                                    alt="icon-service-1"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-1.svg"
-                                                    alt="icon-service-1"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">AI & Machine Learning</div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">Empower your projects with intelligent automation and data-driven insights.</p>
-                                                <a
-                                                    href="/service-details"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
-                                                >
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
+                                {services.map((service) => (
+                                    <div key={service.id} className="jos" data-jos_delay="0">
+                                        <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
+                                            <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
+                                                <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
+                                                    <img
+                                                        src={service.thumbnail!.localFile!.publicURL!}
+                                                        alt={service.name!}
+                                                        width="98"
+                                                        height="100"
+                                                        className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
+                                                    />
+                                                    <img
+                                                        src={service.hoverThumbnail!.localFile!.publicURL!}
+                                                        alt={service.name!}
+                                                        width="98"
+                                                        height="100"
+                                                        className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
+                                                    />
+                                                </div>
+                                                <div className="flex-1 text-center lg:text-left">
+                                                    <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">{service.name}</div>
+                                                    <p className="mb-5 line-clamp-2 text-ColorBlack/80">{service.shortDescription}</p>
+                                                    <a
+                                                        href={`/service-details/${service.slug}`}
+                                                        className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
+                                                    >
+                                                        Find out more
+                                                        <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                                                            <i className="fa-solid fa-arrow-right"></i>
+                                                        </span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                ))}
+
                                 {/* <!-- Service Item --> */}
                                 {/* <!-- Service Item --> */}
                                 <div className="jos" data-jos_delay="0.3">
@@ -656,7 +662,7 @@ const HomePage: React.FC<
                                     <h2>Discover our latest project in this year</h2>
                                 </div>
                                 {/* <!-- Section Block --> */}
-                                <a href="/portfolio" className="btn is-blue is-rounded btn-animation is-large group">
+                                <a href="/projects" className="btn is-blue is-rounded btn-animation is-large group">
                                     <span>See more works</span>
                                 </a>
                             </div>
@@ -664,74 +670,34 @@ const HomePage: React.FC<
 
                             {/* <!-- Portfolio List --> */}
                             <div className="grid gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]">
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-1.jpg"
-                                                alt="portfolio-img-1"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="/portfolio-details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorPrimary xl:text-2xl"
-                                                >
-                                                    App — The power of communication
-                                                </a>
-                                                <a href="#" className="hover:text-ColorPrimary">
-                                                    UI/UX Design
-                                                </a>
+                                {projects.map((project) => (
+                                    <div key={project.id} className="jos" data-jos_delay="0">
+                                        <a href={`/project-detail/${project.slug!}`} className="group">
+                                            <div className="overflow-hidden rounded-[10px]">
+                                                <img
+                                                    src={project.thumbnail!.localFile!.publicURL!}
+                                                    alt={project.name!}
+                                                    width="617"
+                                                    height="450"
+                                                    className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+                                                />
                                             </div>
-                                            <a href="/portfolio-details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0.3">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-2.jpg"
-                                                alt="portfolio-img-2"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="/portfolio-details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorPrimary xl:text-2xl"
-                                                >
-                                                    Website — The future lifestyle platform.
-                                                </a>
-                                                <a href="#" className="hover:text-ColorPrimary">
-                                                    Branding
-                                                </a>
+                                            <div className="mt-6">
+                                                <p className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
+                                                    <div className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorPrimary xl:text-2xl">
+                                                        {project.name!}
+                                                    </div>
+                                                </p>
+                                                <div className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
+                                                    View work
+                                                    <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
+                                                        <i className="fa-solid fa-arrow-right"></i>
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <a href="/portfolio-details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
+                                        </a>
                                     </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
+                                ))}
                             </div>
                             {/* <!-- Portfolio List --> */}
                         </div>
@@ -968,30 +934,47 @@ export default HomePage;
 
 export const Head: HeadFC = () => <PageHead />;
 
-export const projects = graphql`
+export const query = graphql`
     {
         allContentfulProject(sort: { updatedAt: DESC }) {
             nodes {
                 id
-                title
+                name
                 slug
+                categories
                 thumbnail {
                     localFile {
                         publicURL
                     }
                 }
-                service {
-                    title
+            }
+        }
+
+        allContentfulProgrammingLanguage(sort: { updatedAt: DESC }) {
+            nodes {
+                id
+                name
+                link
+                thumbnail {
+                    localFile {
+                        publicURL
+                    }
                 }
             }
         }
 
-        allContentfulService {
+        allContentfulService(limit: 4) {
             nodes {
                 id
-                title
                 slug
+                name
+                shortDescription
                 thumbnail {
+                    localFile {
+                        publicURL
+                    }
+                }
+                hoverThumbnail {
                     localFile {
                         publicURL
                     }

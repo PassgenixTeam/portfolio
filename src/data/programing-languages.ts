@@ -36,7 +36,7 @@ export const programingLanguages: {
     {
         name: "NextJS",
         logo: "/assets/img/programming-languages/nextjs-logo.png",
-        link: "https://reactjs.org",
+        link: "https://nextjs.org",
     },
     {
         name: "Tensorflow",
