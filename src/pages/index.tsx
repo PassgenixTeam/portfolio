@@ -1,5 +1,6 @@
 import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import cls from "classnames";
 import PageHead from "../components/page-head/page-head";
 import PageBody from "../components/page-body/page-body";
 
@@ -8,13 +9,15 @@ const HomePage: React.FC<
         allContentfulProject: Queries.ContentfulProjectGroupConnection;
         allContentfulProgrammingLanguage: Queries.ContentfulProgrammingLanguageGroupConnection;
         allContentfulService: Queries.ContentfulServiceGroupConnection;
+        allContentfulFaq: Queries.ContentfulFaqGroupConnection;
+        allContentfulPlan: Queries.ContentfulPlanGroupConnection;
     }>
 > = ({ data }) => {
     const projects = data.allContentfulProject.nodes;
     const programmingLanguages = data.allContentfulProgrammingLanguage.nodes;
     const services = data.allContentfulService.nodes;
-
-    console.log(programmingLanguages);
+    const faqs = data.allContentfulFaq.nodes;
+    const plans = data.allContentfulPlan.nodes;
 
     return (
         <PageBody>
@@ -59,8 +62,8 @@ const HomePage: React.FC<
                                 {/* <!-- Hero Image Block --> */}
                                 <div className="jos">
                                     <div className="relative flex items-center justify-center">
-                                        <img src="/assets/img/th-1/hero-img.jpg" alt="hero image" width="600" height="579" className="h-auto w-full" />
-                                        <a
+                                        <img src="/assets/img/th-1/hero-img.jpg" alt="hero image" width="600" height="579" className="h-auto w-full rounded-md" />
+                                        {/* <a
                                             data-fslightbox="gallery"
                                             href="/https://www.youtube.com/watch?v=3nQNiWdeH2Q"
                                             className="group group absolute flex h-[100px] w-[100px] items-center justify-center rounded-[50%] bg-white text-ColorPrimary"
@@ -69,7 +72,7 @@ const HomePage: React.FC<
                                             <span className="text-2xl transition-all duration-300 ease-linear group-hover:scale-110">
                                                 <i className="fa-solid fa-play"></i>
                                             </span>
-                                        </a>
+                                        </a> */}
                                     </div>
                                 </div>
                                 {/* <!-- Hero Image Block --> */}
@@ -185,124 +188,6 @@ const HomePage: React.FC<
                                         </div>
                                     </div>
                                 ))}
-
-                                {/* <!-- Service Item --> */}
-                                {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0.3">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-2.svg"
-                                                    alt="icon-service-2"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-2.svg"
-                                                    alt="icon-service-2"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">Web & App Development</div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Craft exceptional web and mobile applications to bring your digital vision to life.
-                                                </p>
-                                                <a
-                                                    href="/service-details"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
-                                                >
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Service Item --> */}
-                                {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0.6">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-3.svg"
-                                                    alt="icon-service-3"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-3.svg"
-                                                    alt="icon-service-3"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">Data Solutions</div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Harness the power of data to unlock actionable insights and inform strategic decision-making.
-                                                </p>
-                                                <a
-                                                    href="/service-details"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
-                                                >
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Service Item --> */}
-                                {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0.9">
-                                    <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-4.svg"
-                                                    alt="icon-service-4"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-4.svg"
-                                                    alt="icon-service-4"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">Maintenance & Support</div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Keep your technology running smoothly, maximizing uptime and minimizing disruption.
-                                                </p>
-                                                <a
-                                                    href="/service-details"
-                                                    className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
-                                                >
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 {/* <!-- Service Item --> */}
                             </div>
                             {/* <!-- Service List --> */}
@@ -467,42 +352,14 @@ const HomePage: React.FC<
                                             {/* <!-- Horizontal Line Separator --> */}
                                             {/* <!-- Pricing Data list --> */}
                                             <ul className="flex flex-col gap-y-6 text-base font-semibold text-ColorBlack xl:px-[18px]">
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Unlimited chats & websites
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    60-day conversations history
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Basic widget customization
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Web, desktop & mobile apps
-                                                </li>
-                                                <li className="flex gap-x-3 text-ColorBlack/10">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage visitors via visitor list
-                                                </li>
-                                                <li className="flex gap-x-3 text-ColorBlack/10">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage with automatic messages
-                                                </li>
+                                                {plans.map((plan) => (
+                                                    <li key={plan.id} className={cls("flex gap-x-3", !plan.level!.includes("Free") && "text-ColorBlack/10")}>
+                                                        <span className="text-xl">
+                                                            <i className="fa-solid fa-star"></i>
+                                                        </span>
+                                                        {plan.name}
+                                                    </li>
+                                                ))}
                                             </ul>
                                             {/* <!-- Pricing Data list --> */}
                                             <div className="mt-10 flex justify-center">
@@ -530,42 +387,14 @@ const HomePage: React.FC<
                                             {/* <!-- Horizontal Line Separator --> */}
                                             {/* <!-- Pricing Data list --> */}
                                             <ul className="flex flex-col gap-y-6 text-base font-semibold text-ColorBlack xl:px-[18px]">
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Live chat + email + FB Messenger
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    3-year conversations history
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Advanced widget customization
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    24/7 system monitoring facility
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage visitors via visitor list
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage with automatic messages
-                                                </li>
+                                                {plans.map((plan) => (
+                                                    <li key={plan.id} className={cls("flex gap-x-3", !plan.level!.includes("Standard") && "text-ColorBlack/10")}>
+                                                        <span className="text-xl">
+                                                            <i className="fa-solid fa-star"></i>
+                                                        </span>
+                                                        {plan.name}
+                                                    </li>
+                                                ))}
                                             </ul>
                                             {/* <!-- Pricing Data list --> */}
                                             <div className="mt-10 flex justify-center">
@@ -593,42 +422,14 @@ const HomePage: React.FC<
                                             {/* <!-- Horizontal Line Separator --> */}
                                             {/* <!-- Pricing Data list --> */}
                                             <ul className="flex flex-col gap-y-6 text-base font-semibold text-ColorBlack xl:px-[18px]">
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Live chat + email + FB Messenger
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    3-year conversations history
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Advanced widget customization
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    24/7 system monitoring facility
-                                                </li>
-                                                <li className="flex gap-x-3 text-ColorBlack/10">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage visitors via visitor list
-                                                </li>
-                                                <li className="flex gap-x-3 text-ColorBlack/10">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage with automatic messages
-                                                </li>
+                                                {plans.map((plan) => (
+                                                    <li key={plan.id} className={cls("flex gap-x-3", !plan.level!.includes("Pro") && "text-ColorBlack/10")}>
+                                                        <span className="text-xl">
+                                                            <i className="fa-solid fa-star"></i>
+                                                        </span>
+                                                        {plan.name}
+                                                    </li>
+                                                ))}
                                             </ul>
                                             {/* <!-- Pricing Data list --> */}
                                             <div className="mt-10 flex justify-center">
@@ -757,12 +558,12 @@ const HomePage: React.FC<
                                         <span className="block text-xl font-semibold">Nguyễn Minh Thắng</span>
                                         <span className="block">Frequent customer, Vietnam</span>
                                     </div>
-                                    <a href="/portfolio-details" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorPrimary">
+                                    {/* <a href="/portfolio-details" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorPrimary">
                                         Read more reviews
                                         <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
                                             <i className="fa-solid fa-arrow-right"></i>
                                         </span>
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                             {/* <!-- Testimonial Area --> */}
@@ -786,7 +587,7 @@ const HomePage: React.FC<
                             <div className="jos mb-[60px] xl:mb-20">
                                 {/* <!-- Section Content Block --> */}
                                 <div className="mx-auto max-w-[625px]">
-                                    <h2 className="text-center">Frequently asked questions about our digital agency</h2>
+                                    <h2 className="text-center">Frequently asked questions about our services</h2>
                                 </div>
                                 {/* <!-- Section Content Block --> */}
                             </div>
@@ -796,109 +597,24 @@ const HomePage: React.FC<
                                 {/* <!-- Accordion List --> */}
                                 <ul className="mx-auto max-w-[1076px] rounded-[10px] border border-ColorBlack">
                                     {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item active overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. What is a digital agency?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
+                                    {faqs.map((faq) => (
+                                        <li key={faq.id} className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
+                                            {/* <!-- Accordion Header --> */}
+                                            <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
+                                                <button className="flex-1 text-left">Q. {faq.question}</button>
+                                                <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
+                                                    <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
+                                                    <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. What services does a digital agency provide?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
+                                            {/* <!-- Accordion Header --> */}
+                                            {/* <!-- Accordion Body --> */}
+                                            <div className="accordion-body max-w-[826px] opacity-80">
+                                                <p className="pt-5">{faq.answer!.raw}</p>
                                             </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. Hiring a digital agency vs hiring in-house: What is the difference?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. What questions should you ask when interviewing a digital agency?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. How do digital agencies charge for their services?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
+                                            {/* <!-- Accordion Body --> */}
+                                        </li>
+                                    ))}
                                     {/* <!-- Accordion Item --> */}
                                 </ul>
                                 {/* <!-- Accordion List --> */}
@@ -936,7 +652,7 @@ export const Head: HeadFC = () => <PageHead />;
 
 export const query = graphql`
     {
-        allContentfulProject(sort: { updatedAt: DESC }) {
+        allContentfulProject(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "en-US" } }) {
             nodes {
                 id
                 name
@@ -950,7 +666,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulProgrammingLanguage(sort: { updatedAt: DESC }) {
+        allContentfulProgrammingLanguage(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "en-US" } }) {
             nodes {
                 id
                 name
@@ -963,7 +679,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulService(limit: 4) {
+        allContentfulService(limit: 4, filter: { node_locale: { eq: "en-US" } }) {
             nodes {
                 id
                 slug
@@ -979,6 +695,24 @@ export const query = graphql`
                         publicURL
                     }
                 }
+            }
+        }
+
+        allContentfulFaq(filter: { node_locale: { eq: "en-US" } }) {
+            nodes {
+                id
+                question
+                answer {
+                    raw
+                }
+            }
+        }
+
+        allContentfulPlan(sort: { order: ASC }, filter: { node_locale: { eq: "en-US" } }) {
+            nodes {
+                id
+                name
+                level
             }
         }
     }

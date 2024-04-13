@@ -230,30 +230,19 @@ const PageBody: React.FC<{
                                     {/* <!-- Footer Widget Item --> */}
 
                                     {/* <!-- Footer Widget Item --> */}
-                                    <div className="flex flex-col gap-y-7 md:col-span-1 lg:col-span-1">
+                                    <div className="flex flex-col gap-y-7 md:col-span-3 lg:col-span-1">
                                         {/* <!-- Footer Widget Title --> */}
                                         <div className="text-xl font-semibold capitalize">Primary Pages</div>
                                         {/* <!-- Footer Navbar --> */}
                                         <ul className="flex flex-col gap-y-[10px] capitalize">
                                             <li>
-                                                <a
-                                                    href="index.html"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
+                                                <a href="/" className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">
                                                     Home
                                                 </a>
                                             </li>
                                             <li>
                                                 <a
-                                                    href="about.html"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    About Us
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="services.html"
+                                                    href="/services"
                                                     className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
                                                 >
                                                     Services
@@ -261,124 +250,10 @@ const PageBody: React.FC<{
                                             </li>
                                             <li>
                                                 <a
-                                                    href="pricing.html"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    pricing
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="contact.html"
+                                                    href="/contact"
                                                     className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
                                                 >
                                                     Contact
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    {/* <!-- Footer Widget Item --> */}
-
-                                    {/* <!-- Footer Widget Item --> */}
-                                    <div className="flex flex-col gap-y-6 md:col-span-1 lg:col-span-1">
-                                        {/* <!-- Footer Title --> */}
-                                        <div className="text-xl font-semibold capitalize">Utility pages</div>
-                                        {/* <!-- Footer Title --> */}
-
-                                        {/* <!-- Footer Navbar --> */}
-                                        <ul className="flex flex-col gap-y-[10px] capitalize">
-                                            <li>
-                                                <a
-                                                    href="signup.html"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    Signup
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="login.html"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    Login
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="error-404.html"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    404 Not found
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="reset-password.html"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    Password Reset
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    {/* <!-- Footer Widget Item--> */}
-
-                                    {/* <!-- Footer Widget Item --> */}
-                                    <div className="flex flex-col gap-y-6 md:col-span-1 lg:col-span-1">
-                                        {/* <!-- Footer Title --> */}
-                                        <div className="text-xl font-semibold capitalize">Resources</div>
-                                        {/* <!-- Footer Title --> */}
-
-                                        {/* <!-- Footer Navbar --> */}
-                                        <ul className="flex flex-col gap-y-[10px] capitalize">
-                                            <li>
-                                                <a
-                                                    href="https://www.example.com/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    Support
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.example.com/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    Privacy policy
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.example.com/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    Terms & Conditions
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.example.com/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    Strategic finance
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.example.com/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
-                                                >
-                                                    Video guide
                                                 </a>
                                             </li>
                                         </ul>
@@ -399,7 +274,7 @@ const PageBody: React.FC<{
                         <div className="py-[18px]">
                             {/* <!-- Section Container --> */}
                             <div className="container-default">
-                                <div className="text-center text-white text-opacity-80">&copy; Copyright 2024, All Rights Reserved by Mthemeus</div>
+                                <div className="text-center text-white text-opacity-80">&copy; Copyright 2024, All Rights Reserved by Passgenix Solutions</div>
                             </div>
                             {/* <!-- Section Container --> */}
                         </div>
