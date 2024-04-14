@@ -7,10 +7,10 @@ dotenv.config({
 
 const config: GatsbyConfig = {
     siteMetadata: {
-        title: `Gatsby Default Starter`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-        author: `@gatsbyjs`,
-        siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+        title: `Passgenix Solutions`,
+        description: `Launched in 2023, we're a Vietnamese open-source company passionate about building high-quality software and services for the global tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale projects.`,
+        author: `@passgenix.solutions`,
+        siteUrl: `https://passgenix.com`,
     },
     graphqlTypegen: true,
     plugins: [
@@ -39,12 +39,12 @@ const config: GatsbyConfig = {
                 name: `gatsby-starter-default`,
                 short_name: `starter`,
                 start_url: `/`,
-                background_color: `#663399`,
+                background_color: `#FFFFFF`,
                 // This will impact how browsers show your PWA/website
                 // https://css-tricks.com/meta-theme-color-and-trickery/
                 // theme_color: `#663399`,
                 display: `minimal-ui`,
-                icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+                icon: `static/assets/img/favicon.png`, // This path is relative to the root of the site.
             },
         },
     ],
