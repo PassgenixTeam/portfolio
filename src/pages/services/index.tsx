@@ -2,8 +2,17 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import PageHead from "../../components/page-head/page-head";
 import PageBody from "../../components/page-body/page-body";
+import FAQ from "../../components/faq/faq";
 
-const ServicePage: React.FC<PageProps> = ({ data }) => {
+const ServicePage: React.FC<
+    PageProps<{
+        allContentfulService: Queries.ContentfulServiceGroupConnection;
+        allContentfulFaq: Queries.ContentfulFaqGroupConnection;
+    }>
+> = ({ data }) => {
+    const services = data.allContentfulService.nodes;
+    const faqs = data.allContentfulFaq.nodes;
+
     return (
         <PageBody>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
@@ -48,232 +57,43 @@ const ServicePage: React.FC<PageProps> = ({ data }) => {
                             {/* <!-- Service List --> */}
                             <div className="grid gap-6 sm:grid-cols-2">
                                 {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-1.svg"
-                                                    alt="icon-service-1"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-1.svg"
-                                                    alt="icon-service-1"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Branding & Digital Strategies
+                                {services.map((service) => (
+                                    <div key={service.id} className="jos" data-jos_delay="0">
+                                        <a
+                                            href={`/services/${service.slug}`}
+                                            className="block group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10"
+                                        >
+                                            <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
+                                                <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
+                                                    <img
+                                                        src={service.thumbnail!.localFile!.publicURL!}
+                                                        alt={service.name!}
+                                                        width="98"
+                                                        height="100"
+                                                        className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
+                                                    />
+                                                    <img
+                                                        src={service.hoverThumbnail!.localFile!.publicURL!}
+                                                        alt={service.name!}
+                                                        width="98"
+                                                        height="100"
+                                                        className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
+                                                    />
                                                 </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Brand strategy is all about developing a unique identity that distinguishes your business from
-                                                </p>
-                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Service Item --> */}
-                                {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0.3">
-                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-2.svg"
-                                                    alt="icon-service-2"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-2.svg"
-                                                    alt="icon-service-2"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Web Design & App Development
+                                                <div className="flex-1 text-center lg:text-left">
+                                                    <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">{service.name}</div>
+                                                    <p className="mb-5 line-clamp-2 text-ColorBlack/80">{service.shortDescription}</p>
+                                                    <div className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
+                                                        Find out more
+                                                        <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
+                                                            <i className="fa-solid fa-arrow-right"></i>
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Web design & development is an umbrella term that describes the process of creating a website
-                                                </p>
-                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
-                                </div>
-                                {/* <!-- Service Item --> */}
-                                {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0.6">
-                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-3.svg"
-                                                    alt="icon-service-3"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-3.svg"
-                                                    alt="icon-service-3"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Results-Driven Digital Marketing
-                                                </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Digital marketing potential customers using the internet & other forms of digital communication
-                                                </p>
-                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Service Item --> */}
-                                {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="0.9">
-                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-4.svg"
-                                                    alt="icon-service-4"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-4.svg"
-                                                    alt="icon-service-4"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Custom Software Development
-                                                </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    Custom Software Development is the process of conceptualizing, designing, building & deploying
-                                                </p>
-                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Service Item --> */}
-                                {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="1.2">
-                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-5.svg"
-                                                    alt="icon-service-5"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-5.svg"
-                                                    alt="icon-service-5"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Search Engine Optimization
-                                                </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    SEO is the practice of orienting your website to rank higher on a sear engine results more traffic
-                                                </p>
-                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Service Item --> */}
-                                {/* <!-- Service Item --> */}
-                                <div className="jos" data-jos_delay="1.5">
-                                    <div className="group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10">
-                                        <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
-                                            <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
-                                                <img
-                                                    src="/assets/img/icons/icon-black-service-6.svg"
-                                                    alt="icon-service-6"
-                                                    width="98"
-                                                    height="100"
-                                                    className="opcity-100 h-auto w-full transition-all duration-300 ease-in-out group-hover:opacity-0"
-                                                />
-                                                <img
-                                                    src="/assets/img/icons/icon-blue-service-6.svg"
-                                                    alt="icon-service-6"
-                                                    width="98"
-                                                    height="100"
-                                                    className="absolute h-auto w-full opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100"
-                                                />
-                                            </div>
-                                            <div className="flex-1 text-center lg:text-left">
-                                                <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">
-                                                    Social Media Strategies
-                                                </div>
-                                                <p className="mb-5 line-clamp-2 text-ColorBlack/80">
-                                                    A social media strategy is an outline of content that your business will post, the responsibilities
-                                                </p>
-                                                <a href="details" className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
-                                                    Find out more
-                                                    <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
-                                                        <i className="fa-solid fa-arrow-right"></i>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                ))}
                                 {/* <!-- Service Item --> */}
                             </div>
                             {/* <!-- Service List --> */}
@@ -579,146 +399,7 @@ const ServicePage: React.FC<PageProps> = ({ data }) => {
             {/* <!--...::: Pricing Section Start :::... --> */}
 
             {/* <!--...::: FAQ Section Start :::... --> */}
-            <section className="section-faq">
-                <div className="relative z-10 overflow-hidden">
-                    {/* <!-- Section Space --> */}
-                    <div className="section-space">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-default">
-                            {/* <!-- Section Content Wrapper --> */}
-                            <div className="jos mb-[60px] xl:mb-20">
-                                {/* <!-- Section Content Block --> */}
-                                <div className="mx-auto max-w-[625px]">
-                                    <h2 className="text-center">Frequently asked questions about our digital agency</h2>
-                                </div>
-                                {/* <!-- Section Content Block --> */}
-                            </div>
-                            {/* <!-- Section Content Wrapper --> */}
-                            {/* <!-- FAQ Area --> */}
-                            <div className="jos">
-                                {/* <!-- Accordion List --> */}
-                                <ul className="mx-auto max-w-[1076px] rounded-[10px] border border-ColorBlack">
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item active overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. What is a digital agency?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. What services does a digital agency provide?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. Hiring a digital agency vs hiring in-house: What is the difference?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. What questions should you ask when interviewing a digital agency?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                    {/* <!-- Accordion Item --> */}
-                                    <li className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                        {/* <!-- Accordion Header --> */}
-                                        <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                            <button className="flex-1 text-left">Q. How do digital agencies charge for their services?</button>
-                                            <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                            </div>
-                                        </div>
-                                        {/* <!-- Accordion Header --> */}
-                                        {/* <!-- Accordion Body --> */}
-                                        <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
-                                                A digital agency is a company that leverages digital channels to grow their clients’ brands online. ls and technologies such as web
-                                                design, digital marketing, creative design and app development.
-                                            </p>
-                                        </div>
-                                        {/* <!-- Accordion Body --> */}
-                                    </li>
-                                    {/* <!-- Accordion Item --> */}
-                                </ul>
-                                {/* <!-- Accordion List --> */}
-
-                                <div className="jos mt-[60px] flex justify-center xl:mt-20">
-                                    <a href="contact" className="btn is-blue is-rounded btn-animation is-large group">
-                                        <span>Still, have any questions? Contact us</span>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- FAQ Area --> */}
-                        </div>
-                        {/* <!-- Section Container --> */}
-                    </div>
-                    {/* <!-- Section Space --> */}
-                </div>
-            </section>
+            <FAQ faqs={faqs} />
             {/* <!--...::: FAQ Section End :::... --> */}
         </PageBody>
     );
@@ -727,3 +408,36 @@ const ServicePage: React.FC<PageProps> = ({ data }) => {
 export default ServicePage;
 
 export const Head: HeadFC = () => <PageHead title="Services" />;
+
+export const query = graphql`
+    {
+        allContentfulService(filter: { node_locale: { eq: "en-US" } }) {
+            nodes {
+                id
+                slug
+                name
+                shortDescription
+                thumbnail {
+                    localFile {
+                        publicURL
+                    }
+                }
+                hoverThumbnail {
+                    localFile {
+                        publicURL
+                    }
+                }
+            }
+        }
+
+        allContentfulFaq(filter: { node_locale: { eq: "en-US" } }) {
+            nodes {
+                id
+                question
+                answer {
+                    raw
+                }
+            }
+        }
+    }
+`;

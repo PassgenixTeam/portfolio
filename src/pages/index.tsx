@@ -3,6 +3,7 @@ import * as React from "react";
 import cls from "classnames";
 import PageHead from "../components/page-head/page-head";
 import PageBody from "../components/page-body/page-body";
+import FAQ from "../components/faq/faq";
 
 const HomePage: React.FC<
     PageProps<{
@@ -153,7 +154,10 @@ const HomePage: React.FC<
                                 {/* <!-- Service Item --> */}
                                 {services.map((service) => (
                                     <div key={service.id} className="jos" data-jos_delay="0">
-                                        <div className="group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full">
+                                        <a
+                                            href={`/services/${service.slug}`}
+                                            className="block group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full"
+                                        >
                                             <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
                                                 <div className="relative mx-auto flex w-16 items-center justify-center lg:w-[98px]">
                                                     <img
@@ -174,18 +178,15 @@ const HomePage: React.FC<
                                                 <div className="flex-1 text-center lg:text-left">
                                                     <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">{service.name}</div>
                                                     <p className="mb-5 line-clamp-2 text-ColorBlack/80">{service.shortDescription}</p>
-                                                    <a
-                                                        href={`/service-details/${service.slug}`}
-                                                        className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary"
-                                                    >
+                                                    <div className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary">
                                                         Find out more
                                                         <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
                                                             <i className="fa-solid fa-arrow-right"></i>
                                                         </span>
-                                                    </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 ))}
                                 {/* <!-- Service Item --> */}
@@ -473,7 +474,7 @@ const HomePage: React.FC<
                             <div className="grid gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]">
                                 {projects.map((project) => (
                                     <div key={project.id} className="jos" data-jos_delay="0">
-                                        <a href={`/project-detail/${project.slug!}`} className="group">
+                                        <a href={`/projects/${project.slug!}`} className="group">
                                             <div className="overflow-hidden rounded-[10px]">
                                                 <img
                                                     src={project.thumbnail!.localFile!.publicURL!}
@@ -577,70 +578,7 @@ const HomePage: React.FC<
             {/* <!--...::: Testimonial Section End :::... --> */}
 
             {/* <!--...::: FAQ Section Start :::... --> */}
-            <section className="section-faq">
-                <div className="relative z-10 overflow-hidden">
-                    {/* <!-- Section Space --> */}
-                    <div className="section-space">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-default">
-                            {/* <!-- Section Content Wrapper --> */}
-                            <div className="jos mb-[60px] xl:mb-20">
-                                {/* <!-- Section Content Block --> */}
-                                <div className="mx-auto max-w-[625px]">
-                                    <h2 className="text-center">Frequently asked questions about our services</h2>
-                                </div>
-                                {/* <!-- Section Content Block --> */}
-                            </div>
-                            {/* <!-- Section Content Wrapper --> */}
-                            {/* <!-- FAQ Area --> */}
-                            <div className="jos">
-                                {/* <!-- Accordion List --> */}
-                                <ul className="mx-auto max-w-[1076px] rounded-[10px] border border-ColorBlack">
-                                    {/* <!-- Accordion Item --> */}
-                                    {faqs.map((faq) => (
-                                        <li key={faq.id} className="accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0">
-                                            {/* <!-- Accordion Header --> */}
-                                            <div className="accordion-header flex justify-between gap-6 text-xl font-semibold text-ColorBlack">
-                                                <button className="flex-1 text-left">Q. {faq.question}</button>
-                                                <div className="accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue">
-                                                    <span className="inline-block h-0.5 w-[10px] rounded-sm bg-white"></span>
-                                                    <span className="absolute inline-block h-[10px] w-0.5 rotate-0 rounded-sm bg-white"></span>
-                                                </div>
-                                            </div>
-                                            {/* <!-- Accordion Header --> */}
-                                            {/* <!-- Accordion Body --> */}
-                                            <div className="accordion-body max-w-[826px] opacity-80">
-                                                <p className="pt-5">{faq.answer!.raw}</p>
-                                            </div>
-                                            {/* <!-- Accordion Body --> */}
-                                        </li>
-                                    ))}
-                                    {/* <!-- Accordion Item --> */}
-                                </ul>
-                                {/* <!-- Accordion List --> */}
-
-                                <div className="jos mt-[60px] flex justify-center xl:mt-20">
-                                    <a href="/contact" className="btn is-blue is-rounded btn-animation is-large group">
-                                        <span>Still, have any questions? Contact us</span>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- FAQ Area --> */}
-                        </div>
-                        {/* <!-- Section Container --> */}
-                    </div>
-                    {/* <!-- Section Space --> */}
-
-                    {/* <!-- FAQ Shape - 1 --> */}
-                    <div className="absolute left-0 top-0 -z-10">
-                        <img src="/assets/img/elements/faq-1-shape-1.svg" alt="service-section-shape" width="390" height="507" />
-                    </div>
-                    {/* <!-- FAQ Shape - 2 --> */}
-                    <div className="absolute bottom-0 right-0 -z-10">
-                        <img src="/assets/img/elements/faq-1-shape-2.svg" alt="service-section-shape" width="467" height="609" />
-                    </div>
-                </div>
-            </section>
+            <FAQ faqs={faqs} />
             {/* <!--...::: FAQ Section End :::... --> */}
         </PageBody>
     );
