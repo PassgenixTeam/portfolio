@@ -44,7 +44,7 @@ const PageBody: React.FC<{
                     <div className="flex items-center justify-between gap-x-8">
                         {/* <!-- Header Logo --> */}
                         <a href="index.html" className="">
-                            <img src="/assets/img/logo-blue-dark.png" alt="Masco" width="109" height="24" />
+                            <img src="/assets/img/logo-full.svg" alt="Passgenix Solutions" className="h-[3rem]" />
                         </a>
                         {/* <!-- Header Logo --> */}
 
@@ -173,7 +173,7 @@ const PageBody: React.FC<{
                                     <div className="flex flex-col gap-y-7 md:col-span-3 lg:col-span-1">
                                         {/* <!-- Footer Logo --> */}
                                         <a href="index.html">
-                                            <img src="/assets/img/logo-blue-light.png" alt="Masco" width="109" height="24" />
+                                            <img src="/assets/img/logo-full-light.svg" alt="Masco" className="h-[3rem]" />
                                         </a>
                                         {/* <!-- Footer Content --> */}
                                         <div>
