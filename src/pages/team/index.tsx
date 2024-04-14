@@ -70,7 +70,11 @@ const TeamPage: React.FC<
                                         />
                                         <div className="mb-4 mt-6">
                                             <div className="mb-1 text-xl font-semibold text-ColorBlack">{team.name!}</div>
-                                            <span className="block text-opacity-80">{team.role!}</span>
+                                            {team.role!.split(" & ").map((role) => (
+                                                <span key={role} className="block text-[0.9rem] text-opacity-80">
+                                                    {role}
+                                                </span>
+                                            ))}
                                         </div>
 
                                         <div className="flex flex-wrap gap-[10px] xl:gap-4">
