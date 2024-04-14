@@ -101,7 +101,7 @@ const PageBody: React.FC<{
 
                         {/* <!-- Header User Event --> */}
                         <div className="flex items-center gap-6">
-                            {/* <a href="login.html" className="btn-text hidden hover:text-ColorBlue sm:inline-block">
+                            {/* <a href="login.html" className="btn-text hidden hover:text-ColorPrimary sm:inline-block">
                                 Login
                             </a> */}
                             <a href="/contact" className="btn is-blue is-rounded btn-animation group hidden sm:inline-block">
@@ -140,7 +140,7 @@ const PageBody: React.FC<{
                                         <h2 className="text-white">Ready to grow your business digitally?</h2>
                                     </div>
                                     {/* <!-- Section Block --> */}
-                                    <a href="portfolio.html" className="btn is-blue is-rounded btn-animation is-large group">
+                                    <a href="/contact" className="btn is-blue is-rounded btn-animation is-large group">
                                         <span>Let's start the project</span>
                                     </a>
                                 </div>
@@ -182,7 +182,10 @@ const PageBody: React.FC<{
                                                 We develop cutting-edge services that provide exceptional value and personalized service to our clients.
                                             </div>
                                             {/* <!-- Footer Mail --> */}
-                                            <a href="mailto:passgenixteam2023@gmail.com" className="my-6 block underline-offset-4 transition-all duration-300 hover:underline">
+                                            <a
+                                                href="mailto:passgenixteam2023@gmail.com"
+                                                className="my-6 block font-semibold underline-offset-4 transition-all duration-300 hover:underline hover:text-ColorPrimary"
+                                            >
                                                 passgenixteam2023@gmail.com
                                             </a>
                                             {/* <!-- Footer Social Link --> */}
@@ -232,12 +235,12 @@ const PageBody: React.FC<{
                                     {/* <!-- Footer Widget Item --> */}
                                     <div className="flex flex-col gap-y-7 md:col-span-3 lg:col-span-1">
                                         {/* <!-- Footer Widget Title --> */}
-                                        <div className="text-xl font-semibold capitalize">Primary Pages</div>
+                                        <div className="text-xl font-semibold capitalize">Quick Links</div>
                                         {/* <!-- Footer Navbar --> */}
                                         <ul className="flex flex-col gap-y-[10px] capitalize">
                                             <li>
                                                 <a href="/" className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">
-                                                    Home
+                                                    Discover
                                                 </a>
                                             </li>
                                             <li>
@@ -249,11 +252,16 @@ const PageBody: React.FC<{
                                                 </a>
                                             </li>
                                             <li>
+                                                <a href="/team" className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">
+                                                    Team
+                                                </a>
+                                            </li>
+                                            <li>
                                                 <a
-                                                    href="/contact"
+                                                    href="/projects"
                                                     className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
                                                 >
-                                                    Contact
+                                                    Projects
                                                 </a>
                                             </li>
                                         </ul>
@@ -274,7 +282,12 @@ const PageBody: React.FC<{
                         <div className="py-[18px]">
                             {/* <!-- Section Container --> */}
                             <div className="container-default">
-                                <div className="text-center text-white text-opacity-80">&copy; Copyright 2024, All Rights Reserved by Passgenix Solutions</div>
+                                <div className="text-sm text-center text-white text-opacity-80">
+                                    &copy; Copyright 2024, All Rights Reserved by{" "}
+                                    <a href="/" className="font-semibold hover:text-ColorPrimary">
+                                        Passgenix Solutions
+                                    </a>
+                                </div>
                             </div>
                             {/* <!-- Section Container --> */}
                         </div>

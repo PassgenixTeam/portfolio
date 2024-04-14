@@ -3,7 +3,13 @@ import * as React from "react";
 import PageHead from "../../components/page-head/page-head";
 import PageBody from "../../components/page-body/page-body";
 
-const TeamPage: React.FC<PageProps> = ({ data }) => {
+const TeamPage: React.FC<
+    PageProps<{
+        allContentfulTeam: Queries.ContentfulTeamGroupConnection;
+    }>
+> = ({ data }) => {
+    const teams = data.allContentfulTeam.nodes;
+
     return (
         <PageBody>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
@@ -47,208 +53,63 @@ const TeamPage: React.FC<PageProps> = ({ data }) => {
                         {/* <!-- Team List --> */}
                         <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
                             {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-1.jpg" alt="team-img-1" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Eleanor Pena</div>
-                                    <span className="block text-opacity-80">CEO & Co-founder</span>
-                                </div>
+                            {teams
+                                .filter((team) => team.role!.includes("Co-founder"))
+                                .map((team) => (
+                                    <div
+                                        key={team.id}
+                                        className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
+                                        data-jos_animation="flip-left"
+                                    >
+                                        <img
+                                            src={team.thumbnail!.localFile!.publicURL!}
+                                            alt={team.name!}
+                                            width="266"
+                                            height="250"
+                                            className="h-auto w-full rounded-[10px] lg:w-auto"
+                                        />
+                                        <div className="mb-4 mt-6">
+                                            <div className="mb-1 text-xl font-semibold text-ColorBlack">{team.name!}</div>
+                                            <span className="block text-opacity-80">{team.role!}</span>
+                                        </div>
 
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-2.jpg" alt="team-img-2" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Leslie Alexander</div>
-                                    <span className="block text-opacity-80">Product Manager</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-3.jpg" alt="team-img-3" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Jane Cooper</div>
-                                    <span className="block text-opacity-80">Web Developer</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-4.jpg" alt="team-img-4" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Floyd Miles</div>
-                                    <span className="block text-opacity-80">Marketing Expert</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
+                                        <div className="flex flex-wrap gap-[10px] xl:gap-4">
+                                            <a
+                                                href={`mailto:${team.email!}`}
+                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                            >
+                                                <i className="fa-regular fa-envelope"></i>
+                                            </a>
+                                            <a
+                                                href={team.facebook!}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                                aria-label="facebook"
+                                            >
+                                                <i className="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                            <a
+                                                href={team.github!}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                                aria-label="github"
+                                            >
+                                                <i className="fa-brands fa-github"></i>
+                                            </a>
+                                            <a
+                                                href={team.website!}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                                aria-label="website"
+                                            >
+                                                <i className="fa-regular fa-globe"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                ))}
                             {/* <!-- Team Item --> */}
                         </div>
                         {/* <!-- Team List --> */}
@@ -278,412 +139,63 @@ const TeamPage: React.FC<PageProps> = ({ data }) => {
                         {/* <!-- Team List --> */}
                         <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
                             {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-5.jpg" alt="team-img-5" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Arlene McCoy</div>
-                                    <span className="block text-opacity-80">UI/UX Designer</span>
-                                </div>
+                            {teams
+                                .filter((team) => !team.role!.includes("Co-founder"))
+                                .map((team) => (
+                                    <div
+                                        key={team.id}
+                                        className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
+                                        data-jos_animation="flip-left"
+                                    >
+                                        <img
+                                            src={team.thumbnail!.localFile!.publicURL!}
+                                            alt={team.name!}
+                                            width="266"
+                                            height="250"
+                                            className="h-auto w-full rounded-[10px] lg:w-auto"
+                                        />
+                                        <div className="mb-4 mt-6">
+                                            <div className="mb-1 text-xl font-semibold text-ColorBlack">{team.name!}</div>
+                                            <span className="block text-opacity-80">{team.role!}</span>
+                                        </div>
 
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-6.jpg" alt="team-img-6" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Theresa Webb</div>
-                                    <span className="block text-opacity-80">WP Developer</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-7.jpg" alt="team-img-7" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Jerome Bell</div>
-                                    <span className="block text-opacity-80">HTML Developer</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-8.jpg" alt="team-img-8" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Darrell Steward</div>
-                                    <span className="block text-opacity-80">Product Designer</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-9.jpg" alt="team-img-9" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Devon Lane</div>
-                                    <span className="block text-opacity-80">Marketing Expert</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-10.jpg" alt="team-img-10" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Floyd Miles</div>
-                                    <span className="block text-opacity-80">Product Designer</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-11.jpg" alt="team-img-11" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Darlene Robertson</div>
-                                    <span className="block text-opacity-80">Web Developer</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            {/* <!-- Team Item --> */}
-                            {/* <!-- Team Item --> */}
-                            <div
-                                className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                data-jos_animation="flip-left"
-                            >
-                                <img src="/assets/img/th-1/team-img-12.jpg" alt="team-img-12" width="266" height="250" className="h-auto w-full rounded-[10px] lg:w-auto" />
-                                <div className="mb-4 mt-6">
-                                    <div className="mb-1 text-xl font-semibold text-ColorBlack">Bessie Cooper</div>
-                                    <span className="block text-opacity-80">Marketing Executive</span>
-                                </div>
-
-                                <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                    <a
-                                        href="https://twitter.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="twitter"
-                                    >
-                                        <i className="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="facebook"
-                                    >
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.instagram.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="instagram"
-                                    >
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a
-                                        href="https://www.github.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                        aria-label="github"
-                                    >
-                                        <i className="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
+                                        <div className="flex flex-wrap gap-[10px] xl:gap-4">
+                                            <a
+                                                href={`mailto:${team.email!}`}
+                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                            >
+                                                <i className="fa-regular fa-envelope"></i>
+                                            </a>
+                                            <a
+                                                href={team.facebook!}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                                aria-label="facebook"
+                                            >
+                                                <i className="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                            <a
+                                                href={team.github!}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                                aria-label="github"
+                                            >
+                                                <i className="fa-brands fa-github"></i>
+                                            </a>
+                                            <a
+                                                href={team.website!}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                                aria-label="website"
+                                            >
+                                                <i className="fa-regular fa-globe"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                ))}
                             {/* <!-- Team Item --> */}
                         </div>
                         {/* <!-- Team List --> */}
@@ -706,3 +218,24 @@ const TeamPage: React.FC<PageProps> = ({ data }) => {
 export default TeamPage;
 
 export const Head: HeadFC = () => <PageHead title="Team" />;
+
+export const query = graphql`
+    {
+        allContentfulTeam(filter: { node_locale: { eq: "en-US" } }) {
+            nodes {
+                id
+                name
+                role
+                email
+                facebook
+                github
+                website
+                thumbnail {
+                    localFile {
+                        publicURL
+                    }
+                }
+            }
+        }
+    }
+`;

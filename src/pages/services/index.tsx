@@ -3,15 +3,18 @@ import * as React from "react";
 import PageHead from "../../components/page-head/page-head";
 import PageBody from "../../components/page-body/page-body";
 import FAQ from "../../components/faq/faq";
+import Plan from "../../components/plan/plan";
 
 const ServicePage: React.FC<
     PageProps<{
         allContentfulService: Queries.ContentfulServiceGroupConnection;
         allContentfulFaq: Queries.ContentfulFaqGroupConnection;
+        allContentfulPlan: Queries.ContentfulPlanGroupConnection;
     }>
 > = ({ data }) => {
     const services = data.allContentfulService.nodes;
     const faqs = data.allContentfulFaq.nodes;
+    const plans = data.allContentfulPlan.nodes;
 
     return (
         <PageBody>
@@ -83,7 +86,7 @@ const ServicePage: React.FC<
                                                 <div className="flex-1 text-center lg:text-left">
                                                     <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">{service.name}</div>
                                                     <p className="mb-5 line-clamp-2 text-ColorBlack/80">{service.shortDescription}</p>
-                                                    <div className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorBlue">
+                                                    <div className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary">
                                                         Find out more
                                                         <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
                                                             <i className="fa-solid fa-arrow-right"></i>
@@ -119,17 +122,17 @@ const ServicePage: React.FC<
                             {/* <!-- About Hero Image Block --> */}
                             <div className="jos order-2 lg:order-1" data-jos_animation="fade-left" data-jos_delay="0">
                                 <div className="relative flex items-center justify-center mx-auto lg:mx-0 max-w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-full">
-                                    <img src="/assets/img/th-1/about-hero-2.jpg" alt="hero image" width="580" height="550" className="h-auto w-full" />
-                                    <a
+                                    <img src="/assets/img/th-1/about-hero-2.jpg" alt="hero image" width="580" height="550" className="h-auto w-full rounded-md" />
+                                    {/* <a
                                         data-fslightbox="gallery"
                                         href="https://www.youtube.com/watch?v=3nQNiWdeH2Q"
-                                        className="group group absolute flex h-[100px] w-[100px] items-center justify-center rounded-[50%] bg-white text-ColorBlue"
+                                        className="group group absolute flex h-[100px] w-[100px] items-center justify-center rounded-[50%] bg-white text-ColorPrimary"
                                         aria-label="video-play"
                                     >
                                         <span className="text-2xl transition-all duration-300 ease-linear group-hover:scale-110">
                                             <i className="fa-solid fa-play"></i>
                                         </span>
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                             {/* <!-- About Hero Image Block --> */}
@@ -139,12 +142,12 @@ const ServicePage: React.FC<
                                 <div>
                                     {/* <!-- Section Block --> */}
                                     <div className="mb-5">
-                                        <h2>Our vision is to build brands and provide world-class experiences to our clients</h2>
+                                        <h2>Our vision to be shaping the future through innovative software solutions.</h2>
                                     </div>
                                     {/* <!-- Section Block --> */}
                                     <p>
-                                        SINCE 1998, we transform bold business ideas into exceptional digital products. We ideate, design, and develop data-driven digital products
-                                        made to answer business challenges.
+                                        We believe technology should empower people and businesses, and we strive to create software that simplifies complex problems and drives
+                                        positive change.
                                     </p>
                                     {/* <!-- Horizontal Line Separator --> */}
                                     <div className="my-7 h-px w-full bg-ColorBlack opacity-10 xl:my-10 xxl:my-14"></div>
@@ -162,8 +165,8 @@ const ServicePage: React.FC<
                                                 className="mx-auto h-[60px] w-[60px] rounded-[50%] lg:mx-0"
                                             />
                                             <div>
-                                                <span className="block font-semibold">Karen Lynn</span>
-                                                <span className="text-sm text-opacity-80">CEO & Co-founder @ Company</span>
+                                                <span className="block font-semibold">Nguyen Dinh Huy</span>
+                                                <span className="text-sm text-opacity-80">CEO & Co-founder @ Passgenix Solutions</span>
                                             </div>
                                         </div>
                                     </div>
@@ -181,221 +184,7 @@ const ServicePage: React.FC<
             {/* <!--...::: Service Hero Section End :::... --> */}
 
             {/* <!--...::: Pricing Section Start :::... --> */}
-            <section className="section-pricing">
-                <div className="bg-ColorOffWhite">
-                    {/* <!-- Section Space --> */}
-                    <div className="section-space">
-                        {/* <!-- Section Container --> */}
-                        <div className="container-default">
-                            {/* <!-- Section Content Wrapper --> */}
-                            <div className="jos mb-[60px] xl:mb-20">
-                                {/* <!-- Section Content Block --> */}
-                                <div className="mx-auto max-w-[600px]">
-                                    <h2 className="text-center">Choice the right pricing plan that suits your need</h2>
-                                </div>
-                                {/* <!-- Section Content Block --> */}
-                            </div>
-                            {/* <!-- Section Content Wrapper --> */}
-
-                            {/* <!-- Pricing List --> */}
-                            <div className="grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-                                {/* <!-- Pricing Item --> */}
-                                <div className="jos" data-jos_animation="flip-left" data-jos_delay="0">
-                                    <div className="hover-solid-shadow h-full">
-                                        <div className="rounded-[10px] border-2 border-ColorBlack bg-white p-7 xl:p-10 h-full">
-                                            {/* <!-- Pricing Content Top --> */}
-                                            <div className="text-center text-ColorBlack">
-                                                <span className="text-xl font-bold">Free Plan</span>
-                                                <div className="text-[28px] font-normal leading-[2.85]">
-                                                    $<span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">00</span>/month
-                                                </div>
-                                                <span className="text-sm text-ColorBlack/70">No credit card required</span>
-                                            </div>
-                                            {/* <!-- Pricing Content Top --> */}
-                                            {/* <!-- Horizontal Line Separator --> */}
-                                            <div className="my-10 h-px w-full bg-ColorBlack/10"></div>
-                                            {/* <!-- Horizontal Line Separator --> */}
-                                            {/* <!-- Pricing Data list --> */}
-                                            <ul className="flex flex-col gap-y-6 text-base font-semibold text-ColorBlack xl:px-[18px]">
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Unlimited chats & websites
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    60-day conversations history
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Basic widget customization
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Web, desktop & mobile apps
-                                                </li>
-                                                <li className="flex gap-x-3 text-ColorBlack/10">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage visitors via visitor list
-                                                </li>
-                                                <li className="flex gap-x-3 text-ColorBlack/10">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage with automatic messages
-                                                </li>
-                                            </ul>
-                                            {/* <!-- Pricing Data list --> */}
-                                            <div className="mt-10 flex justify-center">
-                                                <button className="btn is-white is-rounded is-large group w-full border-2">Purchase now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Pricing Item --> */}
-                                {/* <!-- Pricing Item --> */}
-                                <div className="jos" data-jos_animation="flip-left" data-jos_delay="0">
-                                    <div className="hover-solid-shadow h-full">
-                                        <div className="rounded-[10px] border-2 border-ColorBlack bg-white p-7 xl:p-10 h-full">
-                                            {/* <!-- Pricing Content Top --> */}
-                                            <div className="text-center text-ColorBlack">
-                                                <span className="text-xl font-bold">Popular Plan</span>
-                                                <div className="text-[28px] font-normal leading-[2.85]">
-                                                    $<span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">199</span>/month
-                                                </div>
-                                                <span className="text-sm text-ColorBlack/70">No credit card required</span>
-                                            </div>
-                                            {/* <!-- Pricing Content Top --> */}
-                                            {/* <!-- Horizontal Line Separator --> */}
-                                            <div className="my-10 h-px w-full bg-ColorBlack/10"></div>
-                                            {/* <!-- Horizontal Line Separator --> */}
-                                            {/* <!-- Pricing Data list --> */}
-                                            <ul className="flex flex-col gap-y-6 text-base font-semibold text-ColorBlack xl:px-[18px]">
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Live chat + email + FB Messenger
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    3-year conversations history
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Advanced widget customization
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    24/7 system monitoring facility
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage visitors via visitor list
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage with automatic messages
-                                                </li>
-                                            </ul>
-                                            {/* <!-- Pricing Data list --> */}
-                                            <div className="mt-10 flex justify-center">
-                                                <button className="btn is-blue is-rounded is-large group w-full border-2">Purchase now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Pricing Item --> */}
-                                {/* <!-- Pricing Item --> */}
-                                <div className="jos" data-jos_animation="flip-left" data-jos_delay="0">
-                                    <div className="hover-solid-shadow h-full">
-                                        <div className="rounded-[10px] border-2 border-ColorBlack bg-white p-7 xl:p-10 h-full">
-                                            {/* <!-- Pricing Content Top --> */}
-                                            <div className="text-center text-ColorBlack">
-                                                <span className="text-xl font-bold">Standard Plan</span>
-                                                <div className="text-[28px] font-normal leading-[2.85]">
-                                                    $<span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">49</span>/month
-                                                </div>
-                                                <span className="text-sm text-ColorBlack/70">No credit card required</span>
-                                            </div>
-                                            {/* <!-- Pricing Content Top --> */}
-                                            {/* <!-- Horizontal Line Separator --> */}
-                                            <div className="my-10 h-px w-full bg-ColorBlack/10"></div>
-                                            {/* <!-- Horizontal Line Separator --> */}
-                                            {/* <!-- Pricing Data list --> */}
-                                            <ul className="flex flex-col gap-y-6 text-base font-semibold text-ColorBlack xl:px-[18px]">
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Live chat + email + FB Messenger
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    3-year conversations history
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Advanced widget customization
-                                                </li>
-                                                <li className="flex gap-x-3">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    24/7 system monitoring facility
-                                                </li>
-                                                <li className="flex gap-x-3 text-ColorBlack/10">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage visitors via visitor list
-                                                </li>
-                                                <li className="flex gap-x-3 text-ColorBlack/10">
-                                                    <span className="text-xl">
-                                                        <i className="fa-solid fa-star"></i>
-                                                    </span>
-                                                    Engage with automatic messages
-                                                </li>
-                                            </ul>
-                                            {/* <!-- Pricing Data list --> */}
-                                            <div className="mt-10 flex justify-center">
-                                                <button className="btn is-white is-rounded is-large group w-full border-2">Purchase now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Pricing Item --> */}
-                            </div>
-                            {/* <!-- Pricing List --> */}
-                        </div>
-                        {/* <!-- Section Container --> */}
-                    </div>
-                    {/* <!-- Section Space --> */}
-                </div>
-            </section>
+            <Plan plans={plans} className="bg-ColorOffWhite" />
             {/* <!--...::: Pricing Section Start :::... --> */}
 
             {/* <!--...::: FAQ Section Start :::... --> */}
@@ -427,6 +216,14 @@ export const query = graphql`
                         publicURL
                     }
                 }
+            }
+        }
+
+        allContentfulPlan(sort: { order: ASC }, filter: { node_locale: { eq: "en-US" } }) {
+            nodes {
+                id
+                name
+                level
             }
         }
 

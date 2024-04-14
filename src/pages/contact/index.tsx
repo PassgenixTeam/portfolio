@@ -67,10 +67,10 @@ const ContactPage: React.FC<PageProps> = () => {
                                         <div>
                                             <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Give us a call</div>
                                             <p>
-                                                Give us a ring at
-                                                <a href="tel:+01234567890" className="font-semibold hover:text-ColorBlue">
-                                                    (+012-345-567-890)
-                                                </a>
+                                                Give us a ring at{" "}
+                                                <a href="tel:+84946672181" className="font-semibold hover:text-ColorPrimary hover:underline hover:underline-offset-4">
+                                                    (+84-946-672-181)
+                                                </a>{" "}
                                                 . Every monday-friday from 9 am to 5 pm.
                                             </p>
                                         </div>
@@ -92,10 +92,13 @@ const ContactPage: React.FC<PageProps> = () => {
                                         <div>
                                             <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Email Us</div>
                                             <p>
-                                                Drop us an email at
-                                                <a href="mailto:example@yourmail.com" className="font-semibold underline underline-offset-4 hover:text-ColorBlue">
-                                                    example@gmail.com
-                                                </a>
+                                                Drop us an email at{" "}
+                                                <a
+                                                    href="mailto:passgenixteam2023@gmail.com"
+                                                    className="font-semibold hover:text-ColorPrimary hover:underline hover:underline-offset-4"
+                                                >
+                                                    passgenixteam2023@gmail.com
+                                                </a>{" "}
                                                 and you'll receive a reply within 24 hours.
                                             </p>
                                         </div>

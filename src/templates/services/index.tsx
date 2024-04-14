@@ -33,10 +33,10 @@ const ServiceDetailsPage: React.FC<
                             <h1 className="breadcrumb-title">{service.name}</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href="index">Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a href="services">Services</a>
+                                    <a href="/services">Services</a>
                                 </li>
                                 <li>{service.name!}</li>
                             </ul>
