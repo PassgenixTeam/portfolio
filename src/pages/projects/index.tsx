@@ -3,7 +3,23 @@ import * as React from "react";
 import PageHead from "../../components/page-head/page-head";
 import PageBody from "../../components/page-body/page-body";
 
-const ProjectsPage: React.FC<PageProps> = ({ data }) => {
+const ProjectsPage: React.FC<
+    PageProps<{
+        allContentfulProject: Queries.ContentfulProjectGroupConnection;
+    }>
+> = ({ data }) => {
+    const projects = data.allContentfulProject.nodes;
+    const categories = projects.reduce((result, project) => {
+        project.categories!.forEach((category) => {
+            if (!result.includes(category!)) result.push(category!);
+        });
+        return result;
+    }, [] as string[]);
+
+    function category2Id(category: string) {
+        return category.toLowerCase().replace(/\s/g, "-");
+    }
+
     return (
         <PageBody>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
@@ -49,21 +65,11 @@ const ProjectsPage: React.FC<PageProps> = ({ data }) => {
                             <button className="active tab-button btn tab-btn-blue is-rounded h-[50px]" data-tab="show-all">
                                 Show All
                             </button>
-                            <button className="tab-button btn tab-btn-blue is-rounded h-[50px]" data-tab="website">
-                                Website
-                            </button>
-                            <button className="tab-button btn tab-btn-blue is-rounded h-[50px]" data-tab="branding">
-                                Branding
-                            </button>
-                            <button className="tab-button btn tab-btn-blue is-rounded h-[50px]" data-tab="commercial">
-                                Commercial
-                            </button>
-                            <button className="tab-button btn tab-btn-blue is-rounded h-[50px]" data-tab="digital-art">
-                                Digital Art
-                            </button>
-                            <button className="tab-button btn tab-btn-blue is-rounded h-[50px]" data-tab="ui-ux-design">
-                                UI/UX Design
-                            </button>
+                            {categories.map((category) => (
+                                <button key={category} className="tab-button btn tab-btn-blue is-rounded h-[50px]" data-tab={category2Id(category)}>
+                                    {category}
+                                </button>
+                            ))}
                         </div>
                         {/* <!-- Tab Button Menu --> */}
 
@@ -72,469 +78,74 @@ const ProjectsPage: React.FC<PageProps> = ({ data }) => {
                             {/* <!-- Portfolio List --> */}
                             <div className="tab-content grid gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]" id="show-all">
                                 {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-1.jpg"
-                                                alt="portfolio-img-1"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    App — The power of communication
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    UI/UX Design
-                                                </a>
+                                {projects.map((project) => (
+                                    <div key={project.id} className="jos" data-jos_delay="0">
+                                        <a href={`/projects/${project.slug}`} className="group">
+                                            <div className="overflow-hidden rounded-[10px]">
+                                                <img
+                                                    src={project.thumbnail!.localFile!.publicURL!}
+                                                    alt="portfolio-img-1"
+                                                    width="617"
+                                                    height="450"
+                                                    className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+                                                />
                                             </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0.3">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-2.jpg"
-                                                alt="portfolio-img-2"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Website — The future lifestyle platform.
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Branding
-                                                </a>
+                                            <div className="mt-6">
+                                                <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
+                                                    <div className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorPrimary xl:text-2xl">
+                                                        {project.name}
+                                                    </div>
+                                                </div>
+                                                <div className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
+                                                    View work
+                                                    <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
+                                                        <i className="fa-solid fa-arrow-right"></i>
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
+                                        </a>
                                     </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0.6">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-3.jpg"
-                                                alt="portfolio-img-3"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Campaign — Provision of information
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Marketing
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0.9">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-4.jpg"
-                                                alt="portfolio-img-4"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Journal — Asset in business
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Commercial
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="1.2">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-5.jpg"
-                                                alt="portfolio-img-5"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Book — Design of the year
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    UI/UX Design
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="1.5">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-6.jpg"
-                                                alt="portfolio-img-6"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Strategic — Ways to level up your brand
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Branding
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                ))}
                                 {/* <!-- Portfolio Item --> */}
                             </div>
                             {/* <!-- Portfolio List --> */}
-                            {/* <!-- Portfolio List --> */}
-                            <div className="tab-content grid hidden gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]" id="website">
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-2.jpg"
-                                                alt="portfolio-img-2"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Website — The future lifestyle platform.
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Branding
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                            </div>
-                            {/* <!-- Portfolio List --> */}
-                            {/* <!-- Portfolio List --> */}
-                            <div className="tab-content grid hidden gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]" id="branding">
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-2.jpg"
-                                                alt="portfolio-img-2"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Website — The future lifestyle platform.
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Branding
+
+                            {categories.map((category) => (
+                                <div key={category} className="tab-content grid hidden gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]" id={category2Id(category)}>
+                                    {/* <!-- Portfolio Item --> */}
+                                    {projects
+                                        .filter((project) => project.categories!.includes(category))
+                                        .map((project) => (
+                                            <div key={project.id} className="jos" data-jos_delay="0">
+                                                <a href={`/projects/${project.slug}`} className="group">
+                                                    <div className="overflow-hidden rounded-[10px]">
+                                                        <img
+                                                            src={project.thumbnail!.localFile!.publicURL!}
+                                                            alt="portfolio-img-1"
+                                                            width="617"
+                                                            height="450"
+                                                            className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+                                                        />
+                                                    </div>
+                                                    <div className="mt-6">
+                                                        <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
+                                                            <div className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorPrimary xl:text-2xl">
+                                                                {project.name}
+                                                            </div>
+                                                        </div>
+                                                        <div className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
+                                                            View work
+                                                            <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
+                                                                <i className="fa-solid fa-arrow-right"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
                                                 </a>
                                             </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
+                                        ))}
+                                    {/* <!-- Portfolio Item --> */}
                                 </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0.3">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-6.jpg"
-                                                alt="portfolio-img-6"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Strategic — Ways to level up your brand
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Branding
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                            </div>
-                            {/* <!-- Portfolio List --> */}
-                            {/* <!-- Portfolio List --> */}
-                            <div className="tab-content grid hidden gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]" id="commercial">
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-4.jpg"
-                                                alt="portfolio-img-4"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Journal — Asset in business
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Commercial
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                            </div>
-                            {/* <!-- Portfolio List --> */}
-                            {/* <!-- Portfolio List --> */}
-                            <div className="tab-content grid hidden gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]" id="digital-art">
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-3.jpg"
-                                                alt="portfolio-img-3"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Campaign — Provision of information
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Marketing
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                            </div>
-                            {/* <!-- Portfolio List --> */}
-                            {/* <!-- Portfolio List --> */}
-                            <div className="tab-content grid hidden gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]" id="ui-ux-design">
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-1.jpg"
-                                                alt="portfolio-img-1"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    App — The power of communication
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    UI/UX Design
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos" data-jos_delay="0.3">
-                                    <div className="group">
-                                        <div className="overflow-hidden rounded-[10px]">
-                                            <img
-                                                src="/assets/img/th-1/portfolio-img-5.jpg"
-                                                alt="portfolio-img-5"
-                                                width="617"
-                                                height="450"
-                                                className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="mt-6">
-                                            <div className="mb-5 flex flex-wrap justify-between gap-5 lg:flex-nowrap xl:mb-7">
-                                                <a
-                                                    href="details"
-                                                    className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue xl:text-2xl"
-                                                >
-                                                    Book — Design of the year
-                                                </a>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    UI/UX Design
-                                                </a>
-                                            </div>
-                                            <a href="details" className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorBlue">
-                                                View work
-                                                <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
-                                                    <i className="fa-solid fa-arrow-right"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                            </div>
-                            {/* <!-- Portfolio List --> */}
+                            ))}
                         </div>
                         {/* <!-- Portfolio Area --> */}
 
@@ -554,3 +165,21 @@ const ProjectsPage: React.FC<PageProps> = ({ data }) => {
 export default ProjectsPage;
 
 export const Head: HeadFC = () => <PageHead title="Projects" />;
+
+export const query = graphql`
+    {
+        allContentfulProject(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "en-US" } }) {
+            nodes {
+                id
+                name
+                slug
+                categories
+                thumbnail {
+                    localFile {
+                        publicURL
+                    }
+                }
+            }
+        }
+    }
+`;

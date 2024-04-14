@@ -1,9 +1,23 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
 import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
-import PageHead from "../../components/page-head/page-head";
 import PageBody from "../../components/page-body/page-body";
+import PageHead from "../../components/page-head/page-head";
 
-const ProjectDetailsPage: React.FC<PageProps> = ({ data }) => {
+const TeamDetailsPage: React.FC<
+    PageProps<{
+        contentfulProject: Queries.ContentfulProject;
+    }>
+> = ({ data }) => {
+    const project = data.contentfulProject;
+
+    const projectDescription = documentToReactComponents(JSON.parse(project.content!.raw!), {
+        renderNode: {
+            [BLOCKS.PARAGRAPH]: (node, children) => <p className="project-details__text">{children}</p>,
+        },
+    });
+
     return (
         <PageBody>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
@@ -13,12 +27,15 @@ const ProjectDetailsPage: React.FC<PageProps> = ({ data }) => {
                     {/* <!-- Section Container --> */}
                     <div className="container-default">
                         <div className="breadcrumb-block">
-                            <h1 className="breadcrumb-title">Project Details</h1>
+                            <h1 className="breadcrumb-title">{project.name}</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
                                     <a href="/">Home</a>
                                 </li>
-                                <li>Projects</li>
+                                <li>
+                                    <a href="/projects">Projects</a>
+                                </li>
+                                <li>{project.name!}</li>
                             </ul>
                         </div>
                     </div>
@@ -47,38 +64,35 @@ const ProjectDetailsPage: React.FC<PageProps> = ({ data }) => {
                         {/* <!-- Portfolio Details Area --> */}
                         <div className="mx-auto max-w-[1076px]">
                             {/* <!-- Portfolio Main Image --> */}
-                            <img src="/assets/img/th-1/portfolio-main-img.jpg" alt="portfolio-main-img" width="1076" height="600" className="h-auto w-full rounded-[10px]" />
+                            <img src={project.image!.localFile!.publicURL!} alt={project.name!} width="1076" height="600" className="h-auto w-full rounded-[10px]" />
                             {/* <!-- Portfolio Main Image --> */}
 
                             {/* <!-- Portfolio Info List --> */}
                             <ul className="mb-[60px] mt-[30px] flex flex-wrap justify-between gap-8">
                                 <li>
                                     <span className="mb-[5px] block text-xl font-bold leading-[1.4] text-ColorBlack">Client:</span>
-                                    <span className="text-ColorBlack/80">Adam Smith</span>
+                                    <span className="text-ColorBlack/80">{project.client}</span>
                                 </li>
                                 <li>
                                     <span className="mb-[5px] block text-xl font-bold leading-[1.4] text-ColorBlack">Category:</span>
-                                    <span className="text-ColorBlack/80">UI/UX Design</span>
+                                    <span className="text-ColorBlack/80">{project.categories!.join(", ")}</span>
                                 </li>
                                 <li>
                                     <span className="mb-[5px] block text-xl font-bold leading-[1.4] text-ColorBlack">Duration:</span>
-                                    <span className="text-ColorBlack/80">1 Week</span>
+                                    <span className="text-ColorBlack/80">{project.duration}</span>
                                 </li>
                                 <li>
-                                    <span className="mb-[5px] block text-xl font-bold leading-[1.4]">Website Link:</span>
-                                    <span className="text-ColorBlack/80">example@gmail.com</span>
+                                    <span className="mb-[5px] block text-xl font-bold leading-[1.4]">Website:</span>
+                                    <a href={project.websiteLink!} target="_blank" className="text-ColorBlack/80 hover:text-ColorPrimary">
+                                        {project.websiteLink}
+                                    </a>
                                 </li>
                             </ul>
                             {/* <!-- Portfolio Info List --> */}
 
                             {/* <!-- Portfolio Rich Text --> */}
                             <div className="rich-text">
-                                <h4>Project overview</h4>
-                                <p>
-                                    Mobile UX design is the design of user experiences for hand-held and wearable devices. Designers create solutions (typically applications) to
-                                    meet mobile users' unique requirements and restrictions. Designers focus on accessibility, discoverability and efficiency to optimize on-the-go
-                                    interactive experiences.
-                                </p>
+                                {projectDescription}
                                 <p>
                                     Interface (UI) determines how the app will look like, while UX determines what problem it will solve in the users' life. UI is revolves around
                                     visually directing the user about the app interface, while UX includes researching, testing, developing the app.
@@ -130,14 +144,11 @@ const ProjectDetailsPage: React.FC<PageProps> = ({ data }) => {
             <div className="overflow-hidden bg-ColorBlack py-5 text-3xl font-bold uppercase leading-[1.4] tracking-widest text-white">
                 {/* <!-- Horizontal Slider Block--> */}
                 <div className="horizontal-slide-from-right-to-left flex gap-x-[30px]">
-                    <span className="inline-block min-w-[855px]">We complete client's projects efficiently</span>
-                    <img src="/assets/img/icons/fire-icon.png" alt="fire-icon" width="40" height="40" />
-                    <span className="inline-block min-w-[855px]">We complete client's projects efficiently</span>
-                    <img src="/assets/img/icons/fire-icon.png" alt="fire-icon" width="40" height="40" />
-                    <span className="inline-block min-w-[855px]">We complete client's projects efficiently</span>
-                    <img src="/assets/img/icons/fire-icon.png" alt="fire-icon" width="40" height="40" />
-                    <span className="inline-block min-w-[855px]">We complete client's projects efficiently</span>
-                    <img src="/assets/img/icons/fire-icon.png" alt="fire-icon" width="40" height="40" />
+                    {[...Array(5)].map((_, index) => (
+                        <span key={index} className="inline-block min-w-[855px]">
+                            We complete client's projects efficiently
+                        </span>
+                    ))}
                 </div>
                 {/* <!-- Horizontal Slider Block--> */}
             </div>
@@ -160,73 +171,36 @@ const ProjectDetailsPage: React.FC<PageProps> = ({ data }) => {
                             </div>
                             {/* <!-- Section Wrapper --> */}
                             <p className="jos max-w-[856px]">
-                                There are many variations of passages of Lorem Ipsum available, but the majority have suf alteration in some form, by injected humour, or randomised
-                                words which don't look even slightly believable.
+                                Unleash even more possibilities! Don't miss our recently completed projects. We've curated a collection of the similar projects, showcasing
+                                innovative ways to leverage our services.
                             </p>
 
                             {/* <!-- Portfolio List --> */}
                             <div className="grid gap-8 sm:grid-cols-2">
                                 {/* <!-- Portfolio Item --> */}
-                                <div className="jos">
-                                    <div className="group">
-                                        <div className="relative z-10 after:absolute after:inset-0 after:-z-10 after:translate-x-0 after:translate-y-0 after:rounded-[11px] after:bg-ColorBlack after:transition-all after:duration-300 after:ease-in-out hover:after:translate-x-[10px] hover:after:translate-y-[10px]">
-                                            <div className="overflow-hidden rounded-[10px]">
-                                                <img
-                                                    src="/assets/img/th-1/portfolio-modern-img-1.jpg"
-                                                    alt="portfolio-modern-img-1"
-                                                    width="406"
-                                                    height="350"
-                                                    className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                                />
+                                {project.relatedProjects!.map((relatedProject) => (
+                                    <div key={relatedProject!.id} className="jos">
+                                        <a href={`/projects/${relatedProject!.slug}`} className="group">
+                                            <div className="relative z-10 after:absolute after:inset-0 after:-z-10 after:translate-x-0 after:translate-y-0 after:rounded-[11px] after:bg-ColorBlack after:transition-all after:duration-300 after:ease-in-out hover:after:translate-x-[10px] hover:after:translate-y-[10px]">
+                                                <div className="overflow-hidden rounded-[10px]">
+                                                    <img
+                                                        src={relatedProject!.thumbnail!.localFile!.publicURL!}
+                                                        alt="portfolio-modern-img-1"
+                                                        width="406"
+                                                        height="350"
+                                                        className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="mt-8">
-                                            <div className="mb-3 flex flex-wrap gap-2 text-xl leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue lg:flex-nowrap xl:text-2xl">
-                                                <a href="portfolio-details.html" className="font-semibold">
-                                                    App
-                                                </a>
-                                                <span>—</span>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    UI/UX Design
-                                                </a>
+                                            <div className="mt-8">
+                                                <div className="mb-3 flex flex-wrap gap-2 text-xl leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorPrimary lg:flex-nowrap xl:text-2xl">
+                                                    <div className="font-semibold">{relatedProject!.name!}</div>
+                                                </div>
+                                                <p className="line-clamp-2 text-base sm:max-w-[350px]">{relatedProject!.shortDescription!}</p>
                                             </div>
-                                            <p className="line-clamp-2 text-base sm:max-w-[350px]">
-                                                Lectus faucibus ac sollicitudin feugiat sit. Ac tellus sit commodo duis mi interdum
-                                            </p>
-                                        </div>
+                                        </a>
                                     </div>
-                                </div>
-                                {/* <!-- Portfolio Item --> */}
-                                {/* <!-- Portfolio Item --> */}
-                                <div className="jos">
-                                    <div className="group">
-                                        <div className="relative z-10 after:absolute after:inset-0 after:-z-10 after:translate-x-0 after:translate-y-0 after:rounded-[11px] after:bg-ColorBlack after:transition-all after:duration-300 after:ease-in-out hover:after:translate-x-[10px] hover:after:translate-y-[10px]">
-                                            <div className="overflow-hidden rounded-[10px]">
-                                                <img
-                                                    src="/assets/img/th-1/portfolio-modern-img-2.jpg"
-                                                    alt="portfolio-modern-img-2"
-                                                    width="406"
-                                                    height="350"
-                                                    className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="mt-8">
-                                            <div className="mb-3 flex flex-wrap gap-2 text-xl leading-[1.33] -tracking-[0.5px] text-ColorBlack group-hover:text-ColorBlue lg:flex-nowrap xl:text-2xl">
-                                                <a href="portfolio-details.html" className="font-semibold">
-                                                    Website
-                                                </a>
-                                                <span>—</span>
-                                                <a href="#" className="hover:text-ColorBlue">
-                                                    Branding
-                                                </a>
-                                            </div>
-                                            <p className="line-clamp-2 text-base sm:max-w-[350px]">
-                                                Lectus faucibus ac sollicitudin feugiat sit. Ac tellus sit commodo duis mi interdum
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                ))}
                                 {/* <!-- Portfolio Item --> */}
                             </div>
                             {/* <!-- Portfolio List --> */}
@@ -241,6 +215,42 @@ const ProjectDetailsPage: React.FC<PageProps> = ({ data }) => {
     );
 };
 
-export default ProjectDetailsPage;
+export default TeamDetailsPage;
 
-export const Head: HeadFC = () => <PageHead title="Project Details" />;
+export const Head: HeadFC<{
+    contentfulProject: Queries.ContentfulProject;
+}> = ({ data }) => <PageHead title={data.contentfulProject.name!} />;
+
+export const query = graphql`
+    query ($slug: String!) {
+        contentfulProject(slug: { eq: $slug }) {
+            id
+            name
+            slug
+            categories
+            client
+            duration
+            websiteLink
+            shortDescription
+            relatedProjects {
+                id
+                name
+                slug
+                shortDescription
+                thumbnail {
+                    localFile {
+                        publicURL
+                    }
+                }
+            }
+            image {
+                localFile {
+                    publicURL
+                }
+            }
+            content {
+                raw
+            }
+        }
+    }
+`;
