@@ -17,7 +17,24 @@ const ServiceDetailsPage: React.FC<
 
     const serviceDescription = documentToReactComponents(JSON.parse(service.description!.raw!), {
         renderNode: {
-            [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+            [BLOCKS.LIST_ITEM]: (node, children) => (
+                <li className="mb-4 flex gap-x-3 last:mb-0">
+                    <span className="text-xl text-ColorPrimary">
+                        <i className="fa-solid fa-badge-check"></i>
+                    </span>
+                    {children}
+                </li>
+            ),
+            [BLOCKS.EMBEDDED_ASSET]: (node) => {
+                const imageId = node.data.target.sys.id;
+                const imageReference = service.description!.references?.find((reference) => reference!.contentful_id === imageId);
+                return (
+                    <div className="image flex flex-col items-center gap-4 mb-10">
+                        <img src={imageReference!.localFile!.publicURL!} alt={node.data.target.title} className="h-auto w-full rounded-lg max-w-[50rem]" />
+                        <small className="text-sm font-medium italic text-ColorBlack/40">{imageReference!.description}</small>
+                    </div>
+                );
+            },
         },
     });
 
@@ -69,70 +86,7 @@ const ServiceDetailsPage: React.FC<
                             {/* <!-- Service main Image --> */}
                             <img src={service.image!.localFile!.publicURL!} alt={service.name!} className="mb-10 h-auto w-full rounded-[10px]" />
                             {/* <!-- Service Rich Text --> */}
-                            <div className="rich-text">
-                                {serviceDescription}
-                                <p>
-                                    What makes it unique? What do you want people to think about your product or service? By creating guidelines for your brand, you can ensure
-                                    every interaction with consumers remains consistent.
-                                </p>
-
-                                <h5>How Do You Create an Effective Digital Brand Strategy?</h5>
-                                <p>
-                                    Creating an effective digital brand takes time, effort, and due diligence. It's not as simple as making a logo, showing up with a few dozen
-                                    hashtags, and calling. Let's dive into the roadmap for building a digital brand strategy with a few detailed examples.
-                                </p>
-
-                                <ul className="font-semibold text-ColorBlack">
-                                    <li className="mb-4 flex gap-x-3 last:mb-0">
-                                        <span className="text-xl text-ColorPrimary">
-                                            <i className="fa-solid fa-badge-check"></i>
-                                        </span>
-                                        Digital Branding – Creating your brand image through logo, website design, and social media design to produce a solid brand identity through
-                                        digital platforms.
-                                    </li>
-                                    <li className="mb-4 flex gap-x-3 last:mb-0">
-                                        <span className="text-xl text-ColorPrimary">
-                                            <i className="fa-solid fa-badge-check"></i>
-                                        </span>
-                                        Digital Marketing – Promoting your existing brand image through content marketing and advertising techniques to impact consumers.
-                                    </li>
-                                </ul>
-
-                                <div className="my-6 grid grid-cols-1 md:grid-cols-2 gap-5">
-                                    <img
-                                        src="/assets/img/th-1/service-inner-1-img.jpg"
-                                        alt="service-inner-1-img"
-                                        width="532"
-                                        height="355"
-                                        className="w-full h-auto rounded-[10px]"
-                                    />
-                                    <img
-                                        src="/assets/img/th-1/service-inner-2-img.jpg"
-                                        alt="service-inner-2-img"
-                                        width="532"
-                                        height="355"
-                                        className="w-full h-auto rounded-[10px]"
-                                    />
-                                </div>
-
-                                <h5>Digital Branding vs. Digital Marketing</h5>
-                                <p>
-                                    It is a common misconception to confuse digital marketing and digital branding. While you may think that these phrases are interchangeable,
-                                    there is a distinct difference. Creating an effective digital brand takes time, effort, and due diligence. It's not as simple as making a logo,
-                                    showing up with a few dozen hashtags, and calling it a day.
-                                </p>
-
-                                <h5>Are You Ready to Digitize Your Business Brand?</h5>
-                                <p>
-                                    Now it is clear what digital branding is and what are the strategies. That means it’s time for you to put it into practice. There are nine ways
-                                    that you can use for maximum the results.
-                                </p>
-
-                                <p>
-                                    However, you can also try some of the strategies that you think are the easiest and most important. For example, you can start by creating a
-                                    logo, using social media, or creating a website. Keep the spirit and see you on the next article!
-                                </p>
-                            </div>
+                            <div className="rich-text">{serviceDescription}</div>
                         </div>
                         {/* <!-- Service Details Area --> */}
                     </div>
@@ -168,6 +122,13 @@ export const query = graphql`
             }
             description {
                 raw
+                references {
+                    contentful_id
+                    description
+                    localFile {
+                        publicURL
+                    }
+                }
             }
         }
 
