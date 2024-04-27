@@ -305,10 +305,6 @@
     @apply bg-[#FFFCEF];
 }
 
-.rich-text h5 {
-    @apply mb-4;
-}
-
 /* Tab */
 .tab-text.active {
     @apply text-ColorBlue;
@@ -341,4 +337,35 @@
 }
 .testimonial-slider-area-1 .swiper-pagination-bullet-active {
     @apply h-[10px] w-[10px] bg-ColorDark;
+}
+
+/* Rich-text */
+.rich-text {
+    @apply text-base font-normal leading-[1.66] text-ColorBlack/80;
+}
+
+.rich-text > p,
+.rich-text > ul,
+.rich-text > li {
+    @apply mb-4 last:mb-0;
+}
+
+.rich-text > h1 {
+    @apply text-4xl font-extrabold leading-[1.2] -tracking-[1px] text-ColorBlack mt-8 mb-4;
+}
+
+.rich-text > h2 {
+    @apply text-3xl font-extrabold leading-[1.2] -tracking-[1px] text-ColorBlack mt-8 mb-4;
+}
+
+.rich-text > h3 {
+    @apply text-2xl font-extrabold leading-[1.2] -tracking-[1px] text-ColorBlack mt-8 mb-4;
+}
+
+.rich-text > h4 {
+    @apply text-xl font-extrabold leading-[1.2] -tracking-[1px] text-ColorBlack mt-8 mb-4;
+}
+
+.rich-text > h5 {
+    @apply text-lg font-extrabold leading-[1.2] -tracking-[1px] text-ColorBlack mt-8 mb-4;
 }
