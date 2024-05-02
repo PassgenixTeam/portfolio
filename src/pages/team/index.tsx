@@ -5,9 +5,11 @@ import PageBody from "../../components/page-body/page-body";
 
 const TeamPage: React.FC<
     PageProps<{
+        allContentfulLeader: Queries.ContentfulLeaderGroupConnection;
         allContentfulTeam: Queries.ContentfulTeamGroupConnection;
     }>
 > = ({ data }) => {
+    const leaders = data.allContentfulLeader.nodes;
     const teams = data.allContentfulTeam.nodes;
 
     return (
@@ -53,67 +55,61 @@ const TeamPage: React.FC<
                         {/* <!-- Team List --> */}
                         <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
                             {/* <!-- Team Item --> */}
-                            {teams
-                                .filter((team) => team.role!.includes("Co-founder"))
-                                .map((team) => (
-                                    <div
-                                        key={team.id}
-                                        className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                        data-jos_animation="flip-left"
-                                    >
-                                        <img
-                                            src={team.thumbnail!.localFile!.publicURL!}
-                                            alt={team.name!}
-                                            width="266"
-                                            height="250"
-                                            className="h-auto w-full rounded-[10px] lg:w-auto"
-                                        />
-                                        <div className="mb-4 mt-6">
-                                            <div className="mb-1 text-xl font-semibold text-ColorBlack">{team.name!}</div>
-                                            {team.role!.split(" & ").map((role) => (
-                                                <span key={role} className="block text-[0.9rem] text-opacity-80">
-                                                    {role}
-                                                </span>
-                                            ))}
-                                        </div>
-
-                                        <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                            <a
-                                                href={`mailto:${team.email!}`}
-                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                            >
-                                                <i className="fa-regular fa-envelope"></i>
-                                            </a>
-                                            <a
-                                                href={team.facebook!}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                                aria-label="facebook"
-                                            >
-                                                <i className="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                            <a
-                                                href={team.github!}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                                aria-label="github"
-                                            >
-                                                <i className="fa-brands fa-github"></i>
-                                            </a>
-                                            <a
-                                                href={team.website!}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                                aria-label="website"
-                                            >
-                                                <i className="fa-regular fa-globe"></i>
-                                            </a>
-                                        </div>
+                            {leaders.map((leader) => (
+                                <div
+                                    key={leader.id}
+                                    className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
+                                    data-jos_animation="flip-left"
+                                >
+                                    <img
+                                        src={leader.thumbnail!.localFile!.publicURL!}
+                                        alt={leader.name!}
+                                        width="266"
+                                        height="250"
+                                        className="h-auto w-full rounded-[10px] lg:w-auto"
+                                    />
+                                    <div className="mb-4 mt-6">
+                                        <div className="mb-1 text-xl font-semibold text-ColorBlack">{leader.name!}</div>
+                                        <span className="block text-sm text-opacity-80">{leader.role!}</span>
                                     </div>
-                                ))}
+
+                                    <div className="flex flex-wrap gap-[10px] xl:gap-4">
+                                        <a
+                                            href={`mailto:${leader.email!}`}
+                                            className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                        >
+                                            <i className="fa-regular fa-envelope"></i>
+                                        </a>
+                                        <a
+                                            href={leader.facebook!}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                            aria-label="facebook"
+                                        >
+                                            <i className="fa-brands fa-facebook-f"></i>
+                                        </a>
+                                        <a
+                                            href={leader.github!}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                            aria-label="github"
+                                        >
+                                            <i className="fa-brands fa-github"></i>
+                                        </a>
+                                        <a
+                                            href={leader.website!}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                            aria-label="website"
+                                        >
+                                            <i className="fa-regular fa-globe"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
                             {/* <!-- Team Item --> */}
                         </div>
                         {/* <!-- Team List --> */}
@@ -143,63 +139,33 @@ const TeamPage: React.FC<
                         {/* <!-- Team List --> */}
                         <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
                             {/* <!-- Team Item --> */}
-                            {teams
-                                .filter((team) => !team.role!.includes("Co-founder"))
-                                .map((team) => (
-                                    <div
-                                        key={team.id}
-                                        className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
-                                        data-jos_animation="flip-left"
-                                    >
-                                        <img
-                                            src={team.thumbnail!.localFile!.publicURL!}
-                                            alt={team.name!}
-                                            width="266"
-                                            height="250"
-                                            className="h-auto w-full rounded-[10px] lg:w-auto"
-                                        />
-                                        <div className="mb-4 mt-6">
-                                            <div className="mb-1 text-xl font-semibold text-ColorBlack">{team.name!}</div>
-                                            <span className="block text-opacity-80">{team.role!}</span>
-                                        </div>
 
-                                        <div className="flex flex-wrap gap-[10px] xl:gap-4">
-                                            <a
-                                                href={`mailto:${team.email!}`}
-                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                            >
-                                                <i className="fa-regular fa-envelope"></i>
-                                            </a>
-                                            <a
-                                                href={team.facebook!}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                                aria-label="facebook"
-                                            >
-                                                <i className="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                            <a
-                                                href={team.github!}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                                aria-label="github"
-                                            >
-                                                <i className="fa-brands fa-github"></i>
-                                            </a>
-                                            <a
-                                                href={team.website!}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                                aria-label="website"
-                                            >
-                                                <i className="fa-regular fa-globe"></i>
-                                            </a>
-                                        </div>
+                            {teams.map((teamGroup) => (
+                                <div
+                                    key={teamGroup.id}
+                                    className="jos flex flex-col items-center justify-center rounded-[10px] bg-white p-5 text-center shadow-[0_4px_80px_0_rgba(0,0,0,0.08)]"
+                                    data-jos_animation="flip-left"
+                                >
+                                    <img
+                                        src={teamGroup.thumbnail!.localFile!.publicURL!}
+                                        alt={teamGroup.name!}
+                                        width="266"
+                                        height="250"
+                                        className="h-auto w-full rounded-[10px] lg:w-auto"
+                                    />
+                                    <div className="mb-4 mt-6">
+                                        <div className="mb-1 text-xl font-semibold text-ColorBlack">{teamGroup.name!}</div>
+                                        <span className="block text-[0.9rem] text-opacity-80">{teamGroup.size!} members</span>
                                     </div>
-                                ))}
+
+                                    <div className="flex flex-col gap-1">
+                                        <span className="text-sm text-ColorBlack font-semibold">Leader:</span>
+                                        <a href={teamGroup.leader!.website!} className="text-sm italic text-ColorBlack transition-all duration-300 hover:text-ColorPrimary">
+                                            {teamGroup.leader!.name!}
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
                             {/* <!-- Team Item --> */}
                         </div>
                         {/* <!-- Team List --> */}
@@ -225,7 +191,7 @@ export const Head: HeadFC = () => <PageHead title="Team" />;
 
 export const query = graphql`
     {
-        allContentfulTeam(filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulLeader(filter: { node_locale: { eq: "en-US" } }) {
             nodes {
                 id
                 name
@@ -238,6 +204,23 @@ export const query = graphql`
                     localFile {
                         publicURL
                     }
+                }
+            }
+        }
+
+        allContentfulTeam(filter: { node_locale: { eq: "en-US" } }) {
+            nodes {
+                id
+                name
+                size
+                thumbnail {
+                    localFile {
+                        publicURL
+                    }
+                }
+                leader {
+                    name
+                    website
                 }
             }
         }
