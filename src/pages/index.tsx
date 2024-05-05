@@ -488,7 +488,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulService(limit: 4, filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulService(limit: 4, filter: { node_locale: { eq: "en-US" }, shouldShowOnDiscover: { eq: true } }) {
             nodes {
                 id
                 slug

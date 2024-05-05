@@ -200,7 +200,7 @@ export const Head: HeadFC = () => <PageHead title="Services" />;
 
 export const query = graphql`
     {
-        allContentfulService(filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulService(filter: { node_locale: { eq: "en-US" } }, sort: { shouldShowOnDiscover: ASC }) {
             nodes {
                 id
                 slug
