@@ -68,7 +68,7 @@ const Plan: React.FC<
                                         <div className="text-center text-ColorBlack">
                                             <span className="text-xl font-bold">Standard Plan</span>
                                             <div className="text-[28px] font-normal leading-[2.85]">
-                                                <span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">~$500</span>
+                                                <span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">~$250</span>
                                             </div>
                                             <span className="text-sm text-ColorBlack/70">For small websites, retailers</span>
                                         </div>
