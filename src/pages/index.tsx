@@ -427,8 +427,8 @@ const HomePage: React.FC<
                                         the features I need, and their customer support is excellent. A great value for the price!
                                     </p>
                                     <div className="mb-8 lg:mb-[50px]">
-                                        <span className="block text-xl font-semibold">Nguyễn Minh Thắng</span>
-                                        <span className="block">Frequent customer, Vietnam</span>
+                                        <span className="block text-xl font-semibold">Sarah Doe</span>
+                                        <span className="block">Frequent customer, United States</span>
                                     </div>
                                     {/* <a href="/portfolio-details" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorPrimary">
                                         Read more reviews

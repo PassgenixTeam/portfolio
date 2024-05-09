@@ -69,9 +69,9 @@ const ContactPage: React.FC<PageProps> = () => {
                                             <p>
                                                 Give us a ring at{" "}
                                                 <a href="tel:+84946672181" className="font-semibold hover:text-ColorPrimary hover:underline hover:underline-offset-4">
-                                                    (+84-946-672-181)
+                                                    (+84-796-796-492)
                                                 </a>{" "}
-                                                . Every monday-friday from 9 am to 5 pm.
+                                                . Every monday-friday from 9 am to 11 pm.
                                             </p>
                                         </div>
                                     </div>
@@ -136,42 +136,6 @@ const ContactPage: React.FC<PageProps> = () => {
                                     {/* <!-- Horizontal Line Separator --> */}
                                     <div className="my-7 h-px w-full bg-ColorBlack opacity-10 xl:my-10 xxl:my-14"></div>
                                     {/* <!-- BlockQuote Block--> */}
-                                    <div>
-                                        <div className="mb-[25px] flex justify-center gap-1 text-[#FFC947] lg:justify-start">
-                                            <span>
-                                                <i className="fa-sharp fa-solid fa-star"></i>
-                                            </span>
-                                            <span>
-                                                <i className="fa-sharp fa-solid fa-star"></i>
-                                            </span>
-                                            <span>
-                                                <i className="fa-sharp fa-solid fa-star"></i>
-                                            </span>
-                                            <span>
-                                                <i className="fa-sharp fa-solid fa-star"></i>
-                                            </span>
-                                            <span>
-                                                <i className="fa-sharp fa-solid fa-star"></i>
-                                            </span>
-                                        </div>
-                                        <blockquote className="mb-6 font-semibold italic text-opacity-80">
-                                            "Snaga did an exceptional job for us. keep up the excellent digital work. Man, this thing is getting better and better as I learn more
-                                            about it. I have gotten at least 50 times the value from Snaga. It is worth much more than I paid."
-                                        </blockquote>
-                                        <div className="flex flex-col items-center gap-4 lg:flex-row">
-                                            <img
-                                                src="/assets/img/th-1/about-hero-user-blockquote-img-2.jpg"
-                                                alt="about-hero-user-blockquote-img-2"
-                                                width="60"
-                                                height="60"
-                                                className="mx-auto h-[60px] w-[60px] rounded-[50%] lg:mx-0"
-                                            />
-                                            <div>
-                                                <span className="block font-semibold text-ColorBlack">Brooklyn Simmons</span>
-                                                <span className="text-sm text-opacity-80">CEO & Co-founder @ Company</span>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 {/* <!-- Section Wrapper --> */}
                             </div>

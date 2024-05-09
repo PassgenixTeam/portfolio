@@ -53,7 +53,7 @@ const TeamPage: React.FC<
                     {/* <!-- Section Container --> */}
                     <div className="container-default">
                         {/* <!-- Team List --> */}
-                        <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+                        <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
                             {/* <!-- Team Item --> */}
                             {leaders.map((leader) => (
                                 <div
@@ -89,15 +89,17 @@ const TeamPage: React.FC<
                                         >
                                             <i className="fa-brands fa-facebook-f"></i>
                                         </a>
-                                        <a
-                                            href={leader.github!}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
-                                            aria-label="github"
-                                        >
-                                            <i className="fa-brands fa-github"></i>
-                                        </a>
+                                        {leader.github && (
+                                            <a
+                                                href={leader.github!}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-ColorBlack bg-opacity-5 text-sm text-ColorBlack transition-all duration-300 hover:bg-ColorBlack hover:bg-opacity-100 hover:text-white"
+                                                aria-label="github"
+                                            >
+                                                <i className="fa-brands fa-github"></i>
+                                            </a>
+                                        )}
                                         <a
                                             href={leader.website!}
                                             target="_blank"
