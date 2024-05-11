@@ -41,12 +41,19 @@ const HomePage: React.FC<
                                             tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale
                                             projects.
                                         </p>
-                                        <form action="#" method="post" className="relative mx-auto flex w-full items-center sm:w-[80%] lg:mx-0 lg:mt-5 lg:max-w-md">
+                                        <form
+                                            action="https://formbold.com/s/3GKk1"
+                                            method="POST"
+                                            className="relative mx-auto flex w-full items-center sm:w-[80%] lg:mx-0 lg:mt-5 lg:max-w-md"
+                                        >
+                                            <input type="hidden" name="name" value="New subscribe user" />
                                             <input
                                                 type="email"
+                                                name="email"
                                                 placeholder="Leave your email here"
                                                 className="w-full rounded-[50px] border border-ColorBlack bg-white px-5 py-[15px] pr-40 text-base font-semibold text-opacity-50 outline-none"
                                             />
+                                            <input type="hidden" name="message" value="Please contact me soon." />
                                             <button type="submit" className="btn is-blue is-rounded absolute right-[5px] py-[10px]">
                                                 Get started
                                             </button>
@@ -105,8 +112,8 @@ const HomePage: React.FC<
                     <div className="py-[60px] md:py-20 lg:py-[100px]">
                         {/* <!-- Section Container --> */}
                         <div className="container-default">
-                            <div className="mx-auto mb-10 max-w-[80%] text-center text-xl font-semibold leading-[1.4] opacity-70 md:mb-16 lg:mb-20 lg:max-w-2xl">
-                                We are familiar with the latest technologies and frameworks
+                            <div className="mx-auto mb-10 max-w-[80%] text-center text-base font-light uppercase tracking-[0.4rem] leading-[1.4] opacity-70 md:mb-16 lg:mb-20">
+                                We can use any latest technologies and frameworks
                             </div>
                             {/* <!-- Brand Slider --> */}
                             <div className="swiper brand-slider">
@@ -461,7 +468,7 @@ export const Head: HeadFC = () => <PageHead />;
 
 export const query = graphql`
     {
-        allContentfulProject(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulProject(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "en-US" } }, limit: 4) {
             nodes {
                 id
                 name

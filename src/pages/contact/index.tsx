@@ -68,7 +68,7 @@ const ContactPage: React.FC<PageProps> = () => {
                                             <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Give us a call</div>
                                             <p>
                                                 Give us a ring at{" "}
-                                                <a href="tel:+84946672181" className="font-semibold hover:text-ColorPrimary hover:underline hover:underline-offset-4">
+                                                <a href="tel:+84796796492" className="font-semibold hover:text-ColorPrimary hover:underline hover:underline-offset-4">
                                                     (+84-796-796-492)
                                                 </a>{" "}
                                                 . Every monday-friday from 9 am to 11 pm.
@@ -136,6 +136,42 @@ const ContactPage: React.FC<PageProps> = () => {
                                     {/* <!-- Horizontal Line Separator --> */}
                                     <div className="my-7 h-px w-full bg-ColorBlack opacity-10 xl:my-10 xxl:my-14"></div>
                                     {/* <!-- BlockQuote Block--> */}
+                                    <div>
+                                        <div className="mb-[25px] flex justify-center gap-1 text-[#FFC947] lg:justify-start">
+                                            <span>
+                                                <i className="fa-sharp fa-solid fa-star"></i>
+                                            </span>
+                                            <span>
+                                                <i className="fa-sharp fa-solid fa-star"></i>
+                                            </span>
+                                            <span>
+                                                <i className="fa-sharp fa-solid fa-star"></i>
+                                            </span>
+                                            <span>
+                                                <i className="fa-sharp fa-solid fa-star"></i>
+                                            </span>
+                                            <span>
+                                                <i className="fa-sharp fa-solid fa-star"></i>
+                                            </span>
+                                        </div>
+                                        <blockquote className="mb-6 font-semibold text-opacity-80">
+                                            "We're thrilled with new website your team designed for us! It's professional, easy to navigate, and showcases our products beautifully.
+                                            We've already seen a significant increase in online traffic. Awesome job!"
+                                        </blockquote>
+                                        <div className="flex flex-col items-center gap-4 lg:flex-row">
+                                            <img
+                                                src="/assets/img/th-1/about-hero-user-blockquote-img-2.jpg"
+                                                alt="about-hero-user-blockquote-img-2"
+                                                width="60"
+                                                height="60"
+                                                className="mx-auto h-[60px] w-[60px] rounded-[50%] lg:mx-0"
+                                            />
+                                            <div>
+                                                <span className="block font-semibold text-ColorBlack">Nhung Tran</span>
+                                                <span className="text-sm text-opacity-80">Founder @ The Rike</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 {/* <!-- Section Wrapper --> */}
                             </div>
@@ -143,12 +179,12 @@ const ContactPage: React.FC<PageProps> = () => {
 
                             {/* <!-- Contact Form Block --> */}
                             <div className="jos xm:p-10 rounded-[10px] border border-ColorBlack/50 bg-ColorOffWhite p-[30px]">
-                                <form action="https://formspree.io/f/{form_id}" method="post">
+                                <form action="https://formbold.com/s/3GKk1" method="POST">
                                     {/* <!-- From Group List --> */}
                                     <div className="flex flex-col gap-6">
                                         {/* <!-- Form Group Item--> */}
                                         <div>
-                                            <label htmlFor="name" className="mb-[10px] block text-left font-semibold">
+                                            <label htmlFor="name" className="mb-[10px] block text-left font-semibold" autoFocus>
                                                 Your name
                                             </label>
                                             <input

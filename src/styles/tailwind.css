@@ -369,3 +369,8 @@
 .rich-text > h5 {
     @apply text-lg font-extrabold leading-[1.2] -tracking-[1px] text-ColorBlack mt-8 mb-4;
 }
+
+/* Text ellipsis */
+.text-ellipsis {
+    @apply overflow-hidden whitespace-nowrap overflow-ellipsis;
+}

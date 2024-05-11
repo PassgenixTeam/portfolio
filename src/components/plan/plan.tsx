@@ -54,7 +54,9 @@ const Plan: React.FC<
                                         </ul>
                                         {/* <!-- Pricing Data list --> */}
                                         <div className="mt-10 flex justify-center">
-                                            <button className="btn is-white is-rounded is-large group w-full border-2">Contact now</button>
+                                            <a href="/contact" className="btn is-white is-rounded is-large group w-full border-2">
+                                                Contact now
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +91,9 @@ const Plan: React.FC<
                                         </ul>
                                         {/* <!-- Pricing Data list --> */}
                                         <div className="mt-10 flex justify-center">
-                                            <button className="btn is-blue is-rounded is-large group w-full border-2">Contact now</button>
+                                            <a href="/contact" className="btn is-blue is-rounded is-large group w-full border-2">
+                                                Contact now
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -124,7 +128,9 @@ const Plan: React.FC<
                                         </ul>
                                         {/* <!-- Pricing Data list --> */}
                                         <div className="mt-10 flex justify-center">
-                                            <button className="btn is-white is-rounded is-large group w-full border-2">Contact now</button>
+                                            <a href="/contact" className="btn is-white is-rounded is-large group w-full border-2">
+                                                Contact now
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

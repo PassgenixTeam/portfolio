@@ -148,10 +148,6 @@ const ProjectsPage: React.FC<
                             ))}
                         </div>
                         {/* <!-- Portfolio Area --> */}
-
-                        <div className="flex justify-center">
-                            <button className="btn is-blue is-rounded is-large group">View more</button>
-                        </div>
                     </div>
                     {/* <!-- Section Container --> */}
                 </div>

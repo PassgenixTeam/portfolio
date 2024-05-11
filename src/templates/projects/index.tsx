@@ -12,9 +12,26 @@ const TeamDetailsPage: React.FC<
 > = ({ data }) => {
     const project = data.contentfulProject;
 
-    const projectDescription = documentToReactComponents(JSON.parse(project.content!.raw!), {
+    const projectContent = documentToReactComponents(JSON.parse(project.content!.raw!), {
         renderNode: {
-            [BLOCKS.PARAGRAPH]: (node, children) => <p className="project-details__text">{children}</p>,
+            [BLOCKS.LIST_ITEM]: (node, children) => (
+                <li className="mb-4 flex gap-x-3 last:mb-0">
+                    <span className="text-xl text-ColorPrimary">
+                        <i className="fa-solid fa-badge-check"></i>
+                    </span>
+                    {children}
+                </li>
+            ),
+            [BLOCKS.EMBEDDED_ASSET]: (node) => {
+                const imageId = node.data.target.sys.id;
+                const imageReference = project.content!.references?.find((reference) => reference!.contentful_id === imageId);
+                return (
+                    <div className="image flex flex-col items-center gap-4 mb-10">
+                        <img src={imageReference!.localFile!.publicURL!} alt={node.data.target.title} className="h-auto w-full rounded-lg max-w-[50rem]" />
+                        <small className="text-sm font-medium italic text-ColorBlack/40">{imageReference!.description}</small>
+                    </div>
+                );
+            },
         },
     });
 
@@ -83,53 +100,29 @@ const TeamDetailsPage: React.FC<
                                 </li>
                                 <li>
                                     <span className="mb-[5px] block text-xl font-bold leading-[1.4]">Website:</span>
-                                    <a href={project.websiteLink!} target="_blank" className="text-ColorBlack/80 hover:text-ColorPrimary">
+                                    <a href={project.websiteLink!} target="_blank" className="block text-ColorBlack/80 hover:text-ColorPrimary text-ellipsis max-w-[320px]">
                                         {project.websiteLink}
                                     </a>
                                 </li>
                             </ul>
                             {/* <!-- Portfolio Info List --> */}
 
-                            {/* <!-- Portfolio Rich Text --> */}
-                            <div className="rich-text">
-                                {projectDescription}
-                                <p>
-                                    Interface (UI) determines how the app will look like, while UX determines what problem it will solve in the users' life. UI is revolves around
-                                    visually directing the user about the app interface, while UX includes researching, testing, developing the app.
-                                </p>
-
-                                <h5>What we did for this project</h5>
-                                <p>
-                                    A user can engage with a product or service by using a user interface (UI), which is essentially a collection of screens, pages, visual elements
-                                    (such as buttons and icons). The phrase “User Experience” refers to how a person reacts to each component.
-                                </p>
-                                <ol className="list-inside list-decimal">
-                                    <li>Strategic Discovery</li>
-                                    <li>Web application redesign and optimization</li>
-                                    <li>Mobile application redesign and optimization</li>
-                                    <li>Landing page redesign and optimization</li>
-                                    <li>Component-based UI-Kit</li>
-                                    <li>Product design sprints to explore new functionality</li>
-                                </ol>
-
-                                <img
-                                    src="/assets/img/th-1/portfolio-inner-img.jpg"
-                                    alt="portfolio-inner-img"
-                                    width="1076"
-                                    height="650"
-                                    className="my-6 h-auto w-full rounded-[10px]"
-                                />
-
-                                <h5>Project results</h5>
-                                <p>
-                                    The UI/UX design of software and applications helps improve customer experience and satisfaction. This ultimately helps increase the number of
-                                    people using your product. If users encounter roadblocks when trying to complete actions on your product, they are very likely to drop off.
-                                </p>
-                                <p>
-                                    Creating a brand with clear and targeted messaging was crucial in increasing conversions. Together with the Webflow team, we have compiled a new
-                                    product page structure using the App model and packed that in an excellent cover 🙂
-                                </p>
+                            {/* <!-- Portfolio Programming Languages List --> */}
+                            <div className="swiper brand-slider mb-[60px]">
+                                {/* <!-- Additional required wrapper --> */}
+                                <div className="swiper-wrapper">
+                                    {/* <!-- Slides --> */}
+                                    {project.programmingLanguages!.map((language) => (
+                                        <a key={language!.id} href={language!.link!} className="swiper-slide">
+                                            <img src={language!.thumbnail?.localFile?.publicURL!} alt={language!.name!} className="h-24 w-fit" />
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
+                            {/* <!-- Portfolio Programming Languages List --> */}
+
+                            {/* <!-- Portfolio Rich Text --> */}
+                            <div className="rich-text">{projectContent}</div>
                             {/* <!-- Portfolio Rich Text --> */}
                         </div>
                         {/* <!-- Portfolio Details Area --> */}
@@ -232,6 +225,21 @@ export const query = graphql`
             duration
             websiteLink
             shortDescription
+            image {
+                localFile {
+                    publicURL
+                }
+            }
+            content {
+                raw
+                references {
+                    contentful_id
+                    description
+                    localFile {
+                        publicURL
+                    }
+                }
+            }
             relatedProjects {
                 id
                 name
@@ -243,13 +251,15 @@ export const query = graphql`
                     }
                 }
             }
-            image {
-                localFile {
-                    publicURL
+            programmingLanguages {
+                id
+                name
+                link
+                thumbnail {
+                    localFile {
+                        publicURL
+                    }
                 }
-            }
-            content {
-                raw
             }
         }
     }

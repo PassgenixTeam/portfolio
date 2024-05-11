@@ -189,7 +189,7 @@ const PageBody: React.FC<{
                                                 passgenixteam2023@gmail.com
                                             </a>
                                             {/* <!-- Footer Social Link --> */}
-                                            <div className="flex flex-wrap gap-5">
+                                            {/* <div className="flex flex-wrap gap-5">
                                                 <a
                                                     href="https://twitter.com"
                                                     target="_blank"
@@ -226,7 +226,7 @@ const PageBody: React.FC<{
                                                 >
                                                     <i className="fa-brands fa-github"></i>
                                                 </a>
-                                            </div>
+                                            </div> */}
                                         </div>
                                         {/* <!-- Footer Content --> */}
                                     </div>
