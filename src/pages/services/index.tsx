@@ -166,7 +166,7 @@ const ServicePage: React.FC<
                                             />
                                             <div>
                                                 <span className="block font-semibold">Nguyen Dinh Huy</span>
-                                                <span className="text-sm text-opacity-80">Manager & Co-founder @ Passgenix Solutions</span>
+                                                <span className="text-sm text-opacity-80">Manager & Co-founder @ Passgenix Technology</span>
                                             </div>
                                         </div>
                                     </div>

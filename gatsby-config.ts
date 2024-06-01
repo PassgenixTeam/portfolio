@@ -7,7 +7,7 @@ dotenv.config({
 
 const config: GatsbyConfig = {
     siteMetadata: {
-        title: `Passgenix Solutions`,
+        title: `Passgenix Technology`,
         description: `Launched in 2023, we're a Vietnamese open-source company passionate about building high-quality software and services for the global tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale projects.`,
         author: `@passgenix.solutions`,
         siteUrl: `https://passgenix.com`,

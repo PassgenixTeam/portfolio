@@ -8,7 +8,7 @@ const PageHead: React.FC<{
     const renderDescription =
         description ||
         "Launched in 2023, we're a Vietnamese open-source company passionate about building high-quality software and services for the global tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale projects.";
-    const renderName = "Passgenix Solutions";
+    const renderName = "Passgenix Technology";
     const renderDate = new Date().toISOString();
     const renderBrandImage = "/assets/img/brand.jpg";
 

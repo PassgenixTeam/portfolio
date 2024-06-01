@@ -237,7 +237,7 @@ const HomePage: React.FC<
                                         </div>
                                         {/* <!-- Section Wrapper --> */}
                                         <p>
-                                            At <span className="font-semibold text-cyan-700">Passgenix Solutions</span>, we build with cutting-edge tools and adapt our process to
+                                            At <span className="font-semibold text-cyan-700">Passgenix Technology</span>, we build with cutting-edge tools and adapt our process to
                                             keep things fresh. We sweat the details, but never lose sight of the whole project.
                                         </p>
                                         <p>
@@ -430,7 +430,7 @@ const HomePage: React.FC<
                                         className="h-auto w-10 xl:w-[90px]"
                                     />
                                     <p className="mt-[30px] text-xl font-semibold leading-[1.33] -tracking-[0.5px] lg:text-2xl">
-                                        I've been using Passgenix Solutions's software for a while now, and it's made a huge difference in my workflow. It's easy to use, has all
+                                        I've been using Passgenix Technology's software for a while now, and it's made a huge difference in my workflow. It's easy to use, has all
                                         the features I need, and their customer support is excellent. A great value for the price!
                                     </p>
                                     <div className="mb-8 lg:mb-[50px]">

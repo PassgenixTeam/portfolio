@@ -44,7 +44,7 @@ const PageBody: React.FC<{
                     <div className="flex items-center justify-between gap-x-8">
                         {/* <!-- Header Logo --> */}
                         <a href="/" className="">
-                            <img src="/assets/img/logo-full.svg" alt="Passgenix Solutions" className="h-[3rem]" />
+                            <img src="/assets/img/logo-full.svg" alt="Passgenix Technology" className="h-[3rem]" />
                         </a>
                         {/* <!-- Header Logo --> */}
 
@@ -285,7 +285,7 @@ const PageBody: React.FC<{
                                 <div className="text-sm text-center text-white text-opacity-80">
                                     &copy; Copyright 2024, All Rights Reserved by{" "}
                                     <a href="/" className="font-semibold hover:text-ColorPrimary">
-                                        Passgenix Solutions
+                                        Passgenix Technology
                                     </a>
                                 </div>
                             </div>
