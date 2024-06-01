@@ -4,7 +4,7 @@ const PageHead: React.FC<{
     title?: string;
     description?: string;
 }> = ({ title, description }) => {
-    const renderTitle = [title, "Passgenix Solution"].filter(Boolean).join(" | ");
+    const renderTitle = [title, "Passgenix Technology"].filter(Boolean).join(" | ");
     const renderDescription =
         description ||
         "Launched in 2023, we're a Vietnamese open-source company passionate about building high-quality software and services for the global tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale projects.";
