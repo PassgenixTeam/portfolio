@@ -7283,6 +7283,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"folktale@npm:^2.0.1":
+  version: 2.3.2
+  resolution: "folktale@npm:2.3.2"
+  checksum: 10c0/8a583b9494f23a5a1e80886bdd6da3c05f3680ddd4ce7fa41c653b5786bb3d19057387474bb3de5d335d180849e3dfdc856afc6f01a2375dff7aeeb2301d6545
+  languageName: node
+  linkType: hard
+
 "follow-redirects@npm:^1.14.0, follow-redirects@npm:^1.15.6":
   version: 1.15.6
   resolution: "follow-redirects@npm:1.15.6"
@@ -7648,6 +7655,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-i18n@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "gatsby-plugin-i18n@npm:1.0.1"
+  dependencies:
+    folktale: "npm:^2.0.1"
+    graphql: "npm:^0.11.7"
+    ptz-i18n: "npm:^1.0.0"
+  checksum: 10c0/b33f21b0ee495f0c8bc616ce3a5860fcdbf47a58277b89e105693c63df6f34ca5070e9bd3d7ed995a21915186f4e735865ee84333aba26f8fa5227acc490787c
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-image@npm:^3.13.1":
   version: 3.13.1
   resolution: "gatsby-plugin-image@npm:3.13.1"
@@ -7882,6 +7900,7 @@ __metadata:
     autoprefixer: "npm:^10.4.19"
     classnames: "npm:^2.5.1"
     gatsby: "npm:^5.13.3"
+    gatsby-plugin-i18n: "npm:^1.0.1"
     gatsby-plugin-image: "npm:^3.13.1"
     gatsby-plugin-manifest: "npm:^5.13.1"
     gatsby-plugin-postcss: "npm:^6.13.1"
@@ -7893,6 +7912,7 @@ __metadata:
     lint-staged: "npm:^15.2.2"
     postcss: "npm:^8.4.38"
     prettier: "npm:^2.8.8"
+    ptz-i18n: "npm:^1.0.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     tailwindcss: "npm:^3.4.1"
@@ -8470,6 +8490,15 @@ __metadata:
   peerDependencies:
     graphql: ">=0.8.0"
   checksum: 10c0/1ee7efff7f451cf2db6844430f4b19f8915175af11c1eeca31c8972685194669199cc542060d15cc9e169bb4d5a3cd16a6cf99081b9d802d8470048022a2924a
+  languageName: node
+  linkType: hard
+
+"graphql@npm:^0.11.7":
+  version: 0.11.7
+  resolution: "graphql@npm:0.11.7"
+  dependencies:
+    iterall: "npm:1.1.3"
+  checksum: 10c0/a4a132c256fc297ce42c4b71f3712b10a39cfb8614e97c1fc7293483c940652155e6ac2b8f6b1fe6616ae67b7b68e06fe3e90295d05551fe1539c78d2be092f4
   languageName: node
   linkType: hard
 
@@ -9447,6 +9476,13 @@ __metadata:
   version: 3.0.1
   resolution: "isobject@npm:3.0.1"
   checksum: 10c0/03344f5064a82f099a0cd1a8a407f4c0d20b7b8485e8e816c39f249e9416b06c322e8dec5b842b6bb8a06de0af9cb48e7bc1b5352f0fadc2f0abac033db3d4db
+  languageName: node
+  linkType: hard
+
+"iterall@npm:1.1.3":
+  version: 1.1.3
+  resolution: "iterall@npm:1.1.3"
+  checksum: 10c0/2ae3d4ca0c68fe9d1610f24664c6e4955a17be19e36116d125747774283c3d046682ff75545b1d8fabbcc7b6a29aa2f424f53d1051ea821fd932019a0d9a44c8
   languageName: node
   linkType: hard
 
@@ -12210,6 +12246,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ptz-i18n@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "ptz-i18n@npm:1.0.0"
+  dependencies:
+    folktale: "npm:^2.0.1"
+    ramda: "npm:^0.24.1"
+  checksum: 10c0/41adc7a3f6b06c80098699f29fcabbdd50cc6ba72674193db21921406f6919f6ea37263256d24ae4d552ff2a0fb4e47fe8d03f3886e6bbc7d7df419b14fbcc1b
+  languageName: node
+  linkType: hard
+
 "public-ip@npm:^4.0.4":
   version: 4.0.4
   resolution: "public-ip@npm:4.0.4"
@@ -12293,6 +12339,13 @@ __metadata:
   version: 5.1.1
   resolution: "quick-lru@npm:5.1.1"
   checksum: 10c0/a24cba5da8cec30d70d2484be37622580f64765fb6390a928b17f60cd69e8dbd32a954b3ff9176fa1b86d86ff2ba05252fae55dc4d40d0291c60412b0ad096da
+  languageName: node
+  linkType: hard
+
+"ramda@npm:^0.24.1":
+  version: 0.24.1
+  resolution: "ramda@npm:0.24.1"
+  checksum: 10c0/757270ed5c593166f33b51706a1006af4e1bb51335e48562aa4963e82636fc4c07b5a9735f1ff80d8ebe64ed721925988bb7e3866d28a763a990ff8b10bc90cd
   languageName: node
   linkType: hard
 

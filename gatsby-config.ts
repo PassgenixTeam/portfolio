@@ -47,6 +47,14 @@ const config: GatsbyConfig = {
                 icon: `static/assets/img/favicon.png`, // This path is relative to the root of the site.
             },
         },
+        {
+            resolve: "gatsby-plugin-i18n",
+            options: {
+                langKeyDefault: "en",
+                useLangKeyLayout: false,
+                prefixDefault: false,
+            },
+        },
     ],
 };
 

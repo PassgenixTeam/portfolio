@@ -1,4 +1,5 @@
 import * as React from "react";
+import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n";
 
 const PageHead: React.FC<{
     title?: string;
@@ -11,6 +12,8 @@ const PageHead: React.FC<{
     const renderName = "Passgenix Technology";
     const renderDate = new Date().toISOString();
     const renderBrandImage = "/assets/img/brand.jpg";
+
+    console.log(getLangs());
 
     return (
         <>
