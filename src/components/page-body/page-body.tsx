@@ -1,7 +1,7 @@
-import * as React from "react";
+import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react";
 import { graphql, useStaticQuery } from "gatsby";
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n";
-import { motion, AnimatePresence } from "framer-motion";
+import * as React from "react";
 
 const PageBody: React.FC<{
     children?: React.ReactNode;
@@ -31,7 +31,17 @@ const PageBody: React.FC<{
         vi: "VI 🇻🇳",
     };
 
-    const [isLangMenuOpen, setIsLangMenuOpen] = React.useState(false);
+    // const [isLangMenuOpen, setIsLangMenuOpen] = React.useState(false);
+
+    // React.useEffect(() => {
+    //     const handleLangMenuClosed = (event: MouseEvent) => {
+    //         if (event.target instanceof Element && !event.target.closest("#menu-button")) setIsLangMenuOpen(false);
+    //     };
+
+    //     document.addEventListener("click", handleLangMenuClosed);
+
+    //     return () => document.removeEventListener("click", handleLangMenuClosed);
+    // }, [setIsLangMenuOpen]);
 
     // Load custom scripts
     React.useEffect(() => {
@@ -136,47 +146,38 @@ const PageBody: React.FC<{
                             <a href="/contact" className="btn is-blue is-rounded btn-animation group hidden sm:inline-block">
                                 <span>Contact us</span>
                             </a>
-                            <div className="relative inline-block text-left">
-                                <button
-                                    type="button"
-                                    className="bg-white font-semibold gap-x-1 hover:bg-gray-50 inline-flex justify-center px-3 py-2 ring-1 ring-gray-300 ring-inset rounded-md text-gray-900 text-sm"
-                                    id="menu-button"
-                                    aria-expanded="true"
-                                    aria-haspopup="true"
-                                    onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                                >
-                                    {langOptions[langKey]}
-                                </button>
-                                <AnimatePresence>
-                                    {isLangMenuOpen && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: -10 }}
-                                            animate={{ opacity: 1, y: 0,  }}
-                                            exit={{ opacity: 0, y: -10 }}
-                                            transition={{ ease: "easeOut",  duration: 0.2 }}
-                                            className="absolute right-0 w-full z-10 mt-2 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                                            role="menu"
-                                            aria-orientation="vertical"
-                                            aria-labelledby="menu-button"
-                                            tabIndex={-1}
+
+                            <Menu>
+                                <div className="relative inline-block text-left">
+                                    <MenuButton className="bg-white font-semibold gap-x-1 hover:bg-gray-50 inline-flex justify-center px-3 py-2 ring-1 ring-gray-300 ring-inset rounded-md text-gray-900 text-sm">
+                                        {langOptions[langKey]}
+                                    </MenuButton>
+
+                                    <Transition
+                                        enter="duration-200 ease-out"
+                                        enterFrom="scale-95 opacity-0"
+                                        enterTo="scale-100 opacity-100"
+                                        leave="duration-300 ease-out"
+                                        leaveFrom="scale-100 opacity-100"
+                                        leaveTo="scale-95 opacity-0"
+                                    >
+                                        <MenuItems
+                                            anchor="bottom end"
+                                            className="w-16 z-10 mt-2 py-1 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 [--anchor-gap:var(--spacing-1)] focus:outline-none origin-top-right transition"
+                                            modal={false}
                                         >
-                                            <div className="py-1" role="none">
-                                                {langsMenu.map((item) => (
-                                                    <a
-                                                        key={item.langKey}
-                                                        href={item.link}
-                                                        className="block px-2 py-2 text-sm text-end text-gray-700 hover:bg-gray-100"
-                                                        role="menuitem"
-                                                        tabIndex={-1}
-                                                    >
+                                            {langsMenu.map((item) => (
+                                                <MenuItem key={item.langKey}>
+                                                    <a href={item.link} className="block px-2 py-2 text-sm text-end text-gray-700 hover:bg-gray-100" role="menuitem" tabIndex={-1}>
                                                         {langOptions[item.langKey]}
                                                     </a>
-                                                ))}
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
+                                                </MenuItem>
+                                            ))}
+                                        </MenuItems>
+                                    </Transition>
+                                </div>
+                            </Menu>
+
                             {/* <!-- Responsive Offcanvas Menu Button --> */}
                             <div className="block lg:hidden">
                                 <button id="openBtn" className="hamburger-menu mobile-menu-trigger">
