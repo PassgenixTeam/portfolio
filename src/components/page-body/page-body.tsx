@@ -1,8 +1,39 @@
 import * as React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n";
+import { motion, AnimatePresence } from "framer-motion";
 
 const PageBody: React.FC<{
     children?: React.ReactNode;
 }> = ({ children }) => {
+    // Get language information
+    const headerInfo = useStaticQuery(graphql`
+        {
+            site {
+                siteMetadata {
+                    languages {
+                        langs
+                        defaultLangKey
+                    }
+                }
+            }
+        }
+    `);
+
+    const url = location.pathname;
+    const { langs, defaultLangKey } = headerInfo.site.siteMetadata.languages;
+    const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+    const homeLink = `/${langKey}/`.replace(`/${defaultLangKey}/`, "/");
+    const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, "/") }));
+
+    const langOptions = {
+        en: "EN 🇺🇸",
+        vi: "VI 🇻🇳",
+    };
+
+    const [isLangMenuOpen, setIsLangMenuOpen] = React.useState(false);
+
+    // Load custom scripts
     React.useEffect(() => {
         // Put custom scripts here
         const scriptInfos: Record<string, { path: string } & Record<string, any>> = {
@@ -36,6 +67,7 @@ const PageBody: React.FC<{
         });
     }, []);
 
+    // Render the page
     return (
         <div className="page-wrapper relative z-[1] bg-white">
             {/* <!--...::: Header Start :::... --> */}
@@ -101,12 +133,50 @@ const PageBody: React.FC<{
 
                         {/* <!-- Header User Event --> */}
                         <div className="flex items-center gap-6">
-                            {/* <a href="login.html" className="btn-text hidden hover:text-ColorPrimary sm:inline-block">
-                                Login
-                            </a> */}
                             <a href="/contact" className="btn is-blue is-rounded btn-animation group hidden sm:inline-block">
                                 <span>Contact us</span>
                             </a>
+                            <div className="relative inline-block text-left">
+                                <button
+                                    type="button"
+                                    className="bg-white font-semibold gap-x-1 hover:bg-gray-50 inline-flex justify-center px-3 py-2 ring-1 ring-gray-300 ring-inset rounded-md text-gray-900 text-sm"
+                                    id="menu-button"
+                                    aria-expanded="true"
+                                    aria-haspopup="true"
+                                    onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                                >
+                                    {langOptions[langKey]}
+                                </button>
+                                <AnimatePresence>
+                                    {isLangMenuOpen && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -10 }}
+                                            animate={{ opacity: 1, y: 0,  }}
+                                            exit={{ opacity: 0, y: -10 }}
+                                            transition={{ ease: "easeOut",  duration: 0.2 }}
+                                            className="absolute right-0 w-full z-10 mt-2 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                            role="menu"
+                                            aria-orientation="vertical"
+                                            aria-labelledby="menu-button"
+                                            tabIndex={-1}
+                                        >
+                                            <div className="py-1" role="none">
+                                                {langsMenu.map((item) => (
+                                                    <a
+                                                        key={item.langKey}
+                                                        href={item.link}
+                                                        className="block px-2 py-2 text-sm text-end text-gray-700 hover:bg-gray-100"
+                                                        role="menuitem"
+                                                        tabIndex={-1}
+                                                    >
+                                                        {langOptions[item.langKey]}
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
                             {/* <!-- Responsive Offcanvas Menu Button --> */}
                             <div className="block lg:hidden">
                                 <button id="openBtn" className="hamburger-menu mobile-menu-trigger">
@@ -122,7 +192,7 @@ const PageBody: React.FC<{
             </header>
             {/* <!--...::: Header End :::... --> */}
 
-            <main className="main-wrapper relative overflow-hidden">{children}</main>
+            <main className="main-wrapper relative overflow-hidden opacity-0">{children}</main>
 
             {/* <!--...::: Footer Section Start :::... --> */}
             <footer className="section-footer">
