@@ -5,6 +5,7 @@
     "version": "0.1.0",
     "author": "Kyle Mathews <mathews.kyle@gmail.com>",
     "dependencies": {
+        "@headlessui/react": "^2.0.4",
         "autoprefixer": "^10.4.19",
         "classnames": "^2.5.1",
         "framer-motion": "^11.2.10",
