@@ -3,7 +3,7 @@ import { getCurrentLangKey } from "ptz-i18n";
 import { useMemo } from "react";
 import { LanguageCode } from "../types";
 
-export const useLanguage = () => {
+export const useLanguage = (pathname: string) => {
     const headerInfo = useStaticQuery(graphql`
         {
             site {
@@ -24,11 +24,11 @@ export const useLanguage = () => {
         homeLink: string;
     } = useMemo(() => {
         const { langs, defaultLangKey } = headerInfo.site.siteMetadata.languages;
-        const langKey = getCurrentLangKey(langs, defaultLangKey, location.pathname);
+        const langKey = getCurrentLangKey(langs, defaultLangKey, pathname || "/");
         const homeLink = `/${langKey}/`.replace(`/${defaultLangKey}/`, "/");
 
         return { langs, defaultLangKey, langKey, homeLink };
-    }, [headerInfo, location.pathname]);
+    }, [headerInfo, pathname]);
 
     return languageInfo;
 };

@@ -4,12 +4,15 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import PageBody from "../../components/page-body/page-body";
 import PageHead from "../../components/page-head/page-head";
+import { useLanguage } from "../../languages/hooks/useLanguage";
 
 const TeamDetailsPage: React.FC<
     PageProps<{
         contentfulProject: Queries.ContentfulProject;
     }>
-> = ({ data }) => {
+> = ({ location, data }) => {
+    const { homeLink } = useLanguage(location.pathname);
+
     const project = data.contentfulProject;
 
     const projectContent = documentToReactComponents(JSON.parse(project.content!.raw!), {
@@ -36,7 +39,7 @@ const TeamDetailsPage: React.FC<
     });
 
     return (
-        <PageBody>
+        <PageBody pathname={location.pathname}>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
             <section className="section-breadcrumb">
                 {/* <!-- Breadcrumb Section Spacer --> */}
@@ -47,10 +50,10 @@ const TeamDetailsPage: React.FC<
                             <h1 className="breadcrumb-title">{project.name}</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href={homeLink}>Home</a>
                                 </li>
                                 <li>
-                                    <a href="/projects">Projects</a>
+                                    <a href={`${homeLink}projects`}>Projects</a>
                                 </li>
                                 <li>{project.name!}</li>
                             </ul>
@@ -173,7 +176,7 @@ const TeamDetailsPage: React.FC<
                                 {/* <!-- Portfolio Item --> */}
                                 {project.relatedProjects!.map((relatedProject) => (
                                     <div key={relatedProject!.id} className="jos">
-                                        <a href={`/projects/${relatedProject!.slug}`} className="group">
+                                        <a href={`${homeLink}projects/${relatedProject!.slug}`} className="group">
                                             <div className="relative z-10 after:absolute after:inset-0 after:-z-10 after:translate-x-0 after:translate-y-0 after:rounded-[11px] after:bg-ColorBlack after:transition-all after:duration-300 after:ease-in-out hover:after:translate-x-[10px] hover:after:translate-y-[10px]">
                                                 <div className="overflow-hidden rounded-[10px]">
                                                     <img
@@ -212,7 +215,7 @@ export default TeamDetailsPage;
 
 export const Head: HeadFC<{
     contentfulProject: Queries.ContentfulProject;
-}> = ({ data }) => <PageHead title={data.contentfulProject.name!} />;
+}> = ({ location, data }) => <PageHead title={data.contentfulProject.name!} pathname={location.pathname} />;
 
 export const query = graphql`
     query ($slug: String!) {

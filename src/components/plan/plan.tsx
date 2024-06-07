@@ -1,14 +1,18 @@
 import cls from "classnames";
 import * as React from "react";
+import { useLanguage } from "../../languages/hooks/useLanguage";
 
 const Plan: React.FC<
     React.HTMLAttributes<HTMLDivElement> & {
+        pathname: string;
         plans: readonly Queries.ContentfulPlan[];
     }
-> = ({ plans, className }) => {
+> = ({ pathname, plans, className, ...props }) => {
+    const { homeLink } = useLanguage(pathname);
+
     return (
         <section className="section-pricing">
-            <div className={cls("bg-opacity-60", className)}>
+            <div className={cls("bg-opacity-60", className)} {...props}>
                 {/* <!-- Section Space --> */}
                 <div className="section-space">
                     {/* <!-- Section Container --> */}
@@ -54,7 +58,7 @@ const Plan: React.FC<
                                         </ul>
                                         {/* <!-- Pricing Data list --> */}
                                         <div className="mt-10 flex justify-center">
-                                            <a href="/contact" className="btn is-white is-rounded is-large group w-full border-2">
+                                            <a href={`${homeLink}contact`} className="btn is-white is-rounded is-large group w-full border-2">
                                                 Contact now
                                             </a>
                                         </div>
@@ -91,7 +95,7 @@ const Plan: React.FC<
                                         </ul>
                                         {/* <!-- Pricing Data list --> */}
                                         <div className="mt-10 flex justify-center">
-                                            <a href="/contact" className="btn is-blue is-rounded is-large group w-full border-2">
+                                            <a href={`${homeLink}contact`} className="btn is-blue is-rounded is-large group w-full border-2">
                                                 Contact now
                                             </a>
                                         </div>
@@ -128,7 +132,7 @@ const Plan: React.FC<
                                         </ul>
                                         {/* <!-- Pricing Data list --> */}
                                         <div className="mt-10 flex justify-center">
-                                            <a href="/contact" className="btn is-white is-rounded is-large group w-full border-2">
+                                            <a href={`${homeLink}contact`} className="btn is-white is-rounded is-large group w-full border-2">
                                                 Contact now
                                             </a>
                                         </div>

@@ -4,9 +4,10 @@ import { useLanguage } from "../../languages/hooks/useLanguage";
 import { messages } from "./messages";
 
 const PageHead: React.FC<{
+    pathname: string;
     title?: string;
     description?: string;
-}> = ({ title, description }) => {
+}> = ({ title, description, pathname }) => {
     const headerInfo = useStaticQuery(graphql`
         {
             site {
@@ -17,7 +18,7 @@ const PageHead: React.FC<{
         }
     `);
 
-    const { langKey } = useLanguage();
+    const { langKey } = useLanguage(pathname);
 
     const renderTitle = [title, headerInfo.site.siteMetadata.title].filter(Boolean).join(" | ");
     const renderDescription = description || messages["page.defaultDescription"][langKey];

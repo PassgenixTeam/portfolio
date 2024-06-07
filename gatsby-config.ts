@@ -8,6 +8,7 @@ dotenv.config({
 const config: GatsbyConfig = {
     siteMetadata: {
         title: `Passgenix Technology`,
+        siteURL: `https://passgenix.com`,
         languages: {
             langs: ["en", "vi"],
             defaultLangKey: "en",

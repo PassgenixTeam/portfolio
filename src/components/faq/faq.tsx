@@ -2,15 +2,19 @@ import * as React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import cls from "classnames";
+import { useLanguage } from "../../languages/hooks/useLanguage";
 
 const FAQ: React.FC<
     React.HTMLAttributes<HTMLDivElement> & {
+        pathname: string;
         faqs: readonly Queries.ContentfulFaq[];
     }
-> = ({ faqs, className }) => {
+> = ({ pathname, faqs, className, ...props }) => {
+    const { homeLink } = useLanguage(pathname);
+
     return (
         <section className="section-faq">
-            <div className={cls("relative z-10 overflow-hidden", className)}>
+            <div className={cls("relative z-10 overflow-hidden", className)} {...props}>
                 {/* <!-- Section Space --> */}
                 <div className="section-space">
                     {/* <!-- Section Container --> */}
@@ -59,7 +63,7 @@ const FAQ: React.FC<
                             {/* <!-- Accordion List --> */}
 
                             <div className="jos mt-[60px] flex justify-center xl:mt-20">
-                                <a href="/contact" className="btn is-blue is-rounded btn-animation is-large group">
+                                <a href={`${homeLink}contact`} className="btn is-blue is-rounded btn-animation is-large group">
                                     <span>Still, have any questions? Contact us</span>
                                 </a>
                             </div>

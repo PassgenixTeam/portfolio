@@ -2,12 +2,15 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import PageHead from "../../components/page-head/page-head";
 import PageBody from "../../components/page-body/page-body";
+import { useLanguage } from "../../languages/hooks/useLanguage";
 
 const ProjectsPage: React.FC<
     PageProps<{
         allContentfulProject: Queries.ContentfulProjectGroupConnection;
     }>
-> = ({ data }) => {
+> = ({ location, data }) => {
+    const { homeLink } = useLanguage(location.pathname);
+
     const projects = data.allContentfulProject.nodes;
     const categories = projects.reduce((result, project) => {
         project.categories!.forEach((category) => {
@@ -21,7 +24,7 @@ const ProjectsPage: React.FC<
     }
 
     return (
-        <PageBody>
+        <PageBody pathname={location.pathname}>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
             <section className="section-breadcrumb">
                 {/* <!-- Breadcrumb Section Spacer --> */}
@@ -32,7 +35,7 @@ const ProjectsPage: React.FC<
                             <h1 className="breadcrumb-title">Projects</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href={homeLink}>Home</a>
                                 </li>
                                 <li>Projects</li>
                             </ul>
@@ -80,7 +83,7 @@ const ProjectsPage: React.FC<
                                 {/* <!-- Portfolio Item --> */}
                                 {projects.map((project) => (
                                     <div key={project.id} className="jos" data-jos_delay="0">
-                                        <a href={`/projects/${project.slug}`} className="group">
+                                        <a href={`${homeLink}projects/${project.slug}`} className="group">
                                             <div className="overflow-hidden rounded-[10px]">
                                                 <img
                                                     src={project.thumbnail!.localFile!.publicURL!}
@@ -117,7 +120,7 @@ const ProjectsPage: React.FC<
                                         .filter((project) => project.categories!.includes(category))
                                         .map((project) => (
                                             <div key={project.id} className="jos" data-jos_delay="0">
-                                                <a href={`/projects/${project.slug}`} className="group">
+                                                <a href={`${homeLink}projects/${project.slug}`} className="group">
                                                     <div className="overflow-hidden rounded-[10px]">
                                                         <img
                                                             src={project.thumbnail!.localFile!.publicURL!}
@@ -160,7 +163,7 @@ const ProjectsPage: React.FC<
 
 export default ProjectsPage;
 
-export const Head: HeadFC = () => <PageHead title="Projects" />;
+export const Head: HeadFC = ({ location }) => <PageHead title="Projects" pathname={location.pathname} />;
 
 export const query = graphql`
     {

@@ -5,13 +5,16 @@ import * as React from "react";
 import PageBody from "../../components/page-body/page-body";
 import PageHead from "../../components/page-head/page-head";
 import FAQ from "../../components/faq/faq";
+import { useLanguage } from "../../languages/hooks/useLanguage";
 
 const ServiceDetailsPage: React.FC<
     PageProps<{
         contentfulService: Queries.ContentfulService;
         allContentfulFaq: Queries.ContentfulFaqGroupConnection;
     }>
-> = ({ data }) => {
+> = ({ location, data }) => {
+    const { homeLink } = useLanguage(location.pathname);
+
     const service = data.contentfulService;
     const faqs = data.allContentfulFaq.nodes;
 
@@ -39,7 +42,7 @@ const ServiceDetailsPage: React.FC<
     });
 
     return (
-        <PageBody>
+        <PageBody pathname={location.pathname}>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
             <section className="section-breadcrumb">
                 {/* <!-- Breadcrumb Section Spacer --> */}
@@ -50,10 +53,10 @@ const ServiceDetailsPage: React.FC<
                             <h1 className="breadcrumb-title">{service.name}</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href={homeLink}>Home</a>
                                 </li>
                                 <li>
-                                    <a href="/services">Services</a>
+                                    <a href={`${homeLink}services`}>Services</a>
                                 </li>
                                 <li>{service.name!}</li>
                             </ul>
@@ -97,7 +100,7 @@ const ServiceDetailsPage: React.FC<
             {/* <!--...::: Service Details Section End :::... --> */}
 
             {/* <!--...::: FAQ Section Start :::... --> */}
-            <FAQ faqs={faqs} className="bg-ColorOffWhite" />
+            <FAQ faqs={faqs} className="bg-ColorOffWhite" pathname={location.pathname} />
             {/* <!--...::: FAQ Section End :::... --> */}
         </PageBody>
     );
@@ -107,7 +110,7 @@ export default ServiceDetailsPage;
 
 export const Head: HeadFC<{
     contentfulService: Queries.ContentfulService;
-}> = ({ data }) => <PageHead title={data.contentfulService.name!} />;
+}> = ({ location, data }) => <PageHead title={data.contentfulService.name!} pathname={location.pathname} />;
 
 export const query = graphql`
     query ($slug: String!) {

@@ -2,10 +2,13 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import PageHead from "../../components/page-head/page-head";
 import PageBody from "../../components/page-body/page-body";
+import { useLanguage } from "../../languages/hooks/useLanguage";
 
-const ContactPage: React.FC<PageProps> = () => {
+const ContactPage: React.FC<PageProps> = ({ location }) => {
+    const { homeLink } = useLanguage(location.pathname);
+
     return (
-        <PageBody>
+        <PageBody pathname={location.pathname}>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
             <section className="section-breadcrumb">
                 {/* <!-- Breadcrumb Section Spacer --> */}
@@ -16,7 +19,7 @@ const ContactPage: React.FC<PageProps> = () => {
                             <h1 className="breadcrumb-title">Send Us A Message</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href={homeLink}>Home</a>
                                 </li>
                                 <li>Contact Us</li>
                             </ul>
@@ -248,4 +251,4 @@ const ContactPage: React.FC<PageProps> = () => {
 
 export default ContactPage;
 
-export const Head: HeadFC = () => <PageHead title="Contact" />;
+export const Head: HeadFC = ({ location }) => <PageHead title="Contact" pathname={location.pathname} />;

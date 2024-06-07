@@ -1,5 +1,6 @@
 import { GatsbyNode } from "gatsby";
 import path from "path";
+import { LanguageCode } from "./src/languages/types";
 
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
     const { createPage } = actions;
@@ -21,7 +22,14 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
     services.forEach((node: { slug: string }) => {
         createPage({
             path: `/services/${node.slug}`,
-            component: path.resolve(`./src/templates/services/index.tsx`),
+            component: path.resolve(`./src/templates/services/index.en.tsx`),
+            context: {
+                slug: node.slug,
+            },
+        });
+        createPage({
+            path: `${LanguageCode.VI}/services/${node.slug}`,
+            component: path.resolve(`./src/templates/services/index.vi.tsx`),
             context: {
                 slug: node.slug,
             },
@@ -45,7 +53,14 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
     projects.forEach((node: { slug: string }) => {
         createPage({
             path: `/projects/${node.slug}`,
-            component: path.resolve(`./src/templates/projects/index.tsx`),
+            component: path.resolve(`./src/templates/projects/index.en.tsx`),
+            context: {
+                slug: node.slug,
+            },
+        });
+        createPage({
+            path: `${LanguageCode.VI}/projects/${node.slug}`,
+            component: path.resolve(`./src/templates/projects/index.vi.tsx`),
             context: {
                 slug: node.slug,
             },

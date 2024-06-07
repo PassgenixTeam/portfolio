@@ -32,6 +32,6 @@ export const messages = {
     },
     "footer.logoDescription": {
         [LanguageCode.EN]: "We develop cutting-edge services that provide exceptional value and personalized service to our clients.",
-        [LanguageCode.VI]: "Chúng tôi phát triển các dịch vụ tiên tiến mang lại giá trị xuất sắc và dịch vụ cá nhân hóa cho khách hàng.",
+        [LanguageCode.VI]: "Chúng tôi phát triển các dịch vụ công nghệ hiện đại nhằm mang lại giá trị và lợi ích nhanh chóng cho khách hàng.",
     },
 };

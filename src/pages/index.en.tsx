@@ -1,10 +1,10 @@
 import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
-import cls from "classnames";
-import PageHead from "../components/page-head/page-head";
-import PageBody from "../components/page-body/page-body";
 import FAQ from "../components/faq/faq";
+import PageBody from "../components/page-body/page-body";
+import PageHead from "../components/page-head/page-head";
 import Plan from "../components/plan/plan";
+import { useLanguage } from "../languages/hooks/useLanguage";
 
 const HomePage: React.FC<
     PageProps<{
@@ -14,7 +14,9 @@ const HomePage: React.FC<
         allContentfulFaq: Queries.ContentfulFaqGroupConnection;
         allContentfulPlan: Queries.ContentfulPlanGroupConnection;
     }>
-> = ({ data }) => {
+> = ({ location, data }) => {
+    const { homeLink } = useLanguage(location.pathname);
+
     const projects = data.allContentfulProject.nodes;
     const programmingLanguages = data.allContentfulProgrammingLanguage.nodes;
     const services = data.allContentfulService.nodes;
@@ -22,7 +24,7 @@ const HomePage: React.FC<
     const plans = data.allContentfulPlan.nodes;
 
     return (
-        <PageBody>
+        <PageBody pathname={location.pathname}>
             {/* <!--...::: Hero Section Start :::... --> */}
             <section className="section-hero">
                 <div className="relative z-10 overflow-hidden bg-[#FAF9F5]">
@@ -163,7 +165,7 @@ const HomePage: React.FC<
                                 {services.map((service) => (
                                     <div key={service.id} className="jos" data-jos_delay="0">
                                         <a
-                                            href={`/services/${service.slug}`}
+                                            href={`${homeLink}services/${service.slug}`}
                                             className="block group rounded-[10px] border border-[#E6E6E6] bg-white p-8 transition-all duration-300 ease-in-out hover:border-teal-400 hover:bg-teal-50 lg:p-10 h-full"
                                         >
                                             <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
@@ -325,7 +327,7 @@ const HomePage: React.FC<
             {/* <!--...::: Content Section End :::... --> */}
 
             {/* <!--...::: Pricing Section Start :::... --> */}
-            <Plan plans={plans} className="bg-ColorEggSour" />
+            <Plan plans={plans} className="bg-ColorEggSour" pathname={location.pathname} />
             {/* <!--...::: Pricing Section Start :::... --> */}
 
             {/* <!--...::: Portfolio Section Start :::... --> */}
@@ -342,7 +344,7 @@ const HomePage: React.FC<
                                     <h2>Discover our latest project in this year</h2>
                                 </div>
                                 {/* <!-- Section Block --> */}
-                                <a href="/projects" className="btn is-blue is-rounded btn-animation is-large group">
+                                <a href={`${homeLink}projects`} className="btn is-blue is-rounded btn-animation is-large group">
                                     <span>See more works</span>
                                 </a>
                             </div>
@@ -352,7 +354,7 @@ const HomePage: React.FC<
                             <div className="grid gap-8 md:grid-cols-2 lg:gap-10 xl:gap-[60px]">
                                 {projects.map((project) => (
                                     <div key={project.id} className="jos" data-jos_delay="0">
-                                        <a href={`/projects/${project.slug!}`} className="group">
+                                        <a href={`${homeLink}projects/${project.slug!}`} className="group">
                                             <div className="overflow-hidden rounded-[10px]">
                                                 <img
                                                     src={project.thumbnail!.localFile!.publicURL!}
@@ -437,7 +439,7 @@ const HomePage: React.FC<
                                         <span className="block text-xl font-semibold">Sarah Doe</span>
                                         <span className="block">Frequent customer, United States</span>
                                     </div>
-                                    {/* <a href="/portfolio-details" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorPrimary">
+                                    {/* <a href="${homeLink}portfolio-details" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorPrimary">
                                         Read more reviews
                                         <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
                                             <i className="fa-solid fa-arrow-right"></i>
@@ -456,7 +458,7 @@ const HomePage: React.FC<
             {/* <!--...::: Testimonial Section End :::... --> */}
 
             {/* <!--...::: FAQ Section Start :::... --> */}
-            <FAQ faqs={faqs} />
+            <FAQ faqs={faqs} pathname={location.pathname} />
             {/* <!--...::: FAQ Section End :::... --> */}
         </PageBody>
     );
@@ -464,7 +466,7 @@ const HomePage: React.FC<
 
 export default HomePage;
 
-export const Head: HeadFC = () => <PageHead />;
+export const Head: HeadFC = ({ location }) => <PageHead pathname={location.pathname} />;
 
 export const query = graphql`
     {

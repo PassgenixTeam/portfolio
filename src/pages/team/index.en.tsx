@@ -2,18 +2,21 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import PageHead from "../../components/page-head/page-head";
 import PageBody from "../../components/page-body/page-body";
+import { useLanguage } from "../../languages/hooks/useLanguage";
 
 const TeamPage: React.FC<
     PageProps<{
         allContentfulLeader: Queries.ContentfulLeaderGroupConnection;
         allContentfulTeam: Queries.ContentfulTeamGroupConnection;
     }>
-> = ({ data }) => {
+> = ({ location, data }) => {
+    const { homeLink } = useLanguage(location.pathname);
+
     const leaders = data.allContentfulLeader.nodes;
     const teams = data.allContentfulTeam.nodes;
 
     return (
-        <PageBody>
+        <PageBody pathname={location.pathname}>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
             <section className="section-breadcrumb">
                 {/* <!-- Breadcrumb Section Spacer --> */}
@@ -24,7 +27,7 @@ const TeamPage: React.FC<
                             <h1 className="breadcrumb-title">Our Team & Partners</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href={homeLink}>Home</a>
                                 </li>
                                 <li>Our Team</li>
                             </ul>
@@ -173,7 +176,7 @@ const TeamPage: React.FC<
                         {/* <!-- Team List --> */}
 
                         <div className="flex justify-center">
-                            <a href="/contact" className="btn is-blue is-rounded btn-animation is-large group mt-10 inline-block lg:mt-[60px] xl:mt-20">
+                            <a href={`${homeLink}contact`} className="btn is-blue is-rounded btn-animation is-large group mt-10 inline-block lg:mt-[60px] xl:mt-20">
                                 <span>Want to join us?</span>
                             </a>
                         </div>
@@ -189,7 +192,7 @@ const TeamPage: React.FC<
 
 export default TeamPage;
 
-export const Head: HeadFC = () => <PageHead title="Team" />;
+export const Head: HeadFC = ({ location }) => <PageHead title="Team" pathname={location.pathname} />;
 
 export const query = graphql`
     {

@@ -1,15 +1,17 @@
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react";
 import { getLangs, getUrlForLang } from "ptz-i18n";
 import * as React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "../../languages/hooks/useLanguage";
 import { languagesDetail } from "../../languages/types";
 import { messages } from "./messages";
 
 const PageBody: React.FC<{
+    pathname: string;
     children?: React.ReactNode;
-}> = ({ children }) => {
-    const { langs, defaultLangKey, langKey, homeLink } = useLanguage();
-    const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, location.pathname)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, "/") }));
+}> = ({ children, pathname }) => {
+    const { langs, defaultLangKey, langKey, homeLink } = useLanguage(pathname);
+    const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, pathname)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, "/") }));
 
     // Load custom scripts
     React.useEffect(() => {
@@ -47,13 +49,19 @@ const PageBody: React.FC<{
 
     // Render the page
     return (
-        <div className="page-wrapper relative z-[1] bg-white">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="page-wrapper relative z-[1] bg-white"
+        >
             {/* <!--...::: Header Start :::... --> */}
             <header className="site-header site-header--absolute is--white py-3" id="sticky-menu">
                 <div className="container-default">
                     <div className="flex items-center justify-between gap-x-8">
                         {/* <!-- Header Logo --> */}
-                        <a href="/" className="">
+                        <a href={homeLink} className="">
                             <img src="/assets/img/logo-full.svg" alt="Passgenix Technology" className="h-[3rem]" />
                         </a>
                         {/* <!-- Header Logo --> */}
@@ -71,22 +79,22 @@ const PageBody: React.FC<{
                                 </div>
                                 <ul className="site-menu-main">
                                     <li className="nav-item">
-                                        <a href="/" className="nav-link-item">
+                                        <a href={homeLink} className="nav-link-item">
                                             {messages["nav.discover"][langKey]}
                                         </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="/services" className="nav-link-item">
+                                        <a href={`${homeLink}services`} className="nav-link-item">
                                             {messages["nav.services"][langKey]}
                                         </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="/team" className="nav-link-item">
+                                        <a href={`${homeLink}team`} className="nav-link-item">
                                             {messages["nav.team"][langKey]}
                                         </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="/projects" className="nav-link-item">
+                                        <a href={`${homeLink}projects`} className="nav-link-item">
                                             {messages["nav.projects"][langKey]}
                                         </a>
                                     </li>
@@ -111,7 +119,7 @@ const PageBody: React.FC<{
 
                         {/* <!-- Header User Event --> */}
                         <div className="flex items-center gap-6">
-                            <a href="/contact" className="btn is-blue is-rounded btn-animation group hidden sm:inline-block">
+                            <a href={`${homeLink}contact`} className="btn is-blue is-rounded btn-animation group hidden sm:inline-block">
                                 <span>{messages["nav.contact"][langKey]}</span>
                             </a>
 
@@ -166,7 +174,7 @@ const PageBody: React.FC<{
             </header>
             {/* <!--...::: Header End :::... --> */}
 
-            <main className="main-wrapper relative overflow-hidden opacity-0">{children}</main>
+            <main className="main-wrapper relative overflow-hidden">{children}</main>
 
             {/* <!--...::: Footer Section Start :::... --> */}
             <footer className="section-footer">
@@ -184,7 +192,7 @@ const PageBody: React.FC<{
                                         <h2 className="text-white">{messages["footer.title"][langKey]}</h2>
                                     </div>
                                     {/* <!-- Section Block --> */}
-                                    <a href="/contact" className="btn is-blue is-rounded btn-animation is-large group">
+                                    <a href={`${homeLink}contact`} className="btn is-blue is-rounded btn-animation is-large group">
                                         <span>{messages["footer.callOfAction"][langKey]}</span>
                                     </a>
                                 </div>
@@ -216,8 +224,8 @@ const PageBody: React.FC<{
                                     {/* <!-- Footer Widget Item --> */}
                                     <div className="flex flex-col gap-y-7 md:col-span-3 lg:col-span-1">
                                         {/* <!-- Footer Logo --> */}
-                                        <a href="/">
-                                            <img src="/assets/img/logo-full-light.svg" alt="Masco" className="h-[3rem]" />
+                                        <a href={homeLink}>
+                                            <img src="/assets/img/logo-full-light.svg" alt="Passgenix Technology" className="h-[3rem]" />
                                         </a>
                                         {/* <!-- Footer Content --> */}
                                         <div>
@@ -281,26 +289,32 @@ const PageBody: React.FC<{
                                         {/* <!-- Footer Navbar --> */}
                                         <ul className="flex flex-col gap-y-[10px] capitalize">
                                             <li>
-                                                <a href="/" className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">
+                                                <a
+                                                    href={homeLink}
+                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
+                                                >
                                                     {messages["nav.discover"][langKey]}
                                                 </a>
                                             </li>
                                             <li>
                                                 <a
-                                                    href="/services"
+                                                    href={`${homeLink}services`}
                                                     className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
                                                 >
                                                     {messages["nav.services"][langKey]}
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="/team" className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">
+                                                <a
+                                                    href={`${homeLink}team`}
+                                                    className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
+                                                >
                                                     {messages["nav.team"][langKey]}
                                                 </a>
                                             </li>
                                             <li>
                                                 <a
-                                                    href="/projects"
+                                                    href={`${homeLink}projects`}
                                                     className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
                                                 >
                                                     {messages["nav.projects"][langKey]}
@@ -326,7 +340,7 @@ const PageBody: React.FC<{
                             <div className="container-default">
                                 <div className="text-sm text-center text-white text-opacity-80">
                                     &copy; Copyright 2024, All Rights Reserved by{" "}
-                                    <a href="/" className="font-semibold hover:text-ColorPrimary">
+                                    <a href={homeLink} className="font-semibold hover:text-ColorPrimary">
                                         Passgenix Technology
                                     </a>
                                 </div>
@@ -339,7 +353,7 @@ const PageBody: React.FC<{
                 </div>
             </footer>
             {/* <!--...::: Footer Section End :::... --> */}
-        </div>
+        </motion.div>
     );
 };
 

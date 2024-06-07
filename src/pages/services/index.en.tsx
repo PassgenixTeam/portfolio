@@ -4,6 +4,7 @@ import PageHead from "../../components/page-head/page-head";
 import PageBody from "../../components/page-body/page-body";
 import FAQ from "../../components/faq/faq";
 import Plan from "../../components/plan/plan";
+import { useLanguage } from "../../languages/hooks/useLanguage";
 
 const ServicePage: React.FC<
     PageProps<{
@@ -11,13 +12,15 @@ const ServicePage: React.FC<
         allContentfulFaq: Queries.ContentfulFaqGroupConnection;
         allContentfulPlan: Queries.ContentfulPlanGroupConnection;
     }>
-> = ({ data }) => {
+> = ({ location, data }) => {
+    const { homeLink } = useLanguage(location.pathname);
+
     const services = data.allContentfulService.nodes;
     const faqs = data.allContentfulFaq.nodes;
     const plans = data.allContentfulPlan.nodes;
 
     return (
-        <PageBody>
+        <PageBody pathname={location.pathname}>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
             <section className="section-breadcrumb">
                 {/* <!-- Breadcrumb Section Spacer --> */}
@@ -28,7 +31,7 @@ const ServicePage: React.FC<
                             <h1 className="breadcrumb-title">Our Services</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href={homeLink}>Home</a>
                                 </li>
                                 <li>Our Services</li>
                             </ul>
@@ -63,7 +66,7 @@ const ServicePage: React.FC<
                                 {services.map((service) => (
                                     <div key={service.id} className="jos" data-jos_delay="0">
                                         <a
-                                            href={`/services/${service.slug}`}
+                                            href={`${homeLink}services/${service.slug}`}
                                             className="block group rounded-[10px] bg-white p-8 transition-all duration-300 ease-in-out hover:shadow-[0_4px_60px_0_rgba(10,16,47,0.06)] lg:p-10"
                                         >
                                             <div className="flex flex-col gap-x-10 gap-y-6 sm:gap-y-8 lg:flex-row">
@@ -184,11 +187,11 @@ const ServicePage: React.FC<
             {/* <!--...::: Service Hero Section End :::... --> */}
 
             {/* <!--...::: Pricing Section Start :::... --> */}
-            <Plan plans={plans} className="bg-ColorOffWhite" />
+            <Plan plans={plans} className="bg-ColorOffWhite" pathname={location.pathname} />
             {/* <!--...::: Pricing Section Start :::... --> */}
 
             {/* <!--...::: FAQ Section Start :::... --> */}
-            <FAQ faqs={faqs} />
+            <FAQ faqs={faqs} pathname={location.pathname} />
             {/* <!--...::: FAQ Section End :::... --> */}
         </PageBody>
     );
@@ -196,7 +199,7 @@ const ServicePage: React.FC<
 
 export default ServicePage;
 
-export const Head: HeadFC = () => <PageHead title="Services" />;
+export const Head: HeadFC = ({ location }) => <PageHead title="Services" pathname={location.pathname} />;
 
 export const query = graphql`
     {
