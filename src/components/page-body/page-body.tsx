@@ -1,47 +1,15 @@
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react";
-import { graphql, useStaticQuery } from "gatsby";
-import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n";
+import { getLangs, getUrlForLang } from "ptz-i18n";
 import * as React from "react";
+import { useLanguage } from "../../languages/hooks/useLanguage";
+import { languagesDetail } from "../../languages/types";
+import { homeMessages } from "./messages";
 
 const PageBody: React.FC<{
     children?: React.ReactNode;
 }> = ({ children }) => {
-    // Get language information
-    const headerInfo = useStaticQuery(graphql`
-        {
-            site {
-                siteMetadata {
-                    languages {
-                        langs
-                        defaultLangKey
-                    }
-                }
-            }
-        }
-    `);
-
-    const url = location.pathname;
-    const { langs, defaultLangKey } = headerInfo.site.siteMetadata.languages;
-    const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-    const homeLink = `/${langKey}/`.replace(`/${defaultLangKey}/`, "/");
-    const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, "/") }));
-
-    const langOptions = {
-        en: "EN 🇺🇸",
-        vi: "VI 🇻🇳",
-    };
-
-    // const [isLangMenuOpen, setIsLangMenuOpen] = React.useState(false);
-
-    // React.useEffect(() => {
-    //     const handleLangMenuClosed = (event: MouseEvent) => {
-    //         if (event.target instanceof Element && !event.target.closest("#menu-button")) setIsLangMenuOpen(false);
-    //     };
-
-    //     document.addEventListener("click", handleLangMenuClosed);
-
-    //     return () => document.removeEventListener("click", handleLangMenuClosed);
-    // }, [setIsLangMenuOpen]);
+    const { langs, defaultLangKey, langKey, homeLink } = useLanguage();
+    const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, location.pathname)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, "/") }));
 
     // Load custom scripts
     React.useEffect(() => {
@@ -104,22 +72,22 @@ const PageBody: React.FC<{
                                 <ul className="site-menu-main">
                                     <li className="nav-item">
                                         <a href="/" className="nav-link-item">
-                                            Discover
+                                            {homeMessages["nav.discover"][langKey]}
                                         </a>
                                     </li>
                                     <li className="nav-item">
                                         <a href="/services" className="nav-link-item">
-                                            Services
+                                            {homeMessages["nav.services"][langKey]}
                                         </a>
                                     </li>
                                     <li className="nav-item">
                                         <a href="/team" className="nav-link-item">
-                                            Team
+                                            {homeMessages["nav.team"][langKey]}
                                         </a>
                                     </li>
                                     <li className="nav-item">
                                         <a href="/projects" className="nav-link-item">
-                                            Projects
+                                            {homeMessages["nav.projects"][langKey]}
                                         </a>
                                     </li>
                                     {/* <li className="nav-item nav-item-has-children">
@@ -144,13 +112,13 @@ const PageBody: React.FC<{
                         {/* <!-- Header User Event --> */}
                         <div className="flex items-center gap-6">
                             <a href="/contact" className="btn is-blue is-rounded btn-animation group hidden sm:inline-block">
-                                <span>Contact us</span>
+                                <span>{homeMessages["nav.contact"][langKey]}</span>
                             </a>
 
                             <Menu>
                                 <div className="relative inline-block text-left">
                                     <MenuButton className="bg-white font-semibold gap-x-1 hover:bg-gray-50 inline-flex justify-center px-3 py-2 ring-1 ring-gray-300 ring-inset rounded-md text-gray-900 text-sm">
-                                        {langOptions[langKey]}
+                                        {languagesDetail[langKey].code.toUpperCase()} {languagesDetail[langKey].flag}
                                     </MenuButton>
 
                                     <Transition
@@ -163,13 +131,18 @@ const PageBody: React.FC<{
                                     >
                                         <MenuItems
                                             anchor="bottom end"
-                                            className="w-16 z-10 mt-2 py-1 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 [--anchor-gap:var(--spacing-1)] focus:outline-none origin-top-right transition"
+                                            className="z-10 mt-3 py-1 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 [--anchor-gap:var(--spacing-1)] focus:outline-none origin-top-right transition"
                                             modal={false}
                                         >
                                             {langsMenu.map((item) => (
                                                 <MenuItem key={item.langKey}>
-                                                    <a href={item.link} className="block px-2 py-2 text-sm text-end text-gray-700 hover:bg-gray-100" role="menuitem" tabIndex={-1}>
-                                                        {langOptions[item.langKey]}
+                                                    <a
+                                                        href={item.link}
+                                                        className="block px-2 py-2 ps-4 text-sm font-medium text-end text-gray-700 hover:bg-gray-100"
+                                                        role="menuitem"
+                                                        tabIndex={-1}
+                                                    >
+                                                        {languagesDetail[item.langKey].name} {languagesDetail[item.langKey].flag}
                                                     </a>
                                                 </MenuItem>
                                             ))}
@@ -208,11 +181,11 @@ const PageBody: React.FC<{
                                 <div className="flex flex-wrap items-center justify-center text-center lg:text-left lg:justify-between gap-8">
                                     {/* <!-- Section Block --> */}
                                     <div className="max-w-[400px] md:max-w-[500px] lg:max-w-[550px]">
-                                        <h2 className="text-white">Ready to grow your business digitally?</h2>
+                                        <h2 className="text-white">{homeMessages["footer.title"][langKey]}</h2>
                                     </div>
                                     {/* <!-- Section Block --> */}
                                     <a href="/contact" className="btn is-blue is-rounded btn-animation is-large group">
-                                        <span>Let's start the project</span>
+                                        <span>{homeMessages["footer.callOfAction"][langKey]}</span>
                                     </a>
                                 </div>
                                 {/* <!-- Section Wrapper --> */}
@@ -249,9 +222,7 @@ const PageBody: React.FC<{
                                         {/* <!-- Footer Content --> */}
                                         <div>
                                             {/* <!-- Footer About Text --> */}
-                                            <div className="lg:max-w-[416px]">
-                                                We develop cutting-edge services that provide exceptional value and personalized service to our clients.
-                                            </div>
+                                            <div className="lg:max-w-[416px]">{homeMessages["footer.logoDescription"][langKey]}</div>
                                             {/* <!-- Footer Mail --> */}
                                             <a
                                                 href="mailto:passgenixteam2023@gmail.com"
@@ -311,7 +282,7 @@ const PageBody: React.FC<{
                                         <ul className="flex flex-col gap-y-[10px] capitalize">
                                             <li>
                                                 <a href="/" className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">
-                                                    Discover
+                                                    {homeMessages["nav.discover"][langKey]}
                                                 </a>
                                             </li>
                                             <li>
@@ -319,12 +290,12 @@ const PageBody: React.FC<{
                                                     href="/services"
                                                     className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
                                                 >
-                                                    Services
+                                                    {homeMessages["nav.services"][langKey]}
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="/team" className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">
-                                                    Team
+                                                    {homeMessages["nav.team"][langKey]}
                                                 </a>
                                             </li>
                                             <li>
@@ -332,7 +303,7 @@ const PageBody: React.FC<{
                                                     href="/projects"
                                                     className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
                                                 >
-                                                    Projects
+                                                    {homeMessages["nav.projects"][langKey]}
                                                 </a>
                                             </li>
                                         </ul>
