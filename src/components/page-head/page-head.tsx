@@ -1,19 +1,29 @@
+import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
-import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n";
+import { useLanguage } from "../../languages/hooks/useLanguage";
+import { messages } from "./messages";
 
 const PageHead: React.FC<{
     title?: string;
     description?: string;
 }> = ({ title, description }) => {
-    const renderTitle = [title, "Passgenix Technology"].filter(Boolean).join(" | ");
-    const renderDescription =
-        description ||
-        "Launched in 2023, we're a Vietnamese open-source company passionate about building high-quality software and services for the global tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale projects.";
-    const renderName = "Passgenix Technology";
+    const headerInfo = useStaticQuery(graphql`
+        {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+        }
+    `);
+
+    const { langKey } = useLanguage();
+
+    const renderTitle = [title, headerInfo.site.siteMetadata.title].filter(Boolean).join(" | ");
+    const renderDescription = description || messages["page.defaultDescription"][langKey];
+    const renderName = headerInfo.site.siteMetadata.title;
     const renderDate = new Date().toISOString();
     const renderBrandImage = "/assets/img/brand.jpg";
-
-    console.log(getLangs());
 
     return (
         <>
@@ -43,10 +53,9 @@ const PageHead: React.FC<{
             <meta property="article:author" content={renderName} />
             <meta property="article:published_time" content={renderDate} />
             <meta property="article:section" content={renderName} />
-            <meta property="article:tag" content="Technology" />
-            <meta property="article:tag" content="Company" />
-            <meta property="article:tag" content="Solutions" />
-            <meta property="article:tag" content="Service" />
+            {messages["page.tags"][langKey].map((tag) => (
+                <meta key={tag} property="article:tag" content={tag} />
+            ))}
 
             <meta name="twitter:card" content={renderBrandImage} />
             <meta name="twitter:site" content={renderName} />
