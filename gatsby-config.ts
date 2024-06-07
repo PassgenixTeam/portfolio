@@ -11,10 +11,6 @@ const config: GatsbyConfig = {
         description: `Launched in 2023, we're a Vietnamese open-source company passionate about building high-quality software and services for the global tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale projects.`,
         author: `@passgenix.technology`,
         siteUrl: `https://passgenix.com`,
-        languages: {
-            langs: ["en", "vi"],
-            defaultLangKey: "en",
-        },
     },
     graphqlTypegen: true,
     plugins: [

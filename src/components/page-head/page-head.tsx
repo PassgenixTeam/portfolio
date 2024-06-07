@@ -1,37 +1,19 @@
-import { graphql, useStaticQuery } from "gatsby";
-import { getCurrentLangKey } from "ptz-i18n";
 import * as React from "react";
+import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n";
 
 const PageHead: React.FC<{
     title?: string;
     description?: string;
 }> = ({ title, description }) => {
-    const headerInfo = useStaticQuery(graphql`
-        {
-            site {
-                siteMetadata {
-                    title
-                    description
-                    languages {
-                        langs
-                        defaultLangKey
-                    }
-                }
-            }
-        }
-    `);
-
-    const url = location.pathname;
-    const { langs, defaultLangKey } = headerInfo.site.siteMetadata.languages;
-    const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-
-    // console.log(langsMenu);
-
-    const renderTitle = [title, headerInfo.site.siteMetadata.title].filter(Boolean).join(" | ");
-    const renderDescription = description || headerInfo.site.siteMetadata.description;
-    const renderName = headerInfo.site.siteMetadata.title;
+    const renderTitle = [title, "Passgenix Technology"].filter(Boolean).join(" | ");
+    const renderDescription =
+        description ||
+        "Launched in 2023, we're a Vietnamese open-source company passionate about building high-quality software and services for the global tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale projects.";
+    const renderName = "Passgenix Technology";
     const renderDate = new Date().toISOString();
     const renderBrandImage = "/assets/img/brand.jpg";
+
+    console.log(getLangs());
 
     return (
         <>
