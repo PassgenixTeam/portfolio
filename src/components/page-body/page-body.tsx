@@ -3,7 +3,7 @@ import { getLangs, getUrlForLang } from "ptz-i18n";
 import * as React from "react";
 import { useLanguage } from "../../languages/hooks/useLanguage";
 import { languagesDetail } from "../../languages/types";
-import { homeMessages } from "./messages";
+import { messages } from "./messages";
 
 const PageBody: React.FC<{
     children?: React.ReactNode;
@@ -72,22 +72,22 @@ const PageBody: React.FC<{
                                 <ul className="site-menu-main">
                                     <li className="nav-item">
                                         <a href="/" className="nav-link-item">
-                                            {homeMessages["nav.discover"][langKey]}
+                                            {messages["nav.discover"][langKey]}
                                         </a>
                                     </li>
                                     <li className="nav-item">
                                         <a href="/services" className="nav-link-item">
-                                            {homeMessages["nav.services"][langKey]}
+                                            {messages["nav.services"][langKey]}
                                         </a>
                                     </li>
                                     <li className="nav-item">
                                         <a href="/team" className="nav-link-item">
-                                            {homeMessages["nav.team"][langKey]}
+                                            {messages["nav.team"][langKey]}
                                         </a>
                                     </li>
                                     <li className="nav-item">
                                         <a href="/projects" className="nav-link-item">
-                                            {homeMessages["nav.projects"][langKey]}
+                                            {messages["nav.projects"][langKey]}
                                         </a>
                                     </li>
                                     {/* <li className="nav-item nav-item-has-children">
@@ -112,7 +112,7 @@ const PageBody: React.FC<{
                         {/* <!-- Header User Event --> */}
                         <div className="flex items-center gap-6">
                             <a href="/contact" className="btn is-blue is-rounded btn-animation group hidden sm:inline-block">
-                                <span>{homeMessages["nav.contact"][langKey]}</span>
+                                <span>{messages["nav.contact"][langKey]}</span>
                             </a>
 
                             <Menu>
@@ -181,11 +181,11 @@ const PageBody: React.FC<{
                                 <div className="flex flex-wrap items-center justify-center text-center lg:text-left lg:justify-between gap-8">
                                     {/* <!-- Section Block --> */}
                                     <div className="max-w-[400px] md:max-w-[500px] lg:max-w-[550px]">
-                                        <h2 className="text-white">{homeMessages["footer.title"][langKey]}</h2>
+                                        <h2 className="text-white">{messages["footer.title"][langKey]}</h2>
                                     </div>
                                     {/* <!-- Section Block --> */}
                                     <a href="/contact" className="btn is-blue is-rounded btn-animation is-large group">
-                                        <span>{homeMessages["footer.callOfAction"][langKey]}</span>
+                                        <span>{messages["footer.callOfAction"][langKey]}</span>
                                     </a>
                                 </div>
                                 {/* <!-- Section Wrapper --> */}
@@ -222,7 +222,7 @@ const PageBody: React.FC<{
                                         {/* <!-- Footer Content --> */}
                                         <div>
                                             {/* <!-- Footer About Text --> */}
-                                            <div className="lg:max-w-[416px]">{homeMessages["footer.logoDescription"][langKey]}</div>
+                                            <div className="lg:max-w-[416px]">{messages["footer.logoDescription"][langKey]}</div>
                                             {/* <!-- Footer Mail --> */}
                                             <a
                                                 href="mailto:passgenixteam2023@gmail.com"
@@ -282,7 +282,7 @@ const PageBody: React.FC<{
                                         <ul className="flex flex-col gap-y-[10px] capitalize">
                                             <li>
                                                 <a href="/" className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">
-                                                    {homeMessages["nav.discover"][langKey]}
+                                                    {messages["nav.discover"][langKey]}
                                                 </a>
                                             </li>
                                             <li>
@@ -290,12 +290,12 @@ const PageBody: React.FC<{
                                                     href="/services"
                                                     className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
                                                 >
-                                                    {homeMessages["nav.services"][langKey]}
+                                                    {messages["nav.services"][langKey]}
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="/team" className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline">
-                                                    {homeMessages["nav.team"][langKey]}
+                                                    {messages["nav.team"][langKey]}
                                                 </a>
                                             </li>
                                             <li>
@@ -303,7 +303,7 @@ const PageBody: React.FC<{
                                                     href="/projects"
                                                     className="hover:opcity-100 underline-offset-4 opacity-80 transition-all duration-300 ease-linear hover:underline"
                                                 >
-                                                    {homeMessages["nav.projects"][langKey]}
+                                                    {messages["nav.projects"][langKey]}
                                                 </a>
                                             </li>
                                         </ul>

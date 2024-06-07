@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { getCurrentLangKey } from "ptz-i18n";
 import * as React from "react";
+import { useLanguage } from "../../languages/hooks/useLanguage";
+import { messages } from "./messages";
 
 const PageHead: React.FC<{
     title?: string;
@@ -11,24 +12,15 @@ const PageHead: React.FC<{
             site {
                 siteMetadata {
                     title
-                    description
-                    languages {
-                        langs
-                        defaultLangKey
-                    }
                 }
             }
         }
     `);
 
-    const url = location.pathname;
-    const { langs, defaultLangKey } = headerInfo.site.siteMetadata.languages;
-    const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-
-    // console.log(langsMenu);
+    const { langKey } = useLanguage();
 
     const renderTitle = [title, headerInfo.site.siteMetadata.title].filter(Boolean).join(" | ");
-    const renderDescription = description || headerInfo.site.siteMetadata.description;
+    const renderDescription = description || messages["page.defaultDescription"][langKey];
     const renderName = headerInfo.site.siteMetadata.title;
     const renderDate = new Date().toISOString();
     const renderBrandImage = "/assets/img/brand.jpg";
@@ -61,10 +53,9 @@ const PageHead: React.FC<{
             <meta property="article:author" content={renderName} />
             <meta property="article:published_time" content={renderDate} />
             <meta property="article:section" content={renderName} />
-            <meta property="article:tag" content="Technology" />
-            <meta property="article:tag" content="Company" />
-            <meta property="article:tag" content="Solutions" />
-            <meta property="article:tag" content="Service" />
+            {messages["page.tags"][langKey].map((tag) => (
+                <meta key={tag} property="article:tag" content={tag} />
+            ))}
 
             <meta name="twitter:card" content={renderBrandImage} />
             <meta name="twitter:site" content={renderName} />

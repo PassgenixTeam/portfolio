@@ -1,6 +1,6 @@
 import { LanguageCode } from "../../languages/types";
 
-export const homeMessages = {
+export const messages = {
     "nav.discover": {
         [LanguageCode.EN]: "Discover",
         [LanguageCode.VI]: "Khám phá",
