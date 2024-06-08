@@ -38,11 +38,11 @@ const HomePage: React.FC<
                                 {/* <!-- Hero Content Block --> */}
                                 <div className="jos">
                                     <div className="has-container-custom">
-                                        <h1 className="mb-6">Chúng tôi mang đến những giải pháp sáng tạo.</h1>
+                                        <h1 className="mb-6">Giải pháp đổi mới sáng tạo.</h1>
                                         <p>
                                             Ra mắt vào năm 2023, chúng tôi là một công ty open-source của Việt Nam, đam mê xây dựng phần mềm và dịch vụ chất lượng cao cho cộng đồng
-                                            tech toàn cầu. Đội ngũ của chúng tôi tập hợp những tài năng IT hàng đầu của Việt Nam, được chọn lựa dựa trên kỹ năng mạnh mẽ và kinh
-                                            nghiệm đã được chứng minh trong các dự án quy mô lớn.
+                                            tech toàn cầu. Đội ngũ của chúng tôi tập hợp những thành viên IT trẻ, năng động, sáng tạo và giàu kin nghiệm đã tham gia các môi trường
+                                            làm việc chuyên nghiệp và các dự án quy mô.
                                         </p>
                                         <form
                                             action="https://formbold.com/s/3GKk1"
@@ -245,7 +245,7 @@ const HomePage: React.FC<
                                             toàn bộ dự án.
                                         </p>
                                         <p>
-                                            <strong>Chiến lược dựa trên dữ liệu:</strong>
+                                            <strong>Chiến lược dựa trên dữ liệu: </strong>
                                             Chúng tôi sử dụng dữ liệu để tạo ra các chương trình đề xướng phù hợp với đối tượng của bạn và xây dựng một danh tiếng thương hiệu mạnh
                                             mẽ.
                                         </p>
@@ -348,7 +348,7 @@ const HomePage: React.FC<
                                 </div>
                                 {/* <!-- Section Block --> */}
                                 <a href={`${homeLink}projects`} className="btn is-blue is-rounded btn-animation is-large group">
-                                    <span>Xem thêm các công trình khác</span>
+                                    <span>Xem thêm các dự án khác</span>
                                 </a>
                             </div>
                             {/* <!-- Section Wrapper --> */}
@@ -436,7 +436,7 @@ const HomePage: React.FC<
                                     />
                                     <p className="mt-[30px] text-xl font-semibold leading-[1.33] -tracking-[0.5px] lg:text-2xl">
                                         Tôi đã sử dụng phần mềm của Passgenix Technology được một thời gian và nó đã tạo ra sự khác biệt lớn trong quy trình làm việc của tôi. Nó dễ
-                                        sử dụng, có tất cả các tính năng mà tôi cần, và dịch vụ khách hàng của họ rất xuất sắc. Một giá trị tuyệt vời cho giá cả!
+                                        sử dụng, có tất cả các tính năng mà tôi cần, và dịch vụ khách hàng của họ rất xuất sắc.
                                     </p>
                                     <div className="mb-8 lg:mb-[50px]">
                                         <span className="block text-xl font-semibold">Sarah Doe</span>

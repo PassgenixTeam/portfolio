@@ -161,8 +161,9 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                             </span>
                                         </div>
                                         <blockquote className="mb-6 font-semibold text-opacity-80">
-                                            "Chúng tôi rất phấn khích với trang web mới mà đội của bạn thiết kế cho chúng tôi! Nó chuyên nghiệp, dễ dàng điều hướng và trưng bày sản
-                                            phẩm của chúng tôi một cách đẹp mắt. Chúng tôi đã thấy một sự tăng đáng kể trong lưu lượng truy cập trực tuyến. Công việc tuyệt vời!"
+                                            "Chúng tôi rất hào hứng với trang web mới mà đội của bạn đã thiết kế cho chúng tôi! Nó rất chuyên nghiệp, dễ dàng điều hướng và trình
+                                            bày sản phẩm của chúng tôi một cách rất đẹp mắt. Chúng tôi đã nhận thấy một sự tăng đáng kể trong lượng truy cập trực tuyến. Công việc
+                                            thực sự tuyệt vời!"
                                         </blockquote>
                                         <div className="flex flex-col items-center gap-4 lg:flex-row">
                                             <img
@@ -191,13 +192,13 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                         {/* <!-- Form Group Item--> */}
                                         <div>
                                             <label htmlFor="name" className="mb-[10px] block text-left font-semibold" autoFocus>
-                                                Your name
+                                                Tên của bạn
                                             </label>
                                             <input
                                                 type="text"
                                                 name="name"
                                                 id="name"
-                                                placeholder="Enter your full name"
+                                                placeholder="Nhập tên đầy đủ của bạn"
                                                 className="w-full rounded-[50px] border border-ColorBlack/50 px-[30px] py-[15px] outline-none transition-all duration-300 placeholder:text-ColorBlack/50 focus:border-ColorBlue"
                                                 required
                                             />
@@ -206,13 +207,13 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                         {/* <!-- Form Group Item--> */}
                                         <div>
                                             <label htmlFor="email" className="mb-[10px] block text-left font-semibold">
-                                                Email address
+                                                Địa chỉ email
                                             </label>
                                             <input
                                                 type="email"
                                                 name="email"
                                                 id="email"
-                                                placeholder="Enter your full name"
+                                                placeholder="Nhập địa chỉ email của bạn"
                                                 className="w-full rounded-[50px] border border-ColorBlack/50 px-[30px] py-[15px] outline-none transition-all duration-300 placeholder:text-ColorBlack/50 focus:border-ColorBlue"
                                                 required
                                             />
@@ -221,12 +222,12 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                         {/* <!-- Form Group Item--> */}
                                         <div>
                                             <label htmlFor="message" className="mb-[10px] block text-left font-semibold">
-                                                Write your message
+                                                Nội dung
                                             </label>
                                             <textarea
                                                 name="message"
                                                 id="message"
-                                                placeholder="Write us your question here..."
+                                                placeholder="Nhập nội dung tin nhắn của bạn"
                                                 className="min-h-[130px] w-full rounded-[30px] border border-ColorBlack/50 px-[30px] py-[15px] outline-none transition-all duration-300 placeholder:text-ColorBlack/50 focus:border-ColorBlue"
                                                 required
                                             ></textarea>
@@ -235,7 +236,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                     </div>
                                     {/* <!-- From Group List --> */}
                                     <button type="submit" className="btn is-blue is-rounded is-large mt-8">
-                                        Send Message
+                                        Gửi
                                     </button>
                                 </form>
                             </div>

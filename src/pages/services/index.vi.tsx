@@ -157,8 +157,8 @@ const ServicePage: React.FC<
                                     {/* <!-- BlockQuote Block--> */}
                                     <div>
                                         <blockquote className="mb-6 font-semibold italic text-opacity-80">
-                                            "Chúng tôi yêu công việc của mình và tạo ra các đối tác với khách hàng để đảm bảo rằng sự chuyển đổi kỹ thuật số của họ được đặt trong
-                                            tư vị cho thành công dài hạn."
+                                            "Chúng tôi không chỉ đam mê công việc mà còn xây dựng mối quan hệ đối tác sâu sắc với khách hàng, đảm bảo rằng sự chuyển đổi kỹ thuật số
+                                            của họ được triển khai một cách hiệu quả và thành công trong dài hạn."
                                         </blockquote>
                                         <div className="flex flex-col items-center gap-4 lg:flex-row">
                                             <img
