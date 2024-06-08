@@ -24,12 +24,12 @@ const TeamPage: React.FC<
                     {/* <!-- Section Container --> */}
                     <div className="container-default">
                         <div className="breadcrumb-block">
-                            <h1 className="breadcrumb-title">Đội Nhóm và Đối Tác của Chúng Tôi</h1>
+                            <h1 className="breadcrumb-title">Thành viên & Đối tác</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
                                     <a href={homeLink}>Trang chủ</a>
                                 </li>
-                                <li>Đội nhóm</li>
+                                <li>Thành viên</li>
                             </ul>
                         </div>
                     </div>
@@ -177,7 +177,7 @@ const TeamPage: React.FC<
 
                         <div className="flex justify-center">
                             <a href={`${homeLink}contact`} className="btn is-blue is-rounded btn-animation is-large group mt-10 inline-block lg:mt-[60px] xl:mt-20">
-                                <span>Hãy tham gia cùng chúng tôi</span>
+                                <span>Tham gia cùng chúng tôi</span>
                             </a>
                         </div>
                     </div>

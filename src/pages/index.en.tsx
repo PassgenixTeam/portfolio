@@ -345,7 +345,9 @@ const HomePage: React.FC<
                                 </div>
                                 {/* <!-- Section Block --> */}
                                 <a href={`${homeLink}projects`} className="btn is-blue is-rounded btn-animation is-large group">
-                                    <span>See more works</span>
+                                    <span>
+                                        See more works <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </span>
                                 </a>
                             </div>
                             {/* <!-- Section Wrapper --> */}

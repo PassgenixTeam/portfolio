@@ -32,7 +32,7 @@ const ProjectsPage: React.FC<
                     {/* <!-- Section Container --> */}
                     <div className="container-default">
                         <div className="breadcrumb-block">
-                            <h1 className="breadcrumb-title">Dự án</h1>
+                            <h1 className="breadcrumb-title">Các dự án gần đây</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
                                     <a href={homeLink}>Trang chủ</a>

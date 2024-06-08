@@ -16,7 +16,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                     {/* <!-- Section Container --> */}
                     <div className="container-default">
                         <div className="breadcrumb-block">
-                            <h1 className="breadcrumb-title">Gửi cho chúng tôi những yêu cầu của bạn</h1>
+                            <h1 className="breadcrumb-title leading-[120%]">Gửi cho chúng tôi những yêu cầu của bạn</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
                                     <a href={homeLink}>Trang chủ</a>
@@ -55,8 +55,8 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                     <div className="h-full rounded-[10px] border-2 border-ColorBlack bg-white p-[30px]">
                                         <img src="/assets/img/icons/icon-duotone-chat.svg" alt="icon-duotone-chat" width="64" height="60" className="mb-[30px] h-[60px] w-auto" />
                                         <div>
-                                            <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Trò chuyện với chúng tôi</div>
-                                            <p>Chúng tôi sẵn lòng hỗ trợ bạn vào mỗi thứ Hai đến thứ Sáu từ 9 giờ sáng đến 5 giờ chiều giờ Đông Nam.</p>
+                                            <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Nhắn tin với chúng tôi</div>
+                                            <p>Chúng tôi sẵn lòng hỗ trợ bạn vào mỗi thứ Hai đến thứ Sáu từ 9 giờ sáng đến 5 giờ chiều giờ Việt Nam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                 <div>
                                     {/* <!-- Section Block --> */}
                                     <div className="mb-5">
-                                        <h2>Điền vào mẫu này, chúng tôi sẽ nhanh chóng trả lời lại cho bạn.</h2>
+                                        <h2>Điền vào mẫu này, chúng tôi sẽ phản hồi nhanh nhất có thể.</h2>
                                     </div>
                                     {/* <!-- Section Block --> */}
                                     <p>

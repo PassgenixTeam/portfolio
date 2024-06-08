@@ -145,7 +145,7 @@ const ServicePage: React.FC<
                                 <div>
                                     {/* <!-- Section Block --> */}
                                     <div className="mb-5">
-                                        <h2>Tầm nhìn của chúng tôi là hình thành tương lai thông qua các giải pháp phần mềm sáng tạo.</h2>
+                                        <h2>Tầm nhìn của chúng tôi là định hình tương lai thông qua các giải pháp phần mềm sáng tạo.</h2>
                                     </div>
                                     {/* <!-- Section Block --> */}
                                     <p>
@@ -170,7 +170,7 @@ const ServicePage: React.FC<
                                             />
                                             <div>
                                                 <span className="block font-semibold">Nguyen Dinh Huy</span>
-                                                <span className="text-sm text-opacity-80">Manager & Co-founder @ Passgenix Technology</span>
+                                                <span className="text-sm text-opacity-80">Quản lý & Đồng sáng lập @ Passgenix Technology</span>
                                             </div>
                                         </div>
                                     </div>
