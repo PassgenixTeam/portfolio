@@ -1,6 +1,7 @@
 import cls from "classnames";
 import * as React from "react";
 import { useLanguage } from "../../languages/hooks/useLanguage";
+import { messages } from "./messages";
 
 const Plan: React.FC<
     React.HTMLAttributes<HTMLDivElement> & {
@@ -8,7 +9,7 @@ const Plan: React.FC<
         plans: readonly Queries.ContentfulPlan[];
     }
 > = ({ pathname, plans, className, ...props }) => {
-    const { homeLink } = useLanguage(pathname);
+    const { homeLink, langKey } = useLanguage(pathname);
 
     return (
         <section className="section-pricing">
@@ -21,7 +22,7 @@ const Plan: React.FC<
                         <div className="jos mb-[60px] xl:mb-20">
                             {/* <!-- Section Content Block --> */}
                             <div className="mx-auto max-w-[600px]">
-                                <h2 className="text-center">Choice the right pricing plan that suits your need</h2>
+                                <h2 className="text-center">{messages["title"][langKey]}</h2>
                             </div>
                             {/* <!-- Section Content Block --> */}
                         </div>
@@ -35,11 +36,11 @@ const Plan: React.FC<
                                     <div className="rounded-[10px] border-2 border-ColorBlack bg-white p-7 xl:p-10 h-full">
                                         {/* <!-- Pricing Content Top --> */}
                                         <div className="text-center text-ColorBlack">
-                                            <span className="text-xl font-bold">Getting Start</span>
+                                            <span className="text-xl font-bold">{messages["price.gettingStart"][langKey]}</span>
                                             <div className="text-[28px] font-normal leading-[2.85]">
-                                                <span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">FREE</span>
+                                                <span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">{messages["price.gettingStart.price"][langKey]}</span>
                                             </div>
-                                            <span className="text-sm text-ColorBlack/70">No credit card required</span>
+                                            <span className="text-sm text-ColorBlack/70">{messages["price.gettingStart.message"][langKey]}</span>
                                         </div>
                                         {/* <!-- Pricing Content Top --> */}
                                         {/* <!-- Horizontal Line Separator --> */}
@@ -59,7 +60,7 @@ const Plan: React.FC<
                                         {/* <!-- Pricing Data list --> */}
                                         <div className="mt-10 flex justify-center">
                                             <a href={`${homeLink}contact`} className="btn is-white is-rounded is-large group w-full border-2">
-                                                Contact now
+                                                {messages["contact"][langKey]}
                                             </a>
                                         </div>
                                     </div>
@@ -72,11 +73,11 @@ const Plan: React.FC<
                                     <div className="rounded-[10px] border-2 border-ColorBlack bg-white p-7 xl:p-10 h-full">
                                         {/* <!-- Pricing Content Top --> */}
                                         <div className="text-center text-ColorBlack">
-                                            <span className="text-xl font-bold">Standard Plan</span>
+                                            <span className="text-xl font-bold">{messages["price.standardPlan"][langKey]}</span>
                                             <div className="text-[28px] font-normal leading-[2.85]">
-                                                <span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">~$250</span>
+                                                <span className="text-[48px] font-bold leading-[1.3] xl:text-[58px]">{messages["price.standardPlan.price"][langKey]}</span>
                                             </div>
-                                            <span className="text-sm text-ColorBlack/70">For small websites, retailers</span>
+                                            <span className="text-sm text-ColorBlack/70">{messages["price.standardPlan.message"][langKey]}</span>
                                         </div>
                                         {/* <!-- Pricing Content Top --> */}
                                         {/* <!-- Horizontal Line Separator --> */}
@@ -96,7 +97,7 @@ const Plan: React.FC<
                                         {/* <!-- Pricing Data list --> */}
                                         <div className="mt-10 flex justify-center">
                                             <a href={`${homeLink}contact`} className="btn is-blue is-rounded is-large group w-full border-2">
-                                                Contact now
+                                                {messages["contact"][langKey]}
                                             </a>
                                         </div>
                                     </div>
@@ -109,11 +110,11 @@ const Plan: React.FC<
                                     <div className="rounded-[10px] border-2 border-ColorBlack bg-white p-7 xl:p-10 h-full">
                                         {/* <!-- Pricing Content Top --> */}
                                         <div className="text-center text-ColorBlack">
-                                            <span className="text-xl font-bold">Pro Plan</span>
+                                            <span className="text-xl font-bold">{messages["price.proPlan"][langKey]}</span>
                                             <div className="text-[28px] font-normal leading-[2.85]">
-                                                <span className="text-[40px] font-bold leading-[1.3] xl:text-[50px]">CONTACT</span>
+                                                <span className="text-[40px] font-bold leading-[1.3] xl:text-[50px]">{messages["price.proPlan.price"][langKey]}</span>
                                             </div>
-                                            <span className="text-sm text-ColorBlack/70">For a complex project and maintenance</span>
+                                            <span className="text-sm text-ColorBlack/70">{messages["price.proPlan.message"][langKey]}</span>
                                         </div>
                                         {/* <!-- Pricing Content Top --> */}
                                         {/* <!-- Horizontal Line Separator --> */}
@@ -133,7 +134,7 @@ const Plan: React.FC<
                                         {/* <!-- Pricing Data list --> */}
                                         <div className="mt-10 flex justify-center">
                                             <a href={`${homeLink}contact`} className="btn is-white is-rounded is-large group w-full border-2">
-                                                Contact now
+                                                {messages["contact"][langKey]}
                                             </a>
                                         </div>
                                     </div>

@@ -473,7 +473,7 @@ export const Head: HeadFC = ({ location }) => <PageHead pathname={location.pathn
 
 export const query = graphql`
     {
-        allContentfulProject(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "en-US" } }, limit: 4) {
+        allContentfulProject(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "vi-VN" } }, limit: 4) {
             nodes {
                 id
                 name
@@ -487,7 +487,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulProgrammingLanguage(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulProgrammingLanguage(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "vi-VN" } }) {
             nodes {
                 id
                 name
@@ -500,7 +500,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulService(limit: 4, filter: { node_locale: { eq: "en-US" }, shouldShowOnDiscover: { eq: true } }) {
+        allContentfulService(limit: 4, filter: { node_locale: { eq: "vi-VN" }, shouldShowOnDiscover: { eq: true } }) {
             nodes {
                 id
                 slug
@@ -519,7 +519,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulFaq(filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulFaq(filter: { node_locale: { eq: "vi-VN" } }) {
             nodes {
                 id
                 question
@@ -529,7 +529,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulPlan(sort: { order: ASC }, filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulPlan(sort: { order: ASC }, filter: { node_locale: { eq: "vi-VN" } }) {
             nodes {
                 id
                 name

@@ -204,7 +204,7 @@ export const Head: HeadFC = ({ location }) => <PageHead title="Services" pathnam
 
 export const query = graphql`
     {
-        allContentfulService(filter: { node_locale: { eq: "en-US" } }, sort: { shouldShowOnDiscover: ASC }) {
+        allContentfulService(filter: { node_locale: { eq: "vi-VN" } }, sort: { shouldShowOnDiscover: ASC }) {
             nodes {
                 id
                 slug
@@ -223,7 +223,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulPlan(sort: { order: ASC }, filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulPlan(sort: { order: ASC }, filter: { node_locale: { eq: "vi-VN" } }) {
             nodes {
                 id
                 name
@@ -231,7 +231,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulFaq(filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulFaq(filter: { node_locale: { eq: "vi-VN" } }) {
             nodes {
                 id
                 question

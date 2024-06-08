@@ -196,7 +196,7 @@ export const Head: HeadFC = ({ location }) => <PageHead title="Team" pathname={l
 
 export const query = graphql`
     {
-        allContentfulLeader(filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulLeader(filter: { node_locale: { eq: "vi-VN" } }) {
             nodes {
                 id
                 name
@@ -213,7 +213,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulTeam(filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulTeam(filter: { node_locale: { eq: "vi-VN" } }) {
             nodes {
                 id
                 name

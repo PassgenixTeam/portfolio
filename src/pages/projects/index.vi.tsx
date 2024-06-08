@@ -167,7 +167,7 @@ export const Head: HeadFC = ({ location }) => <PageHead title="Projects" pathnam
 
 export const query = graphql`
     {
-        allContentfulProject(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulProject(sort: { updatedAt: DESC }, filter: { node_locale: { eq: "vi-VN" } }) {
             nodes {
                 id
                 name

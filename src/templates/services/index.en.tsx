@@ -114,7 +114,7 @@ export const Head: HeadFC<{
 
 export const query = graphql`
     query ($slug: String!) {
-        contentfulService(slug: { eq: $slug }) {
+        contentfulService(slug: { eq: $slug }, node_locale: { eq: "en-US" }) {
             id
             slug
             name

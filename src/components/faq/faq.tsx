@@ -3,6 +3,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types";
 import cls from "classnames";
 import { useLanguage } from "../../languages/hooks/useLanguage";
+import { messages } from "./messages";
 
 const FAQ: React.FC<
     React.HTMLAttributes<HTMLDivElement> & {
@@ -10,7 +11,7 @@ const FAQ: React.FC<
         faqs: readonly Queries.ContentfulFaq[];
     }
 > = ({ pathname, faqs, className, ...props }) => {
-    const { homeLink } = useLanguage(pathname);
+    const { homeLink, langKey } = useLanguage(pathname);
 
     return (
         <section className="section-faq">
@@ -23,7 +24,7 @@ const FAQ: React.FC<
                         <div className="jos mb-[60px] xl:mb-20">
                             {/* <!-- Section Content Block --> */}
                             <div className="mx-auto max-w-[625px]">
-                                <h2 className="text-center">Frequently asked questions about our digital agency</h2>
+                                <h2 className="text-center">{messages["title"][langKey]}</h2>
                             </div>
                             {/* <!-- Section Content Block --> */}
                         </div>
@@ -64,7 +65,7 @@ const FAQ: React.FC<
 
                             <div className="jos mt-[60px] flex justify-center xl:mt-20">
                                 <a href={`${homeLink}contact`} className="btn is-blue is-rounded btn-animation is-large group">
-                                    <span>Still, have any questions? Contact us</span>
+                                    <span>{messages["contact"][langKey]}</span>
                                 </a>
                             </div>
                         </div>

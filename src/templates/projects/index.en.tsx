@@ -219,7 +219,7 @@ export const Head: HeadFC<{
 
 export const query = graphql`
     query ($slug: String!) {
-        contentfulProject(slug: { eq: $slug }) {
+        contentfulProject(slug: { eq: $slug }, node_locale: { eq: "en-US" }) {
             id
             name
             slug

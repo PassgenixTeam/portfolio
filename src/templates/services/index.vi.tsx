@@ -114,7 +114,7 @@ export const Head: HeadFC<{
 
 export const query = graphql`
     query ($slug: String!) {
-        contentfulService(slug: { eq: $slug }) {
+        contentfulService(slug: { eq: $slug }, node_locale: { eq: "vi-VN" }) {
             id
             slug
             name
@@ -135,7 +135,7 @@ export const query = graphql`
             }
         }
 
-        allContentfulFaq(filter: { node_locale: { eq: "en-US" } }) {
+        allContentfulFaq(filter: { node_locale: { eq: "vi-VN" } }) {
             nodes {
                 id
                 question
