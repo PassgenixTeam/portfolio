@@ -16,12 +16,12 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                     {/* <!-- Section Container --> */}
                     <div className="container-default">
                         <div className="breadcrumb-block">
-                            <h1 className="breadcrumb-title">Send Us A Message</h1>
+                            <h1 className="breadcrumb-title">Gửi cho chúng tôi những yêu cầu của bạn</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href={homeLink}>Home</a>
+                                    <a href={homeLink}>Trang chủ</a>
                                 </li>
-                                <li>Contact Us</li>
+                                <li>Liên hệ với chúng tôi</li>
                             </ul>
                         </div>
                     </div>
@@ -55,8 +55,8 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                     <div className="h-full rounded-[10px] border-2 border-ColorBlack bg-white p-[30px]">
                                         <img src="/assets/img/icons/icon-duotone-chat.svg" alt="icon-duotone-chat" width="64" height="60" className="mb-[30px] h-[60px] w-auto" />
                                         <div>
-                                            <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Chat with us</div>
-                                            <p>We're waiting to help you every Monday-Friday from 9 am to 5 pm EST easily.</p>
+                                            <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Trò chuyện với chúng tôi</div>
+                                            <p>Chúng tôi sẵn lòng hỗ trợ bạn vào mỗi thứ Hai đến thứ Sáu từ 9 giờ sáng đến 5 giờ chiều giờ Đông Nam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -68,13 +68,13 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                     <div className="h-full rounded-[10px] border-2 border-ColorBlack bg-white p-[30px]">
                                         <img src="/assets/img/icons/icon-duotone-phone.svg" alt="icon-duotone-phone" width="64" height="60" className="mb-[30px] h-[60px] w-auto" />
                                         <div>
-                                            <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Give us a call</div>
+                                            <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Hãy gọi cho chúng tôi</div>
                                             <p>
-                                                Give us a ring at{" "}
+                                                Gọi cho chúng tôi{" "}
                                                 <a href="tel:+84796796492" className="font-semibold hover:text-ColorPrimary hover:underline hover:underline-offset-4">
                                                     (+84-796-796-492)
                                                 </a>{" "}
-                                                . Every monday-friday from 9 am to 11 pm.
+                                                . Mỗi thứ Hai đến thứ Sáu từ 9 giờ sáng đến 11 giờ tối.
                                             </p>
                                         </div>
                                     </div>
@@ -93,16 +93,16 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                             className="mb-[30px] h-[60px] w-auto"
                                         />
                                         <div>
-                                            <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Email Us</div>
+                                            <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Email của chúng tôi</div>
                                             <p>
-                                                Drop us an email at{" "}
+                                                Gửi email cho chúng tôi tại{" "}
                                                 <a
                                                     href="mailto:passgenixteam2023@gmail.com"
                                                     className="font-semibold hover:text-ColorPrimary hover:underline hover:underline-offset-4"
                                                 >
                                                     passgenixteam2023@gmail.com
                                                 </a>{" "}
-                                                and you'll receive a reply within 24 hours.
+                                                và bạn sẽ nhận được phản hồi trong vòng 24 giờ.
                                             </p>
                                         </div>
                                     </div>
@@ -132,10 +132,13 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                 <div>
                                     {/* <!-- Section Block --> */}
                                     <div className="mb-5">
-                                        <h2>Fill out this form, We ‘ll quickly get back to you</h2>
+                                        <h2>Điền vào mẫu này, chúng tôi sẽ nhanh chóng trả lời lại cho bạn.</h2>
                                     </div>
                                     {/* <!-- Section Block --> */}
-                                    <p>We are here to help you! Tell us how we can help and we’ll get in touch within next 24hrs with expert</p>
+                                    <p>
+                                        Chúng tôi ở đây để giúp bạn! Hãy cho chúng tôi biết làm thế nào chúng tôi có thể giúp và chúng tôi sẽ liên hệ trong vòng 24 giờ tới với
+                                        chuyên gia.
+                                    </p>
                                     {/* <!-- Horizontal Line Separator --> */}
                                     <div className="my-7 h-px w-full bg-ColorBlack opacity-10 xl:my-10 xxl:my-14"></div>
                                     {/* <!-- BlockQuote Block--> */}
@@ -158,8 +161,8 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                             </span>
                                         </div>
                                         <blockquote className="mb-6 font-semibold text-opacity-80">
-                                            "We're thrilled with new website your team designed for us! It's professional, easy to navigate, and showcases our products beautifully.
-                                            We've already seen a significant increase in online traffic. Awesome job!"
+                                            "Chúng tôi rất phấn khích với trang web mới mà đội của bạn thiết kế cho chúng tôi! Nó chuyên nghiệp, dễ dàng điều hướng và trưng bày sản
+                                            phẩm của chúng tôi một cách đẹp mắt. Chúng tôi đã thấy một sự tăng đáng kể trong lưu lượng truy cập trực tuyến. Công việc tuyệt vời!"
                                         </blockquote>
                                         <div className="flex flex-col items-center gap-4 lg:flex-row">
                                             <img

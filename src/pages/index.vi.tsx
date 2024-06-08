@@ -38,11 +38,11 @@ const HomePage: React.FC<
                                 {/* <!-- Hero Content Block --> */}
                                 <div className="jos">
                                     <div className="has-container-custom">
-                                        <h1 className="mb-6">Dạ Alo!!!</h1>
+                                        <h1 className="mb-6">Chúng tôi mang đến những giải pháp sáng tạo.</h1>
                                         <p>
-                                            Launched in 2023, we're a Vietnamese open-source company passionate about building high-quality software and services for the global
-                                            tech community. Our team brings together Vietnam's top IT talent, selected for their strong skills and proven experience on large-scale
-                                            projects.
+                                            Ra mắt vào năm 2023, chúng tôi là một công ty open-source của Việt Nam, đam mê xây dựng phần mềm và dịch vụ chất lượng cao cho cộng đồng
+                                            tech toàn cầu. Đội ngũ của chúng tôi tập hợp những tài năng IT hàng đầu của Việt Nam, được chọn lựa dựa trên kỹ năng mạnh mẽ và kinh
+                                            nghiệm đã được chứng minh trong các dự án quy mô lớn.
                                         </p>
                                         <form
                                             action="https://formbold.com/s/3GKk1"
@@ -53,19 +53,19 @@ const HomePage: React.FC<
                                             <input
                                                 type="email"
                                                 name="email"
-                                                placeholder="Leave your email here"
+                                                placeholder="Để lại email của bạn."
                                                 className="w-full rounded-[50px] border border-ColorBlack bg-white px-5 py-[15px] pr-40 text-base font-semibold text-opacity-50 outline-none"
                                             />
                                             <input type="hidden" name="message" value="Please contact me soon." />
                                             <button type="submit" className="btn is-blue is-rounded absolute right-[5px] py-[10px]">
-                                                Get started
+                                                Bắt đầu ngay
                                             </button>
                                         </form>
                                         <div className="mt-5 text-sm leading-6 md:justify-normal">
                                             <span className="mr-2 inline-block text-lg text-ColorPrimary">
                                                 <i className="fa-solid fa-badge-check"></i>
                                             </span>
-                                            <span className="opacity-50">No credit card is required. We will contact you within 24 hours.</span>
+                                            <span className="opacity-50">Không cần thẻ tín dụng. Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.</span>
                                         </div>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@ const HomePage: React.FC<
                         {/* <!-- Section Container --> */}
                         <div className="container-default">
                             <div className="mx-auto mb-10 max-w-[80%] text-center text-base font-light uppercase tracking-[0.4rem] leading-[1.4] opacity-70 md:mb-16 lg:mb-20">
-                                We can use any latest technologies and frameworks
+                                Chúng tôi có thể sử dụng bất kỳ công nghệ và framework mới nhất nào.
                             </div>
                             {/* <!-- Brand Slider --> */}
                             <div className="swiper brand-slider">
@@ -154,7 +154,7 @@ const HomePage: React.FC<
                             <div className="jos mb-[60px] xl:mb-20">
                                 {/* <!-- Section Content Block --> */}
                                 <div className="mx-auto max-w-[590px]">
-                                    <h2 className="text-center">All the common services that are suitable for you</h2>
+                                    <h2 className="text-center">Tất cả các dịch vụ thông dụng phù hợp với bạn.</h2>
                                 </div>
                                 {/* <!-- Section Content Block --> */}
                             </div>
@@ -190,7 +190,7 @@ const HomePage: React.FC<
                                                     <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">{service.name}</div>
                                                     <p className="mb-5 line-clamp-2 text-ColorBlack/80">{service.shortDescription}</p>
                                                     <div className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary">
-                                                        Find out more
+                                                        Tìm hiểu thêm
                                                         <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
                                                             <i className="fa-solid fa-arrow-right"></i>
                                                         </span>
@@ -234,22 +234,24 @@ const HomePage: React.FC<
                                         <div>
                                             {/* <!-- Section Block --> */}
                                             <div className="mb-5">
-                                                <h2>Highly innovative, Modern, Flexible and Extensible Software Solutions</h2>
+                                                <h2>Giải pháp phần mềm cực kỳ sáng tạo, hiện đại, linh hoạt và có khả năng mở rộng.</h2>
                                             </div>
                                             {/* <!-- Section Block --> */}
                                         </div>
                                         {/* <!-- Section Wrapper --> */}
                                         <p>
-                                            At <span className="font-semibold text-cyan-700">Passgenix Technology</span>, we build with cutting-edge tools and adapt our process to
-                                            keep things fresh. We sweat the details, but never lose sight of the whole project.
+                                            Tại <span className="font-semibold text-cyan-700">Passgenix Technology</span>, Chúng tôi xây dựng bằng các công cụ tiên tiến nhất và
+                                            điều chỉnh quy trình của mình để giữ cho mọi thứ luôn mới mẻ. Chúng tôi chú ý đến các chi tiết nhỏ, nhưng không bao giờ mất tầm nhìn của
+                                            toàn bộ dự án.
                                         </p>
                                         <p>
-                                            <strong>Data-Driven Strategies:</strong> We use data to craft promotions that resonate with your audience and build a strong brand
-                                            identity.
+                                            <strong>Chiến lược dựa trên dữ liệu:</strong>
+                                            Chúng tôi sử dụng dữ liệu để tạo ra các chương trình đề xướng phù hợp với đối tượng của bạn và xây dựng một danh tiếng thương hiệu mạnh
+                                            mẽ.
                                         </p>
                                         <p>
-                                            <strong>Effective Services:</strong> We design and develop user-centric solutions that meet your business goals and user needs,
-                                            delivered on time and budget.
+                                            <strong>Dịch vụ hiệu quả:</strong> Chúng tôi thiết kế và phát triển các giải pháp tập trung vào người dùng, đáp ứng các mục tiêu kinh
+                                            doanh và nhu cầu của người dùng của bạn, được giao đúng thời gian và ngân sách.
                                         </p>
                                     </div>
                                     {/* <!-- Content Block Left --> */}
@@ -274,33 +276,33 @@ const HomePage: React.FC<
                                         <div>
                                             {/* <!-- Section Block --> */}
                                             <div className="mb-5">
-                                                <h2>Discover the latest projects & emerging ideas for business growth</h2>
+                                                <h2>Khám phá các dự án mới nhất và các ý tưởng mới nổi về sự phát triển kinh doanh.</h2>
                                             </div>
                                             {/* <!-- Section Block --> */}
                                         </div>
                                         {/* <!-- Section Wrapper --> */}
                                         <p>
-                                            Our team of experienced designers and developers create cutting-edge websites that combine innovative design with the latest
-                                            technologies.
+                                            Đội ngũ các nhà thiết kế và nhà phát triển giàu kinh nghiệm của chúng tôi tạo ra các trang web tiên tiến kết hợp giữa thiết kế sáng tạo
+                                            và các công nghệ mới nhất.
                                         </p>
                                         <ul className="flex flex-col gap-5 font-semibold text-ColorBlack">
                                             <li>
                                                 <span className="mr-3 inline-block text-xl text-ColorPrimary">
                                                     <i className="fa-solid fa-badge-check"></i>
                                                 </span>
-                                                Reach new technology trends or implement your product ideas.
+                                                Tiếp cận các xu hướng công nghệ mới hoặc triển khai ý tưởng sản phẩm của bạn.
                                             </li>
                                             <li>
                                                 <span className="mr-3 inline-block text-xl text-ColorPrimary">
                                                     <i className="fa-solid fa-badge-check"></i>
                                                 </span>
-                                                Automate your processes and get data-driven business insights.
+                                                Tự động hóa các quy trình của bạn và nhận thông tin kinh doanh dựa trên dữ liệu.
                                             </li>
                                             <li>
                                                 <span className="mr-3 inline-block text-xl text-ColorPrimary">
                                                     <i className="fa-solid fa-badge-check"></i>
                                                 </span>
-                                                Create lightweight, scalable, and easly accessible cloud solution.
+                                                Tạo ra các giải pháp đám mây nhẹ, có khả năng mở rộng và dễ truy cập.
                                             </li>
                                         </ul>
                                     </div>
@@ -342,11 +344,11 @@ const HomePage: React.FC<
                             <div className="jos mb-[60px] flex flex-wrap items-end justify-between gap-8 xl:mb-20">
                                 {/* <!-- Section Block --> */}
                                 <div className="max-w-[550px]">
-                                    <h2>Discover our latest project in this year</h2>
+                                    <h2>Khám phá dự án mới nhất của chúng tôi trong năm nay.</h2>
                                 </div>
                                 {/* <!-- Section Block --> */}
                                 <a href={`${homeLink}projects`} className="btn is-blue is-rounded btn-animation is-large group">
-                                    <span>See more works</span>
+                                    <span>Xem thêm các công trình khác</span>
                                 </a>
                             </div>
                             {/* <!-- Section Wrapper --> */}
@@ -372,7 +374,7 @@ const HomePage: React.FC<
                                                     </div>
                                                 </p>
                                                 <div className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
-                                                    View work
+                                                    Xem chi tiết
                                                     <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
                                                         <i className="fa-solid fa-arrow-right"></i>
                                                     </span>
@@ -408,7 +410,7 @@ const HomePage: React.FC<
                             <div className="jos mb-[60px] xl:mb-20">
                                 {/* <!-- Section Content Block --> */}
                                 <div className="mx-auto max-w-[625px]">
-                                    <h2 className="text-center">Most of our satisfied clients leave their feedback</h2>
+                                    <h2 className="text-center">Hầu hết các khách hàng hài lòng của chúng tôi để lại phản hồi của họ.</h2>
                                 </div>
                                 {/* <!-- Section Content Block --> */}
                             </div>
@@ -433,12 +435,12 @@ const HomePage: React.FC<
                                         className="h-auto w-10 xl:w-[90px]"
                                     />
                                     <p className="mt-[30px] text-xl font-semibold leading-[1.33] -tracking-[0.5px] lg:text-2xl">
-                                        I've been using Passgenix Technology's software for a while now, and it's made a huge difference in my workflow. It's easy to use, has all
-                                        the features I need, and their customer support is excellent. A great value for the price!
+                                        Tôi đã sử dụng phần mềm của Passgenix Technology được một thời gian và nó đã tạo ra sự khác biệt lớn trong quy trình làm việc của tôi. Nó dễ
+                                        sử dụng, có tất cả các tính năng mà tôi cần, và dịch vụ khách hàng của họ rất xuất sắc. Một giá trị tuyệt vời cho giá cả!
                                     </p>
                                     <div className="mb-8 lg:mb-[50px]">
                                         <span className="block text-xl font-semibold">Sarah Doe</span>
-                                        <span className="block">Frequent customer, United States</span>
+                                        <span className="block">Khách hàng thường xuyên, đến từ Hoa Kỳ</span>
                                     </div>
                                     {/* <a href="${homeLink}portfolio-details" className="group text-base font-bold capitalize leading-[1.5] hover:text-ColorPrimary">
                                         Read more reviews

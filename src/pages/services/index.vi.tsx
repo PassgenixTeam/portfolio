@@ -28,12 +28,12 @@ const ServicePage: React.FC<
                     {/* <!-- Section Container --> */}
                     <div className="container-default">
                         <div className="breadcrumb-block">
-                            <h1 className="breadcrumb-title">Our Services</h1>
+                            <h1 className="breadcrumb-title">Dịch vụ của chúng tôi</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href={homeLink}>Home</a>
+                                    <a href={homeLink}>Trang chủ</a>
                                 </li>
-                                <li>Our Services</li>
+                                <li>Dịch vụ của chúng tôi</li>
                             </ul>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ const ServicePage: React.FC<
                                                     <div className="mb-4 text-xl font-semibold leading-[1.33] -tracking-[0.5px] text-ColorBlack lg:text-2xl">{service.name}</div>
                                                     <p className="mb-5 line-clamp-2 text-ColorBlack/80">{service.shortDescription}</p>
                                                     <div className="inline-flex items-center gap-x-2 text-base font-bold text-ColorBlack group-hover:text-ColorPrimary">
-                                                        Find out more
+                                                        Tìm hiểu thêm
                                                         <span className="transition-all duration-300 ease-in-out group-hover:translate-x-2">
                                                             <i className="fa-solid fa-arrow-right"></i>
                                                         </span>
@@ -145,19 +145,20 @@ const ServicePage: React.FC<
                                 <div>
                                     {/* <!-- Section Block --> */}
                                     <div className="mb-5">
-                                        <h2>Our vision to be shaping the future through innovative software solutions.</h2>
+                                        <h2>Tầm nhìn của chúng tôi là hình thành tương lai thông qua các giải pháp phần mềm sáng tạo.</h2>
                                     </div>
                                     {/* <!-- Section Block --> */}
                                     <p>
-                                        We believe technology should empower people and businesses, and we strive to create software that simplifies complex problems and drives
-                                        positive change.
+                                        Chúng tôi tin rằng công nghệ nên làm nên sức mạnh cho con người và doanh nghiệp, và chúng tôi cố gắng tạo ra phần mềm giải quyết các vấn đề
+                                        phức tạp một cách đơn giản và thúc đẩy sự thay đổi tích cực.
                                     </p>
                                     {/* <!-- Horizontal Line Separator --> */}
                                     <div className="my-7 h-px w-full bg-ColorBlack opacity-10 xl:my-10 xxl:my-14"></div>
                                     {/* <!-- BlockQuote Block--> */}
                                     <div>
                                         <blockquote className="mb-6 font-semibold italic text-opacity-80">
-                                            “We love what we do & create partnerships with our clients to ensure their digital transformation is positioned for long-term success.”
+                                            "Chúng tôi yêu công việc của mình và tạo ra các đối tác với khách hàng để đảm bảo rằng sự chuyển đổi kỹ thuật số của họ được đặt trong
+                                            tư vị cho thành công dài hạn."
                                         </blockquote>
                                         <div className="flex flex-col items-center gap-4 lg:flex-row">
                                             <img

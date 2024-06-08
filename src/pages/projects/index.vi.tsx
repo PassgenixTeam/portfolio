@@ -32,12 +32,12 @@ const ProjectsPage: React.FC<
                     {/* <!-- Section Container --> */}
                     <div className="container-default">
                         <div className="breadcrumb-block">
-                            <h1 className="breadcrumb-title">Projects</h1>
+                            <h1 className="breadcrumb-title">Dự án</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href={homeLink}>Home</a>
+                                    <a href={homeLink}>Trang chủ</a>
                                 </li>
-                                <li>Projects</li>
+                                <li>Dự án</li>
                             </ul>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ const ProjectsPage: React.FC<
                         {/* <!-- Tab Button Menu --> */}
                         <div className="flex flex-wrap justify-center gap-3 md:gap-6">
                             <button className="active tab-button btn tab-btn-blue is-rounded h-[50px]" data-tab="show-all">
-                                Show All
+                                Xem tất cả
                             </button>
                             {categories.map((category) => (
                                 <button key={category} className="tab-button btn tab-btn-blue is-rounded h-[50px]" data-tab={category2Id(category)}>
@@ -100,7 +100,7 @@ const ProjectsPage: React.FC<
                                                     </div>
                                                 </div>
                                                 <div className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
-                                                    View work
+                                                    Xem chi tiết
                                                     <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
                                                         <i className="fa-solid fa-arrow-right"></i>
                                                     </span>
@@ -137,7 +137,7 @@ const ProjectsPage: React.FC<
                                                             </div>
                                                         </div>
                                                         <div className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
-                                                            View work
+                                                            Xem chi tiết
                                                             <span className="inline-block transition-all duration-150 group-hover:translate-x-2">
                                                                 <i className="fa-solid fa-arrow-right"></i>
                                                             </span>

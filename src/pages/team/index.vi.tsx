@@ -24,12 +24,12 @@ const TeamPage: React.FC<
                     {/* <!-- Section Container --> */}
                     <div className="container-default">
                         <div className="breadcrumb-block">
-                            <h1 className="breadcrumb-title">Our Team & Partners</h1>
+                            <h1 className="breadcrumb-title">Đội Nhóm và Đối Tác của Chúng Tôi</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href={homeLink}>Home</a>
+                                    <a href={homeLink}>Trang chủ</a>
                                 </li>
-                                <li>Our Team</li>
+                                <li>Đội nhóm</li>
                             </ul>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ const TeamPage: React.FC<
                         <div className="jos mb-[60px] xl:mb-20">
                             {/* <!-- Section Content Block --> */}
                             <div className="mx-auto max-w-[636px]">
-                                <h2 className="text-center">The amazing team behind our creative products</h2>
+                                <h2 className="text-center">Đội ngũ tuyệt vời đứng sau các sản phẩm sáng tạo của chúng tôi</h2>
                             </div>
                             {/* <!-- Section Content Block --> */}
                         </div>
@@ -160,7 +160,7 @@ const TeamPage: React.FC<
                                     />
                                     <div className="mb-4 mt-6">
                                         <div className="mb-1 text-xl font-semibold text-ColorBlack">{teamGroup.name!}</div>
-                                        <span className="block text-[0.9rem] text-opacity-80">{teamGroup.size!} members</span>
+                                        <span className="block text-[0.9rem] text-opacity-80">{teamGroup.size!} thành viên</span>
                                     </div>
 
                                     <div className="flex flex-col gap-1">
@@ -177,7 +177,7 @@ const TeamPage: React.FC<
 
                         <div className="flex justify-center">
                             <a href={`${homeLink}contact`} className="btn is-blue is-rounded btn-animation is-large group mt-10 inline-block lg:mt-[60px] xl:mt-20">
-                                <span>Want to join us?</span>
+                                <span>Hãy tham gia cùng chúng tôi</span>
                             </a>
                         </div>
                     </div>
