@@ -48,13 +48,13 @@ const FAQ: React.FC<
                                         {/* <!-- Accordion Header --> */}
                                         {/* <!-- Accordion Body --> */}
                                         <div className="accordion-body max-w-[826px] opacity-80">
-                                            <p className="pt-5">
+                                            <div className="pt-5">
                                                 {documentToReactComponents(JSON.parse(faq.answer!.raw!), {
                                                     renderNode: {
                                                         [BLOCKS.PARAGRAPH]: (node, children) => <p className="project-details__text">{children}</p>,
                                                     },
                                                 })}
-                                            </p>
+                                            </div>
                                         </div>
                                         {/* <!-- Accordion Body --> */}
                                     </li>

@@ -367,11 +367,11 @@ const HomePage: React.FC<
                                                 />
                                             </div>
                                             <div className="mt-6">
-                                                <p className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
+                                                <div className="mb-5 flex flex-wrap justify-between gap-5 text-ColorBlack lg:flex-nowrap xl:mb-7">
                                                     <div className="text-xl font-semibold leading-[1.33] -tracking-[0.5px] group-hover:text-ColorPrimary xl:text-2xl">
                                                         {project.name!}
                                                     </div>
-                                                </p>
+                                                </div>
                                                 <div className="text-base font-bold capitalize leading-[1.5] group-hover:text-ColorPrimary">
                                                     View work
                                                     <span className="inline-block transition-all duration-150 group-hover:translate-x-2">

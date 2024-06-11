@@ -5,13 +5,21 @@ import { motion } from "framer-motion";
 import { useLanguage } from "../../languages/hooks/useLanguage";
 import { languagesDetail } from "../../languages/types";
 import { messages } from "./messages";
+import LocalePopup from "../locale-popup/locale-popup";
 
 const PageBody: React.FC<{
     pathname: string;
     children?: React.ReactNode;
 }> = ({ children, pathname }) => {
+    const isSSR = typeof window === "undefined";
+
     const { langs, defaultLangKey, langKey, homeLink } = useLanguage(pathname);
     const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, pathname)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, "/") }));
+
+    const handleLangChanged = (langKey: string) => {
+        if (isSSR) return;
+        localStorage.setItem("lang-key", langKey);
+    };
 
     // Load custom scripts
     React.useEffect(() => {
@@ -149,6 +157,7 @@ const PageBody: React.FC<{
                                                         className="block px-2 py-2 ps-4 text-sm font-medium text-end text-gray-700 hover:bg-gray-100"
                                                         role="menuitem"
                                                         tabIndex={-1}
+                                                        onClick={() => handleLangChanged(item.langKey)}
                                                     >
                                                         {languagesDetail[item.langKey].name} {languagesDetail[item.langKey].flag}
                                                     </a>
@@ -353,6 +362,8 @@ const PageBody: React.FC<{
                 </div>
             </footer>
             {/* <!--...::: Footer Section End :::... --> */}
+
+            <LocalePopup langsMenu={langsMenu} />
         </motion.div>
     );
 };
