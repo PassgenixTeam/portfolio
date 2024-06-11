@@ -192,7 +192,7 @@ const ServicePage: React.FC<
             {/* <!--...::: Pricing Section Start :::... --> */}
 
             {/* <!--...::: FAQ Section Start :::... --> */}
-            <FAQ faqs={faqs} />
+            <FAQ faqs={faqs} pathname={location.pathname} />
             {/* <!--...::: FAQ Section End :::... --> */}
         </PageBody>
     );
