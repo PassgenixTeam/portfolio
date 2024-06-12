@@ -50,10 +50,10 @@ const TeamDetailsPage: React.FC<
                             <h1 className="breadcrumb-title">{project.name}</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href={homeLink}>Home</a>
+                                    <a href={homeLink}>Trang chủ</a>
                                 </li>
                                 <li>
-                                    <a href={`${homeLink}projects`}>Projects</a>
+                                    <a href={`${homeLink}projects`}>Dự án</a>
                                 </li>
                                 <li>{project.name!}</li>
                             </ul>
@@ -90,15 +90,15 @@ const TeamDetailsPage: React.FC<
                             {/* <!-- Portfolio Info List --> */}
                             <ul className="mb-[60px] mt-[30px] flex flex-wrap justify-between gap-8">
                                 <li>
-                                    <span className="mb-[5px] block text-xl font-bold leading-[1.4] text-ColorBlack">Client:</span>
+                                    <span className="mb-[5px] block text-xl font-bold leading-[1.4] text-ColorBlack">Khách hàng:</span>
                                     <span className="text-ColorBlack/80">{project.client}</span>
                                 </li>
                                 <li>
-                                    <span className="mb-[5px] block text-xl font-bold leading-[1.4] text-ColorBlack">Category:</span>
+                                    <span className="mb-[5px] block text-xl font-bold leading-[1.4] text-ColorBlack">Danh mục:</span>
                                     <span className="text-ColorBlack/80">{project.categories!.join(", ")}</span>
                                 </li>
                                 <li>
-                                    <span className="mb-[5px] block text-xl font-bold leading-[1.4] text-ColorBlack">Duration:</span>
+                                    <span className="mb-[5px] block text-xl font-bold leading-[1.4] text-ColorBlack">Thời gian:</span>
                                     <span className="text-ColorBlack/80">{project.duration}</span>
                                 </li>
                                 <li>
@@ -142,7 +142,7 @@ const TeamDetailsPage: React.FC<
                 <div className="horizontal-slide-from-right-to-left flex gap-x-[30px]">
                     {[...Array(5)].map((_, index) => (
                         <span key={index} className="inline-block min-w-[855px]">
-                            We complete client's projects efficiently
+                            Làm việc cùng với niềm đam mê và sự sáng tạo
                         </span>
                     ))}
                 </div>
@@ -161,14 +161,14 @@ const TeamDetailsPage: React.FC<
                             <div className="jos flex flex-wrap items-center justify-between gap-8">
                                 {/* <!-- Section Block --> */}
                                 <div className="mb-5">
-                                    <h2>Related Project:</h2>
+                                    <h2>Dự án gần đây:</h2>
                                 </div>
                                 {/* <!-- Section Block --> */}
                             </div>
                             {/* <!-- Section Wrapper --> */}
                             <p className="jos max-w-[856px]">
-                                Unleash even more possibilities! Don't miss our recently completed projects. We've curated a collection of the similar projects, showcasing
-                                innovative ways to leverage our services.
+                                Hãy xem các dự án vừa hoàn thành gần đây của chúng tôi. Dưới đây là tập hợp các dự án có liên quan, giới thiệu các công nghệ và ý tưởng sáng tạo có
+                                trong các dịch vụ mà chúng tôi cung cấp.
                             </p>
 
                             {/* <!-- Portfolio List --> */}

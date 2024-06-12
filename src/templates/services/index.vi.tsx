@@ -53,10 +53,10 @@ const ServiceDetailsPage: React.FC<
                             <h1 className="breadcrumb-title">{service.name}</h1>
                             <ul className="breadcrumb-nav">
                                 <li>
-                                    <a href={homeLink}>Home</a>
+                                    <a href={homeLink}>Trang chủ</a>
                                 </li>
                                 <li>
-                                    <a href={`${homeLink}services`}>Services</a>
+                                    <a href={`${homeLink}services`}>Dịch vụ của chúng tôi</a>
                                 </li>
                                 <li>{service.name!}</li>
                             </ul>
