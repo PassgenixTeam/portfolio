@@ -153,7 +153,7 @@ const PageBody: React.FC<{
                                             {langsMenu.map((item) => (
                                                 <MenuItem key={item.langKey}>
                                                     <a
-                                                        href={item.link}
+                                                        href={`${item.link}${location.search}${location.hash}`}
                                                         className="block px-2 py-2 ps-4 text-sm font-medium text-end text-gray-700 hover:bg-gray-100"
                                                         role="menuitem"
                                                         tabIndex={-1}
@@ -242,23 +242,14 @@ const PageBody: React.FC<{
                                             <div className="lg:max-w-[416px]">{messages["footer.logoDescription"][langKey]}</div>
                                             {/* <!-- Footer Mail --> */}
                                             <a
-                                                href="mailto:passgenixteam2023@gmail.com"
+                                                href="mailto:info@passgenix.com"
                                                 className="my-6 block font-semibold underline-offset-4 transition-all duration-300 hover:underline hover:text-ColorPrimary"
                                             >
-                                                passgenixteam2023@gmail.com
+                                                info@passgenix.com
                                             </a>
                                             {/* <!-- Footer Social Link --> */}
-                                            {/* <div className="flex flex-wrap gap-5">
-                                                <a
-                                                    href="https://twitter.com"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm text-white transition-all duration-300 hover:bg-ColorBlue"
-                                                    aria-label="twitter"
-                                                >
-                                                    <i className="fa-brands fa-x-twitter"></i>
-                                                </a>
-                                                <a
+                                            <div className="flex flex-wrap gap-5">
+                                                {/* <a
                                                     href="https://www.facebook.com/"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -266,9 +257,9 @@ const PageBody: React.FC<{
                                                     aria-label="facebook"
                                                 >
                                                     <i className="fa-brands fa-facebook-f"></i>
-                                                </a>
+                                                </a> */}
                                                 <a
-                                                    href="https://www.instagram.com/"
+                                                    href="https://www.instagram.com/passgenix"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm text-white transition-all duration-300 hover:bg-ColorBlue"
@@ -277,15 +268,15 @@ const PageBody: React.FC<{
                                                     <i className="fa-brands fa-instagram"></i>
                                                 </a>
                                                 <a
-                                                    href="https://www.github.com/"
+                                                    href="https://www.threads.net/@passgenix"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm text-white transition-all duration-300 hover:bg-ColorBlue"
                                                     aria-label="github"
                                                 >
-                                                    <i className="fa-brands fa-github"></i>
+                                                    <i className="fa-brands fa-threads"></i>
                                                 </a>
-                                            </div> */}
+                                            </div>
                                         </div>
                                         {/* <!-- Footer Content --> */}
                                     </div>

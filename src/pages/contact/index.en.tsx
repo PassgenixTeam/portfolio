@@ -7,6 +7,9 @@ import { useLanguage } from "../../languages/hooks/useLanguage";
 const ContactPage: React.FC<PageProps> = ({ location }) => {
     const { homeLink } = useLanguage(location.pathname);
 
+    const searchParams = new URLSearchParams(location.search);
+    const prefillEmail = searchParams.get("email");
+
     return (
         <PageBody pathname={location.pathname}>
             {/* <!--...::: Breadcrumb Section Start :::... --> */}
@@ -96,11 +99,8 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                             <div className="mb-4 text-2xl font-semibold -tracking-[0.5]">Email Us</div>
                                             <p>
                                                 Drop us an email at{" "}
-                                                <a
-                                                    href="mailto:passgenixteam2023@gmail.com"
-                                                    className="font-semibold hover:text-ColorPrimary hover:underline hover:underline-offset-4"
-                                                >
-                                                    passgenixteam2023@gmail.com
+                                                <a href="mailto:info@passgenix.com" className="font-semibold hover:text-ColorPrimary hover:underline hover:underline-offset-4">
+                                                    info@passgenix.com
                                                 </a>{" "}
                                                 and you'll receive a reply within 24 hours.
                                             </p>
@@ -191,6 +191,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                                 Your name
                                             </label>
                                             <input
+                                                autoFocus={Boolean(prefillEmail)}
                                                 type="text"
                                                 name="name"
                                                 id="name"
@@ -206,6 +207,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                                                 Email address
                                             </label>
                                             <input
+                                                defaultValue={prefillEmail || ""}
                                                 type="email"
                                                 name="email"
                                                 id="email"

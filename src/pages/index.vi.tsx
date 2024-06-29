@@ -24,6 +24,24 @@ const HomePage: React.FC<
     const faqs = data.allContentfulFaq.nodes;
     const plans = data.allContentfulPlan.nodes;
 
+    const invalidAreaRef = React.useRef<HTMLInputElement>(null);
+
+    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        const email = formData.get("email") as string;
+
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        const invalidArea = invalidAreaRef.current!;
+        if (!emailRegex.test(email)) {
+            invalidArea.textContent = "Please enter a valid email address.";
+            return;
+        }
+
+        window.location.href = `${homeLink}contact?email=${email}`;
+    };
+
     return (
         <PageBody pathname={location.pathname}>
             {/* <!--...::: Hero Section Start :::... --> */}
@@ -44,19 +62,16 @@ const HomePage: React.FC<
                                             tech toàn cầu. Đội ngũ của chúng tôi tập hợp những thành viên IT trẻ, năng động, sáng tạo và giàu kinh nghiệm đã tham gia các môi trường
                                             làm việc chuyên nghiệp và các dự án quy mô.
                                         </p>
-                                        <form
-                                            action="https://formbold.com/s/3GKk1"
-                                            method="POST"
-                                            className="relative mx-auto flex w-full items-center sm:w-[80%] lg:mx-0 lg:mt-5 lg:max-w-md"
-                                        >
-                                            <input type="hidden" name="name" value="New subscribe user" />
+                                        <form onSubmit={handleFormSubmit} className="relative mx-auto flex w-full items-center sm:w-[80%] lg:mx-0 lg:mt-5 lg:max-w-md">
+                                            <div className="absolute -top-8 left-5">
+                                                <span ref={invalidAreaRef} className="text-sm font-medium text-red-500"></span>
+                                            </div>
                                             <input
                                                 type="email"
                                                 name="email"
                                                 placeholder="Để lại email của bạn."
                                                 className="w-full rounded-[50px] border border-ColorBlack bg-white px-5 py-[15px] pr-40 text-base font-semibold text-opacity-50 outline-none"
                                             />
-                                            <input type="hidden" name="message" value="Please contact me soon." />
                                             <button type="submit" className="btn is-blue is-rounded absolute right-[5px] py-[10px]">
                                                 Bắt đầu ngay
                                             </button>
