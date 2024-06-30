@@ -153,7 +153,7 @@ const PageBody: React.FC<{
                                             {langsMenu.map((item) => (
                                                 <MenuItem key={item.langKey}>
                                                     <a
-                                                        href={`${item.link}${location.search}${location.hash}`}
+                                                        href={item.link}
                                                         className="block px-2 py-2 ps-4 text-sm font-medium text-end text-gray-700 hover:bg-gray-100"
                                                         role="menuitem"
                                                         tabIndex={-1}
